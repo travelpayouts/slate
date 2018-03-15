@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;php&quot;,&quot;python&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,10 +211,10 @@
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="shell">cURL</a>
+              <a href="#" data-language-name="ruby">Ruby</a>
+              <a href="#" data-language-name="php">PHP</a>
+              <a href="#" data-language-name="python">Python</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -222,112 +222,171 @@
         <ul class="search-results"></ul>
       <div id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
-          </li>
-          <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#flight-data-access-api" class="toc-h1 toc-link" data-title="flight-data-access-api">Flight Data Access API</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#the-prices-for-the-airline-tickets" class="toc-h2 toc-link" data-title="the-prices-for-the-airline-tickets">The prices for the airline tickets</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#the-calendar-of-prices-for-a-month" class="toc-h2 toc-link" data-title="the-calendar-of-prices-for-a-month">The calendar of prices for a month</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#the-prices-for-the-alternative-directions" class="toc-h2 toc-link" data-title="the-prices-for-the-alternative-directions">The prices for the alternative directions</a>
+                  </li>
+                  <li>
+                    <a href="#cheapest-tickets" class="toc-h2 toc-link" data-title="cheapest-tickets">Cheapest tickets</a>
+                  </li>
+                  <li>
+                    <a href="#non-stop-tickets" class="toc-h2 toc-link" data-title="non-stop-tickets">Non-stop tickets</a>
+                  </li>
+                  <li>
+                    <a href="#tickets-for-each-day-of-month" class="toc-h2 toc-link" data-title="tickets-for-each-day-of-month">Tickets for each day of month</a>
+                  </li>
+                  <li>
+                    <a href="#popular-airline-routes" class="toc-h2 toc-link" data-title="popular-airline-routes">Popular airline routes</a>
+                  </li>
+                  <li>
+                    <a href="#the-calendar-of-prices-for-a-week" class="toc-h2 toc-link" data-title="the-calendar-of-prices-for-a-week">The calendar of prices for a week</a>
+                  </li>
+                  <li>
+                    <a href="#the-popular-directions-from-a-city" class="toc-h2 toc-link" data-title="the-popular-directions-from-a-city">The popular directions from a city</a>
+                  </li>
+                  <li>
+                    <a href="#data-of-countries-in-json-format" class="toc-h2 toc-link" data-title="data-of-countries-in-json-format">Data of countries in json format</a>
+                  </li>
+                  <li>
+                    <a href="#city-data-in-json-format" class="toc-h2 toc-link" data-title="city-data-in-json-format">City data in json format</a>
+                  </li>
+                  <li>
+                    <a href="#airport-data-in-json-format" class="toc-h2 toc-link" data-title="airport-data-in-json-format">Airport data in json format</a>
+                  </li>
+                  <li>
+                    <a href="#airline-data-in-json-format" class="toc-h2 toc-link" data-title="airline-data-in-json-format">Airline data in json format</a>
+                  </li>
+                  <li>
+                    <a href="#alliance-data-in-json-format" class="toc-h2 toc-link" data-title="alliance-data-in-json-format">Alliance data in json format</a>
+                  </li>
+                  <li>
+                    <a href="#airplane-data-in-json-format" class="toc-h2 toc-link" data-title="airplane-data-in-json-format">Airplane data in json format</a>
+                  </li>
+                  <li>
+                    <a href="#routes-list-in-json-format" class="toc-h2 toc-link" data-title="routes-list-in-json-format">Routes list in json format</a>
+                  </li>
+                  <li>
+                    <a href="#the-definition-of-a-user-39-s-location-by-ip-address" class="toc-h2 toc-link" data-title="the-definition-of-a-user-s-location-by-ip-address">The definition of a user's location by IP address</a>
+                  </li>
+                  <li>
+                    <a href="#reduction-of-prices-into-the-other-currency" class="toc-h2 toc-link" data-title="reduction-of-prices-into-the-other-currency">Reduction of prices into the other currency</a>
+                  </li>
+                  <li>
+                    <a href="#special-offers" class="toc-h2 toc-link" data-title="special-offers">Special offers</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#errors" class="toc-h1 toc-link" data-title="errors">Errors</a>
           </li>
       </div>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://www.travelpayouts.com/'>Sign Up for a Developer Token</a></li>
+            <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
-
-<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
+        <h1 id='flight-data-access-api'>Flight Data Access API</h1>
+<p>Travelpayouts Flight Data API – the way to get travel insights for your site or blog. You can get flight price trends and find popular destinations for your customers.</p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+Dear partners! Attention, the data is transferred from the cache, so it is recommended to use them to generate static pages.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p>To access the API you must pass your token in the X-Access-Token header or in the token parameter. To obtain a token for the Data Access API, go to http://www.travelpayouts.com/developers/api.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<p>Dates are accepted in the formats YYYY-MM and YYYY-MM-DD.</p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
-</code></pre>
+<p>The server response is always sent in json format with the following structure:</p>
+
+<ul>
+<li><strong>success</strong> – true for successful request, false in case of errors;</li>
+<li><strong>data</strong> – result of the request; in case of an error is equal to null;</li>
+<li><strong>error</strong> – short description of the error that prevented request completion; for successful request is equal to null.</li>
+</ul>
+
+<p>Dates and times are given in UTC, formatted according to <a href="https://ru.wikipedia.org/wiki/ISO_8601">ISO 8601</a>. Prices are given in rubles as of when the ticket is put in the search results. It is not recommended to use expired prices (the approximate expiration date is given in the value of the expires_at parameter).</p>
+
+<aside class="warning">
+**Important**. We strongly urge receiving data in compressed GZIP format, which saves a significant amount of time in receiving the response. To get data in compressed form, send the header Accept-Encoding: gzip, deflate.
+</aside>
+
+<p>To obtain access to the API for searching for plane tickets and hotels, <a href="https://support.travelpayouts.com/hc/en-us/requests/new">send a request</a>.</p>
+<h2 id='the-prices-for-the-airline-tickets'>The prices for the airline tickets</h2>
+<p>Brings back the list of prices found by our users during the most recent 48 hours according to the filters used.</p>
+
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Example of request:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://api.travelpayouts.com/v2/prices/latest?currency=usd&amp;period_type=year&amp;page=1&amp;limit=30&amp;show_to_affiliates=true&amp;sorting=price&amp;trip_class=0'</span> <span class="se">\</span>
+  --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://api.travelpayouts.com/v2/prices/latest?currency=usd&amp;period_type=year&amp;page=1&amp;limit=30&amp;show_to_affiliates=true&amp;sorting=price&amp;trip_class=0"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-access-token"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://api.travelpayouts.com/v2/prices/latest?currency=usd&amp;period_type=year&amp;page=1&amp;limit=30&amp;show_to_affiliates=true&amp;sorting=price&amp;trip_class=0"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTPHEADER</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b"</span>
+  <span class="p">),</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://api.travelpayouts.com/v2/prices/latest"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s">"currency"</span><span class="p">:</span><span class="s">"usd"</span><span class="p">,</span><span class="s">"period_type"</span><span class="p">:</span><span class="s">"year"</span><span class="p">,</span><span class="s">"page"</span><span class="p">:</span><span class="s">"1"</span><span class="p">,</span><span class="s">"limit"</span><span class="p">:</span><span class="s">"30"</span><span class="p">,</span><span class="s">"show_to_affiliates"</span><span class="p">:</span><span class="s">"true"</span><span class="p">,</span><span class="s">"sorting"</span><span class="p">:</span><span class="s">"price"</span><span class="p">,</span><span class="s">"trip_class"</span><span class="p">:</span><span class="s">"0"</span><span class="p">}</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x-access-token'</span><span class="p">:</span> <span class="s">'321d6a221f8926b5ec41ae89a3b2ae7b'</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre><h3 id='request'>Request</h3>
+<p><code>GET http://api.travelpayouts.com/v2/prices/latest?currency=usd&amp;period_type=year&amp;page=1&amp;limit=30&amp;show_to_affiliates=true&amp;sorting=price&amp;trip_class=0&amp;token=PutHereYourToken</code></p>
+<h3 id='request-parameters'>Request parameters</h3>
+<aside class="notice">
+**Note** If the point of departure and the point of destination are not specified, the API shall bring back 30 of the cheapest tickets that have been found during the most recent 48 hours.
+</aside>
+
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -336,104 +395,2489 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
+<td>currency</td>
+<td>RUB</td>
+<td>The airline ticket’s currency.</td>
+</tr>
+<tr>
+<td>origin</td>
+<td>-</td>
+<td>The point of departure. The IATA city code or the country code. The length - from 2 to 3 symbols.</td>
+</tr>
+<tr>
+<td>destination</td>
+<td>-</td>
+<td>The point of destination. The IATA city code or the country code. The length - from 2 to 3 symbols.</td>
+</tr>
+<tr>
+<td>beginning_of_period</td>
+<td>-</td>
+<td>The beginning of the period, within which the dates of departure fall (in the YYYY-MM-DD format, for example, 2016-05-01). Must be specified if <strong>period_type</strong> is equal to month.</td>
+</tr>
+<tr>
+<td>period_type</td>
+<td>-</td>
+<td>The period for which the tickets have been found (the required parameter): <strong>year</strong> — for the whole time, <strong>month</strong> — for a month.</td>
+</tr>
+<tr>
+<td>one_way</td>
 <td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td><strong>true</strong> - one way, <strong>false</strong> - back-to-back.</td>
 </tr>
 <tr>
-<td>available</td>
+<td>page</td>
+<td>1</td>
+<td>A page number.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>30</td>
+<td>The total number of records on a page. The maximum value - 1000.</td>
+</tr>
+<tr>
+<td>show_to_affiliates</td>
 <td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td><strong>false</strong> - all the prices, <strong>true</strong> - just the prices, found using the partner marker (recommended).</td>
+</tr>
+<tr>
+<td>sorting</td>
+<td>price</td>
+<td>The assorting of prices: <strong>price</strong> — by the price. For the directions, only <strong>city - city</strong> assorting by the price is possible; <strong>route</strong> — by the popularity of a route; <strong>distance_unit_price</strong> — by the price for 1 km.</td>
+</tr>
+<tr>
+<td>trip_duration</td>
+<td>1</td>
+<td>A page number.</td>
+</tr>
+<tr>
+<td>token</td>
+<td>-</td>
+<td>Individual affiliate token.</td>
 </tr>
 </tbody></table>
+<h3 id='response'>Response</h3>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"show_to_affiliates"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"trip_class"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BKK"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PHS"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"depart_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-02-09"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"return_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-02-11"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"number_of_changes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">36.36</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"found_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-24T06:33:32+04:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"distance"</span><span class="p">:</span><span class="w"> </span><span class="mi">339</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"actual"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Origin</td>
+<td>-</td>
+<td>The point of departure.</td>
+</tr>
+<tr>
+<td>destination</td>
+<td>-</td>
+<td>The point of destination.</td>
+</tr>
+<tr>
+<td>show_to_affiliates</td>
+<td>true</td>
+<td>False - all the prices, true — just the prices, found using the partner marker (recommended)</td>
+</tr>
+<tr>
+<td>trip_class</td>
+<td>-</td>
+<td>The flight class: <strong>0</strong> — the economy class, <strong>1</strong> — the business class, <strong>2</strong> — the first class.</td>
+</tr>
+<tr>
+<td>depart_date</td>
+<td>-</td>
+<td>The date of departure.</td>
+</tr>
+<tr>
+<td>return_date</td>
+<td>-</td>
+<td>The date of return.</td>
+</tr>
+<tr>
+<td>number_of_changes</td>
+<td>-</td>
+<td>The number of transfers.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>-</td>
+<td>The cost of a flight, in the currency specified.</td>
+</tr>
+<tr>
+<td>found_at</td>
+<td>-</td>
+<td>The time and the date, for which a ticket was found.</td>
+</tr>
+<tr>
+<td>distance</td>
+<td>-</td>
+<td>The distance between the point of departure and the point of destination.</td>
+</tr>
+<tr>
+<td>actual</td>
+<td>-</td>
+<td>The actuality of an offer.</td>
+</tr>
+<tr>
+<td>token</td>
+<td>-</td>
+<td>Individual affiliate token.</td>
+</tr>
+</tbody></table>
+<h2 id='the-calendar-of-prices-for-a-month'>The calendar of prices for a month</h2>
+<p>Brings the prices for each day of a month, grouped together by the number of transfers, back.</p>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+<blockquote>
+<p>Example of request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://api.travelpayouts.com/v2/prices/month-matrix?currency=usd&amp;show_to_affiliates=true&amp;origin=LED&amp;destination=HKT'</span> <span class="se">\</span>
+  --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://api.travelpayouts.com/v2/prices/month-matrix?currency=usd&amp;show_to_affiliates=true&amp;origin=LED&amp;destination=HKT"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-access-token"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://api.travelpayouts.com/v2/prices/month-matrix?currency=usd&amp;show_to_affiliates=true&amp;origin=LED&amp;destination=HKT"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTPHEADER</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b"</span>
+  <span class="p">),</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://api.travelpayouts.com/v2/prices/month-matrix"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s">"currency"</span><span class="p">:</span><span class="s">"usd"</span><span class="p">,</span><span class="s">"show_to_affiliates"</span><span class="p">:</span><span class="s">"true"</span><span class="p">,</span><span class="s">"origin"</span><span class="p">:</span><span class="s">"LED"</span><span class="p">,</span><span class="s">"destination"</span><span class="p">:</span><span class="s">"HKT"</span><span class="p">}</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x-access-token'</span><span class="p">:</span> <span class="s">'321d6a221f8926b5ec41ae89a3b2ae7b'</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre><h3 id='request-2'>Request</h3>
+<p>GET &#39;http://api.travelpayouts.com/v2/prices/month-matrix?currency=usd&amp;show_to_affiliates=true&amp;origin=LED&amp;destination=HKT&#39;</p>
+<h3 id='request-parameters-2'>Request parameters</h3>
+<p><strong>Note!</strong> If the point of departure and the point of destination are not specified, then the API shall bring 30 the most cheapest tickets, which have been found during the recent 48 hours, back.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>currency</td>
+<td>RUB</td>
+<td>The airline ticket’s currency</td>
+</tr>
+<tr>
+<td>origin</td>
+<td>-</td>
+<td>The point of departure. The IATA city code or the country code. The length - from 2 to 3 symbols.</td>
+</tr>
+<tr>
+<td>destination</td>
+<td>-</td>
+<td>The point of destination. The IATA city code or the country code. The length - from 2 to 3 symbols.</td>
+</tr>
+<tr>
+<td>month</td>
+<td>-</td>
+<td>The beginning of the month in the YYYY-MM-DD format.</td>
+</tr>
+<tr>
+<td>show_to_affiliates</td>
+<td>true</td>
+<td>False - all the prices, true - just the prices, found using the partner marker (recommended).</td>
+</tr>
+<tr>
+<td>token</td>
+<td>-</td>
+<td>Individual affiliate token.</td>
+</tr>
+</tbody></table>
+<h3 id='response-2'>Response</h3>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{{</span><span class="w">
+    </span><span class="s2">"success"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:[{</span><span class="w">
+        </span><span class="s2">"show_to_affiliates"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"trip_class"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"origin"</span><span class="p">:</span><span class="s2">"LED"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"destination"</span><span class="p">:</span><span class="s2">"HKT"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"depart_date"</span><span class="p">:</span><span class="s2">"2015-10-01"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"return_date"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number_of_changes"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="mi">29127</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"found_at"</span><span class="p">:</span><span class="s2">"2015-09-24T00:06:12+04:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"distance"</span><span class="p">:</span><span class="mi">8015</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"actual"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>origin</td>
+<td>-</td>
+<td>The point of departure.</td>
+</tr>
+<tr>
+<td>destination</td>
+<td>-</td>
+<td>The point of destination.</td>
+</tr>
+<tr>
+<td>show_to_affiliates</td>
+<td>true</td>
+<td>False - all the prices, true - just the prices, found using the partner marker (recommended).</td>
+</tr>
+<tr>
+<td>trip_class</td>
+<td>-</td>
+<td>The flight class: <strong>0</strong> — The economy class, <strong>1</strong> — The business class, <strong>2</strong> — The first class.</td>
+</tr>
+<tr>
+<td>depart_date</td>
+<td>-</td>
+<td>The date of departure.</td>
+</tr>
+<tr>
+<td>return_date</td>
+<td>-</td>
+<td>The date of return.</td>
+</tr>
+<tr>
+<td>number_of_changes</td>
+<td>-</td>
+<td>The number of transfers.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>-</td>
+<td>The cost of a flight, in the currency specified.</td>
+</tr>
+<tr>
+<td>found_at</td>
+<td>-</td>
+<td>The time and the date, for which a ticket was found.</td>
+</tr>
+<tr>
+<td>distance</td>
+<td>-</td>
+<td>The distance between the point of departure and the point of destination.</td>
+</tr>
+<tr>
+<td>actual</td>
+<td>-</td>
+<td>The actuality of an offer.</td>
+</tr>
+</tbody></table>
+<h2 id='the-prices-for-the-alternative-directions'>The prices for the alternative directions</h2>
+<p>Brings the prices for the directions between the nearest to the target cities back.</p>
+
+<blockquote>
+<p>Example of request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://api.travelpayouts.com/v2/prices/nearest-places-matrix?currency=usd&amp;show_to_affiliates=true&amp;origin=LED&amp;destination=HKT'</span> <span class="se">\</span>
+  --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://api.travelpayouts.com/v2/prices/nearest-places-matrix?currency=usd&amp;show_to_affiliates=true&amp;origin=LED&amp;destination=HKT"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-access-token"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://api.travelpayouts.com/v2/prices/nearest-places-matrix?currency=usd&amp;show_to_affiliates=true&amp;origin=LED&amp;destination=HKT"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTPHEADER</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b"</span>
+  <span class="p">),</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://api.travelpayouts.com/v2/prices/nearest-places-matrix"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s">"currency"</span><span class="p">:</span><span class="s">"usd"</span><span class="p">,</span><span class="s">"show_to_affiliates"</span><span class="p">:</span><span class="s">"true"</span><span class="p">,</span><span class="s">"origin"</span><span class="p">:</span><span class="s">"LED"</span><span class="p">,</span><span class="s">"destination"</span><span class="p">:</span><span class="s">"HKT"</span><span class="p">}</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x-access-token'</span><span class="p">:</span> <span class="s">'321d6a221f8926b5ec41ae89a3b2ae7b'</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre><h3 id='request-3'>Request</h3>
+<p><code>GET http://api.travelpayouts.com/v2/prices/nearest-places-matrix?currency=usd&amp;origin=LED&amp;destination=HKT&amp;show_to_affiliates=true&amp;token=PutHereYourToken</code></p>
+<h3 id='request-parameters-3'>Request parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>currency</td>
+<td>RUB</td>
+<td>The airline ticket’s currency</td>
+</tr>
+<tr>
+<td>origin</td>
+<td>-</td>
+<td>The point of departure. The IATA city code or the country code. The length - from 2 to 3 symbols.</td>
+</tr>
+<tr>
+<td>destination</td>
+<td>-</td>
+<td>The point of destination. The IATA city code or the country code. The length - from 2 to 3 symbols.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>-</td>
+<td>The number of variants entered, from 1 to 20. Where 1 – is just the variant with the specified points of departure and the points of destination.</td>
+</tr>
+<tr>
+<td>show_to_affiliates</td>
+<td>true</td>
+<td>False - all the prices, true - just the prices, found using the partner marker (recommended).</td>
+</tr>
+<tr>
+<td>depart_date** <em>(optional)</em></td>
+<td>-</td>
+<td>Day or month of departure (yyyy-mm-dd or yyyy-mm).</td>
+</tr>
+<tr>
+<td>return_date** <em>(optional)</em></td>
+<td>-</td>
+<td>Day or month of return (yyyy-mm-dd or yyyy-mm).</td>
+</tr>
+<tr>
+<td>flexibility</td>
+<td>-</td>
+<td>Expansion of the range of dates upward or downward. The value may vary from 0 to 7, where 0 shall show the variants for the dates specified, 7 – all the variants found for a week prior to the specified dates and a week after.</td>
+</tr>
+<tr>
+<td>distance</td>
+<td>-</td>
+<td>The number of variants entered, from 1 to 20. Where 1 – is just the variant with the specified points of departure and the points of destination.</td>
+</tr>
+<tr>
+<td>token</td>
+<td>-</td>
+<td>Individual affiliate token.</td>
+</tr>
+</tbody></table>
+<h3 id='response-3'>Response</h3>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"prices"</span><span class="p">:[{</span><span class="w">
+    </span><span class="s2">"value"</span><span class="p">:</span><span class="mf">26000.0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"trip_class"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"show_to_affiliates"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"return_date"</span><span class="p">:</span><span class="s2">"2016-09-18"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"origin"</span><span class="p">:</span><span class="s2">"BAX"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"number_of_changes"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"gate"</span><span class="p">:</span><span class="s2">"AMADEUS"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"found_at"</span><span class="p">:</span><span class="s2">"2016-07-28T04:57:47Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"duration"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"distance"</span><span class="p">:</span><span class="mi">3643</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"destination"</span><span class="p">:</span><span class="s2">"SIP"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"depart_date"</span><span class="p">:</span><span class="s2">"2016-09-09"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"actual"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+</span><span class="s2">"origins"</span><span class="p">:[</span><span class="w">
+    </span><span class="s2">"BAX"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+</span><span class="s2">"errors"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"amadeus"</span><span class="p">:{</span><span class="w">
+    </span><span class="p">}},</span><span class="w">
+</span><span class="s2">"destinations"</span><span class="p">:[</span><span class="w">
+    </span><span class="s2">"SIP"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>origin</td>
+<td>-</td>
+<td>The point of departure.</td>
+</tr>
+<tr>
+<td>destination</td>
+<td>-</td>
+<td>The point of destination.</td>
+</tr>
+<tr>
+<td>show_to_affiliates</td>
+<td>true</td>
+<td>False - all the prices, true - just the prices, found using the partner marker (recommended).</td>
+</tr>
+<tr>
+<td>trip_class</td>
+<td>-</td>
+<td>The flight class: <strong>0</strong> — the economy class, <strong>1</strong> — the business class, <strong>2</strong> — the first class.</td>
+</tr>
+<tr>
+<td>depart_date</td>
+<td>-</td>
+<td>The date of departure.</td>
+</tr>
+<tr>
+<td>return_date</td>
+<td>-</td>
+<td>The date of return.</td>
+</tr>
+<tr>
+<td>number_of_changes</td>
+<td>-</td>
+<td>The number of transfers.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>-</td>
+<td>The cost of a flight, in the currency specified.</td>
+</tr>
+<tr>
+<td>found_at</td>
+<td>-</td>
+<td>The time and the date, for which a ticket was found.</td>
+</tr>
+<tr>
+<td>distance</td>
+<td>-</td>
+<td>The distance between the point of departure and the point of destination.</td>
+</tr>
+<tr>
+<td>actual</td>
+<td>-</td>
+<td>The actuality of an offer.</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>-</td>
+<td>Flight duration in minutes, taking into account direct and expectations.</td>
+</tr>
+<tr>
+<td>errors</td>
+<td>-</td>
+<td>If the error &quot;Some error occurred&quot; is returned, so in this area do not have the data in the cache.</td>
+</tr>
+<tr>
+<td>gate</td>
+<td>-</td>
+<td>The agents, which was found in the ticket.</td>
+</tr>
+<tr>
+<td>token</td>
+<td>-</td>
+<td>Individual affiliate token.</td>
+</tr>
+</tbody></table>
+<h2 id='cheapest-tickets'>Cheapest tickets</h2>
+<p>Returns the cheapest non-stop tickets, as well as tickets with 1 or 2 stops, for the selected route with departure/return date filters.</p>
+
+<blockquote>
+<p>Example of request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://api.travelpayouts.com/v1/prices/cheap?origin=MOW&amp;destination=HKT&amp;depart_date=2017-11&amp;return_date=2017-12'</span> <span class="se">\</span>
+  --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://api.travelpayouts.com/v1/prices/cheap?origin=MOW&amp;destination=HKT&amp;depart_date=2017-11&amp;return_date=2017-12"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-access-token"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://api.travelpayouts.com/v1/prices/cheap?origin=MOW&amp;destination=HKT&amp;depart_date=2017-11&amp;return_date=2017-12"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTPHEADER</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b"</span>
+  <span class="p">),</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://api.travelpayouts.com/v1/prices/cheap"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s">"origin"</span><span class="p">:</span><span class="s">"MOW"</span><span class="p">,</span><span class="s">"destination"</span><span class="p">:</span><span class="s">"HKT"</span><span class="p">,</span><span class="s">"depart_date"</span><span class="p">:</span><span class="s">"2017-11"</span><span class="p">,</span><span class="s">"return_date"</span><span class="p">:</span><span class="s">"2017-12"</span><span class="p">}</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x-access-token'</span><span class="p">:</span> <span class="s">'321d6a221f8926b5ec41ae89a3b2ae7b'</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre><h3 id='request-4'>Request</h3>
+<p><code>GET http://api.travelpayouts.com/v1/prices/cheap?origin=MOW&amp;destination=HKT&amp;depart_date=2016-11&amp;return_date=2016-12&amp;token=PutHereYourToken</code></p>
+
+<aside class="warning">
+**Important** Old dates may be specified in a query. No error will be generated, but no data will be returned.
 </aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
+<h3 id='request-parameters-4'>Request parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>origin</td>
+<td>-</td>
+<td>IATA code of the departure city. IATA code is shown by uppercase letters, for example MOW.</td>
+</tr>
+<tr>
+<td>destination</td>
+<td>-</td>
+<td>IATA code of the destination city (for all routes, enter &quot;-&quot;). IATA code is shown by uppercase letters, for example MOW.</td>
+</tr>
+<tr>
+<td>depart_date <em>(optional)</em></td>
+<td>-</td>
+<td>Day or month of departure (yyyy-mm-dd or yyyy-mm).</td>
+</tr>
+<tr>
+<td>return_date <em>(optional)</em></td>
+<td>-</td>
+<td>Day or month of return (yyyy-mm-dd or yyyy-mm).</td>
+</tr>
+<tr>
+<td>page</td>
+<td>-</td>
+<td>Optional parameter, is used to display the found data (by default the page displays 100 found prices. If the <strong>destination</strong> isn&#39;t selected, there can be more data. In this case, use the <strong>page</strong>, to display the next set of data, for example, page=2).</td>
+</tr>
+<tr>
+<td>token</td>
+<td>-</td>
+<td>Individual affiliate token.</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>RUB</td>
+<td>Currency of prices</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
+<h3 id='response-4'>Response</h3>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
+</span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+</span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"HKT"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">35443</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"airline"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UN"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"flight_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">571</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"departure_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-09T21:20:00Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"return_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-15T12:40:00Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"expires_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-08T18:30:40Z"</span><span class="w">
+        </span><span class="p">}}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>0, 1, 2</td>
+<td>-</td>
+<td>Sequence number in the search results.</td>
+</tr>
+<tr>
+<td>price</td>
+<td>-</td>
+<td>Ticket price (in the currency specified in the currency parameter).</td>
+</tr>
+<tr>
+<td>airline</td>
+<td>-</td>
+<td>IATA code of the airline operating the flight.</td>
+</tr>
+<tr>
+<td>flight_number</td>
+<td>-</td>
+<td>Flight number.</td>
+</tr>
+<tr>
+<td>departure_at</td>
+<td>-</td>
+<td>Departure Date.</td>
+</tr>
+<tr>
+<td>return_at</td>
+<td>-</td>
+<td>Return Date.</td>
+</tr>
+<tr>
+<td>expires_at</td>
+<td>-</td>
+<td>Date on which the found price expires (UTC+0).</td>
+</tr>
+<tr>
+<td>token</td>
+<td>-</td>
+<td>Individual affiliate token.</td>
 </tr>
 </tbody></table>
+<h2 id='non-stop-tickets'>Non-stop tickets</h2>
+<p>Returns the cheapest non-stop tickets for the selected route with departure/return date filters.</p>
+
+<blockquote>
+<p>Example of request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://api.travelpayouts.com/v1/prices/cheap?origin=MOW&amp;destination=HKT&amp;depart_date=2017-11&amp;return_date=2017-12'</span> <span class="se">\</span>
+  --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://api.travelpayouts.com/v1/prices/direct?origin=MOW&amp;destination=LED&amp;depart_date=2017-11&amp;return_date=2017-12"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-access-token"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://api.travelpayouts.com/v1/prices/direct?origin=MOW&amp;destination=LED&amp;depart_date=2017-11&amp;return_date=2017-12"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTPHEADER</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b"</span>
+  <span class="p">),</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://api.travelpayouts.com/v1/prices/direct"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s">"origin"</span><span class="p">:</span><span class="s">"MOW"</span><span class="p">,</span><span class="s">"destination"</span><span class="p">:</span><span class="s">"LED"</span><span class="p">,</span><span class="s">"depart_date"</span><span class="p">:</span><span class="s">"2017-11"</span><span class="p">,</span><span class="s">"return_date"</span><span class="p">:</span><span class="s">"2017-12"</span><span class="p">}</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x-access-token'</span><span class="p">:</span> <span class="s">'321d6a221f8926b5ec41ae89a3b2ae7b'</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre><h3 id='request-5'>Request</h3>
+<p><code>GET http://api.travelpayouts.com/v1/prices/direct?origin=MOW&amp;destination=LED&amp;depart_date=2016-11&amp;return_date=2016-12&amp;token=PutHereYourToken</code></p>
+<h3 id='request-parameters-5'>Request parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>origin</td>
+<td>-</td>
+<td>IATA code of departure city. IATA code is shown by uppercase letters, for example MOW.</td>
+</tr>
+<tr>
+<td>destination</td>
+<td>-</td>
+<td>IATA code of destination city (for all routes, enter “-”). IATA code is shown by uppercase letters, for example MOW.</td>
+</tr>
+<tr>
+<td>depart_date <em>(optional)</em></td>
+<td>-</td>
+<td>Day or month of departure (yyyy-mm-dd or yyyy-mm).</td>
+</tr>
+<tr>
+<td>return_date <em>(optional)</em></td>
+<td>-</td>
+<td>Day or month of return (yyyy-mm-dd or yyyy-mm).</td>
+</tr>
+<tr>
+<td>token</td>
+<td>-</td>
+<td>Individual affiliate token.</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>RUB</td>
+<td>Currency of prices</td>
+</tr>
+</tbody></table>
+<h3 id='response-5'>Response</h3>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"LED"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">4363</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"airline"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UT"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"flight_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">369</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"departure_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-27T11:35:00Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"return_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-04T16:00:00Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"expires_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-08T20:21:46Z"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>price</td>
+<td>-</td>
+<td>Ticket price (in specified currency).</td>
+</tr>
+<tr>
+<td>airline</td>
+<td>-</td>
+<td>IATA code of airline operating the flight.</td>
+</tr>
+<tr>
+<td>flight_number</td>
+<td>-</td>
+<td>Flight number.</td>
+</tr>
+<tr>
+<td>departure_at</td>
+<td>-</td>
+<td>Departure date.</td>
+</tr>
+<tr>
+<td>return_at</td>
+<td>-</td>
+<td>Return date.</td>
+</tr>
+<tr>
+<td>expires_at</td>
+<td>-</td>
+<td>Date on which the found price expires (UTC+0).</td>
+</tr>
+</tbody></table>
+<h2 id='tickets-for-each-day-of-month'>Tickets for each day of month</h2>
+<p>Returns the cheapest non-stop, one-stop, and two-stop flights for the selected route for each day of the selected month.</p>
+
+<blockquote>
+<p>Example of request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://api.travelpayouts.com/v1/prices/calendar?depart_date=2017-11&amp;origin=MOW&amp;destination=BCN&amp;calendar_type=departure_date&amp;currency=USD'</span> <span class="se">\</span>
+  --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://api.travelpayouts.com/v1/prices/calendar?depart_date=2017-11&amp;origin=MOW&amp;destination=BCN&amp;calendar_type=departure_date&amp;currency=USD"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-access-token"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://api.travelpayouts.com/v1/prices/calendar?depart_date=2017-11&amp;origin=MOW&amp;destination=BCN&amp;calendar_type=departure_date&amp;currency=USD"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTPHEADER</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b"</span>
+  <span class="p">),</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://api.travelpayouts.com/v1/prices/calendar"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s">"depart_date"</span><span class="p">:</span><span class="s">"2017-11"</span><span class="p">,</span><span class="s">"origin"</span><span class="p">:</span><span class="s">"MOW"</span><span class="p">,</span><span class="s">"destination"</span><span class="p">:</span><span class="s">"BCN"</span><span class="p">,</span><span class="s">"calendar_type"</span><span class="p">:</span><span class="s">"departure_date"</span><span class="p">,</span><span class="s">"currency"</span><span class="p">:</span><span class="s">"USD"</span><span class="p">}</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x-access-token'</span><span class="p">:</span> <span class="s">'321d6a221f8926b5ec41ae89a3b2ae7b'</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre><h3 id='request-6'>Request</h3>
+<p><code>GET http://api.travelpayouts.com/v1/prices/calendar?depart_date=2016-11&amp;origin=MOW&amp;destination=BCN&amp;calendar_type=departure_date&amp;token=PutHereYourToken</code></p>
+<h3 id='request-parameters-6'>Request parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>origin</td>
+<td>-</td>
+<td>IATA code of departure city. IATA code is shown by uppercase letters, for example MOW.</td>
+</tr>
+<tr>
+<td>destination</td>
+<td>-</td>
+<td>IATA code of destination city. IATA code is shown by uppercase letters, for example MOW.</td>
+</tr>
+<tr>
+<td>departure_date</td>
+<td>-</td>
+<td>Day or month of departure (yyyy-mm-dd or yyyy-mm).</td>
+</tr>
+<tr>
+<td>return_date** <em>(optional)</em></td>
+<td>-</td>
+<td>Day or month of return (yyyy-mm-dd or yyyy-mm). <strong>Pay attention!</strong> If the return_date is not specified, you will get the &quot;One way&quot; flights.</td>
+</tr>
+<tr>
+<td>calendar_type</td>
+<td>-</td>
+<td>Field used to build the calendar. Equal to either: departure_date or return_date</td>
+</tr>
+<tr>
+<td>length <em>(optional)</em></td>
+<td>-</td>
+<td>Length of stay in the destination city.</td>
+</tr>
+<tr>
+<td>token</td>
+<td>-</td>
+<td>Individual affiliate token.</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>RUB</td>
+<td>Currency of prices</td>
+</tr>
+</tbody></table>
+<h3 id='response-6'>Response</h3>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"2015-06-01"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MOW"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BCN"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">12449</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"transfers"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"airline"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PS"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"flight_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">576</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"departure_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-01T06:35:00Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"return_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-01T13:30:00Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"expires_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-07T12:34:14Z"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>origin</td>
+<td>-</td>
+<td>IATA code of departure city.</td>
+</tr>
+<tr>
+<td>destination</td>
+<td>-</td>
+<td>IATA code of destination city.</td>
+</tr>
+<tr>
+<td>price</td>
+<td>-</td>
+<td>Ticket price in the specified currency.</td>
+</tr>
+<tr>
+<td>transfers</td>
+<td>-</td>
+<td>Number of stops.</td>
+</tr>
+<tr>
+<td>airline</td>
+<td>-</td>
+<td>IATA code of airline.</td>
+</tr>
+<tr>
+<td>flight_number</td>
+<td>-</td>
+<td>Flight number.</td>
+</tr>
+<tr>
+<td>departure_at</td>
+<td>-</td>
+<td>Departure Date.</td>
+</tr>
+<tr>
+<td>return_at</td>
+<td>-</td>
+<td>Return Date.</td>
+</tr>
+<tr>
+<td>expires_at</td>
+<td>-</td>
+<td>When the found price expires (UTC+0).</td>
+</tr>
+</tbody></table>
+<h2 id='popular-airline-routes'>Popular airline routes</h2>
+<p>Returns routes for which an airline operates flights, sorted by popularity.</p>
+
+<blockquote>
+<p>Example of request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://api.travelpayouts.com/v1/airline-directions?airline_code=SU&amp;limit=10'</span> <span class="se">\</span>
+  --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://api.travelpayouts.com/v1/airline-directions?airline_code=SU&amp;limit=10"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-access-token"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://api.travelpayouts.com/v1/airline-directions?airline_code=SU&amp;limit=10"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTPHEADER</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b"</span>
+  <span class="p">),</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://api.travelpayouts.com/v1/airline-directions"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s">"airline_code"</span><span class="p">:</span><span class="s">"SU"</span><span class="p">,</span><span class="s">"limit"</span><span class="p">:</span><span class="s">"10"</span><span class="p">}</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x-access-token'</span><span class="p">:</span> <span class="s">'321d6a221f8926b5ec41ae89a3b2ae7b'</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre><h3 id='request-7'>Request</h3>
+<p><code>GET http://api.travelpayouts.com/v1/airline-directions?airline_code=SU&amp;limit=10&amp;token=PutHereYourToken</code></p>
+<h3 id='request-parameters-7'>Request parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>airline_code</td>
+<td>-</td>
+<td>IATA code of airline.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>-</td>
+<td>Records limit per page. Default value is 100. Not less than 1000.</td>
+</tr>
+<tr>
+<td>token</td>
+<td>-</td>
+<td>Individual affiliate token.</td>
+</tr>
+</tbody></table>
+<h3 id='response-7'>Response</h3>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"MOW-BKK"</span><span class="p">:</span><span class="w"> </span><span class="mi">187491</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"MOW-BCN"</span><span class="p">:</span><span class="w"> </span><span class="mi">113764</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"MOW-PAR"</span><span class="p">:</span><span class="w"> </span><span class="mi">91889</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"MOW-NYC"</span><span class="p">:</span><span class="w"> </span><span class="mi">77417</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"MOW-PRG"</span><span class="p">:</span><span class="w"> </span><span class="mi">71449</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"MOW-ROM"</span><span class="p">:</span><span class="w"> </span><span class="mi">67190</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"MOW-TLV"</span><span class="p">:</span><span class="w"> </span><span class="mi">62132</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"MOW-HKT"</span><span class="p">:</span><span class="w"> </span><span class="mi">58549</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"MOW-GOI"</span><span class="p">:</span><span class="w"> </span><span class="mi">47341</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"MOW-IST"</span><span class="p">:</span><span class="w"> </span><span class="mi">45553</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"rub"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='description-of-response'>Description of response</h3>
+<p>Returns a list of popular routes of an airline, sorted by popularity.</p>
+<h2 id='the-calendar-of-prices-for-a-week'>The calendar of prices for a week</h2>
+<p>Brings the prices for the nearest dates to the target ones back.</p>
+
+<blockquote>
+<p>Example of request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://api.travelpayouts.com/v2/prices/week-matrix?currency=usd&amp;origin=LED&amp;destination=HKT&amp;show_to_affiliates=true&amp;depart_date=2017-11-04&amp;return_date=2017-11-18'</span> <span class="se">\</span>
+  --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://api.travelpayouts.com/v2/prices/week-matrix?currency=usd&amp;origin=LED&amp;destination=HKT&amp;show_to_affiliates=true&amp;depart_date=2017-11-04&amp;return_date=2017-11-18"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-access-token"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://api.travelpayouts.com/v2/prices/week-matrix?currency=usd&amp;origin=LED&amp;destination=HKT&amp;show_to_affiliates=true&amp;depart_date=2017-11-04&amp;return_date=2017-11-18"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTPHEADER</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b"</span>
+  <span class="p">),</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://api.travelpayouts.com/v2/prices/week-matrix"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s">"currency"</span><span class="p">:</span><span class="s">"usd"</span><span class="p">,</span><span class="s">"origin"</span><span class="p">:</span><span class="s">"LED"</span><span class="p">,</span><span class="s">"destination"</span><span class="p">:</span><span class="s">"HKT"</span><span class="p">,</span><span class="s">"show_to_affiliates"</span><span class="p">:</span><span class="s">"true"</span><span class="p">,</span><span class="s">"depart_date"</span><span class="p">:</span><span class="s">"2017-11-04"</span><span class="p">,</span><span class="s">"return_date"</span><span class="p">:</span><span class="s">"2017-11-18"</span><span class="p">}</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x-access-token'</span><span class="p">:</span> <span class="s">'321d6a221f8926b5ec41ae89a3b2ae7b'</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>currency</td>
+<td>RUB</td>
+<td>The airline tickets currency.</td>
+</tr>
+<tr>
+<td>origin</td>
+<td>-</td>
+<td>The point of departure. The IATA city code or the country code. The length - from 2 to 3 symbols.</td>
+</tr>
+<tr>
+<td>destination</td>
+<td>-</td>
+<td>The point of destination. The IATA city code or the country code. The length - from 2 to 3 symbols.</td>
+</tr>
+<tr>
+<td>show_to_affiliates</td>
+<td>true</td>
+<td>False - all the prices, true - just the prices, found using the partner marker (recommended).</td>
+</tr>
+<tr>
+<td>depart_date <em>(optional)</em></td>
+<td>-</td>
+<td>Day or month of departure (yyyy-mm-dd or yyyy-mm).</td>
+</tr>
+<tr>
+<td>return_date <em>(optional)</em></td>
+<td>-</td>
+<td>Day or month of return (yyyy-mm-dd or yyyy-mm).</td>
+</tr>
+<tr>
+<td>token</td>
+<td>-</td>
+<td>Individual affiliate token.</td>
+</tr>
+</tbody></table>
+<h3 id='response-8'>Response</h3>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"success"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"show_to_affiliates"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"trip_class"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"origin"</span><span class="p">:</span><span class="s2">"LED"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"destination"</span><span class="p">:</span><span class="s2">"HKT"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"depart_date"</span><span class="p">:</span><span class="s2">"2016-03-01"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"return_date"</span><span class="p">:</span><span class="s2">"2016-03-15"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number_of_changes"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="mi">71725</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"found_at"</span><span class="p">:</span><span class="s2">"2016-02-19T00:04:37+04:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"distance"</span><span class="p">:</span><span class="mi">8015</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"actual"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='request-8'>Request</h3>
+<p><code>GET http://api.travelpayouts.com/v2/prices/week-matrix?currency=usd&amp;origin=LED&amp;destination=HKT&amp;show_to_affiliates=true&amp;depart_date=2016-09-04&amp;return_date=2016-09-18&amp;token=PutHereYourToken</code></p>
+<h3 id='request-parameters-8'>Request parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>origin</td>
+<td>-</td>
+<td>The point of departure.</td>
+</tr>
+<tr>
+<td>destination</td>
+<td>-</td>
+<td>The point of destination.</td>
+</tr>
+<tr>
+<td>show_to_affiliates</td>
+<td>true</td>
+<td>False - all the prices, true - just the prices, found using the partner marker (recommended).</td>
+</tr>
+<tr>
+<td>trip_class</td>
+<td>-</td>
+<td>The flight class: <strong>0</strong> — the economy class, <strong>1</strong> — the business class, <strong>2</strong> — the first class.</td>
+</tr>
+<tr>
+<td>depart_date</td>
+<td>-</td>
+<td>The date of departure.</td>
+</tr>
+<tr>
+<td>return_date</td>
+<td>-</td>
+<td>The date of return.</td>
+</tr>
+<tr>
+<td>number_of_changes</td>
+<td>-</td>
+<td>The number of transfers.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>-</td>
+<td>The cost of a flight, in the currency specified.</td>
+</tr>
+<tr>
+<td>found_at</td>
+<td>-</td>
+<td>The time and the date, for which a ticket was found.</td>
+</tr>
+<tr>
+<td>distance</td>
+<td>-</td>
+<td>The distance between the point of departure and the point of destination.</td>
+</tr>
+<tr>
+<td>actual</td>
+<td>-</td>
+<td>The actuality of an offer.</td>
+</tr>
+</tbody></table>
+<h2 id='the-popular-directions-from-a-city'>The popular directions from a city</h2>
+<p>Brings the most popular directions from a specified city back.</p>
+
+<blockquote>
+<p>Example of request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://api.travelpayouts.com/v1/city-directions?origin=MOW&amp;currency=usd'</span> <span class="se">\</span>
+  --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://api.travelpayouts.com/v1/city-directions?origin=MOW&amp;currency=usd"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-access-token"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://api.travelpayouts.com/v1/city-directions?origin=MOW&amp;currency=usd"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTPHEADER</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b"</span>
+  <span class="p">),</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://api.travelpayouts.com/v1/city-directions"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s">"origin"</span><span class="p">:</span><span class="s">"MOW"</span><span class="p">,</span><span class="s">"currency"</span><span class="p">:</span><span class="s">"usd"</span><span class="p">}</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x-access-token'</span><span class="p">:</span> <span class="s">'321d6a221f8926b5ec41ae89a3b2ae7b'</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre><h3 id='request-9'>Request</h3>
+<p><code>GET http://api.travelpayouts.com/v1/city-directions?origin=MOW&amp;currency=usd&amp;token=PutHereYourToken</code></p>
+<h3 id='request-parameters-9'>Request parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>currency</td>
+<td>RUB</td>
+<td>The airline tickets currency.</td>
+</tr>
+<tr>
+<td>origin</td>
+<td>-</td>
+<td>The point of departure. The IATA city code or the country code. The length - from 2 to 3 symbols.</td>
+</tr>
+<tr>
+<td>token</td>
+<td>-</td>
+<td>Individual affiliate token.</td>
+</tr>
+</tbody></table>
+<h3 id='response-9'>Response</h3>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"success"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"AER"</span><span class="p">:{</span><span class="w">
+            </span><span class="s2">"origin"</span><span class="p">:</span><span class="s2">"MOW"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"destination"</span><span class="p">:</span><span class="s2">"AER"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"price"</span><span class="p">:</span><span class="mi">3673</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"transfers"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"airline"</span><span class="p">:</span><span class="s2">"WZ"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"flight_number"</span><span class="p">:</span><span class="mi">125</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"departure_at"</span><span class="p">:</span><span class="s2">"2016-03-08T16:35:00Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"return_at"</span><span class="p">:</span><span class="s2">"2016-03-17T16:05:00Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"expires_at"</span><span class="p">:</span><span class="s2">"2016-02-22T09:32:44Z"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"rub"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>origin</td>
+<td>-</td>
+<td>The point of departure.</td>
+</tr>
+<tr>
+<td>destination</td>
+<td>-</td>
+<td>The point of destination.</td>
+</tr>
+<tr>
+<td>departure_at</td>
+<td>-</td>
+<td>The date of departure.</td>
+</tr>
+<tr>
+<td>return_at</td>
+<td>-</td>
+<td>The date of return.</td>
+</tr>
+<tr>
+<td>expires_at</td>
+<td>-</td>
+<td>Date on which the found price expires (UTC+0).</td>
+</tr>
+<tr>
+<td>number_of_changes</td>
+<td>-</td>
+<td>The number of transfers.</td>
+</tr>
+<tr>
+<td>price</td>
+<td>-</td>
+<td>The cost of a flight, in the currency specified.</td>
+</tr>
+<tr>
+<td>found_at</td>
+<td>-</td>
+<td>The time and the date, for which a ticket was found.</td>
+</tr>
+<tr>
+<td>transfers</td>
+<td>-</td>
+<td>The number of direct.</td>
+</tr>
+<tr>
+<td>airline</td>
+<td>-</td>
+<td>IATA of airline.</td>
+</tr>
+<tr>
+<td>flight_number</td>
+<td>-</td>
+<td>Flight number.</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>-</td>
+<td>Currency of response.</td>
+</tr>
+</tbody></table>
+<h2 id='data-of-countries-in-json-format'>Data of countries in json format</h2>
+<p>The query returns a file with a list of countrys from the database. </p>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://api.travelpayouts.com/data/countries.json'</span> <span class="se">\</span>
+  --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="n">import</span> <span class="n">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"http://api.travelpayouts.com/v1/city-directions"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"origin"</span><span class="ss">:"MOW"</span><span class="p">,</span><span class="s2">"currency"</span><span class="ss">:"usd"</span><span class="p">}</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'x-access-token'</span><span class="p">:</span> <span class="s1">'321d6a221f8926b5ec41ae89a3b2ae7b'</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="nf">text</span><span class="p">)</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://api.travelpayouts.com/data/countries.json"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTPHEADER</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b"</span>
+  <span class="p">),</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://api.travelpayouts.com/data/countries.json"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x-access-token'</span><span class="p">:</span> <span class="s">'321d6a221f8926b5ec41ae89a3b2ae7b'</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre><h3 id='request-10'>Request</h3>
+<p>GET <code>http://api.travelpayouts.com/data/countries.json</code></p>
+<h3 id='response-10'>Response</h3>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="s2">"NC"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"New Caledonia"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"XPF"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name_translations"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"de"</span><span class="p">:</span><span class="s2">"Neukaledonien"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"en"</span><span class="p">:</span><span class="s2">"New Caledonia"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tr"</span><span class="p">:</span><span class="s2">"Yeni Kaledonya"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ru"</span><span class="p">:</span><span class="s2">"Новая Каледония"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fr"</span><span class="p">:</span><span class="s2">"Nouvelle-Caledonie"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"es"</span><span class="p">:</span><span class="s2">"Nueva Caledonia"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"it"</span><span class="p">:</span><span class="s2">"Nuova Caledonia"</span><span class="w">
+    </span><span class="p">}}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>-</td>
+<td>IATA-code of country.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>-</td>
+<td>Country name.</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>-</td>
+<td>Currency country.</td>
+</tr>
+<tr>
+<td>name_translations</td>
+<td>-</td>
+<td>Translation of country name.</td>
+</tr>
+</tbody></table>
+<h2 id='city-data-in-json-format'>City data in json format</h2>
+<p>The query returns a file with a list of cities from the database. </p>
+
+<blockquote>
+<p>Example of request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://api.travelpayouts.com/data/cities.json'</span> <span class="se">\</span>
+  --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://api.travelpayouts.com/data/cities.json"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-access-token"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://api.travelpayouts.com/data/cities.json"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTPHEADER</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b"</span>
+  <span class="p">),</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://api.travelpayouts.com/data/cities.json"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x-access-token'</span><span class="p">:</span> <span class="s">'321d6a221f8926b5ec41ae89a3b2ae7b'</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre><h3 id='request-11'>Request</h3>
+<p>GET <code>http://api.travelpayouts.com/data/cities.json</code></p>
+<h3 id='response-11'>Response</h3>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="s2">"SCE"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"State College"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"coordinates"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"lon"</span><span class="p">:</span><span class="mf">-77.84823</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lat"</span><span class="p">:</span><span class="mf">40.85372</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"time_zone"</span><span class="p">:</span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name_translations"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"de"</span><span class="p">:</span><span class="s2">"State College"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"en"</span><span class="p">:</span><span class="s2">"State College"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zh-CN"</span><span class="p">:</span><span class="s2">"???"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tr"</span><span class="p">:</span><span class="s2">"State College"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ru"</span><span class="p">:</span><span class="s2">"Стейт Колледж"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"it"</span><span class="p">:</span><span class="s2">"State College"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"es"</span><span class="p">:</span><span class="s2">"State College"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fr"</span><span class="p">:</span><span class="s2">"State College"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"th"</span><span class="p">:</span><span class="s2">"??????????"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"country_code"</span><span class="p">:</span><span class="s2">"US"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>-</td>
+<td>City IATA-code.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>-</td>
+<td>City name.</td>
+</tr>
+<tr>
+<td>coordinates</td>
+<td>-</td>
+<td>City coordinates.</td>
+</tr>
+<tr>
+<td>time_zone</td>
+<td>-</td>
+<td>Timezone relative to GMT.</td>
+</tr>
+<tr>
+<td>name_translations</td>
+<td>-</td>
+<td>Translation of city name.</td>
+</tr>
+<tr>
+<td>country_code</td>
+<td>-</td>
+<td>Country IATA-code.</td>
+</tr>
+</tbody></table>
+<h2 id='airport-data-in-json-format'>Airport data in json format</h2>
+<p>The query returns a file with a list of airports from the database. </p>
+
+<blockquote>
+<p>Example of request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://api.travelpayouts.com/data/airports.json'</span> <span class="se">\</span>
+  --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://api.travelpayouts.com/data/airports.json"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-access-token"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://api.travelpayouts.com/data/airports.json"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTPHEADER</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b"</span>
+  <span class="p">),</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://api.travelpayouts.com/data/airports.json"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x-access-token'</span><span class="p">:</span> <span class="s">'321d6a221f8926b5ec41ae89a3b2ae7b'</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre><h3 id='request-12'>Request</h3>
+<p>GET <code>http://api.travelpayouts.com/data/airports.json</code></p>
+<h3 id='response-12'>Response</h3>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="s2">"MQP"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Kruger Mpumalanga International Airport"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"coordinates"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"lon"</span><span class="p">:</span><span class="mf">31.098131</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lat"</span><span class="p">:</span><span class="mf">-25.384947</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"time_zone"</span><span class="p">:</span><span class="s2">"Africa/Johannesburg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name_translations"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"de"</span><span class="p">:</span><span class="s2">"Nelspruit"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"en"</span><span class="p">:</span><span class="s2">"Kruger Mpumalanga International Airport"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tr"</span><span class="p">:</span><span class="s2">"International Airport"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"it"</span><span class="p">:</span><span class="s2">"Kruger Mpumalanga"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fr"</span><span class="p">:</span><span class="s2">"Kruger Mpumalanga"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"es"</span><span class="p">:</span><span class="s2">"Kruger Mpumalanga"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"th"</span><span class="p">:</span><span class="s2">"???????????????"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"country_code"</span><span class="p">:</span><span class="s2">"ZA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"city_code"</span><span class="p">:</span><span class="s2">"NLP"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>-</td>
+<td>Airport IATA code.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>-</td>
+<td>Airport name.</td>
+</tr>
+<tr>
+<td>lon</td>
+<td>-</td>
+<td>Airport longitude.</td>
+</tr>
+<tr>
+<td>lat</td>
+<td>-</td>
+<td>Airport latitude.</td>
+</tr>
+<tr>
+<td>time_zone</td>
+<td>-</td>
+<td>Time zone relative to GMT.</td>
+</tr>
+<tr>
+<td>name_translations</td>
+<td>-</td>
+<td>The name of the airport in different languages.</td>
+</tr>
+<tr>
+<td>country_code</td>
+<td>-</td>
+<td>Country IATA code.</td>
+</tr>
+<tr>
+<td>city_code</td>
+<td>-</td>
+<td>City IATA code.</td>
+</tr>
+</tbody></table>
+<h2 id='airline-data-in-json-format'>Airline data in json format</h2>
+<p>The query returns a file with a list of airlines from the database. </p>
+
+<blockquote>
+<p>Example of request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://api.travelpayouts.com/v1/city-directions?origin=MOW&amp;currency=usd'</span> <span class="se">\</span>
+  --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://api.travelpayouts.com/data/airlines.json"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-access-token"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://api.travelpayouts.com/data/airlines.json"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTPHEADER</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b"</span>
+  <span class="p">),</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://api.travelpayouts.com/data/airlines.json"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x-access-token'</span><span class="p">:</span> <span class="s">'321d6a221f8926b5ec41ae89a3b2ae7b'</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre><h3 id='request-13'>Request</h3>
+<p>GET <code>http://api.travelpayouts.com/data/airlines.json</code></p>
+<h3 id='response-13'>Response</h3>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Private flight"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"alias"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"iata"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"icao"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"callsign"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"country"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"is_active"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>-</td>
+<td>Airline name.</td>
+</tr>
+<tr>
+<td>alias</td>
+<td>-</td>
+<td>Alliance name (if the airline is an alliance member).</td>
+</tr>
+<tr>
+<td>iata</td>
+<td>-</td>
+<td>Airline IATA code.</td>
+</tr>
+<tr>
+<td>icao</td>
+<td>-</td>
+<td>Airline ICAO code.</td>
+</tr>
+<tr>
+<td>callsign</td>
+<td>-</td>
+<td>Airline call sign.</td>
+</tr>
+<tr>
+<td>country</td>
+<td>-</td>
+<td>Airline country of registration.</td>
+</tr>
+<tr>
+<td>is_active</td>
+<td>-</td>
+<td>True: company is active, false: company is not active.</td>
+</tr>
+</tbody></table>
+<h2 id='alliance-data-in-json-format'>Alliance data in json format</h2>
+<p>The query returns a file with a list of alliances from the database. </p>
+
+<blockquote>
+<p>Example of request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://api.travelpayouts.com/data/airlines_alliances.json'</span> <span class="se">\</span>
+  --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span> <span class="k">if</span> <span class="no">RUBY_VERSION</span> <span class="o">&lt;</span> <span class="s1">'1.9'</span>
+<span class="nb">require</span> <span class="s1">'rest_client'</span>
+
+<span class="n">headers</span>  <span class="o">=</span> <span class="p">{</span><span class="ss">:x_access_token</span> <span class="o">=&gt;</span> <span class="s2">"YOUR_API_TOKEN_HERE"</span><span class="p">}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s2">"http://api.travelpayouts.com/data/airlines_alliances.json"</span><span class="p">,</span> <span class="n">headers</span>
+<span class="nb">puts</span> <span class="n">response</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://api.travelpayouts.com/data/airlines_alliances.json"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTPHEADER</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b"</span>
+  <span class="p">),</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">urllib2</span> <span class="kn">import</span> <span class="n">Request</span><span class="p">,</span> <span class="n">urlopen</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"X-Access-Token"</span><span class="p">:</span> <span class="s">"YOUR_API_TOKEN_HERE"</span><span class="p">}</span>
+<span class="n">request</span> <span class="o">=</span> <span class="n">Request</span><span class="p">(</span><span class="s">"http://api.travelpayouts.com/data/airlines_alliances.json"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">response_body</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="k">print</span> <span class="n">response_body</span>
+</code></pre><h3 id='request-14'>Request</h3>
+<p>GET <code>http://api.travelpayouts.com/data/airlines_alliances.json</code></p>
+<h3 id='response-14'>Response</h3>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"oneworld"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"airlines"</span><span class="p">:[</span><span class="s2">"4M"</span><span class="p">,</span><span class="s2">"AA"</span><span class="p">,</span><span class="s2">"AB"</span><span class="p">,</span><span class="s2">"BA"</span><span class="p">,</span><span class="s2">"CX"</span><span class="p">,</span><span class="s2">"AY"</span><span class="p">,</span><span class="s2">"HG"</span><span class="p">,</span><span class="s2">"IB"</span><span class="p">,</span><span class="s2">"JC"</span><span class="p">,</span><span class="s2">"JL"</span><span class="p">,</span><span class="s2">"JO"</span><span class="p">,</span><span class="s2">"KA"</span><span class="p">,</span><span class="s2">"LA"</span><span class="p">,</span><span class="s2">"LP"</span><span class="p">,</span><span class="s2">"MA"</span><span class="p">,</span><span class="s2">"MN"</span><span class="p">,</span><span class="s2">"MX"</span><span class="p">,</span><span class="s2">"NU"</span><span class="p">,</span><span class="s2">"QF"</span><span class="p">,</span><span class="s2">"RJ"</span><span class="p">,</span><span class="s2">"S7"</span><span class="p">,</span><span class="s2">"XL"</span><span class="p">]</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>-</td>
+<td>Alliance name.</td>
+</tr>
+<tr>
+<td>airlines</td>
+<td>-</td>
+<td>Codes for alliance member companies.</td>
+</tr>
+</tbody></table>
+<h2 id='airplane-data-in-json-format'>Airplane data in json format</h2>
+<p>The query returns a file with a list of airplanes from the database. </p>
+
+<blockquote>
+<p>Example of request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://api.travelpayouts.com/data/planes.json'</span> <span class="se">\</span>
+  --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span> <span class="k">if</span> <span class="no">RUBY_VERSION</span> <span class="o">&lt;</span> <span class="s1">'1.9'</span>
+<span class="nb">require</span> <span class="s1">'rest_client'</span>
+
+<span class="n">headers</span>  <span class="o">=</span> <span class="p">{</span><span class="ss">:x_access_token</span> <span class="o">=&gt;</span> <span class="s2">"YOUR_API_TOKEN_HERE"</span><span class="p">}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s2">"http://api.travelpayouts.com/data/planes.json"</span><span class="p">,</span> <span class="n">headers</span>
+<span class="nb">puts</span> <span class="n">response</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://api.travelpayouts.com/data/planes.json"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTPHEADER</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b"</span>
+  <span class="p">),</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">urllib2</span> <span class="kn">import</span> <span class="n">Request</span><span class="p">,</span> <span class="n">urlopen</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"X-Access-Token"</span><span class="p">:</span> <span class="s">"YOUR_API_TOKEN_HERE"</span><span class="p">}</span>
+<span class="n">request</span> <span class="o">=</span> <span class="n">Request</span><span class="p">(</span><span class="s">"http://api.travelpayouts.com/data/planes.json"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">response_body</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="k">print</span> <span class="n">response_body</span>
+</code></pre><h3 id='request-15'>Request</h3>
+<p>GET <code>http://api.travelpayouts.com/data/planes.json</code></p>
+<h3 id='response-15'>Response</h3>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Fokker 100"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>-</td>
+<td>Plane IATA code.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>-</td>
+<td>Plane name.</td>
+</tr>
+</tbody></table>
+<h2 id='routes-list-in-json-format'>Routes list in json format</h2>
+<p>The query returns a file with a list of routes from the database.</p>
+
+<blockquote>
+<p>Example of request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://api.travelpayouts.com/data/routes.json'</span> <span class="se">\</span>
+  --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span> <span class="k">if</span> <span class="no">RUBY_VERSION</span> <span class="o">&lt;</span> <span class="s1">'1.9'</span>
+<span class="nb">require</span> <span class="s1">'rest_client'</span>
+
+<span class="n">headers</span>  <span class="o">=</span> <span class="p">{</span><span class="ss">:x_access_token</span> <span class="o">=&gt;</span> <span class="s2">"YOUR_API_TOKEN_HERE"</span><span class="p">}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s2">"http://api.travelpayouts.com/data/routes.json"</span><span class="p">,</span> <span class="n">headers</span>
+<span class="nb">puts</span> <span class="n">response</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://api.travelpayouts.com/data/routes.json"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTPHEADER</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b"</span>
+  <span class="p">),</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">urllib2</span> <span class="kn">import</span> <span class="n">Request</span><span class="p">,</span> <span class="n">urlopen</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"X-Access-Token"</span><span class="p">:</span> <span class="s">"YOUR_API_TOKEN_HERE"</span><span class="p">}</span>
+<span class="n">request</span> <span class="o">=</span> <span class="n">Request</span><span class="p">(</span><span class="s">"http://api.travelpayouts.com/data/routes.json"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">response_body</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="k">print</span> <span class="n">response_body</span>
+</code></pre><h3 id='request-16'>Request</h3>
+<p>GET <code>http://api.travelpayouts.com/data/planes.json</code></p>
+<h3 id='response-16'>Response</h3>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+    </span><span class="s2">"airline_iata"</span><span class="p">:</span><span class="s2">"2B"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"airline_icao"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"departure_airport_iata"</span><span class="p">:</span><span class="s2">"AER"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"departure_airport_icao"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"arrival_airport_iata"</span><span class="p">:</span><span class="s2">"DME"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"arrival_airport_icao"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"codeshare"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transfers"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"planes"</span><span class="p">:[</span><span class="w">
+        </span><span class="s2">"CR2"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>airline_iata</td>
+<td>-</td>
+<td>IATA of airline.</td>
+</tr>
+<tr>
+<td>airline_icao</td>
+<td>-</td>
+<td>ICAO of airline.</td>
+</tr>
+<tr>
+<td>departure_airport_iata</td>
+<td>-</td>
+<td>IATA of airport of departure.</td>
+</tr>
+<tr>
+<td>departure_airport_icao</td>
+<td>-</td>
+<td>ICAO of airport of departure.</td>
+</tr>
+<tr>
+<td>arrival_airport_iata</td>
+<td>-</td>
+<td>IATA of airport of arrival.</td>
+</tr>
+<tr>
+<td>arrival_airport_icao</td>
+<td>-</td>
+<td>ICAO of airport of arrival.</td>
+</tr>
+<tr>
+<td>codeshare</td>
+<td>-</td>
+<td>It shows whether the flight performs the same company that sells the ticket.</td>
+</tr>
+<tr>
+<td>transfers</td>
+<td>-</td>
+<td>The number of direct.</td>
+</tr>
+<tr>
+<td>planes</td>
+<td>-</td>
+<td>IATA of airplane.</td>
+</tr>
+</tbody></table>
+<h2 id='the-definition-of-a-user-39-s-location-by-ip-address'>The definition of a user&#39;s location by IP address</h2>
+<p>The query is returned the IATA-code and the name of nearest city from the user.</p>
+
+<blockquote>
+<p>Example of request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://www.travelpayouts.com/whereami?locale=ru&amp;callback=useriata&amp;ip=62.105.128.0'</span> <span class="se">\</span>
+  --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span> <span class="k">if</span> <span class="no">RUBY_VERSION</span> <span class="o">&lt;</span> <span class="s1">'1.9'</span>
+<span class="nb">require</span> <span class="s1">'rest_client'</span>
+
+<span class="n">headers</span>  <span class="o">=</span> <span class="p">{</span><span class="ss">:x_access_token</span> <span class="o">=&gt;</span> <span class="s2">"YOUR_API_TOKEN_HERE"</span><span class="p">}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s2">"http://www.travelpayouts.com/whereami?locale=ru&amp;callback=useriata&amp;ip=62.105.128.0"</span><span class="p">,</span> <span class="n">headers</span>
+<span class="nb">puts</span> <span class="n">response</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://www.travelpayouts.com/whereami?locale=ru&amp;callback=useriata&amp;ip=62.105.128.0"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTPHEADER</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b"</span>
+  <span class="p">),</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">urllib2</span> <span class="kn">import</span> <span class="n">Request</span><span class="p">,</span> <span class="n">urlopen</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"X-Access-Token"</span><span class="p">:</span> <span class="s">"YOUR_API_TOKEN_HERE"</span><span class="p">}</span>
+<span class="n">request</span> <span class="o">=</span> <span class="n">Request</span><span class="p">(</span><span class="s">"http://www.travelpayouts.com/whereami?locale=ru&amp;callback=useriata&amp;ip=62.105.128.0"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">response_body</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="k">print</span> <span class="n">response_body</span>
+</code></pre><h3 id='request-17'>Request</h3>
+<p>GET <code>http://www.travelpayouts.com/whereami?locale=ru&amp;callback=useriata&amp;ip=62.105.128.0</code></p>
+<h3 id='request-parameters-10'>Request parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>locale</td>
+<td>Russian</td>
+<td>The language in which returns the name of the city (available languages: en, ru, de, fr, it, pl, th.);</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>-</td>
+<td>Specifies the name of the function, which contains a response to a query (mandatory);</td>
+</tr>
+<tr>
+<td>ip</td>
+<td>-</td>
+<td>Ip-addresses of the users (if the address is not passed, the system determines IP from the header of the request).</td>
+</tr>
+</tbody></table>
+<h3 id='response-17'>Response</h3>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">useriata</span><span class="w"> </span><span class="err">(</span><span class="p">{</span><span class="s2">"iata"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MOW"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Moscow"</span><span class="p">}</span><span class="err">)</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>iata</td>
+<td>-</td>
+<td>IATA code of the city where the user is located;</td>
+</tr>
+<tr>
+<td>name</td>
+<td>-</td>
+<td>The name of the city.</td>
+</tr>
+</tbody></table>
+<h2 id='reduction-of-prices-into-the-other-currency'>Reduction of prices into the other currency</h2>
+<p>Brings the current rate of all popular currencies to RUB back.</p>
+
+<blockquote>
+<p>Example of request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://yasen.aviasales.ru/adaptors/currency.json'</span>
+  --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://yasen.aviasales.ru/adaptors/currency.json"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-access-token"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'321d6a221f8926b5ec41ae89a3b2ae7b'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://yasen.aviasales.ru/adaptors/currency.json"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTPHEADER</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b"</span>
+  <span class="p">),</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://yasen.aviasales.ru/adaptors/currency.json"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x-access-token'</span><span class="p">:</span> <span class="s">'321d6a221f8926b5ec41ae89a3b2ae7b'</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre><h3 id='request-18'>Request</h3>
+<p><code>GET http://yasen.aviasales.ru/adaptors/currency.json</code></p>
+<h3 id='response-18'>Response</h3>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"cny"</span><span class="p">:</span><span class="mf">8.24394</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"eur"</span><span class="p">:</span><span class="mf">57.1578</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mzn"</span><span class="p">:</span><span class="mf">1.49643</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nio"</span><span class="p">:</span><span class="mf">1.97342</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"usd"</span><span class="p">:</span><span class="mf">51.1388</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hrk"</span><span class="p">:</span><span class="mf">7.48953</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='special-offers'>Special offers</h2>
+<p>Brings the recent special offers from the airline companies back in the .XML format.</p>
+<h3 id='request-19'>Request</h3>
+<p><code>GET http://api.travelpayouts.com/v2/prices/special-offers</code></p>
 <h1 id='errors'>Errors</h1>
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
+<aside class="notice">
+This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+</aside>
 
 <p>The Kittn API uses the following error codes:</p>
 
@@ -445,7 +2889,7 @@ Remember — a happy kitten is an authenticated kitten!
 </thead><tbody>
 <tr>
 <td>400</td>
-<td>Bad Request -- Your request sucks.</td>
+<td>Bad Request -- Your request is invalid.</td>
 </tr>
 <tr>
 <td>401</td>
@@ -492,10 +2936,10 @@ Remember — a happy kitten is an authenticated kitten!
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="shell">cURL</a>
+                <a href="#" data-language-name="ruby">Ruby</a>
+                <a href="#" data-language-name="php">PHP</a>
+                <a href="#" data-language-name="python">Python</a>
           </div>
       </div>
     </div>
