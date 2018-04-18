@@ -47,10 +47,10 @@ To get "Round trip" tickets, add a JSON to the body of the request:
 >Body example
 ```json
 {
-    "signature": "%MD5_signature%",
-    "marker": "%Put_Your_Marker_Here%",
-    "host": %your_server_host%,
-    "user_ip": %user_ip%,
+    "signature": "MD5_signature",
+    "marker": "Put_Your_Marker_Here",
+    "host": your_server_host,
+    "user_ip": user_ip_address,
     "locale": "en",
     "trip_class": "Y",
     "passengers": {
@@ -439,7 +439,7 @@ curl -v -H 'Accept-Encoding:gzip,deflate,sdch' http://api.tp.com/v1/flight_searc
                                 "departure":"LED",
                                 "number":6131
                         }]}]},
-                   }]}],
+                   ]}],
             "validating_carrier": "SU"
         }],
     "_ga":null,
