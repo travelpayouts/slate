@@ -29,29 +29,26 @@ Request parameters:
 
 Parameter | Default | Description
 --------- | ------- | -----------
-marker | - | the unique identifier of the affiliate. You can find your marker in the affiliate personal account
-host - host's request| - | (must be replaced by the address of your website where the API will be used)
-user_ip | - | user's IP address
-locale | - | language of the search result (en-us, en-gb, ru, de, es, fr, pl). Аrom the locale depends on the set of agencies on which the search is performed
-trip_class | - | flight class (Y – Economy, C – Business)
-passengers | - | passenger Information
-adults | - | the number of adult passengers (from 1 to 9)
-children | - | the number of children (from 0 to 6)
-infants | - | the number of infants (from 0 to 6)
-_segments_ ||
-_origin_ | - | origin IATA or string "City, Country (IATA)". The IATA code is shown in uppercase letters (for example, "Paris, France (PAR)")
-_destination_ | - | destination IATA or string "City, Country (IATA)". The IATA code is shown in uppercase letters (for example, "Berlin, Germany (BER)")
-_date_ | - | departure date yyyy-mm-dd (for example, "2015-09-08")
-currency | - | the currency in which the price of the ticket is displayed, after switching to the agency's website (provided that the agency supports this currency);
-signature | - | the Query Signature is constructed from token, marker, and all the values of the query parameters sorted alphabetically and separated by a colon. Learn how to create a signature look here.
+**marker** | - | the unique identifier of the affiliate. You can find your marker in the affiliate personal account
+**host** | - | host's request (must be replaced by the address of your website where the API will be used)
+**user_ip** | - | user's IP address
+**locale** | - | language of the search result (en-us, en-gb, ru, de, es, fr, pl). Аrom the locale depends on the set of agencies on which the search is performed
+**trip_class** | - | flight class (Y – Economy, C – Business)
+**passengers** | - | passenger Information
+**adults** | - | the number of adult passengers (from 1 to 9)
+**children** | - | the number of children (from 0 to 6)
+**infants** | - | the number of infants (from 0 to 6)
+**segments** | - | a list of the trip components: <li>**origin** - origin IATA or string "City, Country (IATA)". The IATA code is shown in uppercase letters (for example, "Paris, France (PAR)");</li><li>**destination** - destination IATA or string "City, Country (IATA)". The IATA code is shown in uppercase letters (for example, "Berlin, Germany (BER)");</l><li>**date** - departure date yyyy-mm-dd (for example, "2015-09-08");</li>
+**currency** | - | the currency in which the price of the ticket is displayed, after switching to the agency's website (provided that the agency supports this currency);
+**signature** | - | the request signature is constructed from token, marker, and all the values of the query parameters sorted alphabetically and separated by a colon. Learn how to create a signature look here.
 
 To get "Round trip" tickets, add a JSON to the body of the request:
 
 >Body example
 ```json
 {
-    "signature": "2c37292b67762a913455b166345ae249",
-    "marker": "PutYourMarkerHere",
+    "signature": "%MD5_signature%",
+    "marker": "%Put_Your_Marker_Here%",
     "host": %your_server_host%,
     "user_ip": %user_ip%,
     "locale": "en",
@@ -64,13 +61,13 @@ To get "Round trip" tickets, add a JSON to the body of the request:
     "segments": [
     {
         "origin": "MOW",
-        "destination": "LED",
-        "date": "2017-05-25"
+        "destination": "LON",
+        "date": "2018-05-25"
     },
     {
-        "origin": "LED",
+        "origin": "LON",
         "destination": "MOW",
-        "date": "2017-06-18"
+        "date": "2018-06-18"
     }
     ]
 } 
@@ -79,24 +76,23 @@ To get data, use the initialization code of the search:
 
 >Request example
 ```shell
-curl -v -X POST -d '{"signature":"2d0c311eb0fe9cd84fcd1b875759c313","marker":"PutYourMarkerHere","host":"beta.as.ru","user_ip":"127.0.0.1","locale":"ru","trip_class":"Y","passengers":{"adults":1,"children":0,"infants":0},"segments":[{"origin":"MOW","destination":"LED","date":"2017-05-25"},{"origin":"LED","destination":"MOW","date":"2017-06-18"}]}' -H 'Content-type:application/json' http://api.tp.com/v1/flight_search
+curl -v -X POST -d '{"signature":"%MD5_signature%","marker":"%Put_Your_Marker_Here%","host":"beta.as.ru","user_ip":"127.0.0.1","locale":"ru","trip_class":"Y","passengers":{"adults":1,"children":0,"infants":0},"segments":[{"origin":"MOW","destination":"LON","date":"2018-05-25"},{"origin":"LON","destination":"MOW","date":"2018-06-18"}]}' -H 'Content-type:application/json' http://api.tp.com/v1/flight_search
 ```
 The answer comes in JSON format. The response contains the parameters:
 
 Parameter | Default | Description
 --------- | ------- | -----------
-locale | - | the language of the search result
-search_id | - | the unique identifier for the search query used to search results
-geoip_city | - | the geoip of the city where the request was made
-trip_class | - | the class of trip
-affiliate | - | the affiliate ID
-marker | - | the unique identifier of the affiliate;
-user_ip | - | the user's IP address
-gates_count | - | the total number of agencies
-segments | - | a list of the trip components:  <li> **date** - departure date; </li> <li>**origin** - origin IATA;</li> <li>**destination** - destination IATA;</li><li>**meta** - technical information;</li><li>**uuid** - unique identifier of the request;</li> <li> **passengers** - passenger information; </li> <li>**adults** - the number of adult passengers;</li><li>  **children**- the number of children;</li> <li> **infants** - the number of infants;</li><li> **host** - host's request;</li><li> **currency_rates** - exchange rate; </li><li>**geoip_country** - the geoip of the country where the request was made </li>
+**locale** | - | the language of the search result
+**search_id** | - | the unique identifier for the search query used to search results
+**geoip_city** | - | the geoip of the city where the request was made
+**trip_class** | - | the class of trip
+**affiliate** | - | the affiliate ID
+**marker** | - | the unique identifier of the affiliate;
+**user_ip** | - | the user's IP address
+**gates_count** | - | the total number of agencies
+**segments** | - | a list of the trip components:  <li> **date** - departure date; </li> <li>**origin** - origin IATA;</li> <li>**destination** - destination IATA;</li><li>**meta** - technical information;</li><li>**uuid** - unique identifier of the request;</li> <li> **passengers** - passenger information; </li> <li>**adults** - the number of adult passengers;</li><li>  **children**- the number of children;</li> <li> **infants** - the number of infants;</li><li> **host** - host's request;</li><li> **currency_rates** - exchange rate; </li><li>**geoip_country** - the geoip of the country where the request was made </li>
 
 <aside class="notice"> Please note! Use currency rates to convert the prices of flights to the currency you need (because the response contains the flight price in Russian rubles).</aside> 
-
 
 ### Getting search results
 
@@ -126,7 +122,8 @@ To get "One-way" tickets, add a JSON into the body of the request:
 >Body example
 ```json
 {
-    "marker": "PutYourMarkerHere",
+    "signature": "%MD5_signature%",
+    "marker": "%Put_Your_Marker_Here%",
     "host": "beta.as.ru",
     "user_ip": "127.0.0.1",
     "locale": "ru",
@@ -149,7 +146,7 @@ To get data, use the initialization code of the search:
 
 >Request example
 ```shell
-curl -v -X POST -d '{"signature":"2a3e1bda117d113569bb6f8b60dba075","marker":"PutYourMarkerHere","host":"beta.as.ru","user_ip":"127.0.0.1","locale":"ru","trip_class":"Y","passengers":{"adults":1,"children":0,"infants":0},"segments":[{"origin":"MOW","destination":"LED","date":"2017-06-18"}]}' -H 'Content-type:application/json' http://api.tp.com/v1/flight_search
+curl -v -X POST -d '{"signature":"%MD5_signature%","marker":"%Put_Your_Marker_Here%","host":"beta.as.ru","user_ip":"127.0.0.1","locale":"ru","trip_class":"Y","passengers":{"adults":1,"children":0,"infants":0},"segments":[{"origin":"MOW","destination":"LED","date":"2017-06-18"}]}' -H 'Content-type:application/json' http://api.tp.com/v1/flight_search
 ```
 ## Getting search results
 
@@ -179,8 +176,8 @@ To get "Open jaw" tickets, add a JSON into the body of the request:
 >Body example
 ```json
 {
-    "signature": "64dd4ff2f8a6f690b69d6a72429bf827",
-    "marker": "PutYourMarkerHere",
+    "signature": "%MD5_signature%",
+    "marker": "%Put_Your_Marker_Here%",
     "host": "beta.as.ru",
     "user_ip": "127.0.0.1",
     "locale": "ru",
@@ -213,7 +210,7 @@ To get data, use the initialization code of the search:
 
 >Request example
 ```shell
-curl -v -X POST -d '{"signature":"08caa94413dc805880f835ba9d8ba98f","marker":"PutYourMarkerHere","host":"beta.as.ru","user_ip":"127.0.0.1","locale":"ru","trip_class":"Y","passengers":{"adults":1,"children":0,"infants":0},"segments":[{"origin":"MOW","destination":"LED","date":"2017-06-18"},{"origin":"LED","destination":"BER","date":"2017-06-25"},{"origin":"BER","destination":"LON","date":"2017-07-05"}]}' -H 'Content-type:application/json' http://api.tp.com/v1/flight_search
+curl -v -X POST -d '{"signature":"%MD5_signature%","marker":"%Put_Your_Marker_Here%","host":"beta.as.ru","user_ip":"127.0.0.1","locale":"ru","trip_class":"Y","passengers":{"adults":1,"children":0,"infants":0},"segments":[{"origin":"MOW","destination":"LED","date":"2017-06-18"},{"origin":"LED","destination":"BER","date":"2017-06-25"},{"origin":"BER","destination":"LON","date":"2017-07-05"}]}' -H 'Content-type:application/json' http://api.tp.com/v1/flight_search
 ```
 ## Getting search results
 
@@ -492,14 +489,14 @@ Some airline companies and agencies provide additional information about flights
 Parameter | Default | Description
 --------- | ------- | -----------
 banner_info | - | service information provided by an airline company
-airlines/AF/ | - |information from a specific airline company (where AF is the IATA designator code): <li>**jets** — information about the airline company’s aircraft:</li> <ol>**seatType** — seat type in an aircraft (Angle Lie Flat, Flat Bed — special seat, can be transformed into a bed, etc.; Standard — standard seat);</ol> <ol>**typeClass** — class type (Business class, Economy class);</ol> <ol>**seatWidth** — seat width (inches);</ol><ol> **aircraft** — aircraft type; **seatPitch** — distance between the seats (inches);</ol><ol> **videoType** — video type (Overhead TV — on a seat, located in front, On-Demand TV — common TV, headphones are given on demand, None — unavailable);</ol><ol> **wifi** — Wi-Fi on-board; </ol><ol>**id** — unique aircraft ID (service parameter); </ol><ol>**powerType** — availability of an AV receptacle in a seat;</ol><ol> **airline** — IATA designator code;</ol><ol> **laptopPower** — availability of a notebook receptacle. </ol><li>**ageOfPlanes** — average age of an airline company’s aircraft;</li><li> **alliance** — alliance joined by an airline company;</li><li> **economyLegroom** — average distance between the seats in economy class (inches);</li><li> **freeStandardCarryOn** — availability of free space for hand luggage;</li><li> **infantsLapCost** — age from which a child is not considered an infant;</li><li> **minorsNotTravelAloneFrom** — opportunity for minors to travel alone;</li><li> **iata** — IATA designator code;</li><li> **checkedBaggagePrice1st** — luggage registration cost;</li><li> **baggage** — information about the luggage on a flight;</li><li> **excess** — text information about restrictions for luggage transportation;</li><li> **checked** — text information about the prepaid luggage weight and size, and the necessity to make an additional payment if the size exceeds the standard; </li><li>**carryOn** — text information about hand-luggage transportation rules;</li><li> **airline** — IATA designator code; </li><li>**sportMusical** — rules for transporting large musical instruments and sport equipment.</li>
+airlines/AF/ | - |information from a specific airline company (where AF is the IATA designator code): <li>**jets** — information about the airline company’s aircraft: <ul><li>**seatType** — seat type in an aircraft (Angle Lie Flat, Flat Bed — special seat, can be transformed into a bed, etc.; Standard — standard seat);</li> <li>**typeClass** — class type (Business class, Economy class);</li> <li>**seatWidth** — seat width (inches);</li><li> **aircraft** — aircraft type; **seatPitch** — distance between the seats (inches);</li><li> **videoType** — video type (Overhead TV — on a seat, located in front, On-Demand TV — common TV, headphones are given on demand, None — unavailable);</li><li> **wifi** — Wi-Fi on-board; </li><li>**id** — unique aircraft ID (service parameter); </li><li>**powerType** — availability of an AV receptacle in a seat;</li><li> **airline** — IATA designator code;</li><li> **laptopPower** — availability of a notebook receptacle. </li></li></ul><li>**ageOfPlanes** — average age of an airline company’s aircraft;</li><li> **alliance** — alliance joined by an airline company;</li><li> **economyLegroom** — average distance between the seats in economy class (inches);</li><li> **freeStandardCarryOn** — availability of free space for hand luggage;</li><li> **infantsLapCost** — age from which a child is not considered an infant;</li><li> **minorsNotTravelAloneFrom** — opportunity for minors to travel alone;</li><li> **iata** — IATA designator code;</li><li> **checkedBaggagePrice1st** — luggage registration cost;</li><li> **baggage** — information about the luggage on a flight;</li><li> **excess** — text information about restrictions for luggage transportation;</li><li> **checked** — text information about the prepaid luggage weight and size, and the necessity to make an additional payment if the size exceeds the standard; </li><li>**carryOn** — text information about hand-luggage transportation rules;</li><li> **airline** — IATA designator code; </li><li>**sportMusical** — rules for transporting large musical instruments and sport equipment.</li>
 frequentFlyerPrograms | - | loyalty program for clients
 aircrafts | - | the number of aircraft owned by an airline company
 carryOnStandard | - | presence of a hand-luggage transportation standard
 lowcost | - | is/not a low-cost airline company
 freeCheckedBag | - | opportunity for luggage transportation for free within the extent permissible
 meals | - | airline company’s on-board types of menus
-checkin | - | ways to register provided by an airline company: <li>**mobileCheckIn** — opportunity of registration using a mobile app;</li><li> **seatOnlineCheckIn** — seat selection at registration;</li><li> **onlineCheckInwithBag** — online luggage registration; </li> <li>**airline** — IATA designator code;</li><li> **onlineCheckIn** — rules for online registration;</li><li> **requirementOnlineCheckIn** — rules for online registration; </li><li>**airportCheckIn** — rules for registration in an airport;</li><li> **timeBoardingGate** — time for boarding before departure; </li><li>**minorsNotTravelAloneTo** — age from which minors may travel without grown-ups;</li><li> **pet** — information about transportation of animals by an airline company:</li><ol> **cargo** — transportation in luggage;</ol> <ol>**baggage** — rules for transportation in luggage;</ol><ol> **restriction** — restrictions;</ol><ol> **documentation** — required documents;</ol><ol> **book** — booking;</ol><ol> **airline** — IATA designator code;</ol><ol> **method** — type of transportation; </ol><ol> **cabin** — information about transportation in a cabin;</ol><ol> **kennel** — additional requirements; </ol><ol>**fee** — information about the fee for transportation of animals; </ol><li>**minor**— information about the fee for minors:</li><ol> **age** — age from which this tariff may be applied;</ol><ol> **airline** — IATA designator code;</ol><ol> **booking** — information about the booking;</ol><ol> **aboutService** — information about the servicing;</ol><ol> **flightRestriction** — information about restrictions;</ol><ol> **fee** — tariff fee.</ol><li>infant - information about the tariff for infants:</li> <ol>**payInternational** — information about the tariff; **exitRow** — restrictions for selection of a seat near the emergency door;</ol><ol> **childTurnTwo** — tariff rules for transfer flights; </ol><ol>**reserveSeat** — information about seats for infants; </ol><ol>**payInfant** — payment information;</ol><ol> **airline** — IATA designator code; </ol><ol>**baggage** — luggage in a ticket for an infant;</ol><ol> **childRestraintDevices** — information about transportation of luggage required for an infant (baby carriage, carrying bag, etc.);</ol><ol> **infantAmenitites** — information about additional services rendered on-board for an infant; </ol><ol>**payDomestic** — additional fee.</ol>
+checkin | - | ways to register provided by an airline company: <li>**mobileCheckIn** — opportunity of registration using a mobile app;</li><li> **seatOnlineCheckIn** — seat selection at registration;</li><li> **onlineCheckInwithBag** — online luggage registration; </li> <li>**airline** — IATA designator code;</li><li> **onlineCheckIn** — rules for online registration;</li><li> **requirementOnlineCheckIn** — rules for online registration; </li><li>**airportCheckIn** — rules for registration in an airport;</li><li> **timeBoardingGate** — time for boarding before departure; </li><li>**minorsNotTravelAloneTo** — age from which minors may travel without grown-ups;</li><li> **pet** — information about transportation of animals by an airline company:</li><ul><li> **cargo** — transportation in luggage;</li> <li>**baggage** — rules for transportation in luggage;</li><li> **restriction** — restrictions;</li><li> **documentation** — required documents;</li><li> **book** — booking;</li><li> **airline** — IATA designator code;</li><li> **method** — type of transportation; </li><li> **cabin** — information about transportation in a cabin;</li><li> **kennel** — additional requirements; </li><li>**fee** — information about the fee for transportation of animals; </li></ul><li>**minor**— information about the fee for minors:</li><ul><li> **age** — age from which this tariff may be applied;</li><li> **airline** — IATA designator code;</li><li> **booking** — information about the booking;</li><li> **aboutService** — information about the servicing;</li><li> **flightRestriction** — information about restrictions;</li><li> **fee** — tariff fee.</li></ul><li>infant - information about the tariff for infants:</li> <ul><li>**payInternational** — information about the tariff; **exitRow** — restrictions for selection of a seat near the emergency door;</li><li> **childTurnTwo** — tariff rules for transfer flights; </li><li>**reserveSeat** — information about seats for infants; </li><li>**payInfant** — payment information;</li><li> **airline** — IATA designator code; </li><li>**baggage** — luggage in a ticket for an infant;</li><li> **childRestraintDevices** — information about transportation of luggage required for an infant (baby carriage, carrying bag, etc.);</li><li> **infantAmenitites** — information about additional services rendered on-board for an infant; </li><li>**payDomestic** — additional fee.</li></ul>
 
 ## How to get a link to the agency website
 
