@@ -20,9 +20,11 @@ includes:
 search: true
 ---
 
-# Flight Data Access API
+# About API
 
-Travelpayouts Flight Data API – the way to get travel insights for your site or blog. You can get flight price trends and find popular destinations for your customers.
+Travelpayouts Data API – the way to get travel insights for your site or blog. You can get flight price trends and find popular destinations for your customers.
+
+To access the API you should be [registered](https://travelpayouts.com/) in our travel affiliate program.
 
 <aside class="notice">
 Dear partners! Attention, the data is transferred from the cache, so it is recommended to use them to generate static pages.
