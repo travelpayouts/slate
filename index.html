@@ -222,7 +222,7 @@
         <ul class="search-results"></ul>
       <div id="toc" class="toc-list-h1">
           <li>
-            <a href="#flight-data-access-api" class="toc-h1 toc-link" data-title="flight-data-access-api">Flight Data Access API</a>
+            <a href="#about-api" class="toc-h1 toc-link" data-title="about-api">About API</a>
           </li>
           <li>
             <a href="#flight-data-access-api-v1" class="toc-h1 toc-link" data-title="flight-data-access-api-v1">Flight Data Access API v1</a>
@@ -268,7 +268,7 @@
               </ul>
           </li>
           <li>
-            <a href="#api-for-different-data-in-json-format" class="toc-h1 toc-link" data-title="api-for-different-data-in-json-format">API for different data in JSON format</a>
+            <a href="#some-data-in-json-format" class="toc-h1 toc-link" data-title="some-data-in-json-format">Some data in JSON format</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#data-of-countries-in-json-format" class="toc-h2 toc-link" data-title="data-of-countries-in-json-format">Data of countries in JSON format</a>
@@ -331,8 +331,10 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='flight-data-access-api'>Flight Data Access API</h1>
-<p>Travelpayouts Flight Data API – the way to get travel insights for your site or blog. You can get flight price trends and find popular destinations for your customers.</p>
+        <h1 id='about-api'>About API</h1>
+<p>Travelpayouts Data API – the way to get travel insights for your site or blog. You can get flight price trends and find popular destinations for your customers.</p>
+
+<p>To access the API you should be <a href="https://travelpayouts.com/">registered</a> in our travel affiliate program.</p>
 
 <aside class="notice">
 Dear partners! Attention, the data is transferred from the cache, so it is recommended to use them to generate static pages.
@@ -353,10 +355,8 @@ Dear partners! Attention, the data is transferred from the cache, so it is recom
 <p>Dates and times are given in UTC, formatted according to <a href="https://ru.wikipedia.org/wiki/ISO_8601">ISO 8601</a>. Prices are given in rubles as of when the ticket is put in the search results. It is not recommended to use expired prices (the approximate expiration date is given in the value of the expires_at parameter).</p>
 
 <aside class="warning">
-**Important**. We strongly urge receiving data in compressed GZIP format, which saves a significant amount of time in receiving the response. To get data in compressed form, send the header Accept-Encoding: gzip, deflate.
+We strongly urge receiving data in compressed GZIP format, which saves a significant amount of time in receiving the response. To get data in compressed form, send the header Accept-Encoding: gzip, deflate.
 </aside>
-
-<p>To obtain access to the API for searching for plane tickets and hotels, <a href="https://support.travelpayouts.com/hc/en-us/requests/new">send a request</a>.</p>
 <h2 id='cheapest-tickets'>Cheapest tickets</h2>
 <p>Returns the cheapest non-stop tickets, as well as tickets with 1 or 2 stops, for the selected route with departure/return date filters.</p>
 
@@ -1173,10 +1173,8 @@ Dear partners! Attention, the data is transferred from the cache, so it is recom
 <p>Dates and times are given in UTC, formatted according to <a href="https://ru.wikipedia.org/wiki/ISO_8601">ISO 8601</a>. Prices are given in rubles as of when the ticket is put in the search results. It is not recommended to use expired prices (the approximate expiration date is given in the value of the expires_at parameter).</p>
 
 <aside class="warning">
-**Important**. We strongly urge receiving data in compressed GZIP format, which saves a significant amount of time in receiving the response. To get data in compressed form, send the header Accept-Encoding: gzip, deflate.
+Important. We strongly urge receiving data in compressed GZIP format, which saves a significant amount of time in receiving the response. To get data in compressed form, send the header Accept-Encoding: gzip, deflate.
 </aside>
-
-<p>To obtain access to the API for searching for plane tickets and hotels, <a href="https://support.travelpayouts.com/hc/en-us/requests/new">send a request</a>.</p>
 <h2 id='the-prices-for-the-airline-tickets'>The prices for the airline tickets</h2>
 <p>Brings back the list of prices found by our users during the most recent 48 hours according to the filters used.</p>
 
@@ -2113,7 +2111,7 @@ Dear partners! Attention, the data is transferred from the cache, so it is recom
 <p>Brings the recent special offers from the airline companies back in the XML format.</p>
 <h3 id='request-6'>Request</h3>
 <p><code>GET http://api.travelpayouts.com/v2/prices/special-offers?token=PutHereYourToken</code></p>
-<h1 id='api-for-different-data-in-json-format'>API for different data in JSON format</h1>
+<h1 id='some-data-in-json-format'>Some data in JSON format</h1>
 <aside class="notice">
 Note! The data in the JSON files is updated no more than twice a year.
 </aside>
