@@ -1,15 +1,3 @@
----
-title: Flight Data Access API v2
-
-language_tabs:
-  - shell: cURL
-  - ruby: Ruby
-  - php: PHP
-  - python: Python
-
-search: true
----
-
 # Flight Data Access API v2
 
 The server response is always sent in JSON format with the following structure:
