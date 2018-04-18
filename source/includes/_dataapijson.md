@@ -1,5 +1,9 @@
 # API for different data in JSON format
 
+<aside class="notice">
+Note! The data in the JSON files is updated no more than twice a year.
+</aside>
+
 ## Data of countries in JSON format
 
 The query returns a file with a list of countries from the database. 
