@@ -1,4 +1,4 @@
-# API for different data in JSON format
+# Some data in JSON format
 
 <aside class="notice">
 Note! The data in the JSON files is updated no more than twice a year.
