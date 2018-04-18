@@ -26,6 +26,7 @@ We'll also need to see the URL of your project, design prototypes, a description
 ### Request initialization
 
 Request parameters:
+
 Parameter | Default | Description
 --------- | ------- | -----------
 marker | - | the unique identifier of the affiliate. You can find your marker in the affiliate personal account
@@ -81,6 +82,7 @@ To get data, use the initialization code of the search:
 curl -v -X POST -d '{"signature":"2d0c311eb0fe9cd84fcd1b875759c313","marker":"PutYourMarkerHere","host":"beta.as.ru","user_ip":"127.0.0.1","locale":"ru","trip_class":"Y","passengers":{"adults":1,"children":0,"infants":0},"segments":[{"origin":"MOW","destination":"LED","date":"2017-05-25"},{"origin":"LED","destination":"MOW","date":"2017-06-18"}]}' -H 'Content-type:application/json' http://api.tp.com/v1/flight_search
 ```
 The answer comes in JSON format. The response contains the parameters:
+
 Parameter | Default | Description
 --------- | ------- | -----------
 locale | - | the language of the search result
@@ -454,6 +456,7 @@ curl -v -H 'Accept-Encoding:gzip,deflate,sdch' http://api.tp.com/v1/flight_searc
 Full response example: [response-example.json](response-example.json)
 
 The response includes the data:
+
 Parameter | Default | Description
 --------- | ------- | -----------
 search_id | - | unique identifier for the search query
@@ -485,6 +488,7 @@ filters_boundary | - | array data for filtering: <li>**stops_duration** - time b
 ## Additional Information in the Response
 
 Some airline companies and agencies provide additional information about flights, aircraft, and onboard services. These fields and their content are described below. You may use this information on your websites or ignore it — the main information about the tickets is given above.
+
 Parameter | Default | Description
 --------- | ------- | -----------
 banner_info | - | service information provided by an airline company
