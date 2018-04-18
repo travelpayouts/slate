@@ -87,12 +87,12 @@ print(response.text)
 
 ### Request
 
-`GET http://api.travelpayouts.com/v2/prices/latest?currency=usd&period_type=year&page=1&limit=30&show_to_affiliates=true&sorting=price&trip_class=0&token=PutHereYourToken`
+GET `http://api.travelpayouts.com/v2/prices/latest?currency=usd&period_type=year&page=1&limit=30&show_to_affiliates=true&sorting=price&trip_class=0&token=PutHereYourToken`
 
 ### Request parameters
 
 <aside class="notice">
-**Note** If the point of departure and the point of destination are not specified, the API shall bring back 30 of the cheapest tickets that have been found during the most recent 48 hours.
+Note. If the point of departure and the point of destination are not specified, the API shall bring back 30 of the cheapest tickets that have been found during the most recent 48 hours.
 </aside>
 
 Parameter | Default | Description
@@ -223,12 +223,14 @@ print(response.text)
 
 ### Request
 
-'GET http://api.travelpayouts.com/v2/prices/month-matrix?currency=usd&show_to_affiliates=true&origin=LED&destination=HKT'
+GET `http://api.travelpayouts.com/v2/prices/month-matrix?currency=usd&show_to_affiliates=true&origin=LED&destination=HKT`
 
 ### Request parameters
 
-**Note!** If the point of departure and the point of destination are not specified, then the API shall bring 30 the cheapest tickets, which have been found during the recent 48 hours, back.
-
+<aside class="notice">
+Note. If the point of departure and the point of destination are not specified, then the API shall bring 30 the cheapest tickets, which have been found during the recent 48 hours, back.
+<aside>
+  
 Parameter | Default | Description
 --------- | ------- | -----------
 currency | RUB | The airline ticket’s currency
@@ -260,8 +262,6 @@ token | - | Individual affiliate token.
     }]
 }
 ```
-
-
 
 Parameter | Default | Description
 --------- | ------- | -----------
@@ -350,7 +350,7 @@ print(response.text)
 
 ### Request
 
-`GET http://api.travelpayouts.com/v2/prices/nearest-places-matrix?currency=usd&origin=LED&destination=HKT&show_to_affiliates=true&token=PutHereYourToken`
+GET `http://api.travelpayouts.com/v2/prices/nearest-places-matrix?currency=usd&origin=LED&destination=HKT&show_to_affiliates=true&token=PutHereYourToken`
 
 ### Request parameters
 
@@ -525,7 +525,7 @@ Parameter | Default | Description
 
 ### Request
 
-`GET http://api.travelpayouts.com/v2/prices/week-matrix?currency=usd&origin=LED&destination=HKT&show_to_affiliates=true&depart_date=2016-09-04&return_date=2016-09-18&token=PutHereYourToken`
+GET `http://api.travelpayouts.com/v2/prices/week-matrix?currency=usd&origin=LED&destination=HKT&show_to_affiliates=true&depart_date=2016-09-04&return_date=2016-09-18&token=PutHereYourToken`
 
 ### Request parameters
 
@@ -633,4 +633,4 @@ Brings the recent special offers from the airline companies back in the XML form
 
 ### Request
 
-`GET http://api.travelpayouts.com/v2/prices/special-offers?token=PutHereYourToken`
+GET `http://api.travelpayouts.com/v2/prices/special-offers?token=PutHereYourToken`
