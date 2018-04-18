@@ -265,7 +265,7 @@ token | - | Individual affiliate token.
 > The above command returns JSON structured like this:
 
 ```json
-{{
+{
     "success":true,
     "data":[{
         "show_to_affiliates":true,
@@ -280,7 +280,7 @@ token | - | Individual affiliate token.
         "distance":8015,
         "actual":true
     }]
-}}
+}
 ```
 
 
@@ -655,4 +655,4 @@ Brings the recent special offers from the airline companies back in the XML form
 
 ### Request
 
-`GET http://api.travelpayouts.com/v2/prices/special-offers`
+`GET http://api.travelpayouts.com/v2/prices/special-offers?token=PutHereYourToken`
