@@ -87,10 +87,10 @@ print(response.text)
 
 ### Request
 
-`GET http://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=HKT&depart_date=2016-11&return_date=2016-12&token=PutHereYourToken`
+GET `http://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=HKT&depart_date=2016-11&return_date=2016-12&token=PutHereYourToken`
 
 <aside class="warning">
-**Important** Old dates may be specified in a query. No error will be generated, but no data will be returned.
+Important! Old dates may be specified in a query. No error will be generated, but no data will be returned.
 </aside>
 
 ### Request parameters
@@ -210,7 +210,7 @@ print(response.text)
 
 ### Request
 
-`GET http://api.travelpayouts.com/v1/prices/direct?origin=MOW&destination=LED&depart_date=2016-11&return_date=2016-12&token=PutHereYourToken`
+GET `http://api.travelpayouts.com/v1/prices/direct?origin=MOW&destination=LED&depart_date=2016-11&return_date=2016-12&token=PutHereYourToken`
 
 ### Request parameters
 
@@ -327,7 +327,7 @@ print(response.text)
 
 ### Request
 
-`GET http://api.travelpayouts.com/v1/prices/calendar?depart_date=2016-11&origin=MOW&destination=BCN&calendar_type=departure_date&token=PutHereYourToken`
+GET `http://api.travelpayouts.com/v1/prices/calendar?depart_date=2016-11&origin=MOW&destination=BCN&calendar_type=departure_date&token=PutHereYourToken`
 
 ### Request parameters
 
@@ -450,7 +450,7 @@ print(response.text)
 
 ### Request
 
-`GET http://api.travelpayouts.com/v1/airline-directions?airline_code=SU&limit=10&token=PutHereYourToken`
+GET `http://api.travelpayouts.com/v1/airline-directions?airline_code=SU&limit=10&token=PutHereYourToken`
 
 ### Request parameters
 
@@ -561,7 +561,7 @@ print(response.text)
 
 ### Request
 
-`GET http://api.travelpayouts.com/v1/city-directions?origin=MOW&currency=usd&token=PutHereYourToken`
+GET `http://api.travelpayouts.com/v1/city-directions?origin=MOW&currency=usd&token=PutHereYourToken`
 
 ### Request parameters
 
