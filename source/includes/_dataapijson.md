@@ -11,17 +11,17 @@ curl --request GET \
 ```
 
 ```ruby
-import requests
+require 'uri'
+require 'net/http'
 
-url = "http://api.travelpayouts.com/v1/city-directions"
+url = "http://api.travelpayouts.com/data/countries.json"
+http = Net::HTTP.new(url.host, url.port)
 
-querystring = {"origin":"MOW","currency":"usd"}
+request = Net::HTTP::Get.new(url)
+request["x-access-token"] = '321d6a221f8926b5ec41ae89a3b2ae7b'
 
-headers = {'x-access-token': '321d6a221f8926b5ec41ae89a3b2ae7b'}
-
-response = requests.request("GET", url, headers=headers, params=querystring)
-
-print(response.text)
+response = http.request(request)
+puts response.read_body
 ```
 
 ```php
@@ -327,7 +327,7 @@ The query returns a file with a list of airlines from the database.
 
 ```shell
 curl --request GET \
-  --url 'http://api.travelpayouts.com/v1/city-directions?origin=MOW&currency=usd' \
+  --url 'http://api.travelpayouts.com/data/airlines.json' \
   --header 'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'
 ```
 
