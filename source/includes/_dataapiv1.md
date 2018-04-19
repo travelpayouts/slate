@@ -1,4 +1,14 @@
-# Flight Data Access API v1
+# Flight Data Access API
+
+Travelpayouts Flight Data API – the way to get travel insights for your site or blog. You can get flight price trends and find popular destinations for your customers.
+
+<aside class="notice">
+Dear partners! Attention, the data is transferred from the cache, so it is recommended to use them to generate static pages.
+</aside>
+
+To access the API you must pass your token in the X-Access-Token header or in the token parameter. To obtain a token for the Data Access API, go to https://www.travelpayouts.com/developers/api.
+
+Dates are accepted in the formats YYYY-MM and YYYY-MM-DD.
 
 The server response is always sent in JSON format with the following structure:
 
@@ -6,13 +16,13 @@ The server response is always sent in JSON format with the following structure:
   - **data** – a result of the request; in case of an error is equal to null;
   - **error** – short description of the error that prevented request completion; for a successful request is equal to null.
 
-Dates are accepted in the formats YYYY-MM and YYYY-MM-DD.
-
 Dates and times are given in UTC, formatted according to [ISO 8601](https://ru.wikipedia.org/wiki/ISO_8601). Prices are given in rubles as of when the ticket is put in the search results. It is not recommended to use expired prices (the approximate expiration date is given in the value of the expires_at parameter).
 
 <aside class="warning">
-We strongly urge receiving data in compressed GZIP format, which saves a significant amount of time in receiving the response. To get data in compressed form, send the header Accept-Encoding: gzip, deflate.
+**Important**. We strongly urge receiving data in compressed GZIP format, which saves a significant amount of time in receiving the response. To get data in compressed form, send the header Accept-Encoding: gzip, deflate.
 </aside>
+
+To obtain access to the API for searching for plane tickets and hotels, [send a request](https://support.travelpayouts.com/hc/en-us/requests/new).
 
 ## Cheapest tickets
 
@@ -22,22 +32,22 @@ Returns the cheapest non-stop tickets, as well as tickets with 1 or 2 stops, for
 
 ```shell
 curl --request GET \
-  --url 'http://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=HKT&depart_date=2017-11&return_date=2017-12' \
+  --url 'https://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=HKT&depart_date=2017-11&return_date=2017-12' \
   --header 'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'
 ```
 
 ```ruby
 require 'uri'
-require 'net/http'
+require 'net/https'
 
-url = URI("http://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=HKT&depart_date=2017-11&return_date=2017-12")
+url = URI("https://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=HKT&depart_date=2017-11&return_date=2017-12")
 
 http = Net::HTTP.new(url.host, url.port)
 
 request = Net::HTTP::Get.new(url)
 request["x-access-token"] = '321d6a221f8926b5ec41ae89a3b2ae7b'
 
-response = http.request(request)
+response = https.request(request)
 puts response.read_body
 ```
 
@@ -47,7 +57,7 @@ puts response.read_body
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=HKT&depart_date=2017-11&return_date=2017-12",
+  CURLOPT_URL => "https://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=HKT&depart_date=2017-11&return_date=2017-12",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -74,7 +84,7 @@ if ($err) {
 ```python
 import requests
 
-url = "http://api.travelpayouts.com/v1/prices/cheap"
+url = "https://api.travelpayouts.com/v1/prices/cheap"
 
 querystring = {"origin":"MOW","destination":"HKT","depart_date":"2017-11","return_date":"2017-12"}
 
@@ -87,10 +97,10 @@ print(response.text)
 
 ### Request
 
-GET `http://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=HKT&depart_date=2016-11&return_date=2016-12&token=PutHereYourToken`
+`GET https://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=HKT&depart_date=2016-11&return_date=2016-12&token=PutHereYourToken`
 
 <aside class="warning">
-Important! Old dates may be specified in a query. No error will be generated, but no data will be returned.
+**Important** Old dates may be specified in a query. No error will be generated, but no data will be returned.
 </aside>
 
 ### Request parameters
@@ -145,22 +155,22 @@ Returns the cheapest non-stop tickets for the selected route with departure/retu
 
 ```shell
 curl --request GET \
-  --url 'http://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=HKT&depart_date=2017-11&return_date=2017-12' \
+  --url 'https://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=HKT&depart_date=2017-11&return_date=2017-12' \
   --header 'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'
 ```
 
 ```ruby
 require 'uri'
-require 'net/http'
+require 'net/https'
 
-url = URI("http://api.travelpayouts.com/v1/prices/direct?origin=MOW&destination=LED&depart_date=2017-11&return_date=2017-12")
+url = URI("https://api.travelpayouts.com/v1/prices/direct?origin=MOW&destination=LED&depart_date=2017-11&return_date=2017-12")
 
 http = Net::HTTP.new(url.host, url.port)
 
 request = Net::HTTP::Get.new(url)
 request["x-access-token"] = '321d6a221f8926b5ec41ae89a3b2ae7b'
 
-response = http.request(request)
+response = https.request(request)
 puts response.read_body
 ```
 
@@ -170,7 +180,7 @@ puts response.read_body
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://api.travelpayouts.com/v1/prices/direct?origin=MOW&destination=LED&depart_date=2017-11&return_date=2017-12",
+  CURLOPT_URL => "https://api.travelpayouts.com/v1/prices/direct?origin=MOW&destination=LED&depart_date=2017-11&return_date=2017-12",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -197,7 +207,7 @@ if ($err) {
 ```python
 import requests
 
-url = "http://api.travelpayouts.com/v1/prices/direct"
+url = "https://api.travelpayouts.com/v1/prices/direct"
 
 querystring = {"origin":"MOW","destination":"LED","depart_date":"2017-11","return_date":"2017-12"}
 
@@ -210,7 +220,7 @@ print(response.text)
 
 ### Request
 
-GET `http://api.travelpayouts.com/v1/prices/direct?origin=MOW&destination=LED&depart_date=2016-11&return_date=2016-12&token=PutHereYourToken`
+`GET https://api.travelpayouts.com/v1/prices/direct?origin=MOW&destination=LED&depart_date=2016-11&return_date=2016-12&token=PutHereYourToken`
 
 ### Request parameters
 
@@ -262,22 +272,22 @@ Returns the cheapest non-stop, one-stop, and two-stop flights for the selected r
 
 ```shell
 curl --request GET \
-  --url 'http://api.travelpayouts.com/v1/prices/calendar?depart_date=2017-11&origin=MOW&destination=BCN&calendar_type=departure_date&currency=USD' \
+  --url 'https://api.travelpayouts.com/v1/prices/calendar?depart_date=2017-11&origin=MOW&destination=BCN&calendar_type=departure_date&currency=USD' \
   --header 'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'
 ```
 
 ```ruby
 require 'uri'
-require 'net/http'
+require 'net/https'
 
-url = URI("http://api.travelpayouts.com/v1/prices/calendar?depart_date=2017-11&origin=MOW&destination=BCN&calendar_type=departure_date&currency=USD")
+url = URI("https://api.travelpayouts.com/v1/prices/calendar?depart_date=2017-11&origin=MOW&destination=BCN&calendar_type=departure_date&currency=USD")
 
 http = Net::HTTP.new(url.host, url.port)
 
 request = Net::HTTP::Get.new(url)
 request["x-access-token"] = '321d6a221f8926b5ec41ae89a3b2ae7b'
 
-response = http.request(request)
+response = https.request(request)
 puts response.read_body
 ```
 
@@ -287,7 +297,7 @@ puts response.read_body
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://api.travelpayouts.com/v1/prices/calendar?depart_date=2017-11&origin=MOW&destination=BCN&calendar_type=departure_date&currency=USD",
+  CURLOPT_URL => "https://api.travelpayouts.com/v1/prices/calendar?depart_date=2017-11&origin=MOW&destination=BCN&calendar_type=departure_date&currency=USD",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -314,7 +324,7 @@ if ($err) {
 ```python
 import requests
 
-url = "http://api.travelpayouts.com/v1/prices/calendar"
+url = "https://api.travelpayouts.com/v1/prices/calendar"
 
 querystring = {"depart_date":"2017-11","origin":"MOW","destination":"BCN","calendar_type":"departure_date","currency":"USD"}
 
@@ -327,7 +337,7 @@ print(response.text)
 
 ### Request
 
-GET `http://api.travelpayouts.com/v1/prices/calendar?depart_date=2016-11&origin=MOW&destination=BCN&calendar_type=departure_date&token=PutHereYourToken`
+`GET https://api.travelpayouts.com/v1/prices/calendar?depart_date=2016-11&origin=MOW&destination=BCN&calendar_type=departure_date&token=PutHereYourToken`
 
 ### Request parameters
 
@@ -385,22 +395,22 @@ Returns routes for which an airline operates flights, sorted by popularity.
 
 ```shell
 curl --request GET \
-  --url 'http://api.travelpayouts.com/v1/airline-directions?airline_code=SU&limit=10' \
+  --url 'https://api.travelpayouts.com/v1/airline-directions?airline_code=SU&limit=10' \
   --header 'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'
 ```
 
 ```ruby
 require 'uri'
-require 'net/http'
+require 'net/https'
 
-url = URI("http://api.travelpayouts.com/v1/airline-directions?airline_code=SU&limit=10")
+url = URI("https://api.travelpayouts.com/v1/airline-directions?airline_code=SU&limit=10")
 
 http = Net::HTTP.new(url.host, url.port)
 
 request = Net::HTTP::Get.new(url)
 request["x-access-token"] = '321d6a221f8926b5ec41ae89a3b2ae7b'
 
-response = http.request(request)
+response = https.request(request)
 puts response.read_body
 ```
 
@@ -410,7 +420,7 @@ puts response.read_body
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://api.travelpayouts.com/v1/airline-directions?airline_code=SU&limit=10",
+  CURLOPT_URL => "https://api.travelpayouts.com/v1/airline-directions?airline_code=SU&limit=10",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -437,7 +447,7 @@ if ($err) {
 ```python
 import requests
 
-url = "http://api.travelpayouts.com/v1/airline-directions"
+url = "https://api.travelpayouts.com/v1/airline-directions"
 
 querystring = {"airline_code":"SU","limit":"10"}
 
@@ -450,7 +460,7 @@ print(response.text)
 
 ### Request
 
-GET `http://api.travelpayouts.com/v1/airline-directions?airline_code=SU&limit=10&token=PutHereYourToken`
+`GET https://api.travelpayouts.com/v1/airline-directions?airline_code=SU&limit=10&token=PutHereYourToken`
 
 ### Request parameters
 
@@ -496,22 +506,22 @@ Brings the most popular directions from a specified city back.
 
 ```shell
 curl --request GET \
-  --url 'http://api.travelpayouts.com/v1/city-directions?origin=MOW&currency=usd' \
+  --url 'https://api.travelpayouts.com/v1/city-directions?origin=MOW&currency=usd' \
   --header 'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'
 ```
 
 ```ruby
 require 'uri'
-require 'net/http'
+require 'net/https'
 
-url = URI("http://api.travelpayouts.com/v1/city-directions?origin=MOW&currency=usd")
+url = URI("https://api.travelpayouts.com/v1/city-directions?origin=MOW&currency=usd")
 
 http = Net::HTTP.new(url.host, url.port)
 
 request = Net::HTTP::Get.new(url)
 request["x-access-token"] = '321d6a221f8926b5ec41ae89a3b2ae7b'
 
-response = http.request(request)
+response = https.request(request)
 puts response.read_body
 ```
 
@@ -521,7 +531,7 @@ puts response.read_body
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://api.travelpayouts.com/v1/city-directions?origin=MOW&currency=usd",
+  CURLOPT_URL => "https://api.travelpayouts.com/v1/city-directions?origin=MOW&currency=usd",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -548,7 +558,7 @@ if ($err) {
 ```python
 import requests
 
-url = "http://api.travelpayouts.com/v1/city-directions"
+url = "https://api.travelpayouts.com/v1/city-directions"
 
 querystring = {"origin":"MOW","currency":"usd"}
 
@@ -561,7 +571,7 @@ print(response.text)
 
 ### Request
 
-GET `http://api.travelpayouts.com/v1/city-directions?origin=MOW&currency=usd&token=PutHereYourToken`
+`GET https://api.travelpayouts.com/v1/city-directions?origin=MOW&currency=usd&token=PutHereYourToken`
 
 ### Request parameters
 
