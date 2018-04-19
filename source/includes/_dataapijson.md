@@ -10,21 +10,21 @@ The query returns a file with a list of countries from the database.
 
 ```shell
 curl --request GET \
-  --url 'http://api.travelpayouts.com/data/countries.json' \
+  --url 'https://api.travelpayouts.com/data/countries.json' \
   --header 'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'
 ```
 
 ```ruby
 require 'uri'
-require 'net/http'
+require 'net/https'
 
-url = "http://api.travelpayouts.com/data/countries.json"
-http = Net::HTTP.new(url.host, url.port)
+url = "https://api.travelpayouts.com/data/countries.json"
+https = Net::HTTPS.new(url.host, url.port)
 
-request = Net::HTTP::Get.new(url)
+request = Net::HTTPS::Get.new(url)
 request["x-access-token"] = '321d6a221f8926b5ec41ae89a3b2ae7b'
 
-response = http.request(request)
+response = https.request(request)
 puts response.read_body
 ```
 
@@ -34,7 +34,7 @@ puts response.read_body
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://api.travelpayouts.com/data/countries.json",
+  CURLOPT_URL => "https://api.travelpayouts.com/data/countries.json",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -61,7 +61,7 @@ if ($err) {
 ```python
 import requests
 
-url = "http://api.travelpayouts.com/data/countries.json"
+url = "https://api.travelpayouts.com/data/countries.json"
 
 headers = {'x-access-token': '321d6a221f8926b5ec41ae89a3b2ae7b'}
 
@@ -72,7 +72,7 @@ print(response.text)
 
 ### Request
 
-GET `http://api.travelpayouts.com/data/countries.json`
+GET `https://api.travelpayouts.com/data/countries.json`
 
 ### Response
 
@@ -110,22 +110,22 @@ The query returns a file with a list of cities from the database.
 
 ```shell
 curl --request GET \
-  --url 'http://api.travelpayouts.com/data/cities.json' \
+  --url 'https://api.travelpayouts.com/data/cities.json' \
   --header 'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'
 ```
 
 ```ruby
 require 'uri'
-require 'net/http'
+require 'net/https'
 
-url = URI("http://api.travelpayouts.com/data/cities.json")
+url = URI("https://api.travelpayouts.com/data/cities.json")
 
-http = Net::HTTP.new(url.host, url.port)
+https = Net::HTTPS.new(url.host, url.port)
 
-request = Net::HTTP::Get.new(url)
+request = Net::HTTPS::Get.new(url)
 request["x-access-token"] = '321d6a221f8926b5ec41ae89a3b2ae7b'
 
-response = http.request(request)
+response = https.request(request)
 puts response.read_body
 ```
 
@@ -135,7 +135,7 @@ puts response.read_body
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://api.travelpayouts.com/data/cities.json",
+  CURLOPT_URL => "https://api.travelpayouts.com/data/cities.json",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -162,7 +162,7 @@ if ($err) {
 ```python
 import requests
 
-url = "http://api.travelpayouts.com/data/cities.json"
+url = "https://api.travelpayouts.com/data/cities.json"
 
 headers = {'x-access-token': '321d6a221f8926b5ec41ae89a3b2ae7b'}
 
@@ -173,7 +173,7 @@ print(response.text)
 
 ### Request
 
-GET `http://api.travelpayouts.com/data/cities.json`
+GET `https://api.travelpayouts.com/data/cities.json`
 
 ### Response
 
@@ -220,22 +220,22 @@ The query returns a file with a list of airports from the database.
 
 ```shell
 curl --request GET \
-  --url 'http://api.travelpayouts.com/data/airports.json' \
+  --url 'https://api.travelpayouts.com/data/airports.json' \
   --header 'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'
 ```
 
 ```ruby
 require 'uri'
-require 'net/http'
+require 'net/https'
 
-url = URI("http://api.travelpayouts.com/data/airports.json")
+url = URI("https://api.travelpayouts.com/data/airports.json")
 
-http = Net::HTTP.new(url.host, url.port)
+https = Net::HTTPS.new(url.host, url.port)
 
-request = Net::HTTP::Get.new(url)
+request = Net::HTTPS::Get.new(url)
 request["x-access-token"] = '321d6a221f8926b5ec41ae89a3b2ae7b'
 
-response = http.request(request)
+response = https.request(request)
 puts response.read_body
 ```
 
@@ -245,7 +245,7 @@ puts response.read_body
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://api.travelpayouts.com/data/airports.json",
+  CURLOPT_URL => "https://api.travelpayouts.com/data/airports.json",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -272,7 +272,7 @@ if ($err) {
 ```python
 import requests
 
-url = "http://api.travelpayouts.com/data/airports.json"
+url = "https://api.travelpayouts.com/data/airports.json"
 
 headers = {'x-access-token': '321d6a221f8926b5ec41ae89a3b2ae7b'}
 
@@ -283,7 +283,7 @@ print(response.text)
 
 ### Request
 
-GET `http://api.travelpayouts.com/data/airports.json`
+GET `https://api.travelpayouts.com/data/airports.json`
 
 ### Response
 
@@ -331,22 +331,22 @@ The query returns a file with a list of airlines from the database.
 
 ```shell
 curl --request GET \
-  --url 'http://api.travelpayouts.com/data/airlines.json' \
+  --url 'https://api.travelpayouts.com/data/airlines.json' \
   --header 'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'
 ```
 
 ```ruby
 require 'uri'
-require 'net/http'
+require 'net/https'
 
-url = URI("http://api.travelpayouts.com/data/airlines.json")
+url = URI("https://api.travelpayouts.com/data/airlines.json")
 
-http = Net::HTTP.new(url.host, url.port)
+https = Net::HTTPS.new(url.host, url.port)
 
-request = Net::HTTP::Get.new(url)
+request = Net::HTTPS::Get.new(url)
 request["x-access-token"] = '321d6a221f8926b5ec41ae89a3b2ae7b'
 
-response = http.request(request)
+response = https.request(request)
 puts response.read_body
 ```
 
@@ -356,7 +356,7 @@ puts response.read_body
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://api.travelpayouts.com/data/airlines.json",
+  CURLOPT_URL => "https://api.travelpayouts.com/data/airlines.json",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -383,7 +383,7 @@ if ($err) {
 ```python
 import requests
 
-url = "http://api.travelpayouts.com/data/airlines.json"
+url = "https://api.travelpayouts.com/data/airlines.json"
 
 headers = {'x-access-token': '321d6a221f8926b5ec41ae89a3b2ae7b'}
 
@@ -394,7 +394,7 @@ print(response.text)
 
 ### Request
 
-GET `http://api.travelpayouts.com/data/airlines.json`
+GET `https://api.travelpayouts.com/data/airlines.json`
 
 ### Response
 
@@ -430,7 +430,7 @@ The query returns a file with a list of alliances from the database.
 
 ```shell
 curl --request GET \
-  --url 'http://api.travelpayouts.com/data/airlines_alliances.json' \
+  --url 'https://api.travelpayouts.com/data/airlines_alliances.json' \
   --header 'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'
 ```
 
@@ -439,7 +439,7 @@ require 'rubygems' if RUBY_VERSION < '1.9'
 require 'rest_client'
 
 headers  = {:x_access_token => "YOUR_API_TOKEN_HERE"}
-response = RestClient.get "http://api.travelpayouts.com/data/airlines_alliances.json", headers
+response = RestClient.get "https://api.travelpayouts.com/data/airlines_alliances.json", headers
 puts response
 ```
 
@@ -449,7 +449,7 @@ puts response
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://api.travelpayouts.com/data/airlines_alliances.json",
+  CURLOPT_URL => "https://api.travelpayouts.com/data/airlines_alliances.json",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -476,14 +476,14 @@ if ($err) {
 ```python
 from urllib2 import Request, urlopen
 headers = {"X-Access-Token": "YOUR_API_TOKEN_HERE"}
-request = Request("http://api.travelpayouts.com/data/airlines_alliances.json", headers=headers)
+request = Request("https://api.travelpayouts.com/data/airlines_alliances.json", headers=headers)
 response_body = urlopen(request).read()
 print response_body
 ```
 
 ### Request
 
-GET `http://api.travelpayouts.com/data/airlines_alliances.json`
+GET `https://api.travelpayouts.com/data/airlines_alliances.json`
 
 ### Response
 
@@ -509,7 +509,7 @@ The query returns a file with a list of airplanes from the database.
 
 ```shell
 curl --request GET \
-  --url 'http://api.travelpayouts.com/data/planes.json' \
+  --url 'https://api.travelpayouts.com/data/planes.json' \
   --header 'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'
 ```
 
@@ -518,7 +518,7 @@ require 'rubygems' if RUBY_VERSION < '1.9'
 require 'rest_client'
 
 headers  = {:x_access_token => "YOUR_API_TOKEN_HERE"}
-response = RestClient.get "http://api.travelpayouts.com/data/planes.json", headers
+response = RestClient.get "https://api.travelpayouts.com/data/planes.json", headers
 puts response
 ```
 
@@ -528,7 +528,7 @@ puts response
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://api.travelpayouts.com/data/planes.json",
+  CURLOPT_URL => "https://api.travelpayouts.com/data/planes.json",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -555,14 +555,14 @@ if ($err) {
 ```python
 from urllib2 import Request, urlopen
 headers = {"X-Access-Token": "YOUR_API_TOKEN_HERE"}
-request = Request("http://api.travelpayouts.com/data/planes.json", headers=headers)
+request = Request("https://api.travelpayouts.com/data/planes.json", headers=headers)
 response_body = urlopen(request).read()
 print response_body
 ```
 
 ### Request
 
-GET `http://api.travelpayouts.com/data/planes.json`
+GET `https://api.travelpayouts.com/data/planes.json`
 
 ### Response
 
@@ -588,7 +588,7 @@ The query returns a file with a list of routes from the database.
 
 ```shell
 curl --request GET \
-  --url 'http://api.travelpayouts.com/data/routes.json' \
+  --url 'https://api.travelpayouts.com/data/routes.json' \
   --header 'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'
 ```
 
@@ -597,7 +597,7 @@ require 'rubygems' if RUBY_VERSION < '1.9'
 require 'rest_client'
 
 headers  = {:x_access_token => "YOUR_API_TOKEN_HERE"}
-response = RestClient.get "http://api.travelpayouts.com/data/routes.json", headers
+response = RestClient.get "https://api.travelpayouts.com/data/routes.json", headers
 puts response
 ```
 
@@ -607,7 +607,7 @@ puts response
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://api.travelpayouts.com/data/routes.json",
+  CURLOPT_URL => "https://api.travelpayouts.com/data/routes.json",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -634,14 +634,14 @@ if ($err) {
 ```python
 from urllib2 import Request, urlopen
 headers = {"X-Access-Token": "YOUR_API_TOKEN_HERE"}
-request = Request("http://api.travelpayouts.com/data/routes.json", headers=headers)
+request = Request("https://api.travelpayouts.com/data/routes.json", headers=headers)
 response_body = urlopen(request).read()
 print response_body
 ```
 
 ### Request
 
-GET `http://api.travelpayouts.com/data/planes.json`
+GET `https://api.travelpayouts.com/data/planes.json`
 
 ### Response
 
