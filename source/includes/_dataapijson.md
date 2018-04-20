@@ -8,6 +8,8 @@ Note! The data in the JSON files is updated no more than twice a year.
 
 The query returns a file with a list of countries from the database. 
 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c79ab5bb9bb4c92ad23d)
+
 ```shell
 curl --request GET \
   --url 'https://api.travelpayouts.com/data/countries.json' \
@@ -105,6 +107,8 @@ Parameter | Default | Description
 ## City data in JSON format
 
 The query returns a file with a list of cities from the database. 
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c79ab5bb9bb4c92ad23d)
 
 > Example of a request:
 
@@ -216,6 +220,8 @@ Parameter | Default | Description
 
 The query returns a file with a list of airports from the database. 
 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c79ab5bb9bb4c92ad23d)
+
 > Example of request:
 
 ```shell
@@ -326,6 +332,8 @@ Parameter | Default | Description
 ## Airline data in JSON format
 
 The query returns a file with a list of airlines from the database. 
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c79ab5bb9bb4c92ad23d)
 
 > Example of a request:
 
@@ -505,6 +513,8 @@ Parameter | Default | Description
 
 The query returns a file with a list of airplanes from the database. 
 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c79ab5bb9bb4c92ad23d)
+
 > Example of request:
 
 ```shell
@@ -583,6 +593,8 @@ Parameter | Default | Description
 ## Routes list in json format
 
 The query returns a file with a list of routes from the database.
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c79ab5bb9bb4c92ad23d)
 
 > Example of request:
 
