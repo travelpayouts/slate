@@ -233,7 +233,7 @@ GET `https://api.travelpayouts.com/v2/prices/month-matrix?currency=usd&show_to_a
 
 <aside class="notice">
 Note. If the point of departure and the point of destination are not specified, then the API shall bring 30 the cheapest tickets, which have been found during the recent 48 hours, back.
-<aside>
+</aside>
   
 Parameter | Default | Description
 --------- | ------- | -----------
