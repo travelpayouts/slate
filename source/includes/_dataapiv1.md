@@ -1,4 +1,4 @@
-# Flight Data Access API
+# Flight Data Access API v1
 
 Travelpayouts Flight Data API – the way to get travel insights for your site or blog. You can get flight price trends and find popular destinations for your customers.
 
@@ -27,6 +27,8 @@ To obtain access to the API for searching for plane tickets and hotels, [send a 
 ## Cheapest tickets
 
 Returns the cheapest non-stop tickets, as well as tickets with 1 or 2 stops, for the selected route with departure/return date filters.
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/a2e83057d1fc995298dd)
 
 > Example of a request:
 
@@ -151,6 +153,8 @@ Parameter | Default | Description
 
 Returns the cheapest non-stop tickets for the selected route with departure/return date filters.
 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/a2e83057d1fc995298dd)
+
 > Example of a request:
 
 ```shell
@@ -267,6 +271,8 @@ Parameter | Default | Description
 ## Tickets for each day of a month
 
 Returns the cheapest non-stop, one-stop, and two-stop flights for the selected route for each day of the selected month.
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/a2e83057d1fc995298dd)
 
 > Example of a request:
 
@@ -391,6 +397,8 @@ Parameter | Default | Description
 
 Returns routes for which an airline operates flights, sorted by popularity.
 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/a2e83057d1fc995298dd)
+
 > Example of a request:
 
 ```shell
@@ -501,6 +509,8 @@ Returns a list of popular routes of an airline, sorted by popularity.
 ## The popular directions from a city
 
 Brings the most popular directions from a specified city back.
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/a2e83057d1fc995298dd)
 
 > Example of a request:
 
