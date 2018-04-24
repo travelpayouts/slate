@@ -315,28 +315,10 @@
                     <a href="#getting-search-results-3" class="toc-h2 toc-link" data-title="getting-search-results">Getting search results</a>
                   </li>
                   <li>
-                    <a href="#additional-information-in-the-response" class="toc-h2 toc-link" data-title="additional-information-in-the-response">Additional Information in the Response</a>
+                    <a href="#additional-information-in-the-response" class="toc-h2 toc-link" data-title="additional-information-in-the-response">Additional Information in the response</a>
                   </li>
                   <li>
                     <a href="#how-to-get-a-link-to-the-agency-website" class="toc-h2 toc-link" data-title="how-to-get-a-link-to-the-agency-website">How to get a link to the agency website</a>
-                  </li>
-                  <li>
-                    <a href="#one-way-2" class="toc-h2 toc-link" data-title="one-way">One way</a>
-                  </li>
-                  <li>
-                    <a href="#getting-search-results-5" class="toc-h2 toc-link" data-title="getting-search-results">Getting search results</a>
-                  </li>
-                  <li>
-                    <a href="#open-jaw-2" class="toc-h2 toc-link" data-title="open-jaw">Open jaw</a>
-                  </li>
-                  <li>
-                    <a href="#getting-search-results-6" class="toc-h2 toc-link" data-title="getting-search-results">Getting search results</a>
-                  </li>
-                  <li>
-                    <a href="#additional-information-in-the-response-2" class="toc-h2 toc-link" data-title="additional-information-in-the-response">Additional Information in the Response</a>
-                  </li>
-                  <li>
-                    <a href="#how-to-get-a-link-to-the-agency-website-2" class="toc-h2 toc-link" data-title="how-to-get-a-link-to-the-agency-website">How to get a link to the agency website</a>
                   </li>
               </ul>
           </li>
@@ -3021,44 +3003,40 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 </tbody></table>
 
 <p>To get &quot;Round trip&quot; tickets, add a JSON to the body of the request:</p>
+<h3 id='body-example'>Body example</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MD5_signature"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"marker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Put_Your_Marker_Here"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"host"</span><span class="p">:</span><span class="w"> </span><span class="err">your_server_host</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user_ip"</span><span class="p">:</span><span class="w"> </span><span class="err">user_ip_address</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"trip_class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Y"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"passengers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"adults"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"infants"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"segments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MOW"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LON"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-25"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LON"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MOW"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-06-18"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w"> 
+</span></code></pre>
+<p>To get data, use the initialization code of the search:</p>
 
 <blockquote>
-<p>Body example
-<code>json
-{
-    &quot;signature&quot;: &quot;MD5_signature&quot;,
-    &quot;marker&quot;: &quot;Put_Your_Marker_Here&quot;,
-    &quot;host&quot;: your_server_host,
-    &quot;user_ip&quot;: user_ip_address,
-    &quot;locale&quot;: &quot;en&quot;,
-    &quot;trip_class&quot;: &quot;Y&quot;,
-    &quot;passengers&quot;: {
-        &quot;adults&quot;: &quot;1&quot;,
-        &quot;children&quot;: &quot;0&quot;,
-        &quot;infants&quot;: &quot;0&quot;
-    },
-    &quot;segments&quot;: [
-    {
-        &quot;origin&quot;: &quot;MOW&quot;,
-        &quot;destination&quot;: &quot;LON&quot;,
-        &quot;date&quot;: &quot;2018-05-25&quot;
-    },
-    {
-        &quot;origin&quot;: &quot;LON&quot;,
-        &quot;destination&quot;: &quot;MOW&quot;,
-        &quot;date&quot;: &quot;2018-06-18&quot;
-    }
-    ]
-} 
-</code>
-To get data, use the initialization code of the search:</p>
-
-<p>Request example
-<code>shell
-curl -v -X POST -d &#39;{&quot;signature&quot;:&quot;%MD5_signature%&quot;,&quot;marker&quot;:&quot;%Put_Your_Marker_Here%&quot;,&quot;host&quot;:&quot;beta.as.ru&quot;,&quot;user_ip&quot;:&quot;127.0.0.1&quot;,&quot;locale&quot;:&quot;ru&quot;,&quot;trip_class&quot;:&quot;Y&quot;,&quot;passengers&quot;:{&quot;adults&quot;:1,&quot;children&quot;:0,&quot;infants&quot;:0},&quot;segments&quot;:[{&quot;origin&quot;:&quot;MOW&quot;,&quot;destination&quot;:&quot;LON&quot;,&quot;date&quot;:&quot;2018-05-25&quot;},{&quot;origin&quot;:&quot;LON&quot;,&quot;destination&quot;:&quot;MOW&quot;,&quot;date&quot;:&quot;2018-06-18&quot;}]}&#39; -H &#39;Content-type:application/json&#39; https://api.tp.com/v1/flight_search
-</code>
-The answer comes in JSON format. The response contains the parameters:</p>
+<p>Request example</p>
 </blockquote>
+<pre class="highlight shell tab-shell"><code>curl -v -X POST -d <span class="s1">'{"signature":"%MD5_signature%","marker":"%Put_Your_Marker_Here%","host":"beta.as.ru","user_ip":"127.0.0.1","locale":"ru","trip_class":"Y","passengers":{"adults":1,"children":0,"infants":0},"segments":[{"origin":"MOW","destination":"LON","date":"2018-05-25"},{"origin":"LON","destination":"MOW","date":"2018-06-18"}]}'</span> -H <span class="s1">'Content-type:application/json'</span> https://api.tp.com/v1/flight_search
+</code></pre>
+<p>The answer comes in JSON format. The response contains the parameters:</p>
 
 <table><thead>
 <tr>
@@ -3130,40 +3108,37 @@ The answer comes in JSON format. The response contains the parameters:</p>
 
 <p>Repeat the request until you get an associative array with one element <strong>search_id</strong>. The periodicity of sending requests isn&#39;t restricted.</p>
 <h2 id='one-way'>One way</h2><h3 id='request-initialization-2'>Request initialization</h3>
-<p>To get &quot;One-way&quot; tickets, add a JSON into the body of the request:</p>
+<p>To get &quot;One-way&quot; tickets, add a JSON into the body of the request.</p>
+<h3 id='body-example-2'>Body example</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"%MD5_signature%"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"marker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"%Put_Your_Marker_Here%"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"beta.as.ru"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user_ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ru"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"trip_class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Y"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"passengers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"adults"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"infants"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"segments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MOW"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LED"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-18"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>To get data, use the initialization code of the search:</p>
 
 <blockquote>
-<p>Body example
-<code>json
-{
-    &quot;signature&quot;: &quot;%MD5_signature%&quot;,
-    &quot;marker&quot;: &quot;%Put_Your_Marker_Here%&quot;,
-    &quot;host&quot;: &quot;beta.as.ru&quot;,
-    &quot;user_ip&quot;: &quot;127.0.0.1&quot;,
-    &quot;locale&quot;: &quot;ru&quot;,
-    &quot;trip_class&quot;: &quot;Y&quot;,
-    &quot;passengers&quot;: {
-        &quot;adults&quot;: 1,
-        &quot;children&quot;: 0,
-        &quot;infants&quot;: 0
-    },
-    &quot;segments&quot;: [
-        {
-            &quot;origin&quot;: &quot;MOW&quot;,
-            &quot;destination&quot;: &quot;LED&quot;,
-            &quot;date&quot;: &quot;2017-06-18&quot;
-        }
-    ]
-}
-</code>
-To get data, use the initialization code of the search:</p>
-
 <p>Request example
 <code>shell
 curl -v -X POST -d &#39;{&quot;signature&quot;:&quot;%MD5_signature%&quot;,&quot;marker&quot;:&quot;%Put_Your_Marker_Here%&quot;,&quot;host&quot;:&quot;beta.as.ru&quot;,&quot;user_ip&quot;:&quot;127.0.0.1&quot;,&quot;locale&quot;:&quot;ru&quot;,&quot;trip_class&quot;:&quot;Y&quot;,&quot;passengers&quot;:{&quot;adults&quot;:1,&quot;children&quot;:0,&quot;infants&quot;:0},&quot;segments&quot;:[{&quot;origin&quot;:&quot;MOW&quot;,&quot;destination&quot;:&quot;LED&quot;,&quot;date&quot;:&quot;2017-06-18&quot;}]}&#39; -H &#39;Content-type:application/json&#39; https://api.tp.com/v1/flight_search
 </code></p>
-<h2 id='getting-search-results-2'>Getting search results</h2></blockquote>
-
+</blockquote>
+<h2 id='getting-search-results-2'>Getting search results</h2>
 <p>In the body of the response is the parameter search_id; insert it into the URL:</p>
 
 <p>https://api.tp.com/v1/flight_search_results?uuid=%search_id%
@@ -3184,49 +3159,46 @@ curl -v -H &#39;Accept-Encoding:gzip,deflate,sdch&#39; https://api.tp.com/v1/fli
 <p>Open jaw is a round-trip ticket in which the traveller does not arrive in the same city of departure and/or does not depart from the same city where he/she first landed. For example, London - Paris - Berlin - London.</p>
 
 <p>To get &quot;Open jaw&quot; tickets, add a JSON into the body of the request:</p>
+<h3 id='body-example-3'>Body example</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"%MD5_signature%"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"marker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"%Put_Your_Marker_Here%"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"beta.as.ru"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user_ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ru"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"trip_class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Y"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"passengers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"adults"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"infants"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"segments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MOW"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LED"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-18"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LED"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BER"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-25"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BER"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LON"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-05"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>To get data, use the initialization code of the search:</p>
 
 <blockquote>
-<p>Body example
-<code>json
-{
-    &quot;signature&quot;: &quot;%MD5_signature%&quot;,
-    &quot;marker&quot;: &quot;%Put_Your_Marker_Here%&quot;,
-    &quot;host&quot;: &quot;beta.as.ru&quot;,
-    &quot;user_ip&quot;: &quot;127.0.0.1&quot;,
-    &quot;locale&quot;: &quot;ru&quot;,
-    &quot;trip_class&quot;: &quot;Y&quot;,
-    &quot;passengers&quot;: {
-        &quot;adults&quot;: 1,
-        &quot;children&quot;: 0,
-        &quot;infants&quot;: 0
-    },
-    &quot;segments&quot;: [
-        {
-            &quot;origin&quot;: &quot;MOW&quot;,
-            &quot;destination&quot;: &quot;LED&quot;,
-            &quot;date&quot;: &quot;2017-02-18&quot;
-        },
-        {
-            &quot;origin&quot;: &quot;LED&quot;,
-            &quot;destination&quot;: &quot;BER&quot;,
-            &quot;date&quot;: &quot;2017-02-25&quot;
-        },
-        {
-            &quot;origin&quot;: &quot;BER&quot;,
-            &quot;destination&quot;: &quot;LON&quot;,
-            &quot;date&quot;: &quot;2017-03-05&quot;
-        }
-    ]
-}
-</code>
-To get data, use the initialization code of the search:</p>
-
 <p>Request example
 <code>shell
 curl -v -X POST -d &#39;{&quot;signature&quot;:&quot;%MD5_signature%&quot;,&quot;marker&quot;:&quot;%Put_Your_Marker_Here%&quot;,&quot;host&quot;:&quot;beta.as.ru&quot;,&quot;user_ip&quot;:&quot;127.0.0.1&quot;,&quot;locale&quot;:&quot;ru&quot;,&quot;trip_class&quot;:&quot;Y&quot;,&quot;passengers&quot;:{&quot;adults&quot;:1,&quot;children&quot;:0,&quot;infants&quot;:0},&quot;segments&quot;:[{&quot;origin&quot;:&quot;MOW&quot;,&quot;destination&quot;:&quot;LED&quot;,&quot;date&quot;:&quot;2017-06-18&quot;},{&quot;origin&quot;:&quot;LED&quot;,&quot;destination&quot;:&quot;BER&quot;,&quot;date&quot;:&quot;2017-06-25&quot;},{&quot;origin&quot;:&quot;BER&quot;,&quot;destination&quot;:&quot;LON&quot;,&quot;date&quot;:&quot;2017-07-05&quot;}]}&#39; -H &#39;Content-type:application/json&#39; https://api.tp.com/v1/flight_search
 </code></p>
-<h2 id='getting-search-results-3'>Getting search results</h2></blockquote>
-
+</blockquote>
+<h2 id='getting-search-results-3'>Getting search results</h2>
 <p>In the body of the response is the parameter search_id; insert it into the URL:</p>
 
 <p>https://api.tp.com/v1/flight_search_results?uuid=%search_id%</p>
@@ -3247,226 +3219,223 @@ curl -v -H &#39;Accept-Encoding:gzip,deflate,sdch&#39; https://api.tp.com/v1/fli
 <aside class="warning">Attention! The link to the search results is relevant for 15 minutes. After this time, you must send a search query again.</aside>
 
 <blockquote>
-<p>Response example
-<code>json
-[{
-    &quot;segments&quot;:[
-    {
-        &quot;destination_country&quot;:&quot;RU&quot;,
-        &quot;original_destination&quot;:&quot;LED&quot;,
-        &quot;origin&quot;:&quot;MOW&quot;,
-        &quot;origin_country&quot;:&quot;RU&quot;,
-        &quot;original_origin&quot;:&quot;MOW&quot;,
-        &quot;date&quot;:&quot;2017-05-25&quot;,
-        &quot;destination&quot;:&quot;LED&quot;
-    },
-    {
-        &quot;destination_country&quot;:&quot;RU&quot;,
-        &quot;original_destination&quot;:&quot;MOW&quot;,
-        &quot;origin&quot;:&quot;LED&quot;,
-        &quot;origin_country&quot;:&quot;RU&quot;,
-        &quot;original_origin&quot;:&quot;LED&quot;,
-        &quot;date&quot;:&quot;2017-06-18&quot;,
-        &quot;destination&quot;:&quot;MOW&quot;
-    }],
-    &quot;banner_info&quot;:{
-    },
-        &quot;internal&quot;:false,
-        &quot;airports&quot;:{
-            &quot;LED&quot;:{
-                &quot;name&quot;:&quot;Пулково&quot;,
-                &quot;time_zone&quot;:&quot;Europe/Moscow&quot;,
-                &quot;country&quot;:&quot;Россия&quot;,
-                &quot;rates&quot;:&quot;259&quot;,
-                &quot;city&quot;:&quot;Санкт-Петербург&quot;
-            },
-            &quot;DME&quot;:{
-                &quot;name&quot;:&quot;Домодедово&quot;,
-                &quot;time_zone&quot;:&quot;Europe/Moscow&quot;,
-                &quot;country&quot;:&quot;Россия&quot;,
-                &quot;rates&quot;:&quot;392&quot;,
-                &quot;city&quot;:&quot;Москва&quot;
-            },
-            &quot;SVO&quot;:{
-                &quot;rates&quot;:&quot;307&quot;,
-                &quot;country&quot;:&quot;Россия&quot;,
-                &quot;name&quot;:&quot;Шереметьево&quot;,
-                &quot;average_rate&quot;:&quot;3.63&quot;,
-                &quot;city&quot;:&quot;Москва&quot;,
-                &quot;time_zone&quot;:&quot;Europe/Moscow&quot;
-            },
-            &quot;VKO&quot;:{
-                &quot;name&quot;:&quot;Внуково&quot;,
-                &quot;time_zone&quot;:&quot;Europe/Moscow&quot;,
-                &quot;country&quot;:&quot;Россия&quot;,
-                &quot;rates&quot;:&quot;211&quot;,
-                &quot;city&quot;:&quot;Москва&quot;
-            }},
-            &quot;gates_info&quot;:{
-                &quot;20&quot;:{
-                    &quot;average_rate&quot;:4.43,
-                    &quot;rates&quot;:2967,
-                    &quot;currency_code&quot;:&quot;rub&quot;,
-                    &quot;is_airline&quot;:false,
-                    &quot;productivity&quot;:16.9991,
-                    &quot;label&quot;:&quot;OneTwoTrip&quot;,
-                    &quot;airline_iatas&quot;:{
-                    },
-                    &quot;payment_methods&quot;:[
-                        &quot;card&quot;
-                    ],
-                    &quot;mobile_version&quot;:false
-                    }},
-                    &quot;city_distance&quot;:634,
-                    &quot;meta&quot;:{
-                        &quot;uuid&quot;:&quot;c9c6de8c-3fb4-404e-b88c-e9e0a605f183&quot;,
-                        &quot;gates&quot;:[
-                        {
-                            &quot;duration&quot;:22.402996063232422,
-                            &quot;id&quot;:20,
-                            &quot;count&quot;:1456,
-                            &quot;good_count&quot;:1456
-                        }]},
-                    &quot;airlines&quot;:{
-                        &quot;SU&quot;:{
-                            &quot;average_rate&quot;:&quot;4.01&quot;,
-                            &quot;rates&quot;:&quot;2362&quot;,
-                            &quot;alliance_name&quot;:&quot;SkyTeam&quot;,
-                            &quot;name&quot;:&quot;Аэрофлот&quot;,
-                            &quot;id&quot;:10
-                        },
-                        &quot;UN&quot;:{
-                            &quot;average_rate&quot;:&quot;3.98&quot;,
-                            &quot;rates&quot;:&quot;2639&quot;,
-                            &quot;alliance_name&quot;:null,
-                            &quot;name&quot;:&quot;Трансаэро&quot;,
-                            &quot;id&quot;:492
-                        },
-                        &quot;S7&quot;:{
-                            &quot;average_rate&quot;:&quot;3.95&quot;,
-                            &quot;rates&quot;:&quot;2430&quot;,
-                            &quot;alliance_name&quot;:&quot;OneWorld&quot;,
-                            &quot;name&quot;:&quot;S7&quot;,
-                            &quot;id&quot;:444
-                        },
-                        &quot;UT&quot;:{
-                            &quot;rates&quot;:&quot;1843&quot;,
-                            &quot;alliance_name&quot;:null,
-                            &quot;name&quot;:&quot;ЮТэйр&quot;,
-                            &quot;id&quot;:507
-                        },
-                        &quot;U6&quot;:{
-                            &quot;average_rate&quot;:&quot;3.62&quot;,
-                            &quot;rates&quot;:&quot;1158&quot;,
-                            &quot;alliance_name&quot;:null,
-                            &quot;name&quot;:&quot;Уральские авиалинии&quot;,
-                            &quot;id&quot;:503
-                        }},
-                    &quot;filters_boundary&quot;:{
-                        &quot;arrival_datetime_0&quot;:{
-                            &quot;min&quot;:1418869200,
-                            &quot;max&quot;:1418950500
-                        },
-                        &quot;arrival_datetime_1&quot;:{
-                            &quot;min&quot;:1419486600,
-                            &quot;max&quot;:1419554400
-                        },
-                        &quot;flights_duration&quot;:{
-                            &quot;min&quot;:70,
-                            &quot;max&quot;:120
-                        },
-                        &quot;stops_count&quot;:{
-                            &quot;0&quot;:4431
-                        },
-                        &quot;departure_time_1&quot;:{
-                            &quot;min&quot;:&quot;04:30&quot;,
-                            &quot;max&quot;:&quot;22:55&quot;
-                        },
-                        &quot;departure_time_0&quot;:{
-                            &quot;min&quot;:&quot;00:50&quot;,
-                            &quot;max&quot;:&quot;23:30&quot;
-                        },
-                        &quot;departure_minutes_0&quot;:{
-                            &quot;min&quot;:50,
-                            &quot;max&quot;:1410
-                        },
-                        &quot;departure_minutes_1&quot;:{
-                            &quot;min&quot;:270,
-                            &quot;max&quot;:1375
-                        },
-                        &quot;price&quot;:{
-                            &quot;min&quot;:4431,
-                            &quot;max&quot;:8689
-                        }},
-                    &quot;flight_numbers&quot;:[
-                    [
-                        &quot;SU30&quot;,
-                        &quot;SU32&quot;
-                    ],
-                    [
-                        &quot;SU31&quot;,
-                        &quot;SU33&quot;
-                    ]],
-                    &quot;affiliate_has_sales&quot;:false,
-                    &quot;proposals&quot;:[
-                        {
-                            &quot;terms&quot;:{
-                                &quot;20&quot;:{
-                                    &quot;url&quot;:2000000,
-                                    &quot;unified_price&quot;:5867,
-                                    &quot;price&quot;:5867,
-                                    &quot;currency&quot;:&quot;rub&quot;
-                            }},
-                            &quot;sign&quot;:&quot;7573ea707c2ff84b243241961412ed34&quot;,
-                            &quot;segment&quot;:[
-                            {
-                                &quot;flight&quot;:[
-                                {
-                                    &quot;arrival&quot;:&quot;LED&quot;,
-                                    &quot;aircraft&quot;:&quot;AIRBUS A320&quot;,
-                                    &quot;local_departure_timestamp&quot;:1434588600,
-                                    &quot;operating_carrier&quot;:&quot;UT&quot;,
-                                    &quot;duration&quot;:85,
-                                    &quot;local_arrival_timestamp&quot;:1432549200,
-                                    &quot;departure_date&quot;:&quot;2015-05-25&quot;,
-                                    &quot;departure_time&quot;:&quot;11:00&quot;,
-                                    &quot;arrival_date&quot;:&quot;2015-05-25&quot;,
-                                    &quot;arrival_time&quot;:&quot;12:25&quot;,
-                                    &quot;delay&quot;:0,
-                                    &quot;departure&quot;:&quot;VKO&quot;,
-                                    &quot;number&quot;:369
-                            }]},
-                        {
-                            &quot;flight&quot;:[
-                            {
-                                &quot;arrival&quot;:&quot;DME&quot;,
-                                &quot;aircraft&quot;:&quot;AIRBUS A320&quot;,
-                                &quot;local_departure_timestamp&quot;:1434588600,
-                                &quot;operating_carrier&quot;:&quot;SU&quot;,
-                                &quot;duration&quot;:90,
-                                &quot;local_arrival_timestamp&quot;:1432549200,
-                                &quot;departure_date&quot;:&quot;2015-06-18&quot;,
-                                &quot;departure_time&quot;:&quot;10:05&quot;,
-                                &quot;arrival_date&quot;:&quot;2015-06-18&quot;,
-                                &quot;arrival_time&quot;:&quot;11:35&quot;,
-                                &quot;delay&quot;:0,
-                                &quot;departure&quot;:&quot;LED&quot;,
-                                &quot;number&quot;:6131
-                        }]}]},
-                   ]}],
-            &quot;validating_carrier&quot;: &quot;SU&quot;
-        }],
-    &quot;_ga&quot;:null,
-    &quot;signature&quot;:&quot;4bb635b9353a1e933907d41841e23414&quot;,
-    &quot;search_id&quot;:&quot;c9c6de8c-3fb4-404e-b88c-e9e0a605f183&quot;
-    },
-    {
-    &quot;search_id&quot;:&quot;c9c6de8c-3fb4-404e-b88c-e9e0a605f183&quot;
-}]
-</code>
-Full response example: <a href="response-example.json">response-example.json</a></p>
+<p>Response example</p>
 </blockquote>
-
+<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+    </span><span class="s2">"segments"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"destination_country"</span><span class="p">:</span><span class="s2">"RU"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"original_destination"</span><span class="p">:</span><span class="s2">"LED"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"origin"</span><span class="p">:</span><span class="s2">"MOW"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"origin_country"</span><span class="p">:</span><span class="s2">"RU"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"original_origin"</span><span class="p">:</span><span class="s2">"MOW"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"date"</span><span class="p">:</span><span class="s2">"2017-05-25"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"destination"</span><span class="p">:</span><span class="s2">"LED"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"destination_country"</span><span class="p">:</span><span class="s2">"RU"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"original_destination"</span><span class="p">:</span><span class="s2">"MOW"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"origin"</span><span class="p">:</span><span class="s2">"LED"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"origin_country"</span><span class="p">:</span><span class="s2">"RU"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"original_origin"</span><span class="p">:</span><span class="s2">"LED"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"date"</span><span class="p">:</span><span class="s2">"2017-06-18"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"destination"</span><span class="p">:</span><span class="s2">"MOW"</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"banner_info"</span><span class="p">:{</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"internal"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"airports"</span><span class="p">:{</span><span class="w">
+            </span><span class="s2">"LED"</span><span class="p">:{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Пулково"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"time_zone"</span><span class="p">:</span><span class="s2">"Europe/Moscow"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"country"</span><span class="p">:</span><span class="s2">"Россия"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"rates"</span><span class="p">:</span><span class="s2">"259"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"city"</span><span class="p">:</span><span class="s2">"Санкт-Петербург"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"DME"</span><span class="p">:{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Домодедово"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"time_zone"</span><span class="p">:</span><span class="s2">"Europe/Moscow"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"country"</span><span class="p">:</span><span class="s2">"Россия"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"rates"</span><span class="p">:</span><span class="s2">"392"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"city"</span><span class="p">:</span><span class="s2">"Москва"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"SVO"</span><span class="p">:{</span><span class="w">
+                </span><span class="s2">"rates"</span><span class="p">:</span><span class="s2">"307"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"country"</span><span class="p">:</span><span class="s2">"Россия"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Шереметьево"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"average_rate"</span><span class="p">:</span><span class="s2">"3.63"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"city"</span><span class="p">:</span><span class="s2">"Москва"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"time_zone"</span><span class="p">:</span><span class="s2">"Europe/Moscow"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"VKO"</span><span class="p">:{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Внуково"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"time_zone"</span><span class="p">:</span><span class="s2">"Europe/Moscow"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"country"</span><span class="p">:</span><span class="s2">"Россия"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"rates"</span><span class="p">:</span><span class="s2">"211"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"city"</span><span class="p">:</span><span class="s2">"Москва"</span><span class="w">
+            </span><span class="p">}},</span><span class="w">
+            </span><span class="s2">"gates_info"</span><span class="p">:{</span><span class="w">
+                </span><span class="s2">"20"</span><span class="p">:{</span><span class="w">
+                    </span><span class="s2">"average_rate"</span><span class="p">:</span><span class="mf">4.43</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"rates"</span><span class="p">:</span><span class="mi">2967</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"currency_code"</span><span class="p">:</span><span class="s2">"rub"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"is_airline"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"productivity"</span><span class="p">:</span><span class="mf">16.9991</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"label"</span><span class="p">:</span><span class="s2">"OneTwoTrip"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"airline_iatas"</span><span class="p">:{</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="s2">"payment_methods"</span><span class="p">:[</span><span class="w">
+                        </span><span class="s2">"card"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="s2">"mobile_version"</span><span class="p">:</span><span class="kc">false</span><span class="w">
+                    </span><span class="p">}},</span><span class="w">
+                    </span><span class="s2">"city_distance"</span><span class="p">:</span><span class="mi">634</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"meta"</span><span class="p">:{</span><span class="w">
+                        </span><span class="s2">"uuid"</span><span class="p">:</span><span class="s2">"c9c6de8c-3fb4-404e-b88c-e9e0a605f183"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"gates"</span><span class="p">:[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="s2">"duration"</span><span class="p">:</span><span class="mf">22.402996063232422</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"count"</span><span class="p">:</span><span class="mi">1456</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"good_count"</span><span class="p">:</span><span class="mi">1456</span><span class="w">
+                        </span><span class="p">}]},</span><span class="w">
+                    </span><span class="s2">"airlines"</span><span class="p">:{</span><span class="w">
+                        </span><span class="s2">"SU"</span><span class="p">:{</span><span class="w">
+                            </span><span class="s2">"average_rate"</span><span class="p">:</span><span class="s2">"4.01"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"rates"</span><span class="p">:</span><span class="s2">"2362"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"alliance_name"</span><span class="p">:</span><span class="s2">"SkyTeam"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Аэрофлот"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">10</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="s2">"UN"</span><span class="p">:{</span><span class="w">
+                            </span><span class="s2">"average_rate"</span><span class="p">:</span><span class="s2">"3.98"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"rates"</span><span class="p">:</span><span class="s2">"2639"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"alliance_name"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Трансаэро"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">492</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="s2">"S7"</span><span class="p">:{</span><span class="w">
+                            </span><span class="s2">"average_rate"</span><span class="p">:</span><span class="s2">"3.95"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"rates"</span><span class="p">:</span><span class="s2">"2430"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"alliance_name"</span><span class="p">:</span><span class="s2">"OneWorld"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"S7"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">444</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="s2">"UT"</span><span class="p">:{</span><span class="w">
+                            </span><span class="s2">"rates"</span><span class="p">:</span><span class="s2">"1843"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"alliance_name"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"ЮТэйр"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">507</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="s2">"U6"</span><span class="p">:{</span><span class="w">
+                            </span><span class="s2">"average_rate"</span><span class="p">:</span><span class="s2">"3.62"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"rates"</span><span class="p">:</span><span class="s2">"1158"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"alliance_name"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Уральские авиалинии"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">503</span><span class="w">
+                        </span><span class="p">}},</span><span class="w">
+                    </span><span class="s2">"filters_boundary"</span><span class="p">:{</span><span class="w">
+                        </span><span class="s2">"arrival_datetime_0"</span><span class="p">:{</span><span class="w">
+                            </span><span class="s2">"min"</span><span class="p">:</span><span class="mi">1418869200</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"max"</span><span class="p">:</span><span class="mi">1418950500</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="s2">"arrival_datetime_1"</span><span class="p">:{</span><span class="w">
+                            </span><span class="s2">"min"</span><span class="p">:</span><span class="mi">1419486600</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"max"</span><span class="p">:</span><span class="mi">1419554400</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="s2">"flights_duration"</span><span class="p">:{</span><span class="w">
+                            </span><span class="s2">"min"</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"max"</span><span class="p">:</span><span class="mi">120</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="s2">"stops_count"</span><span class="p">:{</span><span class="w">
+                            </span><span class="s2">"0"</span><span class="p">:</span><span class="mi">4431</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="s2">"departure_time_1"</span><span class="p">:{</span><span class="w">
+                            </span><span class="s2">"min"</span><span class="p">:</span><span class="s2">"04:30"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"max"</span><span class="p">:</span><span class="s2">"22:55"</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="s2">"departure_time_0"</span><span class="p">:{</span><span class="w">
+                            </span><span class="s2">"min"</span><span class="p">:</span><span class="s2">"00:50"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"max"</span><span class="p">:</span><span class="s2">"23:30"</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="s2">"departure_minutes_0"</span><span class="p">:{</span><span class="w">
+                            </span><span class="s2">"min"</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"max"</span><span class="p">:</span><span class="mi">1410</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="s2">"departure_minutes_1"</span><span class="p">:{</span><span class="w">
+                            </span><span class="s2">"min"</span><span class="p">:</span><span class="mi">270</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"max"</span><span class="p">:</span><span class="mi">1375</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="s2">"price"</span><span class="p">:{</span><span class="w">
+                            </span><span class="s2">"min"</span><span class="p">:</span><span class="mi">4431</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"max"</span><span class="p">:</span><span class="mi">8689</span><span class="w">
+                        </span><span class="p">}},</span><span class="w">
+                    </span><span class="s2">"flight_numbers"</span><span class="p">:[</span><span class="w">
+                    </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"SU30"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"SU32"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"SU31"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"SU33"</span><span class="w">
+                    </span><span class="p">]],</span><span class="w">
+                    </span><span class="s2">"affiliate_has_sales"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"proposals"</span><span class="p">:[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="s2">"terms"</span><span class="p">:{</span><span class="w">
+                                </span><span class="s2">"20"</span><span class="p">:{</span><span class="w">
+                                    </span><span class="s2">"url"</span><span class="p">:</span><span class="mi">2000000</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"unified_price"</span><span class="p">:</span><span class="mi">5867</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"price"</span><span class="p">:</span><span class="mi">5867</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"rub"</span><span class="w">
+                            </span><span class="p">}},</span><span class="w">
+                            </span><span class="s2">"sign"</span><span class="p">:</span><span class="s2">"7573ea707c2ff84b243241961412ed34"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"segment"</span><span class="p">:[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"flight"</span><span class="p">:[</span><span class="w">
+                                </span><span class="p">{</span><span class="w">
+                                    </span><span class="s2">"arrival"</span><span class="p">:</span><span class="s2">"LED"</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"aircraft"</span><span class="p">:</span><span class="s2">"AIRBUS A320"</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"local_departure_timestamp"</span><span class="p">:</span><span class="mi">1434588600</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"operating_carrier"</span><span class="p">:</span><span class="s2">"UT"</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"duration"</span><span class="p">:</span><span class="mi">85</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"local_arrival_timestamp"</span><span class="p">:</span><span class="mi">1432549200</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"departure_date"</span><span class="p">:</span><span class="s2">"2015-05-25"</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"departure_time"</span><span class="p">:</span><span class="s2">"11:00"</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"arrival_date"</span><span class="p">:</span><span class="s2">"2015-05-25"</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"arrival_time"</span><span class="p">:</span><span class="s2">"12:25"</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"delay"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"departure"</span><span class="p">:</span><span class="s2">"VKO"</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"number"</span><span class="p">:</span><span class="mi">369</span><span class="w">
+                            </span><span class="p">}]},</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="s2">"flight"</span><span class="p">:[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"arrival"</span><span class="p">:</span><span class="s2">"DME"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"aircraft"</span><span class="p">:</span><span class="s2">"AIRBUS A320"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"local_departure_timestamp"</span><span class="p">:</span><span class="mi">1434588600</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"operating_carrier"</span><span class="p">:</span><span class="s2">"SU"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"duration"</span><span class="p">:</span><span class="mi">90</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"local_arrival_timestamp"</span><span class="p">:</span><span class="mi">1432549200</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"departure_date"</span><span class="p">:</span><span class="s2">"2015-06-18"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"departure_time"</span><span class="p">:</span><span class="s2">"10:05"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"arrival_date"</span><span class="p">:</span><span class="s2">"2015-06-18"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"arrival_time"</span><span class="p">:</span><span class="s2">"11:35"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"delay"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"departure"</span><span class="p">:</span><span class="s2">"LED"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"number"</span><span class="p">:</span><span class="mi">6131</span><span class="w">
+                        </span><span class="p">}]}]},</span><span class="w">
+                   </span><span class="p">]}],</span><span class="w">
+            </span><span class="s2">"validating_carrier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SU"</span><span class="w">
+        </span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"_ga"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"signature"</span><span class="p">:</span><span class="s2">"4bb635b9353a1e933907d41841e23414"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"search_id"</span><span class="p">:</span><span class="s2">"c9c6de8c-3fb4-404e-b88c-e9e0a605f183"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"search_id"</span><span class="p">:</span><span class="s2">"c9c6de8c-3fb4-404e-b88c-e9e0a605f183"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
 <p>The response includes the data:</p>
 
 <table><thead>
@@ -3594,7 +3563,7 @@ Full response example: <a href="response-example.json">response-example.json</a>
 </tbody></table>
 
 <aside class="warning">Attention! Use currency rates to convert the prices of flights to the currency you need (because the response contains the flight price in Russian rubles).</aside>
-<h2 id='additional-information-in-the-response'>Additional Information in the Response</h2>
+<h2 id='additional-information-in-the-response'>Additional Information in the response</h2>
 <p>Some airline companies and agencies provide additional information about flights, aircraft, and onboard services. These fields and their content are described below. You may use this information on your websites or ignore it — the main information about the tickets is given above.</p>
 
 <table><thead>
@@ -3651,672 +3620,6 @@ Full response example: <a href="response-example.json">response-example.json</a>
 </tr>
 </tbody></table>
 <h2 id='how-to-get-a-link-to-the-agency-website'>How to get a link to the agency website</h2>
-<aside class="warning">Attention! The reference to the agency's website must be received only when the user clicks the "Buy" button. Automatic collection of all links from the answer is prohibited. Violation of this rule will disable the API search for the partner. </aside>
-
-<p>To get a link to the site of the ticket booking agencies:</p>
-
-<ol>
-<li>Send a request to the following address:
-https://api.tp.com/v1/flight_searches/%search_id%/clicks/%terms.url%.json</li>
-</ol>
-
-<p>where <code>search_id</code> is the ID from the answer of the request, <code>terms.url</code> - URL parameter from the response.</p>
-
-<ol>
-<li>You will receive a response like this:</li>
-</ol>
-
-<blockquote>
-<p>Response example
-<code>json
-{
-    &quot;params&quot;: {},
-    &quot;method&quot;: &quot;GET&quot;,
-    &quot;url&quot;: &quot;https://www.svyaznoy.travel/?utm_source=as.ru&amp;utm_medium=cpa&amp;utm_campaign=meta_avia#MOW0906/BKK1506/A1/C0/I0/S0/22316/EK-132;EK-374/EK-373;EK-131&amp;marker=7uh46i0v2&quot;,
-    &quot;gate_id&quot;: 62,
-    &quot;click_id&quot;: 22135952358110
-}
-</code>
-To move on to the booking, give your visitors a link from the parameter <code>&quot;url&quot;</code>.</p>
-</blockquote>
-
-<p>The “lifetime” of such links is 15 minutes, after which you will need to search again for the current prices and generate a new reference to the transition.</p>
-
-<p>In our example, this is a link of the form:</p>
-
-<p>https://www.svyaznoy.travel/?utm_source=as.ru&amp;utm_medium=cpa&amp;utm_campaign=meta_avia#MOW0906/BKK1506/A1/C0/I0/S0/22316/EK-132;EK-374/EK-373;EK-131&amp;marker=7uh46i0v2</p>
-
-<p>To get &quot;Round trip&quot; tickets, add a JSON to the body of the request:</p>
-
-<blockquote>
-<p>Body example
-<code>json
-{
-    &quot;signature&quot;: &quot;MD5_signature&quot;,
-    &quot;marker&quot;: &quot;Put_Your_Marker_Here&quot;,
-    &quot;host&quot;: your_server_host,
-    &quot;user_ip&quot;: user_ip_address,
-    &quot;locale&quot;: &quot;en&quot;,
-    &quot;trip_class&quot;: &quot;Y&quot;,
-    &quot;passengers&quot;: {
-        &quot;adults&quot;: &quot;1&quot;,
-        &quot;children&quot;: &quot;0&quot;,
-        &quot;infants&quot;: &quot;0&quot;
-    },
-    &quot;segments&quot;: [
-    {
-        &quot;origin&quot;: &quot;MOW&quot;,
-        &quot;destination&quot;: &quot;LON&quot;,
-        &quot;date&quot;: &quot;2018-05-25&quot;
-    },
-    {
-        &quot;origin&quot;: &quot;LON&quot;,
-        &quot;destination&quot;: &quot;MOW&quot;,
-        &quot;date&quot;: &quot;2018-06-18&quot;
-    }
-    ]
-} 
-</code>
-To get data, use the initialization code of the search:</p>
-
-<p>Request example
-<code>shell
-curl -v -X POST -d &#39;{&quot;signature&quot;:&quot;%MD5_signature%&quot;,&quot;marker&quot;:&quot;%Put_Your_Marker_Here%&quot;,&quot;host&quot;:&quot;beta.as.ru&quot;,&quot;user_ip&quot;:&quot;127.0.0.1&quot;,&quot;locale&quot;:&quot;ru&quot;,&quot;trip_class&quot;:&quot;Y&quot;,&quot;passengers&quot;:{&quot;adults&quot;:1,&quot;children&quot;:0,&quot;infants&quot;:0},&quot;segments&quot;:[{&quot;origin&quot;:&quot;MOW&quot;,&quot;destination&quot;:&quot;LON&quot;,&quot;date&quot;:&quot;2018-05-25&quot;},{&quot;origin&quot;:&quot;LON&quot;,&quot;destination&quot;:&quot;MOW&quot;,&quot;date&quot;:&quot;2018-06-18&quot;}]}&#39; -H &#39;Content-type:application/json&#39; https://api.tp.com/v1/flight_search
-</code>
-The answer comes in JSON format. The response contains the parameters:</p>
-</blockquote>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><strong>locale</strong></td>
-<td>-</td>
-<td>the language of the search result</td>
-</tr>
-<tr>
-<td><strong>search_id</strong></td>
-<td>-</td>
-<td>the unique identifier for the search query used to search results</td>
-</tr>
-<tr>
-<td><strong>geoip_city</strong></td>
-<td>-</td>
-<td>the geoip of the city where the request was made</td>
-</tr>
-<tr>
-<td><strong>trip_class</strong></td>
-<td>-</td>
-<td>the class of trip</td>
-</tr>
-<tr>
-<td><strong>affiliate</strong></td>
-<td>-</td>
-<td>the affiliate ID</td>
-</tr>
-<tr>
-<td><strong>marker</strong></td>
-<td>-</td>
-<td>the unique identifier of the affiliate;</td>
-</tr>
-<tr>
-<td><strong>user_ip</strong></td>
-<td>-</td>
-<td>the user&#39;s IP address</td>
-</tr>
-<tr>
-<td><strong>gates_count</strong></td>
-<td>-</td>
-<td>the total number of agencies</td>
-</tr>
-<tr>
-<td><strong>segments</strong></td>
-<td>-</td>
-<td>a list of the trip components:  <li> <strong>date</strong> - departure date; </li> <li><strong>origin</strong> - origin IATA;</li> <li><strong>destination</strong> - destination IATA;</li><li><strong>meta</strong> - technical information;</li><li><strong>uuid</strong> - unique identifier of the request;</li> <li> <strong>passengers</strong> - passenger information; </li> <li><strong>adults</strong> - the number of adult passengers;</li><li>  <strong>children</strong>- the number of children;</li> <li> <strong>infants</strong> - the number of infants;</li><li> <strong>host</strong> - host&#39;s request;</li><li> <strong>currency_rates</strong> - exchange rate; </li><li><strong>geoip_country</strong> - the geoip of the country where the request was made </li></td>
-</tr>
-</tbody></table>
-
-<aside class="notice"> Please note! Use currency rates to convert the prices of flights to the currency you need (because the response contains the flight price in Russian rubles).</aside> 
-<h3 id='getting-search-results-4'>Getting search results</h3>
-<p>In the body of the response is the parameter search_id; insert it into the URL:</p>
-
-<p>https://api.tp.com/v1/flight_search_results?uuid=%search_id%</p>
-
-<p>Then send the request to the server for search results:</p>
-<pre class="highlight shell tab-shell"><code>curl -v -H <span class="s1">'Accept-Encoding:gzip,deflate,sdch'</span> https://api.tp.com/v1/flight_search_results?uuid<span class="o">=</span>ebe4fa71-bc07-40df-ae4e-4b72116583da 
---compressed
-</code></pre>
-<p>where <code>&quot;ebe4fa71-bc07-40df-ae4e-4b72116583da&quot;</code> this is search_id.</p>
-
-<aside class="success">As a result of the search, you will get the JSON array, where each element is a response from a definite agency. </aside>
-
-<p>Repeat the request until you get an associative array with one element <strong>search_id</strong>. The periodicity of sending requests isn&#39;t restricted.</p>
-<h2 id='one-way-2'>One way</h2><h3 id='request-initialization-4'>Request initialization</h3>
-<p>To get &quot;One-way&quot; tickets, add a JSON into the body of the request:</p>
-
-<blockquote>
-<p>Body example
-<code>json
-{
-    &quot;signature&quot;: &quot;%MD5_signature%&quot;,
-    &quot;marker&quot;: &quot;%Put_Your_Marker_Here%&quot;,
-    &quot;host&quot;: &quot;beta.as.ru&quot;,
-    &quot;user_ip&quot;: &quot;127.0.0.1&quot;,
-    &quot;locale&quot;: &quot;ru&quot;,
-    &quot;trip_class&quot;: &quot;Y&quot;,
-    &quot;passengers&quot;: {
-        &quot;adults&quot;: 1,
-        &quot;children&quot;: 0,
-        &quot;infants&quot;: 0
-    },
-    &quot;segments&quot;: [
-        {
-            &quot;origin&quot;: &quot;MOW&quot;,
-            &quot;destination&quot;: &quot;LED&quot;,
-            &quot;date&quot;: &quot;2017-06-18&quot;
-        }
-    ]
-}
-</code>
-To get data, use the initialization code of the search:</p>
-
-<p>Request example
-<code>shell
-curl -v -X POST -d &#39;{&quot;signature&quot;:&quot;%MD5_signature%&quot;,&quot;marker&quot;:&quot;%Put_Your_Marker_Here%&quot;,&quot;host&quot;:&quot;beta.as.ru&quot;,&quot;user_ip&quot;:&quot;127.0.0.1&quot;,&quot;locale&quot;:&quot;ru&quot;,&quot;trip_class&quot;:&quot;Y&quot;,&quot;passengers&quot;:{&quot;adults&quot;:1,&quot;children&quot;:0,&quot;infants&quot;:0},&quot;segments&quot;:[{&quot;origin&quot;:&quot;MOW&quot;,&quot;destination&quot;:&quot;LED&quot;,&quot;date&quot;:&quot;2017-06-18&quot;}]}&#39; -H &#39;Content-type:application/json&#39; https://api.tp.com/v1/flight_search
-</code></p>
-<h2 id='getting-search-results-5'>Getting search results</h2></blockquote>
-
-<p>In the body of the response is the parameter search_id; insert it into the URL:</p>
-
-<p>https://api.tp.com/v1/flight_search_results?uuid=%search_id%
-Then send the request to the server for search results:</p>
-
-<blockquote>
-<p>Request example
-<code>shell
-curl -v -H &#39;Accept-Encoding:gzip,deflate,sdch&#39; https://api.tp.com/v1/flight_search_results?uuid=%search_id% 
---compressed
-</code></p>
-</blockquote>
-
-<aside class="notice">As a result of the search, you will get the JSON array where each element is a response from a definite agency. </aside>
-
-<aside class="warning">Repeat the request until you get an associative array with one element search_id. The periodicity of sending requests isn't restricted. </aside>
-<h2 id='open-jaw-2'>Open jaw</h2><h3 id='request-initialization-5'>Request initialization</h3>
-<p>Open jaw is a round-trip ticket in which the traveller does not arrive in the same city of departure and/or does not depart from the same city where he/she first landed. For example, London - Paris - Berlin - London.</p>
-
-<p>To get &quot;Open jaw&quot; tickets, add a JSON into the body of the request:</p>
-
-<blockquote>
-<p>Body example
-<code>json
-{
-    &quot;signature&quot;: &quot;%MD5_signature%&quot;,
-    &quot;marker&quot;: &quot;%Put_Your_Marker_Here%&quot;,
-    &quot;host&quot;: &quot;beta.as.ru&quot;,
-    &quot;user_ip&quot;: &quot;127.0.0.1&quot;,
-    &quot;locale&quot;: &quot;ru&quot;,
-    &quot;trip_class&quot;: &quot;Y&quot;,
-    &quot;passengers&quot;: {
-        &quot;adults&quot;: 1,
-        &quot;children&quot;: 0,
-        &quot;infants&quot;: 0
-    },
-    &quot;segments&quot;: [
-        {
-            &quot;origin&quot;: &quot;MOW&quot;,
-            &quot;destination&quot;: &quot;LED&quot;,
-            &quot;date&quot;: &quot;2017-02-18&quot;
-        },
-        {
-            &quot;origin&quot;: &quot;LED&quot;,
-            &quot;destination&quot;: &quot;BER&quot;,
-            &quot;date&quot;: &quot;2017-02-25&quot;
-        },
-        {
-            &quot;origin&quot;: &quot;BER&quot;,
-            &quot;destination&quot;: &quot;LON&quot;,
-            &quot;date&quot;: &quot;2017-03-05&quot;
-        }
-    ]
-}
-</code>
-To get data, use the initialization code of the search:</p>
-
-<p>Request example
-<code>shell
-curl -v -X POST -d &#39;{&quot;signature&quot;:&quot;%MD5_signature%&quot;,&quot;marker&quot;:&quot;%Put_Your_Marker_Here%&quot;,&quot;host&quot;:&quot;beta.as.ru&quot;,&quot;user_ip&quot;:&quot;127.0.0.1&quot;,&quot;locale&quot;:&quot;ru&quot;,&quot;trip_class&quot;:&quot;Y&quot;,&quot;passengers&quot;:{&quot;adults&quot;:1,&quot;children&quot;:0,&quot;infants&quot;:0},&quot;segments&quot;:[{&quot;origin&quot;:&quot;MOW&quot;,&quot;destination&quot;:&quot;LED&quot;,&quot;date&quot;:&quot;2017-06-18&quot;},{&quot;origin&quot;:&quot;LED&quot;,&quot;destination&quot;:&quot;BER&quot;,&quot;date&quot;:&quot;2017-06-25&quot;},{&quot;origin&quot;:&quot;BER&quot;,&quot;destination&quot;:&quot;LON&quot;,&quot;date&quot;:&quot;2017-07-05&quot;}]}&#39; -H &#39;Content-type:application/json&#39; https://api.tp.com/v1/flight_search
-</code></p>
-<h2 id='getting-search-results-6'>Getting search results</h2></blockquote>
-
-<p>In the body of the response is the parameter search_id; insert it into the URL:</p>
-
-<p>https://api.tp.com/v1/flight_search_results?uuid=%search_id%</p>
-
-<p>Then send the request to the server for search results:</p>
-
-<blockquote>
-<p>Request example
-<code>shell
-curl -v -H &#39;Accept-Encoding:gzip,deflate,sdch&#39; https://api.tp.com/v1/flight_search_results?uuid=%search_id% 
---compressed
-</code>
-<aside class="notice">As a result of the search, you will get the JSON array where each element is a response from a definite agency. </aside></p>
-</blockquote>
-
-<aside class="warning">Repeat the request until you get an associative array with one element search_id. The periodicity of sending requests isn't restricted. </aside>
-<h3 id='example-of-answer-2'>Example of answer</h3>
-<aside class="warning">Attention! The link to the search results is relevant for 15 minutes. After this time, you must send a search query again.</aside>
-
-<blockquote>
-<p>Response example
-<code>json
-[{
-    &quot;segments&quot;:[
-    {
-        &quot;destination_country&quot;:&quot;RU&quot;,
-        &quot;original_destination&quot;:&quot;LED&quot;,
-        &quot;origin&quot;:&quot;MOW&quot;,
-        &quot;origin_country&quot;:&quot;RU&quot;,
-        &quot;original_origin&quot;:&quot;MOW&quot;,
-        &quot;date&quot;:&quot;2017-05-25&quot;,
-        &quot;destination&quot;:&quot;LED&quot;
-    },
-    {
-        &quot;destination_country&quot;:&quot;RU&quot;,
-        &quot;original_destination&quot;:&quot;MOW&quot;,
-        &quot;origin&quot;:&quot;LED&quot;,
-        &quot;origin_country&quot;:&quot;RU&quot;,
-        &quot;original_origin&quot;:&quot;LED&quot;,
-        &quot;date&quot;:&quot;2017-06-18&quot;,
-        &quot;destination&quot;:&quot;MOW&quot;
-    }],
-    &quot;banner_info&quot;:{
-    },
-        &quot;internal&quot;:false,
-        &quot;airports&quot;:{
-            &quot;LED&quot;:{
-                &quot;name&quot;:&quot;Пулково&quot;,
-                &quot;time_zone&quot;:&quot;Europe/Moscow&quot;,
-                &quot;country&quot;:&quot;Россия&quot;,
-                &quot;rates&quot;:&quot;259&quot;,
-                &quot;city&quot;:&quot;Санкт-Петербург&quot;
-            },
-            &quot;DME&quot;:{
-                &quot;name&quot;:&quot;Домодедово&quot;,
-                &quot;time_zone&quot;:&quot;Europe/Moscow&quot;,
-                &quot;country&quot;:&quot;Россия&quot;,
-                &quot;rates&quot;:&quot;392&quot;,
-                &quot;city&quot;:&quot;Москва&quot;
-            },
-            &quot;SVO&quot;:{
-                &quot;rates&quot;:&quot;307&quot;,
-                &quot;country&quot;:&quot;Россия&quot;,
-                &quot;name&quot;:&quot;Шереметьево&quot;,
-                &quot;average_rate&quot;:&quot;3.63&quot;,
-                &quot;city&quot;:&quot;Москва&quot;,
-                &quot;time_zone&quot;:&quot;Europe/Moscow&quot;
-            },
-            &quot;VKO&quot;:{
-                &quot;name&quot;:&quot;Внуково&quot;,
-                &quot;time_zone&quot;:&quot;Europe/Moscow&quot;,
-                &quot;country&quot;:&quot;Россия&quot;,
-                &quot;rates&quot;:&quot;211&quot;,
-                &quot;city&quot;:&quot;Москва&quot;
-            }},
-            &quot;gates_info&quot;:{
-                &quot;20&quot;:{
-                    &quot;average_rate&quot;:4.43,
-                    &quot;rates&quot;:2967,
-                    &quot;currency_code&quot;:&quot;rub&quot;,
-                    &quot;is_airline&quot;:false,
-                    &quot;productivity&quot;:16.9991,
-                    &quot;label&quot;:&quot;OneTwoTrip&quot;,
-                    &quot;airline_iatas&quot;:{
-                    },
-                    &quot;payment_methods&quot;:[
-                        &quot;card&quot;
-                    ],
-                    &quot;mobile_version&quot;:false
-                    }},
-                    &quot;city_distance&quot;:634,
-                    &quot;meta&quot;:{
-                        &quot;uuid&quot;:&quot;c9c6de8c-3fb4-404e-b88c-e9e0a605f183&quot;,
-                        &quot;gates&quot;:[
-                        {
-                            &quot;duration&quot;:22.402996063232422,
-                            &quot;id&quot;:20,
-                            &quot;count&quot;:1456,
-                            &quot;good_count&quot;:1456
-                        }]},
-                    &quot;airlines&quot;:{
-                        &quot;SU&quot;:{
-                            &quot;average_rate&quot;:&quot;4.01&quot;,
-                            &quot;rates&quot;:&quot;2362&quot;,
-                            &quot;alliance_name&quot;:&quot;SkyTeam&quot;,
-                            &quot;name&quot;:&quot;Аэрофлот&quot;,
-                            &quot;id&quot;:10
-                        },
-                        &quot;UN&quot;:{
-                            &quot;average_rate&quot;:&quot;3.98&quot;,
-                            &quot;rates&quot;:&quot;2639&quot;,
-                            &quot;alliance_name&quot;:null,
-                            &quot;name&quot;:&quot;Трансаэро&quot;,
-                            &quot;id&quot;:492
-                        },
-                        &quot;S7&quot;:{
-                            &quot;average_rate&quot;:&quot;3.95&quot;,
-                            &quot;rates&quot;:&quot;2430&quot;,
-                            &quot;alliance_name&quot;:&quot;OneWorld&quot;,
-                            &quot;name&quot;:&quot;S7&quot;,
-                            &quot;id&quot;:444
-                        },
-                        &quot;UT&quot;:{
-                            &quot;rates&quot;:&quot;1843&quot;,
-                            &quot;alliance_name&quot;:null,
-                            &quot;name&quot;:&quot;ЮТэйр&quot;,
-                            &quot;id&quot;:507
-                        },
-                        &quot;U6&quot;:{
-                            &quot;average_rate&quot;:&quot;3.62&quot;,
-                            &quot;rates&quot;:&quot;1158&quot;,
-                            &quot;alliance_name&quot;:null,
-                            &quot;name&quot;:&quot;Уральские авиалинии&quot;,
-                            &quot;id&quot;:503
-                        }},
-                    &quot;filters_boundary&quot;:{
-                        &quot;arrival_datetime_0&quot;:{
-                            &quot;min&quot;:1418869200,
-                            &quot;max&quot;:1418950500
-                        },
-                        &quot;arrival_datetime_1&quot;:{
-                            &quot;min&quot;:1419486600,
-                            &quot;max&quot;:1419554400
-                        },
-                        &quot;flights_duration&quot;:{
-                            &quot;min&quot;:70,
-                            &quot;max&quot;:120
-                        },
-                        &quot;stops_count&quot;:{
-                            &quot;0&quot;:4431
-                        },
-                        &quot;departure_time_1&quot;:{
-                            &quot;min&quot;:&quot;04:30&quot;,
-                            &quot;max&quot;:&quot;22:55&quot;
-                        },
-                        &quot;departure_time_0&quot;:{
-                            &quot;min&quot;:&quot;00:50&quot;,
-                            &quot;max&quot;:&quot;23:30&quot;
-                        },
-                        &quot;departure_minutes_0&quot;:{
-                            &quot;min&quot;:50,
-                            &quot;max&quot;:1410
-                        },
-                        &quot;departure_minutes_1&quot;:{
-                            &quot;min&quot;:270,
-                            &quot;max&quot;:1375
-                        },
-                        &quot;price&quot;:{
-                            &quot;min&quot;:4431,
-                            &quot;max&quot;:8689
-                        }},
-                    &quot;flight_numbers&quot;:[
-                    [
-                        &quot;SU30&quot;,
-                        &quot;SU32&quot;
-                    ],
-                    [
-                        &quot;SU31&quot;,
-                        &quot;SU33&quot;
-                    ]],
-                    &quot;affiliate_has_sales&quot;:false,
-                    &quot;proposals&quot;:[
-                        {
-                            &quot;terms&quot;:{
-                                &quot;20&quot;:{
-                                    &quot;url&quot;:2000000,
-                                    &quot;unified_price&quot;:5867,
-                                    &quot;price&quot;:5867,
-                                    &quot;currency&quot;:&quot;rub&quot;
-                            }},
-                            &quot;sign&quot;:&quot;7573ea707c2ff84b243241961412ed34&quot;,
-                            &quot;segment&quot;:[
-                            {
-                                &quot;flight&quot;:[
-                                {
-                                    &quot;arrival&quot;:&quot;LED&quot;,
-                                    &quot;aircraft&quot;:&quot;AIRBUS A320&quot;,
-                                    &quot;local_departure_timestamp&quot;:1434588600,
-                                    &quot;operating_carrier&quot;:&quot;UT&quot;,
-                                    &quot;duration&quot;:85,
-                                    &quot;local_arrival_timestamp&quot;:1432549200,
-                                    &quot;departure_date&quot;:&quot;2015-05-25&quot;,
-                                    &quot;departure_time&quot;:&quot;11:00&quot;,
-                                    &quot;arrival_date&quot;:&quot;2015-05-25&quot;,
-                                    &quot;arrival_time&quot;:&quot;12:25&quot;,
-                                    &quot;delay&quot;:0,
-                                    &quot;departure&quot;:&quot;VKO&quot;,
-                                    &quot;number&quot;:369
-                            }]},
-                        {
-                            &quot;flight&quot;:[
-                            {
-                                &quot;arrival&quot;:&quot;DME&quot;,
-                                &quot;aircraft&quot;:&quot;AIRBUS A320&quot;,
-                                &quot;local_departure_timestamp&quot;:1434588600,
-                                &quot;operating_carrier&quot;:&quot;SU&quot;,
-                                &quot;duration&quot;:90,
-                                &quot;local_arrival_timestamp&quot;:1432549200,
-                                &quot;departure_date&quot;:&quot;2015-06-18&quot;,
-                                &quot;departure_time&quot;:&quot;10:05&quot;,
-                                &quot;arrival_date&quot;:&quot;2015-06-18&quot;,
-                                &quot;arrival_time&quot;:&quot;11:35&quot;,
-                                &quot;delay&quot;:0,
-                                &quot;departure&quot;:&quot;LED&quot;,
-                                &quot;number&quot;:6131
-                        }]}]},
-                   ]}],
-            &quot;validating_carrier&quot;: &quot;SU&quot;
-        }],
-    &quot;_ga&quot;:null,
-    &quot;signature&quot;:&quot;4bb635b9353a1e933907d41841e23414&quot;,
-    &quot;search_id&quot;:&quot;c9c6de8c-3fb4-404e-b88c-e9e0a605f183&quot;
-    },
-    {
-    &quot;search_id&quot;:&quot;c9c6de8c-3fb4-404e-b88c-e9e0a605f183&quot;
-}]
-</code>
-Full response example: <a href="response-example.json">response-example.json</a></p>
-</blockquote>
-
-<p>The response includes the data:</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>search_id</td>
-<td>-</td>
-<td>unique identifier for the search query</td>
-</tr>
-<tr>
-<td>flight_numbers</td>
-<td>-</td>
-<td>numbers of the flight</td>
-</tr>
-<tr>
-<td>meta</td>
-<td>-</td>
-<td><li><strong>gates</strong> - information about phases of gates in the search process; </li> <li><strong>good_count</strong> - number of relevant tickets (if the agency has returned the ticket for the wrong dates or they are misspelled, they are filtered out by the system); </li><li><strong>count</strong> - number of tickets uploaded from the agency; </li> <li><strong>duration</strong> - processing time of request; </li><li> <strong>id</strong> - ID agency;</li> <li><strong>error</strong> - error information; </li> <li><strong>tos</strong> -content of error.</li></td>
-</tr>
-<tr>
-<td>uuid</td>
-<td>-</td>
-<td>request ID;</td>
-</tr>
-<tr>
-<td>city_distance</td>
-<td>-</td>
-<td>distance between the cities of origin and destination;</td>
-</tr>
-<tr>
-<td>gates_info</td>
-<td>-</td>
-<td>information about the agent (Ticket Seller): <li><strong>currency_code</strong> - payment currency code;</li><li> <strong>is_airline</strong> - is an airline;</li><li> <strong>average_rate</strong> - average rating of agencies;</li><li> <strong>rates</strong> - rating agency (count voters);</li><li> <strong>mobile_version</strong> - having a mobile version of the site;</li> <li><strong>productivity</strong> - productivity;</li><li> <strong>airline_iatas</strong> - IATA airline code, if the gate sells tickets;</li><li> <strong>payment_methods</strong> - payment methods;</li> <li><strong>label</strong> - agency name.</li></td>
-</tr>
-<tr>
-<td>signature</td>
-<td>-</td>
-<td>signature of request</td>
-</tr>
-<tr>
-<td>segments</td>
-<td>-</td>
-<td>array data of flights: <li><strong>destination_country</strong> - code of the country of destination;</li> <li> <strong>original_destination</strong> - code of the city of destination;</li><li> <strong>origin</strong> - origin IATA;</li><li> <strong>destination</strong> - destination IATA;</li><li> <strong>origin_country</strong> - the origin country;</li><li> <strong>date</strong> - departure date.</li></td>
-</tr>
-<tr>
-<td>flight_numbers</td>
-<td>-</td>
-<td>flight numbers</td>
-</tr>
-<tr>
-<td>airlines</td>
-<td>-</td>
-<td>information about the airlines: <li><strong>deeplink_site_name</strong> - address of the airline&#39;s website;</li><li> <strong>id</strong> - identification number of the airline;</li> <li> <strong>site_name</strong> - name of the airline&#39;s website;</li><li> <strong>alliance_name</strong> - alliance of the airline; </li><li><strong>average_rate</strong> - average rating;</li><li> <strong>rates</strong> - number of ratings;</li><li> <strong>deeplink_id</strong> - ID links to airline&#39;s website; </li><li><strong>name</strong> - name of airline.</li></td>
-</tr>
-<tr>
-<td>proposals</td>
-<td>-</td>
-<td>an array of variants</td>
-</tr>
-<tr>
-<td><em>segment</em></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><em>sign</em></td>
-<td>-</td>
-<td>unique id of the ticket, to integrate information from different agencies in one ticket;</td>
-</tr>
-<tr>
-<td><em>flight</em></td>
-<td>-</td>
-<td>flight details: <li><strong>departure</strong> - departure IATA code;</li><li> <strong>duration</strong> - flight duration in minutes;</li><li> <strong>departure_date</strong> - departure date (UNIX-time);</li><li> <strong>departure_time</strong> - departure time (UNIX-time);</li><li> <strong>local_departure_timestamp</strong> - local departure time in UNIX format;</li><li> <strong>arrival_time</strong> - arrival time (UNIX-time);</li><li> <strong>local_arrival_timestamp</strong> - local arrival time in UNIX format;</li><li> <strong>number</strong> - flight number. To generate a full flight number, use the number and <strong>operating_carrier parameters</strong>;</li><li> <strong>delay</strong> - duration of stop between flights (in minutes);</li><li> <strong>operating_carrier</strong> - IATA code of airline that performs the carriage;</li><li> <strong>arrival_date</strong> - arrival date;</li><li> <strong>aircraft</strong> - type of aircraft;</li><li> <strong>rating_summary</strong> - some rating information about agency or airline (can be blank);</li><li> <strong>is_bus, is_train</strong> — true, if in this segment they do not travel by plane, but by bus or train;</li><li> <strong>arrival</strong> - IATA code of arrival.</li></td>
-</tr>
-<tr>
-<td>terms</td>
-<td>-</td>
-<td>information about the flight’s cost: <li><strong>price</strong> - trip price in original currency (type listed in the field currency);</li><li> <strong>currency</strong> - currency type;</li><li> <strong>flights_baggage</strong> - the number of pieces of baggage and its weight. <em>&quot;&quot; - there is no information about baggage; false - baggage is not included in a price; {int}PC{int} - number of bags by %somevalue% kilogram. For example, 2PC23 - means two baggage pieces of 23 kg. {int} - number of bags does not matter, the total weight is limited.</em> </li> <li><strong>unified_price</strong> - price of flight in basic currency (Russian ruble);</li> <li><strong>url</strong> - code to generate links for buyers (as forming the link; see below).</li></td>
-</tr>
-<tr>
-<td>airports</td>
-<td>-</td>
-<td>information about airports;</td>
-</tr>
-<tr>
-<td>market</td>
-<td>-</td>
-<td>market of routes;</td>
-</tr>
-<tr>
-<td>initiated_at</td>
-<td>-</td>
-<td>date and time of search;</td>
-</tr>
-<tr>
-<td>open_jaw</td>
-<td>-</td>
-<td>true if it is part of open jaw;</td>
-</tr>
-<tr>
-<td>clean_marker</td>
-<td>-</td>
-<td>affiliate marker;</td>
-</tr>
-<tr>
-<td>currency</td>
-<td>-</td>
-<td>currency type;</td>
-</tr>
-<tr>
-<td>flight_info</td>
-<td>-</td>
-<td>information about routes: {RouteNumber} <li><strong>ontime_percent</strong> - delay persant; <em>min - min number of delay; max - max number of delay; mean - average number of delay.</em> </li><li><strong>IATA</strong> - IATA code;</li><li> <strong>city</strong> - city where airport is located;</li><li> <strong>average_rate</strong> - average rating of airport;</li><li> <strong>rates</strong> - number of ratings;</li><li> <strong>country</strong> - country where airport is located;</li><li> <strong>name</strong> - airport name;</li><li> <strong>time_zone</strong> - time zone of airport.</li></td>
-</tr>
-<tr>
-<td>filters_boundary</td>
-<td>-</td>
-<td>array data for filtering: <li><strong>stops_duration</strong> - time between flights (maximum and minimum);</li><li> <strong>flights_duration</strong> - flights duration (maximum and minimum);</li><li> <strong>arrival_datetime_0</strong> - arrival datetime (maximum and minimum);</li><li> <strong>price</strong> - price of flights (maximum and minimum);</li><li> <strong>departure_time_0</strong> - departure time (maximum and minimum);</li><li> <strong>stops_count</strong> - stops count.</li></td>
-</tr>
-</tbody></table>
-
-<aside class="warning">Attention! Use currency rates to convert the prices of flights to the currency you need (because the response contains the flight price in Russian rubles).</aside>
-<h2 id='additional-information-in-the-response-2'>Additional Information in the Response</h2>
-<p>Some airline companies and agencies provide additional information about flights, aircraft, and onboard services. These fields and their content are described below. You may use this information on your websites or ignore it — the main information about the tickets is given above.</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>banner_info</td>
-<td>-</td>
-<td>service information provided by an airline company</td>
-</tr>
-<tr>
-<td>airlines/AF/</td>
-<td>-</td>
-<td>information from a specific airline company (where AF is the IATA designator code): <li><strong>jets</strong> — information about the airline company’s aircraft: <ul><li><strong>seatType</strong> — seat type in an aircraft (Angle Lie Flat, Flat Bed — special seat, can be transformed into a bed, etc.; Standard — standard seat);</li> <li><strong>typeClass</strong> — class type (Business class, Economy class);</li> <li><strong>seatWidth</strong> — seat width (inches);</li><li> <strong>aircraft</strong> — aircraft type; <strong>seatPitch</strong> — distance between the seats (inches);</li><li> <strong>videoType</strong> — video type (Overhead TV — on a seat, located in front, On-Demand TV — common TV, headphones are given on demand, None — unavailable);</li><li> <strong>wifi</strong> — Wi-Fi on-board; </li><li><strong>id</strong> — unique aircraft ID (service parameter); </li><li><strong>powerType</strong> — availability of an AV receptacle in a seat;</li><li> <strong>airline</strong> — IATA designator code;</li><li> <strong>laptopPower</strong> — availability of a notebook receptacle. </li></li></ul><li><strong>ageOfPlanes</strong> — average age of an airline company’s aircraft;</li><li> <strong>alliance</strong> — alliance joined by an airline company;</li><li> <strong>economyLegroom</strong> — average distance between the seats in economy class (inches);</li><li> <strong>freeStandardCarryOn</strong> — availability of free space for hand luggage;</li><li> <strong>infantsLapCost</strong> — age from which a child is not considered an infant;</li><li> <strong>minorsNotTravelAloneFrom</strong> — opportunity for minors to travel alone;</li><li> <strong>iata</strong> — IATA designator code;</li><li> <strong>checkedBaggagePrice1st</strong> — luggage registration cost;</li><li> <strong>baggage</strong> — information about the luggage on a flight;</li><li> <strong>excess</strong> — text information about restrictions for luggage transportation;</li><li> <strong>checked</strong> — text information about the prepaid luggage weight and size, and the necessity to make an additional payment if the size exceeds the standard; </li><li><strong>carryOn</strong> — text information about hand-luggage transportation rules;</li><li> <strong>airline</strong> — IATA designator code; </li><li><strong>sportMusical</strong> — rules for transporting large musical instruments and sport equipment.</li></td>
-</tr>
-<tr>
-<td>frequentFlyerPrograms</td>
-<td>-</td>
-<td>loyalty program for clients</td>
-</tr>
-<tr>
-<td>aircrafts</td>
-<td>-</td>
-<td>the number of aircraft owned by an airline company</td>
-</tr>
-<tr>
-<td>carryOnStandard</td>
-<td>-</td>
-<td>presence of a hand-luggage transportation standard</td>
-</tr>
-<tr>
-<td>lowcost</td>
-<td>-</td>
-<td>is/not a low-cost airline company</td>
-</tr>
-<tr>
-<td>freeCheckedBag</td>
-<td>-</td>
-<td>opportunity for luggage transportation for free within the extent permissible</td>
-</tr>
-<tr>
-<td>meals</td>
-<td>-</td>
-<td>airline company’s on-board types of menus</td>
-</tr>
-<tr>
-<td>checkin</td>
-<td>-</td>
-<td>ways to register provided by an airline company: <li><strong>mobileCheckIn</strong> — opportunity of registration using a mobile app;</li><li> <strong>seatOnlineCheckIn</strong> — seat selection at registration;</li><li> <strong>onlineCheckInwithBag</strong> — online luggage registration; </li> <li><strong>airline</strong> — IATA designator code;</li><li> <strong>onlineCheckIn</strong> — rules for online registration;</li><li> <strong>requirementOnlineCheckIn</strong> — rules for online registration; </li><li><strong>airportCheckIn</strong> — rules for registration in an airport;</li><li> <strong>timeBoardingGate</strong> — time for boarding before departure; </li><li><strong>minorsNotTravelAloneTo</strong> — age from which minors may travel without grown-ups;</li><li> <strong>pet</strong> — information about transportation of animals by an airline company:</li><ul><li> <strong>cargo</strong> — transportation in luggage;</li> <li><strong>baggage</strong> — rules for transportation in luggage;</li><li> <strong>restriction</strong> — restrictions;</li><li> <strong>documentation</strong> — required documents;</li><li> <strong>book</strong> — booking;</li><li> <strong>airline</strong> — IATA designator code;</li><li> <strong>method</strong> — type of transportation; </li><li> <strong>cabin</strong> — information about transportation in a cabin;</li><li> <strong>kennel</strong> — additional requirements; </li><li><strong>fee</strong> — information about the fee for transportation of animals; </li></ul><li><strong>minor</strong>— information about the fee for minors:</li><ul><li> <strong>age</strong> — age from which this tariff may be applied;</li><li> <strong>airline</strong> — IATA designator code;</li><li> <strong>booking</strong> — information about the booking;</li><li> <strong>aboutService</strong> — information about the servicing;</li><li> <strong>flightRestriction</strong> — information about restrictions;</li><li> <strong>fee</strong> — tariff fee.</li></ul><li>infant - information about the tariff for infants:</li> <ul><li><strong>payInternational</strong> — information about the tariff; <strong>exitRow</strong> — restrictions for selection of a seat near the emergency door;</li><li> <strong>childTurnTwo</strong> — tariff rules for transfer flights; </li><li><strong>reserveSeat</strong> — information about seats for infants; </li><li><strong>payInfant</strong> — payment information;</li><li> <strong>airline</strong> — IATA designator code; </li><li><strong>baggage</strong> — luggage in a ticket for an infant;</li><li> <strong>childRestraintDevices</strong> — information about transportation of luggage required for an infant (baby carriage, carrying bag, etc.);</li><li> <strong>infantAmenitites</strong> — information about additional services rendered on-board for an infant; </li><li><strong>payDomestic</strong> — additional fee.</li></ul></td>
-</tr>
-</tbody></table>
-<h2 id='how-to-get-a-link-to-the-agency-website-2'>How to get a link to the agency website</h2>
 <aside class="warning">Attention! The reference to the agency's website must be received only when the user clicks the "Buy" button. Automatic collection of all links from the answer is prohibited. Violation of this rule will disable the API search for the partner. </aside>
 
 <p>To get a link to the site of the ticket booking agencies:</p>
