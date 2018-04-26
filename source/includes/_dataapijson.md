@@ -500,7 +500,7 @@ GET `https://api.travelpayouts.com/data/airlines_alliances.json`
 ```json
 [{
     "name":"oneworld",
-    "airlines":["4M","AA","AB","BA","CX","AY","HG","IB","JC","JL","JO","KA","LA","LP","MA","MN","MX","NU","QF","RJ","S7","XL"]
+    "airlines":["4M","AA","AB","BA"]
 }]
 ```
 
