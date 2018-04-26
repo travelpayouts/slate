@@ -137,20 +137,20 @@ token | - | Individual affiliate token.
 }
 ```
 
-Parameter | Default | Description
---------- | ------- | -----------
- Origin | - | The point of departure.
- destination | - | The point of destination.
- show_to_affiliates | true | False - all the prices, true — just the prices, found using the partner marker (recommended)
- trip_class | - | The flight class: **0** — the economy class, **1** — the business class, **2** — the first class.
- depart_date | - | The date of departure.
- return_date | - | The date of return.
- number_of_changes | - | The number of transfers.
- value | - | The cost of a flight, in the currency specified.
- found_at | - | The time and the date, for which a ticket was found.
- distance | - | The distance between the point of departure and the point of destination.
- actual | - | The actuality of an offer.
- token | - | Individual affiliate token.
+Parameter |Description
+--------- | -----------
+ Origin | The point of departure.
+ destination | The point of destination.
+ show_to_affiliates | False - all the prices, true — just the prices, found using the partner marker (recommended)
+ trip_class | The flight class: **0** — the economy class, **1** — the business class, **2** — the first class.
+ depart_date | The date of departure.
+ return_date | The date of return.
+ number_of_changes | The number of transfers.
+ value | The cost of a flight, in the currency specified.
+ found_at | The time and the date, for which a ticket was found.
+ distance | The distance between the point of departure and the point of destination.
+ actual | The actuality of an offer.
+ token | Individual affiliate token.
 
 ## The calendar of prices for a month
 
@@ -267,19 +267,19 @@ token | - | Individual affiliate token.
 }
 ```
 
-Parameter | Default | Description
---------- | ------- | -----------
- origin | - | The point of departure.
- destination | - | The point of destination.
- show_to_affiliates | true | False - all the prices, true - just the prices, found using the partner marker (recommended).
- trip_class | - | The flight class: **0** — The economy class, **1** — The business class, **2** — The first class.
- depart_date | - | The date of departure.
- return_date | - | The date of return.
- number_of_changes | - | The number of transfers.
- value | - | The cost of a flight, in the currency specified.
- found_at | - | The time and the date, for which a ticket was found.
- distance | - | The distance between the point of departure and the point of destination.
- actual | - | The actuality of an offer.
+Parameter | Description
+--------- | -----------
+ origin | The point of departure.
+ destination | The point of destination.
+ show_to_affiliates | False - all the prices, true - just the prices, found using the partner marker (recommended).
+ trip_class | The flight class: **0** — The economy class, **1** — The business class, **2** — The first class.
+ depart_date | The date of departure.
+ return_date | The date of return.
+ number_of_changes | The number of transfers.
+ value | The cost of a flight, in the currency specified.
+ found_at | The time and the date, for which a ticket was found.
+ distance | The distance between the point of departure and the point of destination.
+ actual | The actuality of an offer.
 
 ## The prices for the alternative directions
 
@@ -406,23 +406,23 @@ depart_date** *(optional)* | - | Day or month of departure (yyyy-mm-dd or yyyy-m
 }
 ```
 
-Parameter | Default | Description
---------- | ------- | -----------
- origin | - | The point of departure.
- destination | - | The point of destination.
- show_to_affiliates | true | False - all the prices, true - just the prices, found using the partner marker (recommended).
- trip_class | - | The flight class: **0** — the economy class, **1** — the business class, **2** — the first class.
- depart_date | - | The date of departure.
- return_date | - | The date of return.
- number_of_changes | - | The number of transfers.
- value | - | The cost of a flight, in the currency specified.
- found_at | - | The time and the date, for which a ticket was found.
- distance | - | The distance between the point of departure and the point of destination.
- actual | - | The actuality of an offer.
- duration | - | Flight duration in minutes, taking into account direct and expectations.
- errors | - | If the error "Some error occurred" is returned, so in this area do not have the data in the cache.
- gate | - | The agents, which was found on the ticket.
- token | - | Individual affiliate token.
+Parameter | Description
+--------- | -----------
+ origin | The point of departure.
+ destination | The point of destination.
+ show_to_affiliates | False - all the prices, true - just the prices, found using the partner marker (recommended).
+ trip_class | The flight class: **0** — the economy class, **1** — the business class, **2** — the first class.
+ depart_date | The date of departure.
+ return_date | The date of return.
+ number_of_changes | The number of transfers.
+ value | The cost of a flight, in the currency specified.
+ found_at | The time and the date, for which a ticket was found.
+ distance | The distance between the point of departure and the point of destination.
+ actual | The actuality of an offer.
+ duration | Flight duration in minutes, taking into account direct and expectations.
+ errors | If the error "Some error occurred" is returned, so in this area do not have the data in the cache.
+ gate | The agents, which was found on the ticket.
+ token | Individual affiliate token.
 
 ## The calendar of prices for a week
 
@@ -496,6 +496,11 @@ response = requests.request("GET", url, headers=headers, params=querystring)
 
 print(response.text)
 ```
+### Request
+
+GET `https://api.travelpayouts.com/v2/prices/week-matrix?currency=usd&origin=LED&destination=HKT&show_to_affiliates=true&depart_date=2016-09-04&return_date=2016-09-18&token=PutHereYourToken`
+
+### Request parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
@@ -531,25 +536,19 @@ Parameter | Default | Description
 }
 ```
 
-### Request
-
-GET `https://api.travelpayouts.com/v2/prices/week-matrix?currency=usd&origin=LED&destination=HKT&show_to_affiliates=true&depart_date=2016-09-04&return_date=2016-09-18&token=PutHereYourToken`
-
-### Request parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
- origin | - | The point of departure.
- destination | - | The point of destination.
- show_to_affiliates | true | False - all the prices, true - just the prices, found using the partner marker (recommended). 
- trip_class | - | The flight class: **0** — the economy class, **1** — the business class, **2** — the first class.
- depart_date | - | The date of departure.
- return_date | - | The date of return.
- number_of_changes | - | The number of transfers.
- value | - | The cost of a flight, in the currency specified.
- found_at | - | The time and the date, for which a ticket was found.
- distance | - | The distance between the point of departure and the point of destination.
- actual | - | The actuality of an offer.
+Parameter | Description
+--------- | -----------
+ origin | The point of departure.
+ destination | The point of destination.
+ show_to_affiliates | False - all the prices, true - just the prices, found using the partner marker (recommended). 
+ trip_class | The flight class: **0** — the economy class, **1** — the business class, **2** — the first class.
+ depart_date | The date of departure.
+ return_date | The date of return.
+ number_of_changes | The number of transfers.
+ value | The cost of a flight, in the currency specified.
+ found_at | The time and the date, for which a ticket was found.
+ distance | The distance between the point of departure and the point of destination.
+ actual | The actuality of an offer.
 
 ## The definition of a user's location by IP address
 
@@ -632,10 +631,10 @@ ip | - | Ip-addresses of the users (if the address is not passed, the system det
 useriata ({"iata": "MOW", "name": "Moscow"})
 ```
 
-Parameter | Default | Description
---------- | ------- | -----------
- iata | - | IATA code of the city where the user is located;
- name | - | The name of the city.
+Parameter | Description
+--------- | -----------
+ iata | IATA code of the city where the user is located;
+ name | The name of the city.
 
 ## Special offers
 
