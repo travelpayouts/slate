@@ -5,6 +5,7 @@ With the help of API, you can get the results of requests in real time and creat
 By default, one partner may send no more than 200 queries per hour for one IP, using the airline tickets search API. This restriction may be changed if a situation so requires.
 
 ## Аccess to the flights search API
+
 To access the flights search API you should be registered in our [travel affiliate program](https://travelpayouts.com/) and [submit your request](https://support.travelpayouts.com/hc/ru/requests/new) on with the following information:
 
 * URL of your website;
@@ -14,7 +15,7 @@ To access the flights search API you should be registered in our [travel affilia
 * Why aren’t the standard methods of integration (search forms, White Label, API access to data) suitable for you.
 * Requirements for flights search API access.
 
-<aside class="notice">Each search query must be initiated by the user and the results must be shown to the user in full. The results for each query must contain a “buy” button next to each flight option. </aside>
+<aside class="notice">Each search query must be initiated by the user and the results must be shown to the user in full. The results for each query must contain a “buy” button next to each flight option.</aside>
 
 The conversion rate for searches via the Buy link must be 9% or more. The conversion rate from the Buy button to actual purchases must be at least 5%.
 We'll also need to see the URL of your project, design prototypes, a description of your project, and how our API will be used.
@@ -25,28 +26,9 @@ We'll also need to see the URL of your project, design prototypes, a description
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/f8a2e594d4a2ea0e6a73)
 
-### Request initialization
+### Request parameters
 
-Request parameters:
-
-Parameter | Default | Description
---------- | ------- | -----------
-**marker** | - | the unique identifier of the affiliate. You can find your marker in the affiliate personal account
-**host** | - | host's request (must be replaced by the address of your website where the API will be used)
-**user_ip** | - | user's IP address
-**locale** | - | language of the search result (en-us, en-gb, ru, de, es, fr, pl). Аrom the locale depends on the set of agencies on which the search is performed
-**trip_class** | - | flight class (Y – Economy, C – Business)
-**passengers** | - | passenger Information
-**adults** | - | the number of adult passengers (from 1 to 9)
-**children** | - | the number of children (from 0 to 6)
-**infants** | - | the number of infants (from 0 to 6)
-**segments** | - | a list of the trip components: <li>**origin** - origin IATA or string "City, Country (IATA)". The IATA code is shown in uppercase letters (for example, "Paris, France (PAR)");</li><li>**destination** - destination IATA or string "City, Country (IATA)". The IATA code is shown in uppercase letters (for example, "Berlin, Germany (BER)");</l><li>**date** - departure date yyyy-mm-dd (for example, "2015-09-08");</li>
-**currency** | - | the currency in which the price of the ticket is displayed, after switching to the agency's website (provided that the agency supports this currency);
-**signature** | - | the request signature is constructed from token, marker, and all the values of the query parameters sorted alphabetically and separated by a colon. Learn how to create a signature look here.
-
-To get "Round trip" tickets, add a JSON to the body of the request:
-
-### Body example
+> Body example
 
 ```json
 {
@@ -76,48 +58,133 @@ To get "Round trip" tickets, add a JSON to the body of the request:
 } 
 ```
 
-To get data, use the initialization code of the search:
+Parameter | Default | Description
+--------- | ------- | -----------
+**marker** | - | the unique identifier of the affiliate. You can find your marker in the affiliate personal account
+**host** | - | host's request (must be replaced by the address of your website where the API will be used)
+**user_ip** | - | user's IP address
+**locale** | - | language of the search result (en-us, en-gb, ru, de, es, fr, pl). Аrom the locale depends on the set of agencies on which the search is performed
+**trip_class** | - | flight class (Y – Economy, C – Business)
+**passengers** | - | passenger Information
+**adults** | - | the number of adult passengers (from 1 to 9)
+**children** | - | the number of children (from 0 to 6)
+**infants** | - | the number of infants (from 0 to 6)
+**segments** | - | a list of the trip components: <li>**origin** - origin IATA or string "City, Country (IATA)". The IATA code is shown in uppercase letters (for example, "Paris, France (PAR)");</li><li>**destination** - destination IATA or string "City, Country (IATA)". The IATA code is shown in uppercase letters (for example, "Berlin, Germany (BER)");</l><li>**date** - departure date yyyy-mm-dd (for example, "2015-09-08");</li>
+**currency** | - | the currency in which the price of the ticket is displayed, after switching to the agency's website (provided that the agency supports this currency);
+**signature** | - | the request signature is constructed from token, marker, and all the values of the query parameters sorted alphabetically and separated by a colon. Learn how to create a signature look here.
 
->Request example
+To get "Round trip" tickets, add a JSON to the body of the request:
+
+> Request example
 
 ```shell
 curl -v -X POST -d '{"signature":"%MD5_signature%","marker":"%Put_Your_Marker_Here%","host":"beta.as.ru","user_ip":"127.0.0.1","locale":"ru","trip_class":"Y","passengers":{"adults":1,"children":0,"infants":0},"segments":[{"origin":"MOW","destination":"LON","date":"2018-05-25"},{"origin":"LON","destination":"MOW","date":"2018-06-18"}]}' -H 'Content-type:application/json' https://api.tp.com/v1/flight_search
 ```
 
+### Response
+
 The answer comes in JSON format. The response contains the parameters:
 
-Parameter | Default | Description
---------- | ------- | -----------
-**locale** | - | the language of the search result
-**search_id** | - | the unique identifier for the search query used to search results
-**geoip_city** | - | the geoip of the city where the request was made
-**trip_class** | - | the class of trip
-**affiliate** | - | the affiliate ID
-**marker** | - | the unique identifier of the affiliate;
-**user_ip** | - | the user's IP address
-**gates_count** | - | the total number of agencies
-**segments** | - | a list of the trip components:  <li> **date** - departure date; </li> <li>**origin** - origin IATA;</li> <li>**destination** - destination IATA;</li><li>**meta** - technical information;</li><li>**uuid** - unique identifier of the request;</li> <li> **passengers** - passenger information; </li> <li>**adults** - the number of adult passengers;</li><li>  **children**- the number of children;</li> <li> **infants** - the number of infants;</li><li> **host** - host's request;</li><li> **currency_rates** - exchange rate; </li><li>**geoip_country** - the geoip of the country where the request was made </li>
-
-<aside class="notice"> Please note! Use currency rates to convert the prices of flights to the currency you need (because the response contains the flight price in Russian rubles).</aside> 
-
-### Getting search results
-
-In the body of the response is the parameter search_id; insert it into the URL:
-
-https://api.tp.com/v1/flight_search_results?uuid=%search_id%
-
-Then send the request to the server for search results:
-
-```shell
-curl -v -H 'Accept-Encoding:gzip,deflate,sdch' https://api.tp.com/v1/flight_search_results?uuid=ebe4fa71-bc07-40df-ae4e-4b72116583da 
---compressed
+```json
+{
+  "chain_name": "jetradar_rt_search_native_format",
+  "locale": "en",
+  "user_env": {
+  },
+  "meta": {
+    "uuid": "d9266de5-7578-418f-9ddc-6b176ae45923"
+  },
+  "host": "beta.aviasales.ru",
+  "segments": [
+    {
+      "origin": "CPH",
+      "original_origin": "CPH",
+      "origin_country": "DK",
+      "destination": "ROM",
+      "date": "2018-06-24",
+      "destination_country": "IT",
+      "original_destination": "ROM"
+    },
+    {
+      "origin": "ROM",
+      "original_origin": "ROM",
+      "origin_country": "IT",
+      "destination": "CPH",
+      "date": "2018-06-25",
+      "destination_country": "DK",
+      "original_destination": "CPH"
+    }
+  ],
+  "affiliate_has_sales": true,
+  "show_ads": true,
+  "destination_country": "IT",
+  "passengers": {
+    "children": 0,
+    "adults": 1,
+    "infants": 0
+  },
+  "currency_rates": {
+    "lak": 0.0075,
+    "czk": 2.95961
+  },
+  "travelpayouts_api_request": true,
+  "auid": null,
+  "server_name": "zoo39.int.avs.io.yasen.bee.13",
+  "know_english": "false",
+  "currency": "usd",
+  "range": "false",
+  "geoip_city": "Unknown",
+  "metropoly_airports": {
+    "CPH": [
+      "CPH",
+      "CPH",
+      "ZGH",
+      "RKE"
+    ],
+    "ROM": [
+      "ROM",
+      "IRR",
+      "FCO",
+      "ROM",
+      "XRJ",
+      "IRT",
+      "CIA"
+    ]
+  },
+  "search_depth": 60,
+  "signature": "fb7ded0ddd86270a262d832322f46093",
+  "trip_class": "Y",
+  "affiliate": true,
+  "initiated_at": "2018-04-26 05:09:42.031853",
+  "user_id": null,
+  "start_search_timestamp": 1524719382.03045,
+  "gates_count": 0,
+  "market": "dk",
+  "user_ip": null,
+  "internal": false,
+  "_ga": null,
+  "clean_marker": "xxxxx",
+  "open_jaw": false,
+  "origin_country": "DK",
+  "marker": "xxxxx",
+  "search_id": "d9266de5-7578-418f-9ddc-6b176ae45923",
+  "geoip_country": "Unknown"
+}
 ```
 
-where `"ebe4fa71-bc07-40df-ae4e-4b72116583da"` this is search_id.
+Parameter | Description
+--------- | -----------
+**locale** | the language of the search result
+**search_id** | the unique identifier for the search query used to search results
+**geoip_city** | the geoip of the city where the request was made
+**trip_class** | the class of trip
+**affiliate** | the affiliate ID
+**marker** | the unique identifier of the affiliate;
+**user_ip** | the user's IP address
+**gates_count** | the total number of agencies
+**segments** | a list of the trip components:  <li> **date** - departure date; </li> <li>**origin** - origin IATA;</li> <li>**destination** - destination IATA;</li><li>**meta** - technical information;</li><li>**uuid** - unique identifier of the request;</li> <li> **passengers** - passenger information; </li> <li>**adults** - the number of adult passengers;</li><li>  **children**- the number of children;</li> <li> **infants** - the number of infants;</li><li> **host** - host's request;</li><li> **currency_rates** - exchange rate; </li><li>**geoip_country** - the geoip of the country where the request was made </li>
 
-<aside class="success">As a result of the search, you will get the JSON array, where each element is a response from a definite agency. </aside>
-
-Repeat the request until you get an associative array with one element **search_id**. The periodicity of sending requests isn't restricted.
+<aside class="notice">Please note! Use currency rates to convert the prices of flights to the currency you need (because the response contains the flight price in Russian rubles).</aside> 
 
 ## One way
 
@@ -152,27 +219,11 @@ To get "One-way" tickets, add a JSON into the body of the request.
 
 To get data, use the initialization code of the search:
 
->Request example
+> Request example
+
 ```shell
 curl -v -X POST -d '{"signature":"%MD5_signature%","marker":"%Put_Your_Marker_Here%","host":"beta.as.ru","user_ip":"127.0.0.1","locale":"ru","trip_class":"Y","passengers":{"adults":1,"children":0,"infants":0},"segments":[{"origin":"MOW","destination":"LED","date":"2017-06-18"}]}' -H 'Content-type:application/json' https://api.tp.com/v1/flight_search
 ```
-
-## Getting search results
-
-In the body of the response is the parameter search_id; insert it into the URL:
-
-https://api.tp.com/v1/flight_search_results?uuid=%search_id%
-Then send the request to the server for search results:
-
->Request example
-```shell
-curl -v -H 'Accept-Encoding:gzip,deflate,sdch' https://api.tp.com/v1/flight_search_results?uuid=%search_id% 
---compressed
-```
-
-<aside class="notice">As a result of the search, you will get the JSON array where each element is a response from a definite agency. </aside>
-
-<aside class="warning">Repeat the request until you get an associative array with one element search_id. The periodicity of sending requests isn't restricted. </aside>
 
 ## Open jaw
 
@@ -183,6 +234,48 @@ Open jaw is a round-trip ticket in which the traveller does not arrive in the sa
 To get "Open jaw" tickets, add a JSON into the body of the request:
 
 ### Body example
+
+```json
+{
+    "signature": "%MD5_signature%",
+    "marker": "%Put_Your_Marker_Here%",
+    "host": "beta.as.ru",
+    "user_ip": "127.0.0.1",
+    "locale": "ru",
+    "trip_class": "Y",
+    "passengers": {
+        "adults": 1,
+        "children": 0,
+        "infants": 0
+    },
+    "segments": [
+        {
+            "origin": "MOW",
+            "destination": "LED",
+            "date": "2017-06-18"
+        }
+    ]
+}
+```
+
+### Request parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+**marker** | - | the unique identifier of the affiliate. You can find your marker in the affiliate personal account
+**host** | - | host's request (must be replaced by the address of your website where the API will be used)
+**user_ip** | - | user's IP address
+**locale** | - | language of the search result (en-us, en-gb, ru, de, es, fr, pl). Аrom the locale depends on the set of agencies on which the search is performed
+**trip_class** | - | flight class (Y – Economy, C – Business)
+**passengers** | - | passenger Information
+**adults** | - | the number of adult passengers (from 1 to 9)
+**children** | - | the number of children (from 0 to 6)
+**infants** | - | the number of infants (from 0 to 6)
+**segments** | - | a list of the trip components: <li>**origin** - origin IATA or string "City, Country (IATA)". The IATA code is shown in uppercase letters (for example, "Paris, France (PAR)");</li><li>**destination** - destination IATA or string "City, Country (IATA)". The IATA code is shown in uppercase letters (for example, "Berlin, Germany (BER)");</l><li>**date** - departure date yyyy-mm-dd (for example, "2015-09-08");</li>
+**currency** | - | the currency in which the price of the ticket is displayed, after switching to the agency's website (provided that the agency supports this currency);
+**signature** | - | the request signature is constructed from token, marker, and all the values of the query parameters sorted alphabetically and separated by a colon. Learn how to create a signature look here.
+
+> Body example
 
 ```json
 {
@@ -216,9 +309,11 @@ To get "Open jaw" tickets, add a JSON into the body of the request:
     ]
 }
 ```
+
 To get data, use the initialization code of the search:
 
->Request example
+> Request example
+
 ```shell
 curl -v -X POST -d '{"signature":"%MD5_signature%","marker":"%Put_Your_Marker_Here%","host":"beta.as.ru","user_ip":"127.0.0.1","locale":"ru","trip_class":"Y","passengers":{"adults":1,"children":0,"infants":0},"segments":[{"origin":"MOW","destination":"LED","date":"2017-06-18"},{"origin":"LED","destination":"BER","date":"2017-06-25"},{"origin":"BER","destination":"LON","date":"2017-07-05"}]}' -H 'Content-type:application/json' https://api.tp.com/v1/flight_search
 ```
@@ -231,11 +326,13 @@ https://api.tp.com/v1/flight_search_results?uuid=%search_id%
 
 Then send the request to the server for search results:
 
->Request example
+> Request example
+
 ```shell
 curl -v -H 'Accept-Encoding:gzip,deflate,sdch' https://api.tp.com/v1/flight_search_results?uuid=%search_id% 
 --compressed
 ```
+
 <aside class="notice">As a result of the search, you will get the JSON array where each element is a response from a definite agency. </aside>
 
 <aside class="warning">Repeat the request until you get an associative array with one element search_id. The periodicity of sending requests isn't restricted. </aside>
