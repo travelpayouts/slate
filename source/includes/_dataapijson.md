@@ -653,7 +653,7 @@ print response_body
 
 ### Request
 
-GET `https://api.travelpayouts.com/data/planes.json`
+GET `https://api.travelpayouts.com/data/routes.json`
 
 ### Response
 
