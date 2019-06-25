@@ -2101,19 +2101,19 @@ Note. If the point of departure and the point of destination are not specified, 
 <p>GET <code>https://api.travelpayouts.com/v2/prices/special-offers?token=PutHereYourToken</code></p>
 <h1 id='some-data-in-json-format'>Some data in JSON format</h1>
 <aside class="notice">
-Note! The data in the JSON files is updated no more than twice a year.
+Note! Additionally we created translations for different languages for all data https://api.travelpayouts.com/data/
 </aside>
 <h2 id='data-of-countries-in-json-format'>Data of countries in JSON format</h2>
 <p>The query returns a file with a list of countries from the database. </p>
 
 <p><a href="https://app.getpostman.com/run-collection/c79ab5bb9bb4c92ad23d"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman" /></a></p>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
-  --url <span class="s1">'https://api.travelpayouts.com/data/countries.json'</span> <span class="se">\</span>
+  --url <span class="s1">'https://api.travelpayouts.com/data/en/countries.json'</span> <span class="se">\</span>
   --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/https'</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://api.travelpayouts.com/data/countries.json"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://api.travelpayouts.com/data/en/countries.json"</span>
 <span class="n">https</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTPS</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
 
 <span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTPS</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
@@ -2126,7 +2126,7 @@ Note! The data in the JSON files is updated no more than twice a year.
 <span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
 
 <span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
-  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://api.travelpayouts.com/data/countries.json"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://api.travelpayouts.com/data/en/countries.json"</span><span class="p">,</span>
   <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
   <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
   <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
@@ -2150,7 +2150,7 @@ Note! The data in the JSON files is updated no more than twice a year.
 <span class="p">}</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.travelpayouts.com/data/countries.json"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.travelpayouts.com/data/en/countries.json"</span>
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x-access-token'</span><span class="p">:</span> <span class="s">'321d6a221f8926b5ec41ae89a3b2ae7b'</span><span class="p">}</span>
 
@@ -2158,7 +2158,7 @@ Note! The data in the JSON files is updated no more than twice a year.
 
 <span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre><h3 id='request'>Request</h3>
-<p>GET <code>https://api.travelpayouts.com/data/countries.json</code></p>
+<p>GET <code>https://api.travelpayouts.com/data/en/countries.json</code></p>
 <h3 id='response'>Response</h3>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -2215,12 +2215,12 @@ Note! The data in the JSON files is updated no more than twice a year.
 <p>Example of a request:</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
-  --url <span class="s1">'https://api.travelpayouts.com/data/cities.json'</span> <span class="se">\</span>
+  --url <span class="s1">'https://api.travelpayouts.com/data/en/cities.json'</span> <span class="se">\</span>
   --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/https'</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.travelpayouts.com/data/cities.json"</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.travelpayouts.com/data/en/cities.json"</span><span class="p">)</span>
 
 <span class="n">https</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTPS</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
 
@@ -2234,7 +2234,7 @@ Note! The data in the JSON files is updated no more than twice a year.
 <span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
 
 <span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
-  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://api.travelpayouts.com/data/cities.json"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://api.travelpayouts.com/data/en/cities.json"</span><span class="p">,</span>
   <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
   <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
   <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
@@ -2258,7 +2258,7 @@ Note! The data in the JSON files is updated no more than twice a year.
 <span class="p">}</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.travelpayouts.com/data/cities.json"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.travelpayouts.com/data/en/cities.json"</span>
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x-access-token'</span><span class="p">:</span> <span class="s">'321d6a221f8926b5ec41ae89a3b2ae7b'</span><span class="p">}</span>
 
@@ -2266,7 +2266,7 @@ Note! The data in the JSON files is updated no more than twice a year.
 
 <span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre><h3 id='request-2'>Request</h3>
-<p>GET <code>https://api.travelpayouts.com/data/cities.json</code></p>
+<p>GET <code>https://api.travelpayouts.com/data/en/cities.json</code></p>
 <h3 id='response-2'>Response</h3>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -2340,12 +2340,12 @@ Note! The data in the JSON files is updated no more than twice a year.
 <p>Example of request:</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
-  --url <span class="s1">'https://api.travelpayouts.com/data/airports.json'</span> <span class="se">\</span>
+  --url <span class="s1">'https://api.travelpayouts.com/data/en/airports.json'</span> <span class="se">\</span>
   --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/https'</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.travelpayouts.com/data/airports.json"</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.travelpayouts.com/data/en/airports.json"</span><span class="p">)</span>
 
 <span class="n">https</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTPS</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
 
@@ -2359,7 +2359,7 @@ Note! The data in the JSON files is updated no more than twice a year.
 <span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
 
 <span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
-  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://api.travelpayouts.com/data/airports.json"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://api.travelpayouts.com/data/en/airports.json"</span><span class="p">,</span>
   <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
   <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
   <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
@@ -2383,7 +2383,7 @@ Note! The data in the JSON files is updated no more than twice a year.
 <span class="p">}</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.travelpayouts.com/data/airports.json"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.travelpayouts.com/data/en/airports.json"</span>
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x-access-token'</span><span class="p">:</span> <span class="s">'321d6a221f8926b5ec41ae89a3b2ae7b'</span><span class="p">}</span>
 
@@ -2391,7 +2391,7 @@ Note! The data in the JSON files is updated no more than twice a year.
 
 <span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre><h3 id='request-3'>Request</h3>
-<p>GET <code>https://api.travelpayouts.com/data/airports.json</code></p>
+<p>GET <code>https://api.travelpayouts.com/data/en/airports.json</code></p>
 <h3 id='response-3'>Response</h3>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -2474,12 +2474,12 @@ Note! The data in the JSON files is updated no more than twice a year.
 <p>Example of a request:</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
-  --url <span class="s1">'https://api.travelpayouts.com/data/airlines.json'</span> <span class="se">\</span>
+  --url <span class="s1">'https://api.travelpayouts.com/data/en/airlines.json'</span> <span class="se">\</span>
   --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/https'</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.travelpayouts.com/data/airlines.json"</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.travelpayouts.com/data/en/airlines.json"</span><span class="p">)</span>
 
 <span class="n">https</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTPS</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
 
@@ -2493,7 +2493,7 @@ Note! The data in the JSON files is updated no more than twice a year.
 <span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
 
 <span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
-  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://api.travelpayouts.com/data/airlines.json"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://api.travelpayouts.com/data/en/airlines.json"</span><span class="p">,</span>
   <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
   <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
   <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
@@ -2517,7 +2517,7 @@ Note! The data in the JSON files is updated no more than twice a year.
 <span class="p">}</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.travelpayouts.com/data/airlines.json"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.travelpayouts.com/data/en/airlines.json"</span>
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x-access-token'</span><span class="p">:</span> <span class="s">'321d6a221f8926b5ec41ae89a3b2ae7b'</span><span class="p">}</span>
 
@@ -2525,7 +2525,7 @@ Note! The data in the JSON files is updated no more than twice a year.
 
 <span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre><h3 id='request-4'>Request</h3>
-<p>GET <code>https://api.travelpayouts.com/data/airlines.json</code></p>
+<p>GET <code>https://api.travelpayouts.com/data/en/airlines.json</code></p>
 <h3 id='response-4'>Response</h3>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -2590,20 +2590,20 @@ Note! The data in the JSON files is updated no more than twice a year.
 <p>Example of a request:</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
-  --url <span class="s1">'https://api.travelpayouts.com/data/airlines_alliances.json'</span> <span class="se">\</span>
+  --url <span class="s1">'https://api.travelpayouts.com/data/en/airlines_alliances.json'</span> <span class="se">\</span>
   --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span> <span class="k">if</span> <span class="no">RUBY_VERSION</span> <span class="o">&lt;</span> <span class="s1">'1.9'</span>
 <span class="nb">require</span> <span class="s1">'rest_client'</span>
 
 <span class="n">headers</span>  <span class="o">=</span> <span class="p">{</span><span class="ss">:x_access_token</span> <span class="o">=&gt;</span> <span class="s2">"YOUR_API_TOKEN_HERE"</span><span class="p">}</span>
-<span class="n">response</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s2">"https://api.travelpayouts.com/data/airlines_alliances.json"</span><span class="p">,</span> <span class="n">headers</span>
+<span class="n">response</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s2">"https://api.travelpayouts.com/data/en/airlines_alliances.json"</span><span class="p">,</span> <span class="n">headers</span>
 <span class="nb">puts</span> <span class="n">response</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 
 <span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
 
 <span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
-  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://api.travelpayouts.com/data/airlines_alliances.json"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://api.travelpayouts.com/data/en/airlines_alliances.json"</span><span class="p">,</span>
   <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
   <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
   <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
@@ -2627,11 +2627,11 @@ Note! The data in the JSON files is updated no more than twice a year.
 <span class="p">}</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">urllib2</span> <span class="kn">import</span> <span class="n">Request</span><span class="p">,</span> <span class="n">urlopen</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"X-Access-Token"</span><span class="p">:</span> <span class="s">"YOUR_API_TOKEN_HERE"</span><span class="p">}</span>
-<span class="n">request</span> <span class="o">=</span> <span class="n">Request</span><span class="p">(</span><span class="s">"https://api.travelpayouts.com/data/airlines_alliances.json"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">request</span> <span class="o">=</span> <span class="n">Request</span><span class="p">(</span><span class="s">"https://api.travelpayouts.com/data/en/airlines_alliances.json"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 <span class="n">response_body</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="k">print</span> <span class="n">response_body</span>
 </code></pre><h3 id='request-5'>Request</h3>
-<p>GET <code>https://api.travelpayouts.com/data/airlines_alliances.json</code></p>
+<p>GET <code>https://api.travelpayouts.com/data/en/airlines_alliances.json</code></p>
 <h3 id='response-5'>Response</h3>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -2668,20 +2668,20 @@ Note! The data in the JSON files is updated no more than twice a year.
 <p>Example of request:</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
-  --url <span class="s1">'https://api.travelpayouts.com/data/planes.json'</span> <span class="se">\</span>
+  --url <span class="s1">'https://api.travelpayouts.com/data/en/planes.json'</span> <span class="se">\</span>
   --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span> <span class="k">if</span> <span class="no">RUBY_VERSION</span> <span class="o">&lt;</span> <span class="s1">'1.9'</span>
 <span class="nb">require</span> <span class="s1">'rest_client'</span>
 
 <span class="n">headers</span>  <span class="o">=</span> <span class="p">{</span><span class="ss">:x_access_token</span> <span class="o">=&gt;</span> <span class="s2">"YOUR_API_TOKEN_HERE"</span><span class="p">}</span>
-<span class="n">response</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s2">"https://api.travelpayouts.com/data/planes.json"</span><span class="p">,</span> <span class="n">headers</span>
+<span class="n">response</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s2">"https://api.travelpayouts.com/data/en/planes.json"</span><span class="p">,</span> <span class="n">headers</span>
 <span class="nb">puts</span> <span class="n">response</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 
 <span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
 
 <span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
-  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://api.travelpayouts.com/data/planes.json"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://api.travelpayouts.com/data/en/planes.json"</span><span class="p">,</span>
   <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
   <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
   <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
@@ -2705,11 +2705,11 @@ Note! The data in the JSON files is updated no more than twice a year.
 <span class="p">}</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">urllib2</span> <span class="kn">import</span> <span class="n">Request</span><span class="p">,</span> <span class="n">urlopen</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"X-Access-Token"</span><span class="p">:</span> <span class="s">"YOUR_API_TOKEN_HERE"</span><span class="p">}</span>
-<span class="n">request</span> <span class="o">=</span> <span class="n">Request</span><span class="p">(</span><span class="s">"https://api.travelpayouts.com/data/planes.json"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">request</span> <span class="o">=</span> <span class="n">Request</span><span class="p">(</span><span class="s">"https://api.travelpayouts.com/data/en/planes.json"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 <span class="n">response_body</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="k">print</span> <span class="n">response_body</span>
 </code></pre><h3 id='request-6'>Request</h3>
-<p>GET <code>https://api.travelpayouts.com/data/planes.json</code></p>
+<p>GET <code>https://api.travelpayouts.com/data/en/planes.json</code></p>
 <h3 id='response-6'>Response</h3>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -2746,20 +2746,20 @@ Note! The data in the JSON files is updated no more than twice a year.
 <p>Example of request:</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
-  --url <span class="s1">'https://api.travelpayouts.com/data/routes.json'</span> <span class="se">\</span>
+  --url <span class="s1">'https://api.travelpayouts.com/data/en/routes.json'</span> <span class="se">\</span>
   --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span> <span class="k">if</span> <span class="no">RUBY_VERSION</span> <span class="o">&lt;</span> <span class="s1">'1.9'</span>
 <span class="nb">require</span> <span class="s1">'rest_client'</span>
 
 <span class="n">headers</span>  <span class="o">=</span> <span class="p">{</span><span class="ss">:x_access_token</span> <span class="o">=&gt;</span> <span class="s2">"YOUR_API_TOKEN_HERE"</span><span class="p">}</span>
-<span class="n">response</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s2">"https://api.travelpayouts.com/data/routes.json"</span><span class="p">,</span> <span class="n">headers</span>
+<span class="n">response</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s2">"https://api.travelpayouts.com/data/en/routes.json"</span><span class="p">,</span> <span class="n">headers</span>
 <span class="nb">puts</span> <span class="n">response</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 
 <span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
 
 <span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
-  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://api.travelpayouts.com/data/routes.json"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://api.travelpayouts.com/data/en/routes.json"</span><span class="p">,</span>
   <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
   <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
   <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
@@ -2783,11 +2783,11 @@ Note! The data in the JSON files is updated no more than twice a year.
 <span class="p">}</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">urllib2</span> <span class="kn">import</span> <span class="n">Request</span><span class="p">,</span> <span class="n">urlopen</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"X-Access-Token"</span><span class="p">:</span> <span class="s">"YOUR_API_TOKEN_HERE"</span><span class="p">}</span>
-<span class="n">request</span> <span class="o">=</span> <span class="n">Request</span><span class="p">(</span><span class="s">"https://api.travelpayouts.com/data/routes.json"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">request</span> <span class="o">=</span> <span class="n">Request</span><span class="p">(</span><span class="s">"https://api.travelpayouts.com/data/en/routes.json"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 <span class="n">response_body</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="k">print</span> <span class="n">response_body</span>
 </code></pre><h3 id='request-7'>Request</h3>
-<p>GET <code>https://api.travelpayouts.com/data/routes.json</code></p>
+<p>GET <code>https://api.travelpayouts.com/data/en/routes.json</code></p>
 <h3 id='response-7'>Response</h3>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
