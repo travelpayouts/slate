@@ -78,7 +78,7 @@ To get "Round trip" tickets, add a JSON to the body of the request:
 > Request example
 
 ```shell
-curl -v -X POST -d '{"signature":"%MD5_signature%","marker":"%Put_Your_Marker_Here%","host":"beta.as.ru","user_ip":"127.0.0.1","locale":"ru","trip_class":"Y","passengers":{"adults":1,"children":0,"infants":0},"segments":[{"origin":"MOW","destination":"LON","date":"2018-05-25"},{"origin":"LON","destination":"MOW","date":"2018-06-18"}]}' -H 'Content-type:application/json' https://api.tp.com/v1/flight_search
+curl -v -X POST -d '{"signature":"%MD5_signature%","marker":"%Put_Your_Marker_Here%","host":"beta.as.ru","user_ip":"127.0.0.1","locale":"ru","trip_class":"Y","passengers":{"adults":1,"children":0,"infants":0},"segments":[{"origin":"MOW","destination":"LON","date":"2018-05-25"},{"origin":"LON","destination":"MOW","date":"2018-06-18"}]}' -H 'Content-type:application/json' https://api.travelpayouts.com/v1/flight_search
 ```
 
 ### Response
@@ -222,7 +222,7 @@ To get data, use the initialization code of the search:
 > Request example
 
 ```shell
-curl -v -X POST -d '{"signature":"%MD5_signature%","marker":"%Put_Your_Marker_Here%","host":"beta.as.ru","user_ip":"127.0.0.1","locale":"ru","trip_class":"Y","passengers":{"adults":1,"children":0,"infants":0},"segments":[{"origin":"MOW","destination":"LED","date":"2017-06-18"}]}' -H 'Content-type:application/json' https://api.tp.com/v1/flight_search
+curl -v -X POST -d '{"signature":"%MD5_signature%","marker":"%Put_Your_Marker_Here%","host":"beta.as.ru","user_ip":"127.0.0.1","locale":"ru","trip_class":"Y","passengers":{"adults":1,"children":0,"infants":0},"segments":[{"origin":"MOW","destination":"LED","date":"2017-06-18"}]}' -H 'Content-type:application/json' https://api.travelpayouts.com/v1/flight_search
 ```
 
 ## Open jaw
@@ -315,21 +315,21 @@ To get data, use the initialization code of the search:
 > Request example
 
 ```shell
-curl -v -X POST -d '{"signature":"%MD5_signature%","marker":"%Put_Your_Marker_Here%","host":"beta.as.ru","user_ip":"127.0.0.1","locale":"ru","trip_class":"Y","passengers":{"adults":1,"children":0,"infants":0},"segments":[{"origin":"MOW","destination":"LED","date":"2017-06-18"},{"origin":"LED","destination":"BER","date":"2017-06-25"},{"origin":"BER","destination":"LON","date":"2017-07-05"}]}' -H 'Content-type:application/json' https://api.tp.com/v1/flight_search
+curl -v -X POST -d '{"signature":"%MD5_signature%","marker":"%Put_Your_Marker_Here%","host":"beta.as.ru","user_ip":"127.0.0.1","locale":"ru","trip_class":"Y","passengers":{"adults":1,"children":0,"infants":0},"segments":[{"origin":"MOW","destination":"LED","date":"2017-06-18"},{"origin":"LED","destination":"BER","date":"2017-06-25"},{"origin":"BER","destination":"LON","date":"2017-07-05"}]}' -H 'Content-type:application/json' https://api.travelpayouts.com/v1/flight_search
 ```
 
 ## Getting search results
 
 In the body of the response is the parameter search_id; insert it into the URL:
 
-https://api.tp.com/v1/flight_search_results?uuid=%search_id%
+https://api.travelpayouts.com/v1/flight_search_results?uuid=%search_id%
 
 Then send the request to the server for search results:
 
 > Request example
 
 ```shell
-curl -v -H 'Accept-Encoding:gzip,deflate,sdch' https://api.tp.com/v1/flight_search_results?uuid=%search_id% 
+curl -v -H 'Accept-Encoding:gzip,deflate,sdch' https://api.travelpayouts.com/v1/flight_search_results?uuid=%search_id% 
 --compressed
 ```
 
@@ -613,7 +613,7 @@ checkin | - | ways to register provided by an airline company: <li>**mobileCheck
 To get a link to the site of the ticket booking agencies:
 
 1. Send a request to the following address:
-https://api.tp.com/v1/flight_searches/%search_id%/clicks/%terms.url%.json
+https://api.travelpayouts.com/v1/flight_searches/%search_id%/clicks/%terms.url%.json
 
 where `search_id` is the ID from the answer of the request, `terms.url` - URL parameter from the response.
 
