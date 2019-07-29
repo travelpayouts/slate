@@ -3161,7 +3161,7 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 <blockquote>
 <p>Request example</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -v -X POST -d <span class="s1">'{"signature":"%MD5_signature%","marker":"%Put_Your_Marker_Here%","host":"beta.as.ru","user_ip":"127.0.0.1","locale":"ru","trip_class":"Y","passengers":{"adults":1,"children":0,"infants":0},"segments":[{"origin":"MOW","destination":"LON","date":"2018-05-25"},{"origin":"LON","destination":"MOW","date":"2018-06-18"}]}'</span> -H <span class="s1">'Content-type:application/json'</span> https://api.tp.com/v1/flight_search
+<pre class="highlight shell tab-shell"><code>curl -v -X POST -d <span class="s1">'{"signature":"%MD5_signature%","marker":"%Put_Your_Marker_Here%","host":"beta.as.ru","user_ip":"127.0.0.1","locale":"ru","trip_class":"Y","passengers":{"adults":1,"children":0,"infants":0},"segments":[{"origin":"MOW","destination":"LON","date":"2018-05-25"},{"origin":"LON","destination":"MOW","date":"2018-06-18"}]}'</span> -H <span class="s1">'Content-type:application/json'</span> https://api.travelpayouts.com/v1/flight_search
 </code></pre><h3 id='response'>Response</h3>
 <p>The answer comes in JSON format. The response contains the parameters:</p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -3322,7 +3322,7 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 <blockquote>
 <p>Request example</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -v -X POST -d <span class="s1">'{"signature":"%MD5_signature%","marker":"%Put_Your_Marker_Here%","host":"beta.as.ru","user_ip":"127.0.0.1","locale":"ru","trip_class":"Y","passengers":{"adults":1,"children":0,"infants":0},"segments":[{"origin":"MOW","destination":"LED","date":"2017-06-18"}]}'</span> -H <span class="s1">'Content-type:application/json'</span> https://api.tp.com/v1/flight_search
+<pre class="highlight shell tab-shell"><code>curl -v -X POST -d <span class="s1">'{"signature":"%MD5_signature%","marker":"%Put_Your_Marker_Here%","host":"beta.as.ru","user_ip":"127.0.0.1","locale":"ru","trip_class":"Y","passengers":{"adults":1,"children":0,"infants":0},"segments":[{"origin":"MOW","destination":"LED","date":"2017-06-18"}]}'</span> -H <span class="s1">'Content-type:application/json'</span> https://api.travelpayouts.com/v1/flight_search
 </code></pre><h2 id='open-jaw'>Open jaw</h2><h3 id='request-initialization-2'>Request initialization</h3>
 <p>Open jaw is a round-trip ticket in which the traveller does not arrive in the same city of departure and/or does not depart from the same city where he/she first landed. For example, London - Paris - Berlin - London.</p>
 
@@ -3456,18 +3456,18 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 <blockquote>
 <p>Request example</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -v -X POST -d <span class="s1">'{"signature":"%MD5_signature%","marker":"%Put_Your_Marker_Here%","host":"beta.as.ru","user_ip":"127.0.0.1","locale":"ru","trip_class":"Y","passengers":{"adults":1,"children":0,"infants":0},"segments":[{"origin":"MOW","destination":"LED","date":"2017-06-18"},{"origin":"LED","destination":"BER","date":"2017-06-25"},{"origin":"BER","destination":"LON","date":"2017-07-05"}]}'</span> -H <span class="s1">'Content-type:application/json'</span> https://api.tp.com/v1/flight_search
+<pre class="highlight shell tab-shell"><code>curl -v -X POST -d <span class="s1">'{"signature":"%MD5_signature%","marker":"%Put_Your_Marker_Here%","host":"beta.as.ru","user_ip":"127.0.0.1","locale":"ru","trip_class":"Y","passengers":{"adults":1,"children":0,"infants":0},"segments":[{"origin":"MOW","destination":"LED","date":"2017-06-18"},{"origin":"LED","destination":"BER","date":"2017-06-25"},{"origin":"BER","destination":"LON","date":"2017-07-05"}]}'</span> -H <span class="s1">'Content-type:application/json'</span> https://api.travelpayouts.com/v1/flight_search
 </code></pre><h2 id='getting-search-results'>Getting search results</h2>
 <p>In the body of the response is the parameter search_id; insert it into the URL:</p>
 
-<p>https://api.tp.com/v1/flight_search_results?uuid=%search_id%</p>
+<p>https://api.travelpayouts.com/v1/flight_search_results?uuid=%search_id%</p>
 
 <p>Then send the request to the server for search results:</p>
 
 <blockquote>
 <p>Request example</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -v -H <span class="s1">'Accept-Encoding:gzip,deflate,sdch'</span> https://api.tp.com/v1/flight_search_results?uuid<span class="o">=</span>%search_id% 
+<pre class="highlight shell tab-shell"><code>curl -v -H <span class="s1">'Accept-Encoding:gzip,deflate,sdch'</span> https://api.travelpayouts.com/v1/flight_search_results?uuid<span class="o">=</span>%search_id% 
 --compressed
 </code></pre>
 <aside class="notice">As a result of the search, you will get the JSON array where each element is a response from a definite agency. </aside>
@@ -3884,7 +3884,7 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 
 <ol>
 <li>Send a request to the following address:
-https://api.tp.com/v1/flight_searches/%search_id%/clicks/%terms.url%.json</li>
+https://api.travelpayouts.com/v1/flight_searches/%search_id%/clicks/%terms.url%.json</li>
 </ol>
 
 <p>where <code>search_id</code> is the ID from the answer of the request, <code>terms.url</code> - URL parameter from the response.</p>
