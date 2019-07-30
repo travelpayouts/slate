@@ -3069,9 +3069,9 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
     </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"trip_class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Y"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"passengers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"adults"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"infants"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+        </span><span class="s2">"adults"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"infants"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"segments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -3090,33 +3090,33 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Default</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td><strong>marker</strong></td>
-<td>-</td>
+<td>string</td>
 <td>the unique identifier of the affiliate. You can find your marker in the affiliate personal account</td>
 </tr>
 <tr>
 <td><strong>host</strong></td>
-<td>-</td>
+<td>string</td>
 <td>host&#39;s request (must be replaced by the address of your website where the API will be used)</td>
 </tr>
 <tr>
 <td><strong>user_ip</strong></td>
-<td>-</td>
+<td>string</td>
 <td>user&#39;s IP address</td>
 </tr>
 <tr>
 <td><strong>locale</strong></td>
-<td>-</td>
+<td>string</td>
 <td>language of the search result (en-us, en-gb, ru, de, es, fr, pl). Аrom the locale depends on the set of agencies on which the search is performed</td>
 </tr>
 <tr>
 <td><strong>trip_class</strong></td>
-<td>-</td>
+<td>string</td>
 <td>flight class (Y – Economy, C – Business)</td>
 </tr>
 <tr>
@@ -3126,32 +3126,32 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 </tr>
 <tr>
 <td><strong>adults</strong></td>
-<td>-</td>
+<td>integer</td>
 <td>the number of adult passengers (from 1 to 9)</td>
 </tr>
 <tr>
 <td><strong>children</strong></td>
-<td>-</td>
+<td>integer</td>
 <td>the number of children (from 0 to 6)</td>
 </tr>
 <tr>
 <td><strong>infants</strong></td>
-<td>-</td>
+<td>integer</td>
 <td>the number of infants (from 0 to 6)</td>
 </tr>
 <tr>
 <td><strong>segments</strong></td>
 <td>-</td>
-<td>a list of the trip components: <li><strong>origin</strong> - origin IATA or string &quot;City, Country (IATA)&quot;. The IATA code is shown in uppercase letters (for example, &quot;Paris, France (PAR)&quot;);</li><li><strong>destination</strong> - destination IATA or string &quot;City, Country (IATA)&quot;. The IATA code is shown in uppercase letters (for example, &quot;Berlin, Germany (BER)&quot;);</l><li><strong>date</strong> - departure date yyyy-mm-dd (for example, &quot;2015-09-08&quot;);</li></td>
+<td>a list of the trip components: <li><strong>origin</strong> (string) - origin IATA or string &quot;City, Country (IATA)&quot;. The IATA code is shown in uppercase letters (for example, &quot;Paris, France (PAR)&quot;);</li><li><strong>destination</strong> (string) - destination IATA or string &quot;City, Country (IATA)&quot;. The IATA code is shown in uppercase letters (for example, &quot;Berlin, Germany (BER)&quot;);</l><li><strong>date</strong> (date) - departure date yyyy-mm-dd (for example, &quot;2015-09-08&quot;);</li></td>
 </tr>
 <tr>
 <td><strong>currency</strong></td>
-<td>-</td>
+<td>string</td>
 <td>the currency in which the price of the ticket is displayed, after switching to the agency&#39;s website (provided that the agency supports this currency);</td>
 </tr>
 <tr>
 <td><strong>signature</strong></td>
-<td>-</td>
+<td>string</td>
 <td>the request signature is constructed from token, marker, and all the values of the query parameters sorted alphabetically and separated by a colon. Learn how to create a signature look here.</td>
 </tr>
 </tbody></table>
@@ -3277,7 +3277,7 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 </tr>
 <tr>
 <td><strong>marker</strong></td>
-<td>the unique identifier of the affiliate;</td>
+<td>the unique identifier of the affiliate</td>
 </tr>
 <tr>
 <td><strong>user_ip</strong></td>
@@ -3289,7 +3289,43 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 </tr>
 <tr>
 <td><strong>segments</strong></td>
-<td>a list of the trip components:  <li> <strong>date</strong> - departure date; </li> <li><strong>origin</strong> - origin IATA;</li> <li><strong>destination</strong> - destination IATA;</li><li><strong>meta</strong> - technical information;</li><li><strong>uuid</strong> - unique identifier of the request;</li> <li> <strong>passengers</strong> - passenger information; </li> <li><strong>adults</strong> - the number of adult passengers;</li><li>  <strong>children</strong>- the number of children;</li> <li> <strong>infants</strong> - the number of infants;</li><li> <strong>host</strong> - host&#39;s request;</li><li> <strong>currency_rates</strong> - exchange rate; </li><li><strong>geoip_country</strong> - the geoip of the country where the request was made </li></td>
+<td>a list of the trip components:  <li> <strong>date</strong> - departure date; </li> <li><strong>origin</strong> - origin IATA;</li> <li><strong>destination</strong> - destination IATA.</li></td>
+</tr>
+<tr>
+<td><strong>meta</strong></td>
+<td>technical information</td>
+</tr>
+<tr>
+<td><strong>uuid</strong></td>
+<td>unique identifier of the request</td>
+</tr>
+<tr>
+<td><strong>passengers</strong></td>
+<td>passenger information</td>
+</tr>
+<tr>
+<td><strong>adults</strong></td>
+<td>the number of adult passengers</td>
+</tr>
+<tr>
+<td><strong>children</strong></td>
+<td>the number of children</td>
+</tr>
+<tr>
+<td><strong>infants</strong></td>
+<td>the number of infants</td>
+</tr>
+<tr>
+<td><strong>host</strong></td>
+<td>host&#39;s request</td>
+</tr>
+<tr>
+<td><strong>currency_rates</strong></td>
+<td>exchange rate</td>
+</tr>
+<tr>
+<td><strong>geoip_country</strong></td>
+<td>the geoip of the country where the request was made</td>
 </tr>
 </tbody></table>
 
@@ -3351,33 +3387,33 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Default</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td><strong>marker</strong></td>
-<td>-</td>
+<td>string</td>
 <td>the unique identifier of the affiliate. You can find your marker in the affiliate personal account</td>
 </tr>
 <tr>
 <td><strong>host</strong></td>
-<td>-</td>
+<td>string</td>
 <td>host&#39;s request (must be replaced by the address of your website where the API will be used)</td>
 </tr>
 <tr>
 <td><strong>user_ip</strong></td>
-<td>-</td>
+<td>string</td>
 <td>user&#39;s IP address</td>
 </tr>
 <tr>
 <td><strong>locale</strong></td>
-<td>-</td>
+<td>string</td>
 <td>language of the search result (en-us, en-gb, ru, de, es, fr, pl). Аrom the locale depends on the set of agencies on which the search is performed</td>
 </tr>
 <tr>
 <td><strong>trip_class</strong></td>
-<td>-</td>
+<td>string</td>
 <td>flight class (Y – Economy, C – Business)</td>
 </tr>
 <tr>
@@ -3387,32 +3423,32 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 </tr>
 <tr>
 <td><strong>adults</strong></td>
-<td>-</td>
+<td>integer</td>
 <td>the number of adult passengers (from 1 to 9)</td>
 </tr>
 <tr>
 <td><strong>children</strong></td>
-<td>-</td>
+<td>integer</td>
 <td>the number of children (from 0 to 6)</td>
 </tr>
 <tr>
 <td><strong>infants</strong></td>
-<td>-</td>
+<td>integer</td>
 <td>the number of infants (from 0 to 6)</td>
 </tr>
 <tr>
 <td><strong>segments</strong></td>
 <td>-</td>
-<td>a list of the trip components: <li><strong>origin</strong> - origin IATA or string &quot;City, Country (IATA)&quot;. The IATA code is shown in uppercase letters (for example, &quot;Paris, France (PAR)&quot;);</li><li><strong>destination</strong> - destination IATA or string &quot;City, Country (IATA)&quot;. The IATA code is shown in uppercase letters (for example, &quot;Berlin, Germany (BER)&quot;);</l><li><strong>date</strong> - departure date yyyy-mm-dd (for example, &quot;2015-09-08&quot;);</li></td>
+<td>a list of the trip components: <li><strong>origin</strong> (string) - origin IATA or string &quot;City, Country (IATA)&quot;. The IATA code is shown in uppercase letters (for example, &quot;Paris, France (PAR)&quot;);</li><li><strong>destination</strong> (string) - destination IATA or string &quot;City, Country (IATA)&quot;. The IATA code is shown in uppercase letters (for example, &quot;Berlin, Germany (BER)&quot;);</l><li><strong>date</strong> (date) - departure date yyyy-mm-dd (for example, &quot;2015-09-08&quot;);</li></td>
 </tr>
 <tr>
 <td><strong>currency</strong></td>
-<td>-</td>
+<td>string</td>
 <td>the currency in which the price of the ticket is displayed, after switching to the agency&#39;s website (provided that the agency supports this currency);</td>
 </tr>
 <tr>
 <td><strong>signature</strong></td>
-<td>-</td>
+<td>string</td>
 <td>the request signature is constructed from token, marker, and all the values of the query parameters sorted alphabetically and separated by a colon. Learn how to create a signature look here.</td>
 </tr>
 </tbody></table>
@@ -3741,7 +3777,7 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 <tr>
 <td>segments</td>
 <td>-</td>
-<td>array data of flights: <li><strong>destination_country</strong> - code of the country of destination;</li> <li> <strong>original_destination</strong> - code of the city of destination;</li><li> <strong>origin</strong> - origin IATA;</li><li> <strong>destination</strong> - destination IATA;</li><li> <strong>origin_country</strong> - the origin country;</li><li> <strong>date</strong> - departure date.</li></td>
+<td>array data of flights (<strong>deprecated</strong>): <li><strong>destination_country</strong> - code of the country of destination;</li> <li> <strong>original_destination</strong> - code of the city of destination;</li><li> <strong>origin</strong> - origin IATA;</li><li> <strong>destination</strong> - destination IATA;</li><li> <strong>origin_country</strong> - the origin country;</li><li> <strong>date</strong> - departure date.</li></td>
 </tr>
 <tr>
 <td>flight_numbers</td>
@@ -3786,27 +3822,27 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 <tr>
 <td>market</td>
 <td>-</td>
-<td>market of routes;</td>
+<td>market of routes (<strong>deprecated</strong>);</td>
 </tr>
 <tr>
 <td>initiated_at</td>
 <td>-</td>
-<td>date and time of search;</td>
+<td>date and time of search (<strong>deprecated</strong>);</td>
 </tr>
 <tr>
 <td>open_jaw</td>
 <td>-</td>
-<td>true if it is part of open jaw;</td>
+<td>true if it is part of open jaw (<strong>deprecated</strong>);</td>
 </tr>
 <tr>
 <td>clean_marker</td>
 <td>-</td>
-<td>affiliate marker;</td>
+<td>affiliate marker (<strong>deprecated</strong>);</td>
 </tr>
 <tr>
 <td>currency</td>
 <td>-</td>
-<td>currency type;</td>
+<td>currency type (<strong>deprecated</strong>);</td>
 </tr>
 <tr>
 <td>flight_info</td>
