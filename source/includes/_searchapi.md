@@ -39,9 +39,9 @@ We'll also need to see the URL of your project, design prototypes, a description
     "locale": "en",
     "trip_class": "Y",
     "passengers": {
-        "adults": "1",
-        "children": "0",
-        "infants": "0"
+        "adults": 1,
+        "children": 0,
+        "infants": 0
     },
     "segments": [
     {
@@ -58,20 +58,20 @@ We'll also need to see the URL of your project, design prototypes, a description
 } 
 ```
 
-Parameter | Default | Description
+Parameter | Type | Description
 --------- | ------- | -----------
-**marker** | - | the unique identifier of the affiliate. You can find your marker in the affiliate personal account
-**host** | - | host's request (must be replaced by the address of your website where the API will be used)
-**user_ip** | - | user's IP address
-**locale** | - | language of the search result (en-us, en-gb, ru, de, es, fr, pl). Аrom the locale depends on the set of agencies on which the search is performed
-**trip_class** | - | flight class (Y – Economy, C – Business)
+**marker** | string | the unique identifier of the affiliate. You can find your marker in the affiliate personal account
+**host** | string | host's request (must be replaced by the address of your website where the API will be used)
+**user_ip** | string | user's IP address
+**locale** | string | language of the search result (en-us, en-gb, ru, de, es, fr, pl). Аrom the locale depends on the set of agencies on which the search is performed
+**trip_class** | string | flight class (Y – Economy, C – Business)
 **passengers** | - | passenger Information
-**adults** | - | the number of adult passengers (from 1 to 9)
-**children** | - | the number of children (from 0 to 6)
-**infants** | - | the number of infants (from 0 to 6)
-**segments** | - | a list of the trip components: <li>**origin** - origin IATA or string "City, Country (IATA)". The IATA code is shown in uppercase letters (for example, "Paris, France (PAR)");</li><li>**destination** - destination IATA or string "City, Country (IATA)". The IATA code is shown in uppercase letters (for example, "Berlin, Germany (BER)");</l><li>**date** - departure date yyyy-mm-dd (for example, "2015-09-08");</li>
-**currency** | - | the currency in which the price of the ticket is displayed, after switching to the agency's website (provided that the agency supports this currency);
-**signature** | - | the request signature is constructed from token, marker, and all the values of the query parameters sorted alphabetically and separated by a colon. Learn how to create a signature look here.
+**adults** | integer | the number of adult passengers (from 1 to 9)
+**children** | integer | the number of children (from 0 to 6)
+**infants** | integer | the number of infants (from 0 to 6)
+**segments** | - | a list of the trip components: <li>**origin** (string) - origin IATA or string "City, Country (IATA)". The IATA code is shown in uppercase letters (for example, "Paris, France (PAR)");</li><li>**destination** (string) - destination IATA or string "City, Country (IATA)". The IATA code is shown in uppercase letters (for example, "Berlin, Germany (BER)");</l><li>**date** (date) - departure date yyyy-mm-dd (for example, "2015-09-08");</li>
+**currency** | string | the currency in which the price of the ticket is displayed, after switching to the agency's website (provided that the agency supports this currency);
+**signature** | string | the request signature is constructed from token, marker, and all the values of the query parameters sorted alphabetically and separated by a colon. Learn how to create a signature look here.
 
 To get "Round trip" tickets, add a JSON to the body of the request:
 
@@ -179,10 +179,19 @@ Parameter | Description
 **geoip_city** | the geoip of the city where the request was made
 **trip_class** | the class of trip
 **affiliate** | the affiliate ID
-**marker** | the unique identifier of the affiliate;
+**marker** | the unique identifier of the affiliate
 **user_ip** | the user's IP address
 **gates_count** | the total number of agencies
-**segments** | a list of the trip components:  <li> **date** - departure date; </li> <li>**origin** - origin IATA;</li> <li>**destination** - destination IATA;</li><li>**meta** - technical information;</li><li>**uuid** - unique identifier of the request;</li> <li> **passengers** - passenger information; </li> <li>**adults** - the number of adult passengers;</li><li>  **children**- the number of children;</li> <li> **infants** - the number of infants;</li><li> **host** - host's request;</li><li> **currency_rates** - exchange rate; </li><li>**geoip_country** - the geoip of the country where the request was made </li>
+**segments** | a list of the trip components:  <li> **date** - departure date; </li> <li>**origin** - origin IATA;</li> <li>**destination** - destination IATA.</li>
+**meta** | technical information
+**uuid** | unique identifier of the request
+**passengers** | passenger information
+**adults** | the number of adult passengers
+**children** | the number of children
+**infants** | the number of infants
+**host** | host's request
+**currency_rates** | exchange rate
+**geoip_country** | the geoip of the country where the request was made
 
 <aside class="notice">Please note! Use currency rates to convert the prices of flights to the currency you need (because the response contains the flight price in Russian rubles).</aside> 
 
@@ -260,20 +269,20 @@ To get "Open jaw" tickets, add a JSON into the body of the request:
 
 ### Request parameters
 
-Parameter | Default | Description
+Parameter | Type | Description
 --------- | ------- | -----------
-**marker** | - | the unique identifier of the affiliate. You can find your marker in the affiliate personal account
-**host** | - | host's request (must be replaced by the address of your website where the API will be used)
-**user_ip** | - | user's IP address
-**locale** | - | language of the search result (en-us, en-gb, ru, de, es, fr, pl). Аrom the locale depends on the set of agencies on which the search is performed
-**trip_class** | - | flight class (Y – Economy, C – Business)
+**marker** | string | the unique identifier of the affiliate. You can find your marker in the affiliate personal account
+**host** | string | host's request (must be replaced by the address of your website where the API will be used)
+**user_ip** | string | user's IP address
+**locale** | string | language of the search result (en-us, en-gb, ru, de, es, fr, pl). Аrom the locale depends on the set of agencies on which the search is performed
+**trip_class** | string | flight class (Y – Economy, C – Business)
 **passengers** | - | passenger Information
-**adults** | - | the number of adult passengers (from 1 to 9)
-**children** | - | the number of children (from 0 to 6)
-**infants** | - | the number of infants (from 0 to 6)
-**segments** | - | a list of the trip components: <li>**origin** - origin IATA or string "City, Country (IATA)". The IATA code is shown in uppercase letters (for example, "Paris, France (PAR)");</li><li>**destination** - destination IATA or string "City, Country (IATA)". The IATA code is shown in uppercase letters (for example, "Berlin, Germany (BER)");</l><li>**date** - departure date yyyy-mm-dd (for example, "2015-09-08");</li>
-**currency** | - | the currency in which the price of the ticket is displayed, after switching to the agency's website (provided that the agency supports this currency);
-**signature** | - | the request signature is constructed from token, marker, and all the values of the query parameters sorted alphabetically and separated by a colon. Learn how to create a signature look here.
+**adults** | integer | the number of adult passengers (from 1 to 9)
+**children** | integer | the number of children (from 0 to 6)
+**infants** | integer | the number of infants (from 0 to 6)
+**segments** | - | a list of the trip components: <li>**origin** (string) - origin IATA or string "City, Country (IATA)". The IATA code is shown in uppercase letters (for example, "Paris, France (PAR)");</li><li>**destination** (string) - destination IATA or string "City, Country (IATA)". The IATA code is shown in uppercase letters (for example, "Berlin, Germany (BER)");</l><li>**date** (date) - departure date yyyy-mm-dd (for example, "2015-09-08");</li>
+**currency** | string | the currency in which the price of the ticket is displayed, after switching to the agency's website (provided that the agency supports this currency);
+**signature** | string | the request signature is constructed from token, marker, and all the values of the query parameters sorted alphabetically and separated by a colon. Learn how to create a signature look here.
 
 > Body example
 
@@ -571,7 +580,7 @@ uuid | - | request ID;
 city_distance | - | distance between the cities of origin and destination;
 gates_info | - | information about the agent (Ticket Seller): <li>**currency_code** - payment currency code;</li><li> **is_airline** - is an airline;</li><li> **average_rate** - average rating of agencies;</li><li> **rates** - rating agency (count voters);</li><li> **mobile_version** - having a mobile version of the site;</li> <li>**productivity** - productivity;</li><li> **airline_iatas** - IATA airline code, if the gate sells tickets;</li><li> **payment_methods** - payment methods;</li> <li>**label** - agency name.</li>
 signature | - | signature of request
-segments | - | array data of flights: <li>**destination_country** - code of the country of destination;</li> <li> **original_destination** - code of the city of destination;</li><li> **origin** - origin IATA;</li><li> **destination** - destination IATA;</li><li> **origin_country** - the origin country;</li><li> **date** - departure date.</li>
+segments | - | array data of flights (**deprecated**): <li>**destination_country** - code of the country of destination;</li> <li> **original_destination** - code of the city of destination;</li><li> **origin** - origin IATA;</li><li> **destination** - destination IATA;</li><li> **origin_country** - the origin country;</li><li> **date** - departure date.</li>
 flight_numbers | - | flight numbers
 airlines | - | information about the airlines: <li>**deeplink_site_name** - address of the airline's website;</li><li> **id** - identification number of the airline;</li> <li> **site_name** - name of the airline's website;</li><li> **alliance_name** - alliance of the airline; </li><li>**average_rate** - average rating;</li><li> **rates** - number of ratings;</li><li> **deeplink_id** - ID links to airline's website; </li><li>**name** - name of airline.</li>
 proposals | - | an array of variants
@@ -580,11 +589,11 @@ sign | - | unique id of the ticket, to integrate information from different agen
 flight | - | flight details: <li>**departure** - departure IATA code;</li><li> **duration** - flight duration in minutes;</li><li> **departure_date** - departure date (UNIX-time);</li><li> **departure_time** - departure time (UNIX-time);</li><li> **local_departure_timestamp** - local departure time in UNIX format;</li><li> **arrival_time** - arrival time (UNIX-time);</li><li> **local_arrival_timestamp** - local arrival time in UNIX format;</li><li> **number** - flight number. To generate a full flight number, use the number and **operating_carrier parameters**;</li><li> **delay** - duration of stop between flights (in minutes);</li><li> **operating_carrier** - IATA code of airline that performs the carriage;</li><li> **arrival_date** - arrival date;</li><li> **aircraft** - type of aircraft;</li><li> **rating_summary** - some rating information about agency or airline (can be blank);</li><li> **is_bus, is_train** — true, if in this segment they do not travel by plane, but by bus or train;</li><li> **arrival** - IATA code of arrival.</li>
 terms | - | information about the flight’s cost: <li>**price** - trip price in original currency (type listed in the field currency);</li><li> **currency** - currency type;</li><li> **flights_baggage** - the number of pieces of baggage and its weight. _"" - there is no information about baggage; false - baggage is not included in a price; {int}PC{int} - number of bags by %somevalue% kilogram. For example, 2PC23 - means two baggage pieces of 23 kg. {int} - number of bags does not matter, the total weight is limited._ </li> <li>**unified_price** - price of flight in basic currency (Russian ruble);</li> <li>**url** - code to generate links for buyers (as forming the link; see below).</li>
 airports | - | information about airports;
-market | - | market of routes;
-initiated_at | - | date and time of search;
-open_jaw | - | true if it is part of open jaw;
-clean_marker | - | affiliate marker;
-currency | - | currency type;
+market | - | market of routes (**deprecated**);
+initiated_at | - | date and time of search (**deprecated**);
+open_jaw | - | true if it is part of open jaw (**deprecated**);
+clean_marker | - | affiliate marker (**deprecated**);
+currency | - | currency type (**deprecated**);
 flight_info | - | information about routes: {RouteNumber} <li>**ontime_percent** - delay persant; _min - min number of delay; max - max number of delay; mean - average number of delay._ </li><li>**IATA** - IATA code;</li><li> **city** - city where airport is located;</li><li> **average_rate** - average rating of airport;</li><li> **rates** - number of ratings;</li><li> **country** - country where airport is located;</li><li> **name** - airport name;</li><li> **time_zone** - time zone of airport.</li>
 filters_boundary | - | array data for filtering: <li>**stops_duration** - time between flights (maximum and minimum);</li><li> **flights_duration** - flights duration (maximum and minimum);</li><li> **arrival_datetime_0** - arrival datetime (maximum and minimum);</li><li> **price** - price of flights (maximum and minimum);</li><li> **departure_time_0** - departure time (maximum and minimum);</li><li> **stops_count** - stops count.</li>
 
