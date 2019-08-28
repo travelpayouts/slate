@@ -18,7 +18,7 @@ Important. We strongly urge receiving data in compressed GZIP format, which save
 
 Brings back the list of prices found by our users during the most recent 48 hours according to the filters used.
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/e4421ace19cf77dec915)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3438c693f7bfb0c14368)
 
 > Example of a request:
 
@@ -156,7 +156,7 @@ Parameter |Description
 
 Brings the prices for each day of a month, grouped together by the number of transfers, back.
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/e4421ace19cf77dec915)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3438c693f7bfb0c14368)
 
 > Example of a request:
 
@@ -285,7 +285,7 @@ Parameter | Description
 
 Brings the prices for the directions between the nearest to the target cities back.
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/e4421ace19cf77dec915)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3438c693f7bfb0c14368)
 
 > Example of a request:
 
@@ -428,7 +428,7 @@ Parameter | Description
 
 Brings the prices for the nearest dates to the target ones back.
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/e4421ace19cf77dec915)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3438c693f7bfb0c14368)
 
 > Example of a request:
 
@@ -554,7 +554,7 @@ Parameter | Description
 
 The query is returned the IATA-code and the name of the nearest city from the user.
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/e4421ace19cf77dec915)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3438c693f7bfb0c14368)
 
 > Example of a request:
 
@@ -640,7 +640,7 @@ Parameter | Description
 
 Brings the recent special offers from the airline companies back in the XML format.
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/e4421ace19cf77dec915)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3438c693f7bfb0c14368)
 
 ### Request
 
