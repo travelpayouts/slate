@@ -28,13 +28,13 @@ To obtain access to the API for searching for plane tickets and hotels, [send a 
 
 Returns the cheapest non-stop tickets, as well as tickets with 1 or 2 stops, for the selected route with departure/return date filters.
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/a2e83057d1fc995298dd)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3438c693f7bfb0c14368)
 
 > Example of a request:
 
 ```shell
 curl --request GET \
-  --url 'https://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=HKT&depart_date=2017-11&return_date=2017-12' \
+  --url 'https://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=HKT&depart_date=2019-11&return_date=2019-12' \
   --header 'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'
 ```
 
@@ -42,7 +42,7 @@ curl --request GET \
 require 'uri'
 require 'net/https'
 
-url = URI("https://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=HKT&depart_date=2017-11&return_date=2017-12")
+url = URI("https://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=HKT&depart_date=2019-11&return_date=2019-12")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -59,7 +59,7 @@ puts response.read_body
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=HKT&depart_date=2017-11&return_date=2017-12",
+  CURLOPT_URL => "https://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=HKT&depart_date=2019-11&return_date=2019-12",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -88,7 +88,7 @@ import requests
 
 url = "https://api.travelpayouts.com/v1/prices/cheap"
 
-querystring = {"origin":"MOW","destination":"HKT","depart_date":"2017-11","return_date":"2017-12"}
+querystring = {"origin":"MOW","destination":"HKT","depart_date":"2019-11","return_date":"2019-12"}
 
 headers = {'x-access-token': '321d6a221f8926b5ec41ae89a3b2ae7b'}
 
@@ -153,13 +153,13 @@ Parameter | Default | Description
 
 Returns the cheapest non-stop tickets for the selected route with departure/return date filters.
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/a2e83057d1fc995298dd)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3438c693f7bfb0c14368)
 
 > Example of a request:
 
 ```shell
 curl --request GET \
-  --url 'https://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=HKT&depart_date=2017-11&return_date=2017-12' \
+  --url 'https://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=HKT&depart_date=2019-11&return_date=2019-12' \
   --header 'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'
 ```
 
@@ -167,7 +167,7 @@ curl --request GET \
 require 'uri'
 require 'net/https'
 
-url = URI("https://api.travelpayouts.com/v1/prices/direct?origin=MOW&destination=LED&depart_date=2017-11&return_date=2017-12")
+url = URI("https://api.travelpayouts.com/v1/prices/direct?origin=MOW&destination=LED&depart_date=2019-11&return_date=2019-12")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -184,7 +184,7 @@ puts response.read_body
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api.travelpayouts.com/v1/prices/direct?origin=MOW&destination=LED&depart_date=2017-11&return_date=2017-12",
+  CURLOPT_URL => "https://api.travelpayouts.com/v1/prices/direct?origin=MOW&destination=LED&depart_date=2019-11&return_date=2019-12",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -213,7 +213,7 @@ import requests
 
 url = "https://api.travelpayouts.com/v1/prices/direct"
 
-querystring = {"origin":"MOW","destination":"LED","depart_date":"2017-11","return_date":"2017-12"}
+querystring = {"origin":"MOW","destination":"LED","depart_date":"2019-11","return_date":"2019-12"}
 
 headers = {'x-access-token': '321d6a221f8926b5ec41ae89a3b2ae7b'}
 
@@ -272,13 +272,13 @@ Parameter | Default | Description
 
 Returns the cheapest non-stop, one-stop, and two-stop flights for the selected route for each day of the selected month.
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/a2e83057d1fc995298dd)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3438c693f7bfb0c14368)
 
 > Example of a request:
 
 ```shell
 curl --request GET \
-  --url 'https://api.travelpayouts.com/v1/prices/calendar?depart_date=2017-11&origin=MOW&destination=BCN&calendar_type=departure_date&currency=USD' \
+  --url 'https://api.travelpayouts.com/v1/prices/calendar?depart_date=2019-11&origin=MOW&destination=BCN&calendar_type=departure_date&currency=USD' \
   --header 'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'
 ```
 
@@ -286,7 +286,7 @@ curl --request GET \
 require 'uri'
 require 'net/https'
 
-url = URI("https://api.travelpayouts.com/v1/prices/calendar?depart_date=2017-11&origin=MOW&destination=BCN&calendar_type=departure_date&currency=USD")
+url = URI("https://api.travelpayouts.com/v1/prices/calendar?depart_date=2019-11&origin=MOW&destination=BCN&calendar_type=departure_date&currency=USD")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -303,7 +303,7 @@ puts response.read_body
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api.travelpayouts.com/v1/prices/calendar?depart_date=2017-11&origin=MOW&destination=BCN&calendar_type=departure_date&currency=USD",
+  CURLOPT_URL => "https://api.travelpayouts.com/v1/prices/calendar?depart_date=2019-11&origin=MOW&destination=BCN&calendar_type=departure_date&currency=USD",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -332,7 +332,7 @@ import requests
 
 url = "https://api.travelpayouts.com/v1/prices/calendar"
 
-querystring = {"depart_date":"2017-11","origin":"MOW","destination":"BCN","calendar_type":"departure_date","currency":"USD"}
+querystring = {"depart_date":"2019-11","origin":"MOW","destination":"BCN","calendar_type":"departure_date","currency":"USD"}
 
 headers = {'x-access-token': '321d6a221f8926b5ec41ae89a3b2ae7b'}
 
@@ -521,7 +521,7 @@ Parameter | Default | Description
 
 Returns routes for which an airline operates flights, sorted by popularity.
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/a2e83057d1fc995298dd)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3438c693f7bfb0c14368)
 
 > Example of a request:
 
@@ -634,7 +634,7 @@ Returns a list of popular routes of an airline, sorted by popularity.
 
 Brings the most popular directions from a specified city back.
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/a2e83057d1fc995298dd)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3438c693f7bfb0c14368)
 
 > Example of a request:
 
