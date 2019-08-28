@@ -8,7 +8,7 @@ Note! Additionally we created translations for different languages for all data 
 
 The query returns a file with a list of countries from the database. 
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c79ab5bb9bb4c92ad23d)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3438c693f7bfb0c14368)
 
 ```shell
 curl --request GET \
@@ -108,7 +108,7 @@ Parameter | Default | Description
 
 The query returns a file with a list of cities from the database. 
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c79ab5bb9bb4c92ad23d)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3438c693f7bfb0c14368)
 
 > Example of a request:
 
@@ -220,7 +220,7 @@ Parameter | Default | Description
 
 The query returns a file with a list of airports from the database. 
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c79ab5bb9bb4c92ad23d)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3438c693f7bfb0c14368)
 
 > Example of request:
 
@@ -333,7 +333,7 @@ Parameter | Default | Description
 
 The query returns a file with a list of airlines from the database. 
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c79ab5bb9bb4c92ad23d)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3438c693f7bfb0c14368)
 
 > Example of a request:
 
@@ -513,7 +513,7 @@ Parameter | Default | Description
 
 The query returns a file with a list of airplanes from the database. 
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c79ab5bb9bb4c92ad23d)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3438c693f7bfb0c14368)
 
 > Example of request:
 
@@ -594,7 +594,7 @@ Parameter | Default | Description
 
 The query returns a file with a list of routes from the database.
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c79ab5bb9bb4c92ad23d)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3438c693f7bfb0c14368)
 
 > Example of request:
 
