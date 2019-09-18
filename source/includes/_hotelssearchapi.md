@@ -27,6 +27,20 @@ When using this search, it is possible to access its results not immediately, bu
 
 **Attention**! The default number of requests is limited to **200 requests per hour** for one IP address. If you need to process more requests, send a note to support@travelpayouts.com.
 
+> Sample request
+
+```shell
+http://engine.hotellook.com/api/v2/search/start.json?iata=HKT&checkIn=2018-08-10&checkOut=2018-08-13&adultsCount=2&customerIP=100.168.1.1&childrenCount=1&childAge1=8&lang=ru&currency=USD&waitForResult=0&marker=УкажитеВашМаркер&signature=a475100374414df97a9c6c7d7731b3c6
+```
+
+where **signature** is md5 of the string: "*YourToken:YourMarker:adultsCount:checkIn:checkOut:childAge1:childrenCount:currency:customerIP:iata:lang:waitForResult*". 
+
+More information about the signature is available [here](https://support.travelpayouts.com/hc/en-us/articles/210995998).
+
+### First request
+
+`GET http://engine.hotellook.com/api/v2/search/start.json?iata=HKT&checkIn=2018-08-10&checkOut=2018-08-13&adultsCount=2&customerIP=100.168.1.1&childrenCount=1&childAge1=8&lang=ru&currency=USD&waitForResult=0&marker=УкажитеВашМаркер&signature=a475100374414df97a9c6c7d7731b3c6`
+
 ### Request parameters
 
 Required parameters are highlighted in **bold**.
@@ -61,15 +75,7 @@ childrenCount – the number of children; possible values - from 0 to 3. Default
     * 1 – the connection is open before all the data from the partners. The result is returned to the user query and its searchId.
     * 0 – the connection will be terminated immediately and returned to the user searchId (default).
 
-> Sample request
-
-```shell
-http://engine.hotellook.com/api/v2/search/start.json?iata=HKT&checkIn=2018-08-10&checkOut=2018-08-13&adultsCount=2&customerIP=100.168.1.1&childrenCount=1&childAge1=8&lang=ru&currency=USD&waitForResult=0&marker=УкажитеВашМаркер&signature=a475100374414df97a9c6c7d7731b3c6
-```
-
-where **signature** is md5 of the string: "*YourToken:YourMarker:adultsCount:checkIn:checkOut:childAge1:childrenCount:currency:customerIP:iata:lang:waitForResult*". 
-
-More information about the signature is available [here](https://support.travelpayouts.com/hc/en-us/articles/210995998).
+### Response
 
 > Sample response
 
@@ -79,6 +85,16 @@ More information about the signature is available [here](https://support.travelp
     "status": "ok"
 }
 ```
+
+### Second request
+
+> Sample request
+
+```shell
+http://engine.hotellook.com/api/v2/search/getResult.json?searchId=4034914&limit=10&sortBy=price&sortAsc=1&roomsCount=0&offset=0&marker=PasteYourMarkerHere&signature=364c38baee5cf11b382297bfd4338ce6
+```
+
+where **signature** is md5 of the string: *"YourToken:YourMarker:limit:offset:roomsCount:searchId:sortAsc:sortBy"*. 
 
 ### Request parameters
 
@@ -102,13 +118,7 @@ More information about the signature is available [here](https://support.travelp
 
 * roomsCount – the maximum number of rooms that are returned in each hotel, from 0 to infinity, where 0 - no limit. Default – 0.
 
-> Sample request
-
-```shell
-http://engine.hotellook.com/api/v2/search/getResult.json?searchId=4034914&limit=10&sortBy=price&sortAsc=1&roomsCount=0&offset=0&marker=PasteYourMarkerHere&signature=364c38baee5cf11b382297bfd4338ce6
-```
-
-where **signature** is md5 of the string: *"YourToken:YourMarker:limit:offset:roomsCount:searchId:sortAsc:sortBy"*. 
+### Response
 
 > Sample response
 
