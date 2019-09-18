@@ -16,6 +16,16 @@ Search for a specific location or name places of a hotel (city, island).
 * X-Ratelimit-Remaining - how many requests left of this limit;
 * X-Ratelimit-Limit - the value limit.
 
+> Sample request
+
+```shell
+http://engine.hotellook.com/api/v2/lookup.json?query=moscow&lang=ru&lookFor=both&limit=1&token=PasteYourTokenHere
+```
+
+### Request
+
+`GET http://engine.hotellook.com/api/v2/lookup.json?query=moscow&lang=ru&lookFor=both&limit=1&token=PasteYourTokenHere`
+
 ### Request parameters
 
 Required parameters are highlighted in **bold**.
@@ -32,11 +42,7 @@ Required parameters are highlighted in **bold**.
 * convertCase – automatically change the keyboard layout (actual for Russian users, for example, when requesting "vjcrdf" will be found "москва"). Values - 1 or 0. Default - 1. 
 * token - your affiliate token.
 
-> Sample request
-
-```shell
-http://engine.hotellook.com/api/v2/lookup.json?query=moscow&lang=ru&lookFor=both&limit=1&token=PasteYourTokenHere
-```
+### Response
 
 > Sample response
 
@@ -83,8 +89,6 @@ http://engine.hotellook.com/api/v2/lookup.json?query=moscow&lang=ru&lookFor=both
 }
 ```
 
-### Response parameters
-
 The block "**locations**" includes:
 
 * **cityName** – city name;
@@ -123,6 +127,16 @@ Search for a specific location or hotel (city, island) by coordinates.
 * X-Ratelimit-Remaining - how many requests left of this limit;
 * X-Ratelimit-Limit - the value limit.
 
+> Sample request
+
+```shell
+http://engine.hotellook.com/api/v2/lookup.json?query=55.0291,82.9059&lang=ru&lookFor=both&limit=1&token=PasteYourTokenHere
+```
+
+### Request
+
+`GET http://engine.hotellook.com/api/v2/lookup.json?query=55.0291,82.9059&lang=ru&lookFor=both&limit=1&token=PasteYourTokenHere`
+
 ### Request parameters
 
 Required parameters are highlighted in **bold**.
@@ -139,11 +153,7 @@ Required parameters are highlighted in **bold**.
 * convertCase – automatically change the keyboard layout (actual for Russian users, for example, when requesting "vjcrdf" will be found "москва"). Values - 1 or 0. Default - 1.
 * token - your affiliate token.
 
-> Sample request
-
-```shell
-http://engine.hotellook.com/api/v2/lookup.json?query=55.0291,82.9059&lang=ru&lookFor=both&limit=1&token=PasteYourTokenHere
-```
+### Response
 
 > Sample response
 
@@ -180,8 +190,6 @@ http://engine.hotellook.com/api/v2/lookup.json?query=55.0291,82.9059&lang=ru&loo
 }
 ```
 
-### Response parameters
-
 The block "**locations**" includes:
 
 * **id** – id of locations in the database.
@@ -215,6 +223,16 @@ The request is used to get the price of hotel rooms from the cache for the perio
 * X-Ratelimit-Remaining - how many requests left of this limit;
 * X-Ratelimit-Limit - the value limit.
 
+> Sample request
+
+```shell
+http://engine.hotellook.com/api/v2/cache.json?location=Saint-Petersburg&hotelId=277083&checkIn=2017-09-13&checkOut=2017-09-18&currency=rub&limit=1&token=PasteYourTokenHere
+```
+
+### Request
+
+`GET http://engine.hotellook.com/api/v2/cache.json?location=Saint-Petersburg&hotelId=277083&checkIn=2017-09-13&checkOut=2017-09-18&currency=rub&limit=1&token=PasteYourTokenHere`
+
 ### Request parameters
 
 * **location** - location name (IATA code can be used location);
@@ -236,11 +254,7 @@ The request is used to get the price of hotel rooms from the cache for the perio
 * currency - currency of price (rub, usd, eur). 
 * token - your affiliate token.
 
-> Sample request
-
-```shell
-http://engine.hotellook.com/api/v2/cache.json?location=Saint-Petersburg&hotelId=277083&checkIn=2017-09-13&checkOut=2017-09-18&currency=rub&limit=1&token=PasteYourTokenHere
-```
+### Response
 
 > Sample response
 
@@ -272,10 +286,6 @@ http://engine.hotellook.com/api/v2/cache.json?location=Saint-Petersburg&hotelId=
 }
 ```
 
-### Response parameters
-
-The response contains:
-
 * **stars** - number of the hotel's stars;
 * **locationId** - location id of this hotel;
 * **priceFrom** - minimum price per stay in a hotel room for the period;
@@ -291,11 +301,17 @@ The response contains:
 
 ## List of hotels in the archive
 
-**Endpoint**: [http://yasen.hotellook.com/tp/v1/hotels?language=en](http://yasen.hotellook.com/tp/v1/hotels?language=en)
+**Endpoint**: http://yasen.hotellook.com/tp/v1/hotels
 
-Use this link to download a list of all hotels for the specified locale.
+This request return the file with a list of all hotels for the specified locale.
 
-The language parameter can take the values:
+### Request
+
+`GET http://yasen.hotellook.com/tp/v1/hotels?language=en`
+
+### Request parameters
+
+The **language** parameter can take the values:
 
 * ru (Russian);
 * en (English);
@@ -305,6 +321,8 @@ The language parameter can take the values:
 * fr (French);
 * it (Italian);
 * pl (Polish).
+
+### Response
 
 The file with a list of hotels includes the following data:
 
@@ -326,6 +344,16 @@ The hotels file is updated once a week in the morning (GMT) on Saturday.
 
 The request recovers the list of specific hotels according to the ID of a location. A collection is formed according to the specified period. If the period is not specified, a collection shall be formed from the hotels found for the last three days.
 
+> Sample request
+
+```shell
+http://yasen.hotellook.com/tp/public/widget_location_dump.json?currency=rub&language=ru&limit=5&id=12209&type=popularity&check_in=2017-02-02&check_out=2017-02-17&token=PasteYourTokenHere
+```
+
+### Request
+
+`GET http://yasen.hotellook.com/tp/public/widget_location_dump.json?currency=rub&language=ru&limit=5&id=12209&type=popularity&check_in=2017-02-02&check_out=2017-02-17&token=PasteYourTokenHere`
+
 ### Request parameters
 
 * **check_in** — date of check-in;
@@ -337,11 +365,7 @@ The request recovers the list of specific hotels according to the ID of a locati
 * **id** — id of the city.
 * **token** — your affiliate token.
 
-> Sample request
-
-```shell
-http://yasen.hotellook.com/tp/public/widget_location_dump.json?currency=rub&language=ru&limit=5&id=12209&type=popularity&check_in=2017-02-02&check_out=2017-02-17&token=PasteYourTokenHere
-```
+### Response
 
 > Sample response
 
@@ -379,8 +403,6 @@ http://yasen.hotellook.com/tp/public/widget_location_dump.json?currency=rub&lang
 }
 ```
 
-### Response parameters
-
 * **hotel_id** – unique hotels’ ID;
 * **distance** – distance from the city’s center;
 * **name** – hotel’s name;
@@ -405,16 +427,22 @@ http://yasen.hotellook.com/tp/public/widget_location_dump.json?currency=rub&lang
 
 The request recovers the list of all available separate collections. This type is used to search for hotels with a discount.
 
-### Request parameters
-
-* **id** — id of the city.
-* **token** — your affiliate token.
-
 > Sample request
 
 ```shell
 http://yasen.hotellook.com/tp/public/available_selections.json?id=12209&token=PasteYourTokenHere
 ```
+
+### Request
+
+`GET http://yasen.hotellook.com/tp/public/available_selections.json?id=12209&token=PasteYourTokenHere`
+
+### Request parameters
+
+* **id** — id of the city.
+* **token** — your affiliate token.
+
+### Response
 
 > Sample response
 
@@ -441,8 +469,6 @@ http://yasen.hotellook.com/tp/public/available_selections.json?id=12209&token=Pa
 	"5stars"
 ]
 ```
-
-### Response parameters
 
 * **center** – hotels, located in the center of a city;
 * **tophotels** – best hotels;
