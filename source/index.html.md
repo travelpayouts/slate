@@ -16,6 +16,11 @@ includes:
   - dataapiv2
   - dataapijson
   - searchapi
+  - hotelsdata
+  - stathotelsdata
+  - hotelssearchapi
+  - hotelsandcitiesphotos
+  - hotelapierrors
 
 search: true
 ---
