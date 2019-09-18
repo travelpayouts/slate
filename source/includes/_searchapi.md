@@ -83,7 +83,7 @@ curl -v -X POST -d '{"signature":"%MD5_signature%","marker":"%Put_Your_Marker_He
 
 ### Response
 
-The answer comes in JSON format. The response contains the parameters:
+> The answer comes in JSON format. The response contains the parameters:
 
 ```json
 {
@@ -203,6 +203,8 @@ To get "One-way" tickets, add a JSON into the body of the request.
 
 ### Body example
 
+> Body example
+
 ```json
 {
     "signature": "%MD5_signature%",
@@ -243,6 +245,8 @@ Open jaw is a round-trip ticket in which the traveller does not arrive in the sa
 To get "Open jaw" tickets, add a JSON into the body of the request:
 
 ### Body example
+
+> Body example
 
 ```json
 {
@@ -350,7 +354,7 @@ curl -v -H 'Accept-Encoding:gzip,deflate,sdch' https://api.travelpayouts.com/v1/
 
 <aside class="warning">Attention! The link to the search results is relevant for 15 minutes. After this time, you must send a search query again.</aside>
 
->Response example
+> Response example
 
 ```json
 [{
