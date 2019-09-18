@@ -45,35 +45,33 @@ More information about the signature is available [here](https://support.travelp
 
 Required parameters are highlighted in **bold**.
 
-* **cityId** – the location ID (the query static/locations.json).
-* **hotelId** – the hotel ID (the query static/hotels.json).
-* **iata** – iata code of city.
-    
-    **Note**. The request must have at least one of the required parameters iata, cityId or hotelId.
-
-* **checkIn** – check-in date format: yyyy–MM–dd.
-* **checkOut** – check-out date format: yyyy–MM–dd.
-* **adultsCount** – number of adults.
-* customerIP – IP of the user who initiated the request.
-childrenCount – the number of children; possible values - from 0 to 3. Default - 0.
-* childAge1, childAge2, childAge3 – ages of children (if childrenCount greater than 0). The default age is 1 year (max = 17).
-* lang – the language of the search result. Stated together with the region.
-    * en_US;
-    * en_GB;
-    * ru_RU;
-    * de_DE;
-    * en_AU;
-    * en_CA;
-    * en_IE;
-    * es_ES;
-    * fr_FR;
-    * it_IT;
-    * pl_PL;
-    * th_TH.
+* **cityId** – the location ID (the query static/locations.json)
+* **hotelId** – the hotel ID (the query static/hotels.json)
+* **iata** – iata code of city
+    **Note**. The request must have at least one of the required parameters iata, cityId or hotelId
+* **checkIn** – check-in date format: yyyy–MM–dd
+* **checkOut** – check-out date format: yyyy–MM–dd
+* **adultsCount** – number of adults
+* customerIP – IP of the user who initiated the request
+* childrenCount – the number of children; possible values - from 0 to 3. Default - 0
+* childAge1, childAge2, childAge3 – ages of children (if childrenCount greater than 0). The default age is 1 year (max = 17)
+* lang – the language of the search result. Stated together with the region
+    * en_US
+    * en_GB
+    * ru_RU
+    * de_DE
+    * en_AU
+    * en_CA
+    * en_IE
+    * es_ES
+    * fr_FR
+    * it_IT
+    * pl_PL
+    * th_TH
 * currency – USD, RUB, EUR, ...
-* waitForResult – wait for the completion of all searches for partners, possible values 0 or 1.
-    * 1 – the connection is open before all the data from the partners. The result is returned to the user query and its searchId.
-    * 0 – the connection will be terminated immediately and returned to the user searchId (default).
+* waitForResult – wait for the completion of all searches for partners, possible values 0 or 1
+    * 1 – the connection is open before all the data from the partners. The result is returned to the user query and its searchId
+    * 0 – the connection will be terminated immediately and returned to the user searchId (default)
 
 ### Response
 
@@ -98,25 +96,21 @@ where **signature** is md5 of the string: *"YourToken:YourMarker:limit:offset:ro
 
 ### Request parameters
 
-* **searchId** – search Id.
-* limit – maximum number of hotels, from 0 to infinity, where 0 - no limit. Default - 0.
-* offset – to skip a number of hotels from 0 to infinity, where 0 - no hotel not passed. Default - 0.
+* **searchId** – search Id
+* limit – maximum number of hotels, from 0 to infinity, where 0 - no limit. Default - 0
+* offset – to skip a number of hotels from 0 to infinity, where 0 - no hotel not passed. Default - 0
 * sortBy – how to sort:
-    * popularity - by popularity;
-    * price - by price;
-    * name - by name;
-    * guestScore – by User Rating;
+    * popularity - by popularity
+    * price - by price
+    * name - by name
+    * guestScore – by User Rating
     * stars – by number of stars
-
     *Default – popularity*
-
 * sortAsc – how to sort the values:
-    * 1 – ascending;
-    * 0 – descending.
-    
+    * 1 – ascending
+    * 0 – descending    
     *Default – 1.*
-
-* roomsCount – the maximum number of rooms that are returned in each hotel, from 0 to infinity, where 0 - no limit. Default – 0.
+* roomsCount – the maximum number of rooms that are returned in each hotel, from 0 to infinity, where 0 - no limit. Default – 0
 
 ### Response
 
@@ -176,39 +170,39 @@ When you are trying to get a search result, at the end of search you get the err
 
 Block "**result**" contains:
 
-* **fullUrl** - the link to the hotel's page with partner's marker;
-* **maxPrice** – the highest price of the hotel rooms;
-* **maxPricePerNight** - the maximum price per night;
-* **price** – the average price per room;
-* **minPriceTotal** - the minimum cost per stay;
-* **photoCount** - the number of photos of the hotel;
-* **guestScore** - the travelers' rating;
-* **id** – the ID of hotel in the database;
-* **name** – hotel's name;
-* **address** – the hotel's address;
-* **distance** - the distance from the hotel to the city center;
-* **amenities** - amenities at the hotel (descriptions of values you can find here);
+* **fullUrl** - the link to the hotel's page with partner's marker
+* **maxPrice** – the highest price of the hotel rooms
+* **maxPricePerNight** - the maximum price per night
+* **price** – the average price per room
+* **minPriceTotal** - the minimum cost per stay
+* **photoCount** - the number of photos of the hotel
+* **guestScore** - the travelers' rating
+* **id** – the ID of hotel in the database
+* **name** – hotel's name
+* **address** – the hotel's address
+* **distance** - the distance from the hotel to the city center
+* **amenities** - amenities at the hotel (descriptions of values you can find here)
 * **location** – the hotel's location:
-    * **lat** – latitude of hotel;
-    * **lon** – longitude of hotel.
-* **stars** – the number of stars the hotel;
-* **url** – the link to the hotel website.
+    * **lat** – latitude of hotel
+    * **lon** – longitude of hotel
+* **stars** – the number of stars the hotel
+* **url** – the link to the hotel website
 
 Block "**rooms**" contains:
 
-* **type, desc** – the type of rooms;
-* **total** – the rate for all time;
-* **price** – the daily room rate;
-* **tax** – taxes and fees;
+* **type, desc** – the type of rooms
+* **total** – the rate for all time
+* **price** – the daily room rate
+* **tax** – taxes and fees
 * **options** – additional services:
-    * **breakfast** - whether breakfast included in the rate or not;
-    * **available** - the number of available rooms of this type;
-    * **deposit** - payment directly on the site, if it is 0 - then pay at the hotel;
-    * **refundable** - "free cancellation";
-    * **cardRequired** - without reservation card, if 0 - you can book without card and then pay at partners;
-    * **smoking** - can smoke in the room;
-    * **freeWifi** - whether there is free wifi in the room;
-    * **hotelWebsite** - proposal leads to the official hotel website.
+    * **breakfast** - whether breakfast included in the rate or not
+    * **available** - the number of available rooms of this type
+    * **deposit** - payment directly on the site, if it is 0 - then pay at the hotel
+    * **refundable** - "free cancellation"
+    * **cardRequired** - without reservation card, if 0 - you can book without card and then pay at partners
+    * **smoking** - can smoke in the room
+    * **freeWifi** - whether there is free wifi in the room
+    * **hotelWebsite** - proposal leads to the official hotel website
 * **bookingURL** – the link to the booking website;
 * **fullBookingURL** - complete link to book with filled all data about users (date of check In and check out, number of adults and childrens, currency and ets);
 * **internalTypeId** - grouping by type of rooms;
