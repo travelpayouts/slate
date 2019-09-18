@@ -6,17 +6,21 @@ Requests as a result of which the partner receives information about the countri
 
 ## Request "Country"
 
-**Endpoint**: [http://engine.hotellook.com/api/v2/static/countries.json](http://engine.hotellook.com/api/v2/static/countries.json)
+`GET http://engine.hotellook.com/api/v2/static/countries.json`
 
-### Request parameters
-
-* **token** - your affiliate token.
+### Request
 
 > Sample request
 
 ```shell
 http://engine.hotellook.com/api/v2/static/countries.json?token=PasteYourTokenHere
 ```
+
+### Request parameters
+
+* **token** - your affiliate token.
+
+### Response
 
 > Sample response
 
@@ -61,8 +65,6 @@ http://engine.hotellook.com/api/v2/static/countries.json?token=PasteYourTokenHer
 ]
 ```
 
-### Response parameters
-
 The response contains: 
 
 * **Id** – id of country.
@@ -76,17 +78,21 @@ The response contains:
 
 ## Request "Cities"
 
-**Endpoint**: [http://engine.hotellook.com/api/v2/static/locations.json](http://engine.hotellook.com/api/v2/static/locations.json)
+`GET http://engine.hotellook.com/api/v2/static/locations.json`
 
-### Request parameters
-
-* token - your affiliate token.
+### Request
 
 > Sample request
 
 ```shell
 http://engine.hotellook.com/api/v2/static/locations.json?token=PasteYourTokenHere
 ```
+
+### Request parameters
+
+* token - your affiliate token.
+
+### Response
 
 > Sample response
 
@@ -116,10 +122,6 @@ http://engine.hotellook.com/api/v2/static/locations.json?token=PasteYourTokenHer
 ]
 ```
 
-### Response parameters
-
-The response contains:
-
 * **Id** – id of city.
 * **code** – iata-code of city.
 * **countryId** – id of country.
@@ -137,18 +139,22 @@ The response contains:
 
 ## Request "Amenities"
 
-**Endpoint**: [http://engine.hotellook.com/static/amenities/](http://engine.hotellook.com/static/amenities/)
+`GET http://engine.hotellook.com/static/amenities/`
 
-### Request parameters
-
-* **en.json** - language that you want to see result (en, ru, fr, de and etc);
-* **token** - your affiliate token.
+### Request
 
 > Sample request
 
 ```shell
 http://engine.hotellook.com/api/v2/static/amenities/en.json?token=PasteYourTokenHere
 ```
+
+### Request parameters
+
+* **en.json** - language that you want to see result (en, ru, fr, de and etc);
+* **token** - your affiliate token.
+
+### Response
 
 > Sample response
 
@@ -172,28 +178,28 @@ http://engine.hotellook.com/api/v2/static/amenities/en.json?token=PasteYourToken
 ]
 ```
 
-### Response parameters
-
-The response contains:
-
 * **Id** – id of amenities in the database.
 * **name** – name of amenities.
 * **groupName** - location of amenities.
 
 ## Request 'Hotels list'
 
-**Endpoint**: [http://engine.hotellook.com/static/hotels.json](http://engine.hotellook.com/static/hotels.json)
+`GET http://engine.hotellook.com/static/hotels.json`
 
-### Request parameters
-
-* **locationId** – id of location.
-* **token** – your affiliate token.
+### Request
 
 > Sample request
 
 ```shell
 http://engine.hotellook.com/api/v2/static/hotels.json?locationId=895&token=PasteYourTokenHere
 ```
+
+### Request parameters
+
+* **locationId** – id of location.
+* **token** – your affiliate token.
+
+### Response
 
 > Sample response
 
@@ -312,18 +318,20 @@ The response contains:
 
 ## Request "Types of rooms"
 
-**Endpoint**: [http://engine.hotellook.com/static/roomTypes.json](http://engine.hotellook.com/static/roomTypes.json)
-
-### Request parameters
-
-* language - language of reaponse (pt, en, fr, de, id, it, pl, es, th, ru).
-* **token** - your affiliate token.
+`GET http://engine.hotellook.com/static/roomTypes.json`
 
 > Sample request
 
 ```shell
 http://engine.hotellook.com/api/v2/static/roomTypes.json?language=en&token=PasteYourTokenHere
 ```
+
+### Request parameters
+
+* language - language of reaponse (pt, en, fr, de, id, it, pl, es, th, ru).
+* **token** - your affiliate token.
+
+### Response
 
 > Sample response
 
@@ -339,18 +347,22 @@ http://engine.hotellook.com/api/v2/static/roomTypes.json?language=en&token=Paste
 
 ## Request "Types of hotels"
 
-**Endpoint**: [http://engine.hotellook.com/static/hotelTypes.json](http://engine.hotellook.com/static/hotelTypes.json)
+`GET http://engine.hotellook.com/static/hotelTypes.json`
 
-### Request parameters
-
-* language - language of reaponse (pt, en, fr, de, id, it, pl, es, th, ru).
-* **token** - your affiliate token.
+### Request
 
 > Sample request
 
 ```shell
 http://engine.hotellook.com/api/v2/static/hotelTypes.json?language=en&token=PasteYourTokenHere
 ```
+
+### Request parameters
+
+* language - language of reaponse (pt, en, fr, de, id, it, pl, es, th, ru).
+* **token** - your affiliate token.
+
+### Response
 
 > Sample response
 
