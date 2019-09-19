@@ -26,8 +26,6 @@ We'll also need to see the URL of your project, design prototypes, a description
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3438c693f7bfb0c14368)
 
-### Request parameters
-
 > Body example
 
 ```json
@@ -57,6 +55,8 @@ We'll also need to see the URL of your project, design prototypes, a description
     ]
 } 
 ```
+
+### Request parameters
 
 Parameter | Type | Description
 --------- | ------- | -----------
@@ -201,8 +201,6 @@ Parameter | Description
 
 To get "One-way" tickets, add a JSON into the body of the request.
 
-### Body example
-
 > Body example
 
 ```json
@@ -227,6 +225,8 @@ To get "One-way" tickets, add a JSON into the body of the request.
     ]
 }
 ```
+
+### Request parameters
 
 Parameter | Type | Description
 --------- | ------- | -----------
@@ -258,8 +258,6 @@ curl -v -X POST -d '{"signature":"%MD5_signature%","marker":"%Put_Your_Marker_He
 Open jaw is a round-trip ticket in which the traveller does not arrive in the same city of departure and/or does not depart from the same city where he/she first landed. For example, London - Paris - Berlin - London.
 
 To get "Open jaw" tickets, add a JSON into the body of the request:
-
-### Body example
 
 > Body example
 
@@ -329,6 +327,8 @@ https://api.travelpayouts.com/v1/flight_search_results?uuid=%search_id%
 
 Then send the request to the server for search results:
 
+`GET https://api.travelpayouts.com/v1/flight_search_results?uuid=%search_id%`
+
 > Request example
 
 ```shell
@@ -340,7 +340,7 @@ curl -v -H 'Accept-Encoding:gzip,deflate,sdch' https://api.travelpayouts.com/v1/
 
 <aside class="warning">Repeat the request until you get an associative array with one element search_id. The periodicity of sending requests isn't restricted. </aside>
 
-### Example of answer
+### Request example
 
 <aside class="warning">Attention! The link to the search results is relevant for 15 minutes. After this time, you must send a search query again.</aside>
 
@@ -621,6 +621,7 @@ curl -v -H 'Accept-Encoding:gzip,deflate,sdch' https://api.travelpayouts.com/v1/
 ```
 
 To get a link to the site of the ticket booking agencies send a request to the following address:
+
 `GET https://api.travelpayouts.com/v1/flight_searches/%search_id%/clicks/%terms.url%.json`
 
 where **search_id** is the ID from the answer of the request, **terms.url** - URL parameter from the response.
