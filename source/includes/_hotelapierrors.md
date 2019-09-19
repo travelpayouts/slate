@@ -1,4 +1,4 @@
-# Hotels API queries errors
+# Hotels API request errors
 
 All input parameters are checked and errors are shown if they are wrong:
 
