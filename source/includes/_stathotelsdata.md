@@ -67,14 +67,14 @@ http://engine.hotellook.com/api/v2/static/countries.json?token=PasteYourTokenHer
 
 The response contains: 
 
-* **Id** – id of country.
-* **code** – code of country.
+* **Id** – id of country
+* **code** – code of country
 * The block EN:
-    * **isVariation** – primary or secondary title. 1 - secondary, 0 - primary.
-    * **name** – country name in English.
+    * **isVariation** – primary or secondary title. 1 - secondary, 0 - primary
+    * **name** – country name in English
 * The block RU:
-    * **isVariation** – primary or secondary title.
-    * **name** – country name in Russian.
+    * **isVariation** – primary or secondary title
+    * **name** – country name in Russian
 
 ## Request "Cities"
 
@@ -90,7 +90,7 @@ http://engine.hotellook.com/api/v2/static/locations.json?token=PasteYourTokenHer
 
 ### Request parameters
 
-* token - your affiliate token.
+* token - your affiliate token
 
 ### Response
 
@@ -122,20 +122,20 @@ http://engine.hotellook.com/api/v2/static/locations.json?token=PasteYourTokenHer
 ]
 ```
 
-* **Id** – id of city.
-* **code** – iata-code of city.
-* **countryId** – id of country.
-* **latitude** – latitude of city.
-* **longitude** – longitude of city.
+* **Id** – id of city
+* **code** – iata-code of city
+* **countryId** – id of country
+* **latitude** – latitude of city
+* **longitude** – longitude of city
 * The block DE:
-    * **isVariation** - primary or secondary title. 1 - secondary, 0 - primary.
-    * **name** – city name in German.
+    * **isVariation** - primary or secondary title. 1 - secondary, 0 - primary
+    * **name** – city name in German
 * The block EN:
-    * **isVariation** - primary or secondary title.
-    * **name** – city name in English.
+    * **isVariation** - primary or secondary title
+    * **name** – city name in English
 * The block RU:
-    * **isVariation** – primary or secondary title.
-    * **name** – city name in Russian.
+    * **isVariation** – primary or secondary title
+    * **name** – city name in Russian
 
 ## Request "Amenities"
 
@@ -151,8 +151,8 @@ http://engine.hotellook.com/api/v2/static/amenities/en.json?token=PasteYourToken
 
 ### Request parameters
 
-* **en.json** - language that you want to see result (en, ru, fr, de and etc);
-* **token** - your affiliate token.
+* **en.json** - language that you want to see result (en, ru, fr, de and etc)
+* **token** - your affiliate token
 
 ### Response
 
@@ -178,9 +178,9 @@ http://engine.hotellook.com/api/v2/static/amenities/en.json?token=PasteYourToken
 ]
 ```
 
-* **Id** – id of amenities in the database.
-* **name** – name of amenities.
-* **groupName** - location of amenities.
+* **Id** – id of amenities in the database
+* **name** – name of amenities
+* **groupName** - location of amenities
 
 ## Request 'Hotels list'
 
@@ -196,8 +196,8 @@ http://engine.hotellook.com/api/v2/static/hotels.json?locationId=895&token=Paste
 
 ### Request parameters
 
-* **locationId** – id of location.
-* **token** – your affiliate token.
+* **locationId** – id of location
+* **token** – your affiliate token
 
 ### Response
 
@@ -282,39 +282,39 @@ http://engine.hotellook.com/api/v2/static/hotels.json?locationId=895&token=Paste
 
 The response contains:
 
-* **id** – id of hotel in database hotellook.
-* **cityId** – id of city.
-* **stars** – number of stars.
+* **id** – id of hotel in database hotellook
+* **cityId** – id of city
+* **stars** – number of stars
 * **pricefrom** – average minimum cost of the period, in USD
-* **rating** – rating visitors.
-* **popularity** – popularity of hotel.
-* **propertyType** – type of hotel (hostel, motel, villa, etc.).
-* **checkOut** – check out time.
-* **checkIn** – check in time.
-* **distance** – distance to the center.
-* **photoCount** – number of photos.
+* **rating** – rating visitors
+* **popularity** – popularity of hotel
+* **propertyType** – type of hotel (hostel, motel, villa, etc.)
+* **checkOut** – check out time
+* **checkIn** – check in time
+* **distance** – distance to the center
+* **photoCount** – number of photos
 * **photos**:
-    * **url** – link to the photo.
-    * **width** – width of photo.
-    * **height** – height of photo.
-* **facilities** – id amenities in the database.
-* **shortFacilities** – availability of the amenities from the list: 'restaurant', 'parking', 'non-smoking', 'pets', 'tv', 'laundry', 'air conditioning', 'internet', 'pool', 'fitness', 'wi-fi in public areas', 'wi-fi in room', 'hairdryer', 'shared bathroom', 'safe', 'babysitting', 'children care/activities' (the list can change).
-* **photosByRoomType** - photos of rooms types. The key - id of the room type, the value - number of photos.
+    * **url** – link to the photo
+    * **width** – width of photo
+    * **height** – height of photo
+* **facilities** – id amenities in the database
+* **shortFacilities** – availability of the amenities from the list: 'restaurant', 'parking', 'non-smoking', 'pets', 'tv', 'laundry', 'air conditioning', 'internet', 'pool', 'fitness', 'wi-fi in public areas', 'wi-fi in room', 'hairdryer', 'shared bathroom', 'safe', 'babysitting', 'children care/activities' (the list can change)
+* **photosByRoomType** - photos of rooms types. The key - id of the room type, the value - number of photos
 * **location**:
-    * **lat** – latitude of hotel.
-    * **lon** – longitude of hotel.
-* **name** – hotel name.
-* **address** – hotel address.
-* **link** – link to this page of hotel. 
-* **poi_distance** - distance to the important places (shown in the list of places id array pois and distance in meters).
+    * **lat** – latitude of hotel
+    * **lon** – longitude of hotel
+* **name** – hotel name
+* **address** – hotel address
+* **link** – link to this page of hotel
+* **poi_distance** - distance to the important places (shown in the list of places id array pois and distance in meters)
 * **pois** - an array of the important places:
-    * **confirmed** - confirmed place;
-    * **rating** - place ranking;
-    * **location** - location;
-    * **name** - the name of the place;
-    * **geom** - coordinates of the point;
-    * **category** - the place category;
-    * **id** - id of place in the base.
+    * **confirmed** - confirmed place
+    * **rating** - place ranking
+    * **location** - location
+    * **name** - the name of the place
+    * **geom** - coordinates of the point
+    * **category** - the place category
+    * **id** - id of place in the base
 
 ## Request "Types of rooms"
 
@@ -328,8 +328,8 @@ http://engine.hotellook.com/api/v2/static/roomTypes.json?language=en&token=Paste
 
 ### Request parameters
 
-* language - language of reaponse (pt, en, fr, de, id, it, pl, es, th, ru).
-* **token** - your affiliate token.
+* language - language of reaponse (pt, en, fr, de, id, it, pl, es, th, ru)
+* **token** - your affiliate token
 
 ### Response
 
@@ -359,8 +359,8 @@ http://engine.hotellook.com/api/v2/static/hotelTypes.json?language=en&token=Past
 
 ### Request parameters
 
-* language - language of reaponse (pt, en, fr, de, id, it, pl, es, th, ru).
-* **token** - your affiliate token.
+* language - language of reaponse (pt, en, fr, de, id, it, pl, es, th, ru)
+* **token** - your affiliate token
 
 ### Response
 
@@ -406,10 +406,10 @@ https://photo.hotellook.com/image_v2/limit/h503387_1/800/520.auto
 
 ### Request parameters
 
-* **h+Id** – h + **hotel's id**.
-* **photoId** – number of the hotel's photo.
-* **photosize** – size of the photo (width/height).
-* **file_type** - you can use **.auto** in the type part of file. It means that our system detects whether a user’s browser can accept the Webp image format. If yes, the server will send the image in Webp format (smaller size). If no, the image will be in JPEG format.
+* **h+Id** – h + **hotel's id**
+* **photoId** – number of the hotel's photo
+* **photosize** – size of the photo (width/height)
+* **file_type** - you can use **.auto** in the type part of file. It means that our system detects whether a user’s browser can accept the Webp image format. If yes, the server will send the image in Webp format (smaller size). If no, the image will be in JPEG format
 
 ## Request for hotel photos. New method
 
@@ -463,12 +463,12 @@ https://photo.hotellook.com/rooms/sprite/h4_12/100x50/3/50x25.auto
 
 ### Request parameters
 
-* **h + hotel-Id** - letter h + Hotel identifier (from static/hotels.json).
-* **group-id** - ID room type (from static/hotels.json and internalTypeId of the search for an answer).
-* **first_width** - width of the first photo in the sprite.
-* **photos_count-1** - number of photos of the room type minus one (from the static/hotels.json). For example, if the answer is that photographs of this type have four pieces, it indicates three instead of this parameter.
-* **rest_photos_width** - width of the rest of the photos in the sprite.
-* **auto** - our system checks whether a user's browser can accommodate the WebP image format. If yes, the server will provide a WebP image format. If not, the image will be in JPEG format.
+* **h + hotel-Id** - letter h + Hotel identifier (from static/hotels.json)
+* **group-id** - ID room type (from static/hotels.json and internalTypeId of the search for an answer)
+* **first_width** - width of the first photo in the sprite
+* **photos_count-1** - number of photos of the room type minus one (from the static/hotels.json). For example, if the answer is that photographs of this type have four pieces, it indicates three instead of this parameter
+* **rest_photos_width** - width of the rest of the photos in the sprite
+* **auto** - our system checks whether a user's browser can accommodate the WebP image format. If yes, the server will provide a WebP image format. If not, the image will be in JPEG format
 
 ### Additional information
 
