@@ -30,7 +30,61 @@ When using this search, it is possible to access its results not immediately, bu
 > Sample request
 
 ```shell
-http://engine.hotellook.com/api/v2/search/start.json?iata=HKT&checkIn=2018-08-10&checkOut=2018-08-13&adultsCount=2&customerIP=100.168.1.1&childrenCount=1&childAge1=8&lang=ru&currency=USD&waitForResult=0&marker=УкажитеВашМаркер&signature=a475100374414df97a9c6c7d7731b3c6
+curl --request GET \
+  --url 'http://engine.hotellook.com/api/v2/search/start.json?iata=HKT&checkIn=2018-08-10&checkOut=2018-08-13&adultsCount=2&customerIP=100.168.1.1&childrenCount=1&childAge1=8&lang=ru&currency=USD&waitForResult=0&marker=УкажитеВашМаркер&signature=a475100374414df97a9c6c7d7731b3c6' \
+```
+
+```ruby
+require 'uri'
+require 'net/https'
+
+url = URI("http://engine.hotellook.com/api/v2/search/start.json?iata=HKT&checkIn=2018-08-10&checkOut=2018-08-13&adultsCount=2&customerIP=100.168.1.1&childrenCount=1&childAge1=8&lang=ru&currency=USD&waitForResult=0&marker=УкажитеВашМаркер&signature=a475100374414df97a9c6c7d7731b3c6")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+
+response = https.request(request)
+puts response.read_body
+```
+
+```php
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "http://engine.hotellook.com/api/v2/search/start.json?iata=HKT&checkIn=2018-08-10&checkOut=2018-08-13&adultsCount=2&customerIP=100.168.1.1&childrenCount=1&childAge1=8&lang=ru&currency=USD&waitForResult=0&marker=УкажитеВашМаркер&signature=a475100374414df97a9c6c7d7731b3c6",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+```
+
+```python
+import requests
+
+url = "http://engine.hotellook.com/api/v2/search/start.json"
+
+querystring = {"iata":"HKT", "checkIn":"2018-08-10", "checkOut":"2018-08-13", "adultsCount":"2", "customerIP":"100.168.1.1", "childrenCount":"1", "childAge1":"8", "lang":"ru", "currency":"USD", "waitForResult":"0", "marker":"УкажитеВашМаркер", "signature":"a475100374414df97a9c6c7d7731b3c6"}
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
 ```
 
 where **signature** is md5 of the string: "*YourToken:YourMarker:adultsCount:checkIn:checkOut:childAge1:childrenCount:currency:customerIP:iata:lang:waitForResult*". 
@@ -48,7 +102,9 @@ Required parameters are highlighted in **bold**.
 * **cityId** – the location ID (the query static/locations.json)
 * **hotelId** – the hotel ID (the query static/hotels.json)
 * **iata** – iata code of city
-    **Note**. The request must have at least one of the required parameters iata, cityId or hotelId
+    
+    **Note**. The request must have at least one of the required parameters iata, cityId or hotelId.
+
 * **checkIn** – check-in date format: yyyy–MM–dd
 * **checkOut** – check-out date format: yyyy–MM–dd
 * **adultsCount** – number of adults
@@ -108,7 +164,7 @@ where **signature** is md5 of the string: *"YourToken:YourMarker:limit:offset:ro
     *Default – popularity*
 * sortAsc – how to sort the values:
     * 1 – ascending
-    * 0 – descending    
+    * 0 – descending
     *Default – 1.*
 * roomsCount – the maximum number of rooms that are returned in each hotel, from 0 to infinity, where 0 - no limit. Default – 0
 
@@ -203,12 +259,12 @@ Block "**rooms**" contains:
     * **smoking** - can smoke in the room
     * **freeWifi** - whether there is free wifi in the room
     * **hotelWebsite** - proposal leads to the official hotel website
-* **bookingURL** – the link to the booking website;
-* **fullBookingURL** - complete link to book with filled all data about users (date of check In and check out, number of adults and childrens, currency and ets);
-* **internalTypeId** - grouping by type of rooms;
-* **agencyId** – the id of booking agencies;
-* **agencyName** – the name of the booking agencies;
-* **rating** - the ranking of visitors. The parameters are calculated based on guest rating, which is compiled on the basis of a vote.
+* **bookingURL** – the link to the booking website
+* **fullBookingURL** - complete link to book with filled all data about users (date of check In and check out, number of adults and childrens, currency and ets)
+* **internalTypeId** - grouping by type of rooms
+* **agencyId** – the id of booking agencies
+* **agencyName** – the name of the booking agencies
+* **rating** - the ranking of visitors. The parameters are calculated based on guest rating, which is compiled on the basis of a vote
 
 You can get photos and other information about hotel with help of [Hotel Data API](https://support.travelpayouts.com/hc/en-us/articles/115000343268-Hotels-data-API).
 
