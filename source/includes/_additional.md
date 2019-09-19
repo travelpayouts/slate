@@ -94,8 +94,6 @@ print response_body
 ]
 ```
 
-### Response parameters
-
  * transit_visa_hours - how much hours you can stay in the country by transit visa
  * is_schengen - is it possible to enter on a Schengen visa
  * have_transit_visa - deprecated
