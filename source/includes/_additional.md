@@ -61,7 +61,7 @@ print response_body
 
 ### Request
 
-'GET https://overmind.jetradar.com/api/ru/visas?api_key=afbadb4ff8485c0adcba486b4ca90cc4`
+`GET https://overmind.jetradar.com/api/ru/visas?api_key=afbadb4ff8485c0adcba486b4ca90cc4`
 
 ### Request parameters
 
