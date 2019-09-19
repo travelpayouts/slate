@@ -6,19 +6,73 @@ Requests as a result of which the partner receives information about the countri
 
 ## Request "Country"
 
-`GET http://engine.hotellook.com/api/v2/static/countries.json`
-
-### Request
-
 > Sample request
 
 ```shell
-http://engine.hotellook.com/api/v2/static/countries.json?token=PasteYourTokenHere
+curl --request GET \
+  --url 'http://engine.hotellook.com/api/v2/static/countries.json?token=PasteYourTokenHere' \
 ```
+
+```ruby
+require 'uri'
+require 'net/https'
+
+url = URI("http://engine.hotellook.com/api/v2/static/countries.json?token=PasteYourTokenHere")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+
+response = https.request(request)
+puts response.read_body
+```
+
+```php
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "http://engine.hotellook.com/api/v2/static/countries.json?token=PasteYourTokenHere",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+```
+
+```python
+import requests
+
+url = "http://engine.hotellook.com/api/v2/static/countries.json"
+
+querystring = {"token":"PasteYourTokenHere"}
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
+```
+
+### Request
+
+`GET http://engine.hotellook.com/api/v2/static/countries.json?token=PasteYourTokenHere`
 
 ### Request parameters
 
-* **token** - your affiliate token.
+* **token** - your affiliate token
 
 ### Response
 
@@ -78,15 +132,69 @@ The response contains:
 
 ## Request "Cities"
 
-`GET http://engine.hotellook.com/api/v2/static/locations.json`
-
-### Request
-
 > Sample request
 
 ```shell
-http://engine.hotellook.com/api/v2/static/locations.json?token=PasteYourTokenHere
+curl --request GET \
+  --url 'http://engine.hotellook.com/api/v2/static/locations.json?token=PasteYourTokenHere' \
 ```
+
+```ruby
+require 'uri'
+require 'net/https'
+
+url = URI("http://engine.hotellook.com/api/v2/static/locations.json?token=PasteYourTokenHere")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+
+response = https.request(request)
+puts response.read_body
+```
+
+```php
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "http://engine.hotellook.com/api/v2/static/locations.json?token=PasteYourTokenHere",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+```
+
+```python
+import requests
+
+url = "http://engine.hotellook.com/api/v2/static/locations.json"
+
+querystring = {"token":"PasteYourTokenHere"}
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
+```
+
+### Request
+
+`GET http://engine.hotellook.com/api/v2/static/locations.json?token=PasteYourTokenHere`
 
 ### Request parameters
 
@@ -139,15 +247,69 @@ http://engine.hotellook.com/api/v2/static/locations.json?token=PasteYourTokenHer
 
 ## Request "Amenities"
 
-`GET http://engine.hotellook.com/static/amenities/`
-
-### Request
-
 > Sample request
 
 ```shell
-http://engine.hotellook.com/api/v2/static/amenities/en.json?token=PasteYourTokenHere
+curl --request GET \
+  --url 'http://engine.hotellook.com/api/v2/static/amenities/en.json?token=PasteYourTokenHere' \
 ```
+
+```ruby
+require 'uri'
+require 'net/https'
+
+url = URI("http://engine.hotellook.com/api/v2/static/amenities/en.json?token=PasteYourTokenHere")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+
+response = https.request(request)
+puts response.read_body
+```
+
+```php
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "http://engine.hotellook.com/api/v2/static/amenities/en.json?token=PasteYourTokenHere",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+```
+
+```python
+import requests
+
+url = "http://engine.hotellook.com/api/v2/static/amenities/en.json"
+
+querystring = {"token":"PasteYourTokenHere"}
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
+```
+
+### Request
+
+` GET http://engine.hotellook.com/api/v2/static/amenities/en.json?token=PasteYourTokenHere`
 
 ### Request parameters
 
@@ -184,15 +346,69 @@ http://engine.hotellook.com/api/v2/static/amenities/en.json?token=PasteYourToken
 
 ## Request 'Hotels list'
 
-`GET http://engine.hotellook.com/static/hotels.json`
-
-### Request
-
 > Sample request
 
 ```shell
-http://engine.hotellook.com/api/v2/static/hotels.json?locationId=895&token=PasteYourTokenHere
+curl --request GET \
+  --url 'http://engine.hotellook.com/api/v2/static/hotels.json?locationId=895&token=PasteYourTokenHere' \
 ```
+
+```ruby
+require 'uri'
+require 'net/https'
+
+url = URI("http://engine.hotellook.com/api/v2/static/hotels.json?locationId=895&token=PasteYourTokenHere")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+
+response = https.request(request)
+puts response.read_body
+```
+
+```php
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "http://engine.hotellook.com/api/v2/static/hotels.json?locationId=895&token=PasteYourTokenHere",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+```
+
+```python
+import requests
+
+url = "http://engine.hotellook.com/api/v2/static/hotels.json"
+
+querystring = {"locationId":"895", "token":"PasteYourTokenHere"}
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
+```
+
+### Request
+
+` GET http://engine.hotellook.com/api/v2/static/hotels.json?locationId=895&token=PasteYourTokenHere`
 
 ### Request parameters
 
@@ -318,13 +534,69 @@ The response contains:
 
 ## Request "Types of rooms"
 
-`GET http://engine.hotellook.com/static/roomTypes.json`
-
 > Sample request
 
 ```shell
-http://engine.hotellook.com/api/v2/static/roomTypes.json?language=en&token=PasteYourTokenHere
+curl --request GET \
+  --url 'http://engine.hotellook.com/api/v2/static/roomTypes.json?language=en&token=PasteYourTokenHere' \
 ```
+
+```ruby
+require 'uri'
+require 'net/https'
+
+url = URI("http://engine.hotellook.com/api/v2/static/roomTypes.json?language=en&token=PasteYourTokenHere")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+
+response = https.request(request)
+puts response.read_body
+```
+
+```php
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "http://engine.hotellook.com/api/v2/static/roomTypes.json?language=en&token=PasteYourTokenHere",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+```
+
+```python
+import requests
+
+url = "http://engine.hotellook.com/api/v2/static/roomTypes.json"
+
+querystring = {"language":"en", "token":"PasteYourTokenHere"}
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
+```
+
+### Request
+
+` GET http://engine.hotellook.com/api/v2/static/roomTypes.json?language=en&token=PasteYourTokenHere`
 
 ### Request parameters
 
@@ -347,15 +619,69 @@ http://engine.hotellook.com/api/v2/static/roomTypes.json?language=en&token=Paste
 
 ## Request "Types of hotels"
 
-`GET http://engine.hotellook.com/static/hotelTypes.json`
-
-### Request
-
 > Sample request
 
 ```shell
-http://engine.hotellook.com/api/v2/static/hotelTypes.json?language=en&token=PasteYourTokenHere
+curl --request GET \
+  --url 'http://engine.hotellook.com/api/v2/static/hotelTypes.json?language=en&token=PasteYourTokenHere' \
 ```
+
+```ruby
+require 'uri'
+require 'net/https'
+
+url = URI("http://engine.hotellook.com/api/v2/static/hotelTypes.json?language=en&token=PasteYourTokenHere")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+
+response = https.request(request)
+puts response.read_body
+```
+
+```php
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "http://engine.hotellook.com/api/v2/static/hotelTypes.json?language=en&token=PasteYourTokenHere",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+```
+
+```python
+import requests
+
+url = "http://engine.hotellook.com/api/v2/static/hotelTypes.json"
+
+querystring = {"language":"en", "token":"PasteYourTokenHere"}
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
+```
+
+### Request
+
+` GET http://engine.hotellook.com/api/v2/static/hotelTypes.json?language=en&token=PasteYourTokenHere`
 
 ### Request parameters
 
@@ -386,8 +712,6 @@ http://engine.hotellook.com/api/v2/static/hotelTypes.json?language=en&token=Past
 
 ## Request "Hotel photos". Old method
 
-Endpoint: [https://photo.hotellook.com/image_v2/limit](https://photo.hotellook.com/image_v2/limit)
-
 > Sample request
 
 https://photo.hotellook.com/image_v2/limit/hId_photoId/photosize.jpg
@@ -399,6 +723,64 @@ https://photo.hotellook.com/image_v2/limit/h503387_1/48.jpg
 https://photo.hotellook.com/image_v2/limit/h503387_1/640/480.jpg
 
 https://photo.hotellook.com/image_v2/limit/h503387_1/800/520.auto
+
+```shell
+curl --request GET \
+  --url 'https://photo.hotellook.com/image_v2/limit/hId_photoId/photosize.jpg' \
+```
+
+```ruby
+require 'uri'
+require 'net/https'
+
+url = URI("https://photo.hotellook.com/image_v2/limit/hId_photoId/photosize.jpg")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+
+response = https.request(request)
+puts response.read_body
+```
+
+```php
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://photo.hotellook.com/image_v2/limit/hId_photoId/photosize.jpg",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+```
+
+```python
+import requests
+
+url = "https://photo.hotellook.com/image_v2/limit/hId_photoId/photosize.jpg"
+
+querystring = {}
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
+```
 
 ### Request
 
@@ -413,7 +795,65 @@ https://photo.hotellook.com/image_v2/limit/h503387_1/800/520.auto
 
 ## Request for hotel photos. New method
 
-**Endpoint**: [https://yasen.hotellook.com/photos/hotel_photos](https://yasen.hotellook.com/photos/hotel_photos)
+> Example request
+
+```shell
+curl --request GET \
+  --url 'https://yasen.hotellook.com/photos/hotel_photos?id=27926056,4' \
+```
+
+```ruby
+require 'uri'
+require 'net/https'
+
+url = URI("https://yasen.hotellook.com/photos/hotel_photos?id=27926056,4")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+
+response = https.request(request)
+puts response.read_body
+```
+
+```php
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://yasen.hotellook.com/photos/hotel_photos?id=27926056,4",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+```
+
+```python
+import requests
+
+url = "https://yasen.hotellook.com/photos/hotel_photos"
+
+querystring = {"id":"27926056,4"}
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
+```
 
 ### First request
 
@@ -437,7 +877,63 @@ In response, there will be an array of photos id for each hotel:
 
 > Sample request
 
-https://photo.hotellook.com/image_v2/limit/photo_id/800/520.auto
+```shell
+curl --request GET \
+  --url 'https://photo.hotellook.com/image_v2/limit/photo_id/800/520.auto' \
+```
+
+```ruby
+require 'uri'
+require 'net/https'
+
+url = URI("https://photo.hotellook.com/image_v2/limit/photo_id/800/520.auto")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+
+response = https.request(request)
+puts response.read_body
+```
+
+```php
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://photo.hotellook.com/image_v2/limit/photo_id/800/520.auto",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+```
+
+```python
+import requests
+
+url = "https://photo.hotellook.com/image_v2/limit/photo_id/800/520.auto"
+
+querystring = {}
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
+```
 
 After that, send a request to the address [https://photo.hotellook.com/image_v2/limit/photo_id/800/520.auto](https://photo.hotellook.com/image_v2/limit/photo_id/800/520.auto)
 
@@ -445,13 +941,67 @@ where instead of **photo_id** substitute id photos.
 
 ## Request "Hotel's room photos (in a sprite)"
 
-**Endpoint**: [https://photo.hotellook.com/rooms/sprite/](https://photo.hotellook.com/rooms/sprite/)
-
 Use this request to get a sprite with photos of rooms.
 
 > Sample request
 
-https://photo.hotellook.com/rooms/sprite/h4_1/100/3/50.auto
+```shell
+curl --request GET \
+  --url 'https://photo.hotellook.com/rooms/sprite/h4_1/100/3/50.auto' \
+```
+
+```ruby
+require 'uri'
+require 'net/https'
+
+url = URI("https://photo.hotellook.com/rooms/sprite/h4_1/100/3/50.auto")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+
+response = https.request(request)
+puts response.read_body
+```
+
+```php
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://photo.hotellook.com/rooms/sprite/h4_1/100/3/50.auto",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+```
+
+```python
+import requests
+
+url = "https://photo.hotellook.com/rooms/sprite/h4_1/100/3/50.auto"
+
+querystring = {}
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
+```
 
 > To get a sprite with rectangular photographs, along with the need to specify the width of the height of the photos:
 
@@ -488,11 +1038,69 @@ Parameters similar to those described in the request above, except for photo_idx
 
 ## Request 'City photo'
 
-**Endpoint**: [https://photo.hotellook.com/static/cities/](https://photo.hotellook.com/static/cities/)
-
 > Sample request
 
-https://photo.hotellook.com/static/cities/960x720/LED.jpg
+```shell
+curl --request GET \
+  --url 'https://photo.hotellook.com/static/cities/960x720/LED.jpg' \
+```
+
+```ruby
+require 'uri'
+require 'net/https'
+
+url = URI("https://photo.hotellook.com/static/cities/960x720/LED.jpg")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+
+response = https.request(request)
+puts response.read_body
+```
+
+```php
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://photo.hotellook.com/static/cities/960x720/LED.jpg",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+```
+
+```python
+import requests
+
+url = "https://photo.hotellook.com/static/cities/960x720/LED.jpg"
+
+querystring = {}
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
+```
+
+### Request
+
+`GET https://photo.hotellook.com/static/cities/960x720/LED.jpg`
 
 ### Request parameters
 
