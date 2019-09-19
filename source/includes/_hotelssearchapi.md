@@ -99,8 +99,8 @@ More information about the signature is available [here](https://support.travelp
 
 Required parameters are highlighted in **bold**.
 
-* **cityId** – the location ID (the query static/locations.json)
-* **hotelId** – the hotel ID (the query static/hotels.json)
+* **cityId** – the location ID (the query [static/locations.json](#request-quot-cities-quot))
+* **hotelId** – the hotel ID (the query [static/hotels.json](#request-39-hotels-list-39))
 * **iata** – iata code of city
     
     **Note**. The request must have at least one of the required parameters iata, cityId or hotelId.
