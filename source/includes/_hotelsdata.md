@@ -6,8 +6,6 @@ The authorization is based on [affilliate token](https://www.travelpayouts.com/d
 
 ## Hotel search by name or location
 
-**Endpoint**: [http://engine.hotellook.com/api/v2/lookup.json](http://engine.hotellook.com/api/v2/lookup.json)
-
 Search for a specific location or name places of a hotel (city, island).
 
 **Attention!** If you send a request without a token, the number of queries will be limited. The values of restrictions are passed in the response header:
@@ -19,7 +17,61 @@ Search for a specific location or name places of a hotel (city, island).
 > Sample request
 
 ```shell
-http://engine.hotellook.com/api/v2/lookup.json?query=moscow&lang=ru&lookFor=both&limit=1&token=PasteYourTokenHere
+curl --request GET \
+  --url 'http://engine.hotellook.com/api/v2/lookup.json?query=moscow&lang=ru&lookFor=both&limit=1&token=PasteYourTokenHere' \
+```
+
+```ruby
+require 'uri'
+require 'net/https'
+
+url = URI("http://engine.hotellook.com/api/v2/lookup.json?query=moscow&lang=ru&lookFor=both&limit=1&token=PasteYourTokenHere")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+
+response = https.request(request)
+puts response.read_body
+```
+
+```php
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "http://engine.hotellook.com/api/v2/lookup.json?query=moscow&lang=ru&lookFor=both&limit=1&token=PasteYourTokenHere",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+```
+
+```python
+import requests
+
+url = "http://engine.hotellook.com/api/v2/lookup.json"
+
+querystring = {"query":"moscow","lang":"ru","lookFor":"both","limit":"1","token":"PasteYourTokenHere"}
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
 ```
 
 ### Request
@@ -117,8 +169,6 @@ The block "**hotels**" includes:
 
 ## Searching a hotel or location by coordinates
 
-**Endpoint**: [http://engine.hotellook.com/api/v2/lookup.json](http://engine.hotellook.com/api/v2/lookup.json)
-
 Search for a specific location or hotel (city, island) by coordinates.
 
 **Attention!** If you send a request without a token, the number of queries will be limited. The values of restrictions are passed in the response header:
@@ -130,7 +180,61 @@ Search for a specific location or hotel (city, island) by coordinates.
 > Sample request
 
 ```shell
-http://engine.hotellook.com/api/v2/lookup.json?query=55.0291,82.9059&lang=ru&lookFor=both&limit=1&token=PasteYourTokenHere
+curl --request GET \
+  --url 'http://engine.hotellook.com/api/v2/lookup.json?query=55.0291,82.9059&lang=ru&lookFor=both&limit=1&token=PasteYourTokenHere' \
+```
+
+```ruby
+require 'uri'
+require 'net/https'
+
+url = URI("http://engine.hotellook.com/api/v2/lookup.json?query=55.0291,82.9059&lang=ru&lookFor=both&limit=1&token=PasteYourTokenHere")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+
+response = https.request(request)
+puts response.read_body
+```
+
+```php
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "http://engine.hotellook.com/api/v2/lookup.json?query=55.0291,82.9059&lang=ru&lookFor=both&limit=1&token=PasteYourTokenHere",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+```
+
+```python
+import requests
+
+url = "http://engine.hotellook.com/api/v2/lookup.json"
+
+querystring = {"query":"55.0291,82.9059","lang":"ru","lookFor":"both","limit":"1","token":"PasteYourTokenHere"}
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
 ```
 
 ### Request
@@ -213,8 +317,6 @@ The block "**hotels**" includes:
 
 ## Displays the cost of living in hotels
 
-**Endpoint**: [http://engine.hotellook.com/api/v2/cache.json](http://engine.hotellook.com/api/v2/cache.json)
-
 The request is used to get the price of hotel rooms from the cache for the period. It doesn't contain information about room availability.
 
 **Attention**! If you send a request without a token, the number of queries will be limited. The values of restrictions are passed in the response header:
@@ -226,12 +328,66 @@ The request is used to get the price of hotel rooms from the cache for the perio
 > Sample request
 
 ```shell
-http://engine.hotellook.com/api/v2/cache.json?location=Saint-Petersburg&hotelId=277083&checkIn=2017-09-13&checkOut=2017-09-18&currency=rub&limit=1&token=PasteYourTokenHere
+curl --request GET \
+  --url 'http://engine.hotellook.com/api/v2/cache.json?location=Saint-Petersburg&hotelId=277083&checkIn=2019-09-13&checkOut=2019-09-18&currency=rub&limit=1&token=PasteYourTokenHere' \
+```
+
+```ruby
+require 'uri'
+require 'net/https'
+
+url = URI("http://engine.hotellook.com/api/v2/cache.json?location=Saint-Petersburg&hotelId=277083&checkIn=2019-09-13&checkOut=2019-09-18&currency=rub&limit=1&token=PasteYourTokenHere")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+
+response = https.request(request)
+puts response.read_body
+```
+
+```php
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "http://engine.hotellook.com/api/v2/cache.json?location=Saint-Petersburg&hotelId=277083&checkIn=2019-09-13&checkOut=2019-09-18&currency=rub&limit=1&token=PasteYourTokenHere",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+```
+
+```python
+import requests
+
+url = "http://engine.hotellook.com/api/v2/cache.json"
+
+querystring = {"location":"Saint-Petersburg","hotelId":"277083","checkIn":"2019-09-13","checkOut":"2019-09-18","currency": "rub", "limit": "1", "token":"PasteYourTokenHere"}
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
 ```
 
 ### Request
 
-`GET http://engine.hotellook.com/api/v2/cache.json?location=Saint-Petersburg&hotelId=277083&checkIn=2017-09-13&checkOut=2017-09-18&currency=rub&limit=1&token=PasteYourTokenHere`
+`GET http://engine.hotellook.com/api/v2/cache.json?location=Saint-Petersburg&hotelId=277083&checkIn=2019-09-13&checkOut=2019-09-18&currency=rub&limit=1&token=PasteYourTokenHere`
 
 ### Request parameters
 
@@ -251,7 +407,7 @@ http://engine.hotellook.com/api/v2/cache.json?location=Saint-Petersburg&hotelId=
     * limit = 7 - two 5, 4 and 3-star hotels and one comfortable
     * limit = 8 - all of two. And so on, with the growth parameters in turn increasing the number of hotels in every star. If the specified star hotels are no more, the issue will begin to fall and hotels 1 0 star by the same rule
 * customerIp - parameter to specify the user IP if the request is not sent directly, but through a proxy server
-* currency - currency of price (rub, usd, eur)
+* currency - currency of price (rub, usd, eur).
 * token - your affiliate token
 
 ### Response
@@ -301,9 +457,67 @@ http://engine.hotellook.com/api/v2/cache.json?location=Saint-Petersburg&hotelId=
 
 ## List of hotels in the archive
 
-**Endpoint**: http://yasen.hotellook.com/tp/v1/hotels
-
 This request return the file with a list of all hotels for the specified locale.
+
+> Sample request
+
+```shell
+curl --request GET \
+  --url 'http://yasen.hotellook.com/tp/v1/hotels?language=en' \
+```
+
+```ruby
+require 'uri'
+require 'net/https'
+
+url = URI("http://yasen.hotellook.com/tp/v1/hotels?language=en")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+
+response = https.request(request)
+puts response.read_body
+```
+
+```php
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "http://yasen.hotellook.com/tp/v1/hotels?language=en",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+```
+
+```python
+import requests
+
+url = "http://yasen.hotellook.com/tp/v1/hotels"
+
+querystring = {"language":"en"}
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
+```
 
 ### Request
 
@@ -340,19 +554,71 @@ The hotels file is updated once a week in the morning (GMT) on Saturday.
 
 ## Hotels Selections
 
-**Endpoint**: [http://yasen.hotellook.com/tp/public/widget_location_dump.json](http://yasen.hotellook.com/tp/public/widget_location_dump.json)
-
 The request recovers the list of specific hotels according to the ID of a location. A collection is formed according to the specified period. If the period is not specified, a collection shall be formed from the hotels found for the last three days.
 
 > Sample request
 
 ```shell
-http://yasen.hotellook.com/tp/public/widget_location_dump.json?currency=rub&language=ru&limit=5&id=12209&type=popularity&check_in=2017-02-02&check_out=2017-02-17&token=PasteYourTokenHere
+curl --request GET \
+  --url 'http://yasen.hotellook.com/tp/public/widget_location_dump.json?currency=rub&language=ru&limit=5&id=12209&type=popularity&check_in=2019-02-02&check_out=2019-02-17&token=PasteYourTokenHere' \
+```
+
+```ruby
+require 'uri'
+require 'net/https'
+
+url = URI("http://yasen.hotellook.com/tp/public/widget_location_dump.json?currency=rub&language=ru&limit=5&id=12209&type=popularity&check_in=2019-02-02&check_out=2019-02-17&token=PasteYourTokenHere")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+
+response = https.request(request)
+puts response.read_body
+```
+
+```php
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "http://yasen.hotellook.com/tp/public/widget_location_dump.json?currency=rub&language=ru&limit=5&id=12209&type=popularity&check_in=2019-02-02&check_out=2019-02-17&token=PasteYourTokenHere",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+```
+
+```python
+import requests
+
+url = "http://yasen.hotellook.com/tp/public/widget_location_dump.json"
+
+querystring = {"currency":"rub", "language":"ru", "limit":"5", "id":"12209", "type":"popularity", "check_in":"2019-02-02", "check_out":"2019-02-17", "token":"PasteYourTokenHere"}
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
 ```
 
 ### Request
 
-`GET http://yasen.hotellook.com/tp/public/widget_location_dump.json?currency=rub&language=ru&limit=5&id=12209&type=popularity&check_in=2017-02-02&check_out=2017-02-17&token=PasteYourTokenHere`
+`GET http://yasen.hotellook.com/tp/public/widget_location_dump.json?currency=rub&language=ru&limit=5&id=12209&type=popularity&check_in=2019-02-02&check_out=2019-02-17&token=PasteYourTokenHere`
 
 ### Request parameters
 
@@ -391,8 +657,8 @@ http://yasen.hotellook.com/tp/public/widget_location_dump.json?currency=rub&lang
                 "search_params": {
                     "adults": 2,
                     "children": {},
-                    "checkIn": "2017-02-02",
-                    "checkOut": "2017-02-17"
+                    "checkIn": "2019-02-02",
+                    "checkOut": "2019-02-17"
                 },
                 "price_pn": 2647,
                 "old_price_pn": 2851
@@ -410,7 +676,7 @@ http://yasen.hotellook.com/tp/public/widget_location_dump.json?currency=rub&lang
 * **rating** – hotel’s rating, assigned by its visitors
 * **property_type** – type of a hotel
 * **hotel_type** – description of a hotel’s type
-* **last_price_info** – information about the last found price of a hotel (if any):
+* **last_price_info** – information about the last found price of a hotel (if any)
     * **price** – price of accommodation during the whole period with a discount
     * **old_price** - price of accommodation without a discount
     * **discount** – amount of a discount
@@ -423,14 +689,66 @@ http://yasen.hotellook.com/tp/public/widget_location_dump.json?currency=rub&lang
 
 ## The types of hotel collections
 
-**Endpoint**: [http://yasen.hotellook.com/tp/public/available_selections.json](http://yasen.hotellook.com/tp/public/available_selections.json)
-
 The request recovers the list of all available separate collections. This type is used to search for hotels with a discount.
 
 > Sample request
 
 ```shell
-http://yasen.hotellook.com/tp/public/available_selections.json?id=12209&token=PasteYourTokenHere
+curl --request GET \
+  --url 'http://yasen.hotellook.com/tp/public/available_selections.json?id=12209&token=PasteYourTokenHere' \
+```
+
+```ruby
+require 'uri'
+require 'net/https'
+
+url = URI("http://yasen.hotellook.com/tp/public/available_selections.json?id=12209&token=PasteYourTokenHere")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+
+response = https.request(request)
+puts response.read_body
+```
+
+```php
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "http://yasen.hotellook.com/tp/public/available_selections.json?id=12209&token=PasteYourTokenHere",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+```
+
+```python
+import requests
+
+url = "http://yasen.hotellook.com/tp/public/available_selections.json"
+
+querystring = {"id":"12209", "token":"PasteYourTokenHere"}
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
 ```
 
 ### Request
