@@ -396,7 +396,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </ul>
           </li>
           <li>
-            <a href="#hotel-search-api" class="toc-h1 toc-link" data-title="hotel-search-api">Hotel search API</a>
+            <a href="#hotels-search-api" class="toc-h1 toc-link" data-title="hotels-search-api">Hotels search API</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#requirements-for-hotels-api-access" class="toc-h2 toc-link" data-title="requirements-for-hotels-api-access">Requirements for Hotels API access</a>
@@ -410,7 +410,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </ul>
           </li>
           <li>
-            <a href="#hotels-api-queries-errors" class="toc-h1 toc-link" data-title="hotels-api-queries-errors">Hotels API queries errors</a>
+            <a href="#hotels-api-request-errors" class="toc-h1 toc-link" data-title="hotels-api-request-errors">Hotels API request errors</a>
+          </li>
+          <li>
+            <a href="#additional-api-methods" class="toc-h1 toc-link" data-title="additional-api-methods">Additional API methods</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#visas-information" class="toc-h2 toc-link" data-title="visas-information">Visas information</a>
+                  </li>
+                  <li>
+                    <a href="#routes-schedule" class="toc-h2 toc-link" data-title="routes-schedule">Routes schedule</a>
+                  </li>
+              </ul>
           </li>
       </div>
         <ul class="toc-footer">
@@ -463,7 +474,7 @@ Important. We strongly urge receiving data in compressed GZIP format, which save
 <p><a href="https://app.getpostman.com/run-collection/3438c693f7bfb0c14368"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman" /></a></p>
 
 <blockquote>
-<p>Example of a request:</p>
+<p>Request example</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
   --url <span class="s1">'https://api.travelpayouts.com/v1/prices/cheap?origin=MOW&amp;destination=HKT&amp;depart_date=2019-11&amp;return_date=2019-12'</span> <span class="se">\</span>
@@ -641,7 +652,7 @@ Important Old dates may be specified in a query. No error will be generated, but
 <p><a href="https://app.getpostman.com/run-collection/3438c693f7bfb0c14368"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman" /></a></p>
 
 <blockquote>
-<p>Example of a request:</p>
+<p>Request example</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
   --url <span class="s1">'https://api.travelpayouts.com/v1/prices/cheap?origin=MOW&amp;destination=HKT&amp;depart_date=2019-11&amp;return_date=2019-12'</span> <span class="se">\</span>
@@ -801,7 +812,7 @@ Important Old dates may be specified in a query. No error will be generated, but
 <p><a href="https://app.getpostman.com/run-collection/3438c693f7bfb0c14368"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman" /></a></p>
 
 <blockquote>
-<p>Example of a request:</p>
+<p>Request example</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
   --url <span class="s1">'https://api.travelpayouts.com/v1/prices/calendar?depart_date=2019-11&amp;origin=MOW&amp;destination=BCN&amp;calendar_type=departure_date&amp;currency=USD'</span> <span class="se">\</span>
@@ -1158,7 +1169,7 @@ Important Old dates may be specified in a query. No error will be generated, but
 <p><a href="https://app.getpostman.com/run-collection/3438c693f7bfb0c14368"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman" /></a></p>
 
 <blockquote>
-<p>Example of a request:</p>
+<p>Request example</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
   --url <span class="s1">'https://api.travelpayouts.com/v1/airline-directions?airline_code=SU&amp;limit=10'</span> <span class="se">\</span>
@@ -1268,7 +1279,7 @@ Important Old dates may be specified in a query. No error will be generated, but
 <p><a href="https://app.getpostman.com/run-collection/3438c693f7bfb0c14368"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman" /></a></p>
 
 <blockquote>
-<p>Example of a request:</p>
+<p>Request example</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
   --url <span class="s1">'https://api.travelpayouts.com/v1/city-directions?origin=MOW&amp;currency=usd'</span> <span class="se">\</span>
@@ -2359,6 +2370,10 @@ Note! Additionally we created translations for different languages for all data 
 <p>The query returns a file with a list of countries from the database. </p>
 
 <p><a href="https://app.getpostman.com/run-collection/3438c693f7bfb0c14368"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman" /></a></p>
+
+<blockquote>
+<p>Request example</p>
+</blockquote>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
   --url <span class="s1">'https://api.travelpayouts.com/data/en/countries.json'</span> <span class="se">\</span>
   --header <span class="s1">'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'</span>
@@ -2464,7 +2479,7 @@ Note! Additionally we created translations for different languages for all data 
 <p><a href="https://app.getpostman.com/run-collection/3438c693f7bfb0c14368"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman" /></a></p>
 
 <blockquote>
-<p>Example of a request:</p>
+<p>Request example</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
   --url <span class="s1">'https://api.travelpayouts.com/data/en/cities.json'</span> <span class="se">\</span>
@@ -2589,7 +2604,7 @@ Note! Additionally we created translations for different languages for all data 
 <p><a href="https://app.getpostman.com/run-collection/3438c693f7bfb0c14368"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman" /></a></p>
 
 <blockquote>
-<p>Example of request:</p>
+<p>Request example</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
   --url <span class="s1">'https://api.travelpayouts.com/data/en/airports.json'</span> <span class="se">\</span>
@@ -2723,7 +2738,7 @@ Note! Additionally we created translations for different languages for all data 
 <p><a href="https://app.getpostman.com/run-collection/3438c693f7bfb0c14368"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman" /></a></p>
 
 <blockquote>
-<p>Example of a request:</p>
+<p>Request example</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
   --url <span class="s1">'https://api.travelpayouts.com/data/en/airlines.json'</span> <span class="se">\</span>
@@ -2839,7 +2854,7 @@ Note! Additionally we created translations for different languages for all data 
 <p>The query returns a file with a list of alliances from the database. </p>
 
 <blockquote>
-<p>Example of a request:</p>
+<p>Request example</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
   --url <span class="s1">'https://api.travelpayouts.com/data/en/airlines_alliances.json'</span> <span class="se">\</span>
@@ -2917,7 +2932,7 @@ Note! Additionally we created translations for different languages for all data 
 <p><a href="https://app.getpostman.com/run-collection/3438c693f7bfb0c14368"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman" /></a></p>
 
 <blockquote>
-<p>Example of request:</p>
+<p>Request example</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
   --url <span class="s1">'https://api.travelpayouts.com/data/planes.json'</span> <span class="se">\</span>
@@ -2995,7 +3010,7 @@ Note! Additionally we created translations for different languages for all data 
 <p><a href="https://app.getpostman.com/run-collection/3438c693f7bfb0c14368"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman" /></a></p>
 
 <blockquote>
-<p>Example of request:</p>
+<p>Request example</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
   --url <span class="s1">'https://api.travelpayouts.com/data/routes.json'</span> <span class="se">\</span>
@@ -3437,6 +3452,75 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>marker</strong></td>
+<td>string</td>
+<td>the unique identifier of the affiliate. You can find your marker in the affiliate personal account</td>
+</tr>
+<tr>
+<td><strong>host</strong></td>
+<td>string</td>
+<td>host&#39;s request (must be replaced by the address of your website where the API will be used)</td>
+</tr>
+<tr>
+<td><strong>user_ip</strong></td>
+<td>string</td>
+<td>user&#39;s IP address</td>
+</tr>
+<tr>
+<td><strong>locale</strong></td>
+<td>string</td>
+<td>language of the search result (en-us, en-gb, ru, de, es, fr, pl). Аrom the locale depends on the set of agencies on which the search is performed</td>
+</tr>
+<tr>
+<td><strong>trip_class</strong></td>
+<td>string</td>
+<td>flight class (Y – Economy, C – Business)</td>
+</tr>
+<tr>
+<td><strong>passengers</strong></td>
+<td>-</td>
+<td>passenger Information</td>
+</tr>
+<tr>
+<td><strong>adults</strong></td>
+<td>integer</td>
+<td>the number of adult passengers (from 1 to 9)</td>
+</tr>
+<tr>
+<td><strong>children</strong></td>
+<td>integer</td>
+<td>the number of children (from 0 to 6)</td>
+</tr>
+<tr>
+<td><strong>infants</strong></td>
+<td>integer</td>
+<td>the number of infants (from 0 to 6)</td>
+</tr>
+<tr>
+<td><strong>segments</strong></td>
+<td>-</td>
+<td>a list of the trip components: <li><strong>origin</strong> (string) - origin IATA or string &quot;City, Country (IATA)&quot;. The IATA code is shown in uppercase letters (for example, &quot;Paris, France (PAR)&quot;);</li><li><strong>destination</strong> (string) - destination IATA or string &quot;City, Country (IATA)&quot;. The IATA code is shown in uppercase letters (for example, &quot;Berlin, Germany (BER)&quot;);</l><li><strong>date</strong> (date) - departure date yyyy-mm-dd (for example, &quot;2015-09-08&quot;);</li></td>
+</tr>
+<tr>
+<td><strong>currency</strong></td>
+<td>string</td>
+<td>the currency in which the price of the ticket is displayed, after switching to the agency&#39;s website (provided that the agency supports this currency);</td>
+</tr>
+<tr>
+<td><strong>signature</strong></td>
+<td>string</td>
+<td>the request signature is constructed from token, marker, and all the values of the query parameters sorted alphabetically and separated by a colon. Learn how to create a signature look here.</td>
+</tr>
+</tbody></table>
+
 <p>To get data, use the initialization code of the search:</p>
 
 <blockquote>
@@ -3467,7 +3551,17 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MOW"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LED"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-18"</span><span class="w">
+            </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-18"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LED"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BER"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-25"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BER"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LON"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-05"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -3541,40 +3635,6 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 </tr>
 </tbody></table>
 
-<blockquote>
-<p>Body example</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"%MD5_signature%"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"marker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"%Put_Your_Marker_Here%"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"beta.as.ru"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"user_ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ru"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"trip_class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Y"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"passengers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"adults"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"infants"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"segments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MOW"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LED"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-18"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LED"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BER"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-25"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BER"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LON"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-05"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
 <p>To get data, use the initialization code of the search:</p>
 
 <blockquote>
@@ -3582,7 +3642,7 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl -v -X POST -d <span class="s1">'{"signature":"%MD5_signature%","marker":"%Put_Your_Marker_Here%","host":"beta.as.ru","user_ip":"127.0.0.1","locale":"ru","trip_class":"Y","passengers":{"adults":1,"children":0,"infants":0},"segments":[{"origin":"MOW","destination":"LED","date":"2017-06-18"},{"origin":"LED","destination":"BER","date":"2017-06-25"},{"origin":"BER","destination":"LON","date":"2017-07-05"}]}'</span> -H <span class="s1">'Content-type:application/json'</span> https://api.travelpayouts.com/v1/flight_search
 </code></pre><h2 id='getting-search-results'>Getting search results</h2>
-<p>In the body of the response is the parameter search_id; insert it into the URL:</p>
+<p>In the body of the response is the parameter <strong>search_id</strong>; insert it into the URL:</p>
 
 <p>https://api.travelpayouts.com/v1/flight_search_results?uuid=%search_id%</p>
 
@@ -4004,38 +4064,37 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 <h2 id='how-to-get-a-link-to-the-agency-website'>How to get a link to the agency website</h2>
 <aside class="warning">Attention! The reference to the agency's website must be received only when the user clicks the "Buy" button. Automatic collection of all links from the answer is prohibited. Violation of this rule will disable the API search for the partner. </aside>
 
-<p>To get a link to the site of the ticket booking agencies:</p>
+<blockquote>
+<p>Request example</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -v -H <span class="s1">'Accept-Encoding:gzip,deflate,sdch'</span> https://api.travelpayouts.com/v1/flight_searches/%search_id%/clicks/%terms.url%.json 
+--compressed
+</code></pre>
+<p>To get a link to the site of the ticket booking agencies send a request to the following address:
+<code>GET https://api.travelpayouts.com/v1/flight_searches/%search_id%/clicks/%terms.url%.json</code></p>
 
-<ol>
-<li>Send a request to the following address:
-https://api.travelpayouts.com/v1/flight_searches/%search_id%/clicks/%terms.url%.json</li>
-</ol>
+<p>where <strong>search_id</strong> is the ID from the answer of the request, <strong>terms.url</strong> - URL parameter from the response.</p>
 
-<p>where <code>search_id</code> is the ID from the answer of the request, <code>terms.url</code> - URL parameter from the response.</p>
-
-<ol>
-<li>You will receive a response like this:</li>
-</ol>
+<p>You will receive a response like in the example.</p>
 
 <blockquote>
-<p>Response example
-<code>json
-{
-    &quot;params&quot;: {},
-    &quot;method&quot;: &quot;GET&quot;,
-    &quot;url&quot;: &quot;https://www.svyaznoy.travel/?utm_source=as.ru&amp;utm_medium=cpa&amp;utm_campaign=meta_avia#MOW0906/BKK1506/A1/C0/I0/S0/22316/EK-132;EK-374/EK-373;EK-131&amp;marker=7uh46i0v2&quot;,
-    &quot;gate_id&quot;: 62,
-    &quot;click_id&quot;: 22135952358110
-}
-</code>
-To move on to the booking, give your visitors a link from the parameter <code>&quot;url&quot;</code>.</p>
+<p>Response example</p>
 </blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.svyaznoy.travel/?utm_source=as.ru&amp;utm_medium=cpa&amp;utm_campaign=meta_avia#MOW0906/BKK1506/A1/C0/I0/S0/22316/EK-132;EK-374/EK-373;EK-131&amp;marker=7uh46i0v2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"gate_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">62</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"click_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">22135952358110</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>To move on to the booking, give your visitors a link from the parameter <code>&quot;url&quot;</code>.</p>
 
 <p>The “lifetime” of such links is 15 minutes, after which you will need to search again for the current prices and generate a new reference to the transition.</p>
 
 <p>In our example, this is a link of the form:</p>
 
-<p>https://www.svyaznoy.travel/?utm_source=as.ru&amp;utm_medium=cpa&amp;utm_campaign=meta_avia#MOW0906/BKK1506/A1/C0/I0/S0/22316/EK-132;EK-374/EK-373;EK-131&amp;marker=7uh46i0v2</p>
+<p><code>https://www.svyaznoy.travel/?utm_source=as.ru&amp;utm_medium=cpa&amp;utm_campaign=meta_avia#MOW0906/BKK1506/A1/C0/I0/S0/22316/EK-132;EK-374/EK-373;EK-131&amp;marker=7uh46i0v2</code></p>
 <h1 id='hotels-data-api'>Hotels data API</h1><h2 id='authorization'>Authorization</h2>
 <p>The authorization is based on <a href="https://www.travelpayouts.com/developers/api">affilliate token</a>.</p>
 <h2 id='hotel-search-by-name-or-location'>Hotel search by name or location</h2>
@@ -4796,6 +4855,8 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 
 <p><strong>Attention</strong>! The default number of requests is limited to <strong>60 per minute</strong>. If you need to process more requests, send a letter to support@travelpayouts.com.</p>
 <h2 id='request-quot-country-quot'>Request &quot;Country&quot;</h2>
+<p>The request returns a file with a list of countries from the database.</p>
+
 <blockquote>
 <p>Sample request</p>
 </blockquote>
@@ -4913,6 +4974,8 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 </ul></li>
 </ul>
 <h2 id='request-quot-cities-quot'>Request &quot;Cities&quot;</h2>
+<p>The request returns a file with a list of cities from the database.</p>
+
 <blockquote>
 <p>Sample request</p>
 </blockquote>
@@ -5022,6 +5085,8 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 </ul></li>
 </ul>
 <h2 id='request-quot-amenities-quot'>Request &quot;Amenities&quot;</h2>
+<p>The request returns a file with a list of amenities from the database.</p>
+
 <blockquote>
 <p>Sample request</p>
 </blockquote>
@@ -5106,6 +5171,8 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 <li><strong>groupName</strong> - location of amenities</li>
 </ul>
 <h2 id='request-39-hotels-list-39'>Request &#39;Hotels list&#39;</h2>
+<p>The request returns a file with a list of hotels from the database.</p>
+
 <blockquote>
 <p>Sample request</p>
 </blockquote>
@@ -5286,6 +5353,8 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 </ul></li>
 </ul>
 <h2 id='request-quot-types-of-rooms-quot'>Request &quot;Types of rooms&quot;</h2>
+<p>The request returns a file with a list of rooms type from the database.</p>
+
 <blockquote>
 <p>Sample request</p>
 </blockquote>
@@ -5354,6 +5423,8 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
    </span><span class="s2">"86"</span><span class="p">:</span><span class="s2">"Business deluxe"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='request-quot-types-of-hotels-quot'>Request &quot;Types of hotels&quot;</h2>
+<p>The request returns a file with a list of hotels type from the database.</p>
+
 <blockquote>
 <p>Sample request</p>
 </blockquote>
@@ -5430,6 +5501,8 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
     </span><span class="s2">"12"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Villa"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='request-quot-hotel-photos-quot-old-method'>Request &quot;Hotel photos&quot;. Old method</h2>
+<p>The request returns a hotel photos from the database.</p>
+
 <blockquote>
 <p>Sample request</p>
 </blockquote>
@@ -5501,6 +5574,8 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 <li><strong>file_type</strong> - you can use <strong>.auto</strong> in the type part of file. It means that our system detects whether a user’s browser can accept the Webp image format. If yes, the server will send the image in Webp format (smaller size). If no, the image will be in JPEG format</li>
 </ul>
 <h2 id='request-for-hotel-photos-new-method'>Request for hotel photos. New method</h2>
+<p>The request returns a hotel photos from the database.</p>
+
 <blockquote>
 <p>Example request</p>
 </blockquote>
@@ -5618,6 +5693,8 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 
 <p>where instead of <strong>photo_id</strong> substitute id photos.</p>
 <h2 id='request-quot-hotel-39-s-room-photos-in-a-sprite-quot'>Request &quot;Hotel&#39;s room photos (in a sprite)&quot;</h2>
+<p>The request returns a hotel&#39;s rooms photos from the database.</p>
+
 <p>Use this request to get a sprite with photos of rooms.</p>
 
 <blockquote>
@@ -5701,6 +5778,8 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 
 <p><a href="https://photo.hotellook.com/rooms/limit/h4_12_1/200/200.auto">https://photo.hotellook.com/rooms/limit/h4_12_1/200/200.auto</a></p>
 <h2 id='request-39-city-photo-39'>Request &#39;City photo&#39;</h2>
+<p>The request returns a city photos from the database.</p>
+
 <blockquote>
 <p>Sample request</p>
 </blockquote>
@@ -5757,7 +5836,7 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 <li><strong>photosize</strong> – size of the photo (width/height)</li>
 <li><strong>city_iata</strong> - IATA code of the city</li>
 </ul>
-<h1 id='hotel-search-api'>Hotel search API</h1><h2 id='requirements-for-hotels-api-access'>Requirements for Hotels API access</h2>
+<h1 id='hotels-search-api'>Hotels search API</h1><h2 id='requirements-for-hotels-api-access'>Requirements for Hotels API access</h2>
 <ol>
 <li>Each search query must be initiated by the user and the results must be shown to the user in full. The results for each query must contain a “buy” button next to each flight option.</li>
 <li>The conversion rate for searches via the Buy link must be 9% or more. The conversion rate from the Buy button to actual purchases must be at least 5%.</li>
@@ -6025,7 +6104,7 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 <p>You can get photos and other information about hotel with help of <a href="https://support.travelpayouts.com/hc/en-us/articles/115000343268-Hotels-data-API">Hotel Data API</a>.</p>
 
 <p><strong>Attention</strong>! The reference to the agency&#39;s website must be received only when the user clicks the &quot;Buy&quot; button. Automatic collection of all links from the answer is prohibited. Violation of this rule will disable the API search for the partner.</p>
-<h1 id='hotels-api-queries-errors'>Hotels API queries errors</h1>
+<h1 id='hotels-api-request-errors'>Hotels API request errors</h1>
 <p>All input parameters are checked and errors are shown if they are wrong:</p>
 
 <ul>
@@ -6033,6 +6112,288 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 <li>errorCode 2 – at least one of the parameters does not match the format</li>
 <li>errorCode 3 – access is denied</li>
 <li>errorCode 4 – search is not over yet</li>
+</ul>
+<h1 id='additional-api-methods'>Additional API methods</h1><h2 id='visas-information'>Visas information</h2>
+<p>The request returned information about visa rules for Russian citizens.</p>
+
+<blockquote>
+<p>Request example</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'https://overmind.jetradar.com/api/ru/visas?api_key=afbadb4ff8485c0adcba486b4ca90cc4'</span> <span class="se">\</span>
+  --header <span class="s1">'x-access-token: YOUR_API_TOKEN_HERE'</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span> <span class="k">if</span> <span class="no">RUBY_VERSION</span> <span class="o">&lt;</span> <span class="s1">'1.9'</span>
+<span class="nb">require</span> <span class="s1">'rest_client'</span>
+
+<span class="n">headers</span>  <span class="o">=</span> <span class="p">{</span><span class="ss">:x_access_token</span> <span class="o">=&gt;</span> <span class="s2">"YOUR_API_TOKEN_HERE"</span><span class="p">}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s2">"https://overmind.jetradar.com/api/ru/visas?api_key=afbadb4ff8485c0adcba486b4ca90cc4"</span><span class="p">,</span> <span class="n">headers</span>
+<span class="nb">puts</span> <span class="n">response</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://overmind.jetradar.com/api/ru/visas?api_key=afbadb4ff8485c0adcba486b4ca90cc4"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTPHEADER</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"x-access-token: YOUR_API_TOKEN_HERE"</span>
+  <span class="p">),</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">urllib2</span> <span class="kn">import</span> <span class="n">Request</span><span class="p">,</span> <span class="n">urlopen</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"X-Access-Token"</span><span class="p">:</span> <span class="s">"YOUR_API_TOKEN_HERE"</span><span class="p">}</span>
+<span class="n">request</span> <span class="o">=</span> <span class="n">Request</span><span class="p">(</span><span class="s">"https://overmind.jetradar.com/api/ru/visas?api_key=afbadb4ff8485c0adcba486b4ca90cc4"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">response_body</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="k">print</span> <span class="n">response_body</span>
+</code></pre><h3 id='request'>Request</h3>
+<p><code>GET https://overmind.jetradar.com/api/ru/visas?api_key=afbadb4ff8485c0adcba486b4ca90cc4</code></p>
+<h3 id='request-parameters'>Request parameters</h3>
+<ul>
+<li><strong>api_key</strong> - your API key</li>
+</ul>
+<h3 id='response'>Response</h3>
+<blockquote>
+<p>Response example</p>
+</blockquote>
+<pre class="highlight plaintext"><code>[
+  {
+    "transit_visa_hours": null,
+    "is_schengen": false,
+    "have_transit_visa": null,
+    "get_visa_online": false,
+    "get_visa_on_arrival": false,
+    "get_visa_in_visa_center": null,
+    "entry_by_visa": false,
+    "entry_by_local_passport": null,
+    "entry_by_international_passport": true,
+    "destination_country_id": "4eda5f298792904be400009d",
+    "destination_country_code": "DM",
+    "created_at": "2019-01-22T11:44:53Z",
+    "citizen_country_id": "4eda5f2d8792904be4000193",
+    "citizen_country_code": "RU",
+    "arrival_visa_hours": 504,
+    "_id": null
+  }
+]
+</code></pre><h3 id='response-parameters'>Response parameters</h3>
+<ul>
+<li>transit_visa_hours - how much hours you can stay in the country by transit visa</li>
+<li>is_schengen - is it possible to enter on a Schengen visa</li>
+<li>have_transit_visa - deprecated</li>
+<li>get_visa_online - is it possible to get visa online </li>
+<li>get_visa_on_arrival - is it possible to get visa on arrival</li>
+<li>get_visa_in_visa_center - deprecated</li>
+<li>entry_by_visa - if visa needed to entry</li>
+<li>entry_by_local_passport - if you can entry with local passport</li>
+<li>entry_by_international_passport - if visa-free entry possible</li>
+<li>destination_country_id - the destination country id</li>
+<li>destination_country_code - the destination country IATA code</li>
+<li>created_at - when the data was added to the database</li>
+<li>citizen_country_id - the citizen country id</li>
+<li>citizen_country_code - the citizen country IATA code</li>
+<li>arrival_visa_hours - duration of possible stay in hours</li>
+<li>_id - deprecated</li>
+</ul>
+<h2 id='routes-schedule'>Routes schedule</h2>
+<p>The routes schedule API returns information about direct flights from one city or airport to another. </p>
+
+<blockquote>
+<p>Example of a request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'https://suggest.travelpayouts.com/api_flight_schedule?origin=BAX&amp;destination=MOW&amp;airline=SU&amp;locale=ru&amp;service=api_flight_schedule'</span> <span class="se">\</span>
+  --header <span class="s1">'x-access-token: YOUR_API_TOKEN_HERE'</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/https'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://suggest.travelpayouts.com/api_flight_schedule?origin=BAX&amp;destination=MOW&amp;airline=SU&amp;locale=ru&amp;service=api_flight_schedule"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-access-token"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'YOUR_API_TOKEN_HERE'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">https</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://suggest.travelpayouts.com/api_flight_schedule?origin=BAX&amp;destination=MOW&amp;airline=SU&amp;locale=ru&amp;service=api_flight_schedule"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTPHEADER</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"x-access-token: YOUR_API_TOKEN_HERE"</span>
+  <span class="p">),</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://suggest.travelpayouts.com/api_flight_schedule"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s">"origin"</span><span class="p">:</span><span class="s">"MOW"</span><span class="p">,</span><span class="s">"destination"</span><span class="p">:</span><span class="s">"HKT"</span><span class="p">,</span><span class="s">"airline"</span><span class="p">:</span><span class="s">"SU"</span><span class="p">,</span><span class="s">"locale"</span><span class="p">:</span><span class="s">"ru"</span><span class="p">,</span><span class="s">"service"</span><span class="p">:</span><span class="s">"api_flight_schedule"</span><span class="p">}</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x-access-token'</span><span class="p">:</span> <span class="s">'YOUR_API_TOKEN_HERE'</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre><h3 id='request-2'>Request</h3>
+<p><code>GET https://suggest.travelpayouts.com/api_flight_schedule?origin=BAX&amp;destination=MOW&amp;airline=SU&amp;locale=ru&amp;service=api_flight_schedule</code></p>
+<h3 id='request-parameters-2'>Request parameters</h3>
+<ul>
+<li>origin - IATA code of the departure city. IATA code is shown by uppercase letters, for example, MOW</li>
+<li>destination - IATA code of the destination city (for all routes, enter &quot;-&quot;). IATA code is shown by uppercase letters, for example, MOW</li>
+<li>airline - IATA code of the airline</li>
+<li>locale - locale of response</li>
+<li>service - system parameters, should be api_flight_schedule</li>
+</ul>
+<h3 id='response-2'>Response</h3>
+<blockquote>
+<p>Sample response</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+  "result": {
+    "title": {
+      "flights_every_day": false,
+      "flights_number": 10,
+      "min_flight_duration": {
+        "days": 0,
+        "hours": 4,
+        "min": 15
+      }
+    },
+    "subtitle": {
+      "origin": {
+        "city": "Барнаул",
+        "country": "Россия",
+        "airport": "Барнаул"
+      },
+      "destination": {
+        "city": "Москва",
+        "country": "Россия",
+        "airport": ""
+      }
+    },
+    "direct_flights": [
+      {
+        "depart_time": "07:05",
+        "arrival_time": "07:35",
+        "arrival_day_indicator": 0,
+        "airline_logo": "https://pics.avs.io/al_square/32/32/SU@2x.png",
+        "airline_code": "SU",
+        "airline_name": "Аэрофлот",
+        "flight_number": 1431,
+        "op_days": [
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "choose_dates_url": "https://search.aviasales.ru/?marker=16886&amp;origin_iata=BAX&amp;destination_iata=SVO&amp;locale=ru&amp;open_datepicker=true",
+        "origin_iata": "BAX",
+        "destination_iata": "SVO"
+      },
+      {
+        "depart_time": "18:20",
+        "arrival_time": "18:35",
+        "arrival_day_indicator": 0,
+        "airline_logo": "https://pics.avs.io/al_square/32/32/SU@2x.png",
+        "airline_code": "SU",
+        "airline_name": "Аэрофлот",
+        "flight_number": 1433,
+        "op_days": [
+          false,
+          true,
+          true,
+          true,
+          false,
+          true,
+          false
+        ],
+        "choose_dates_url": "https://search.aviasales.ru/?marker=16886&amp;origin_iata=BAX&amp;destination_iata=SVO&amp;locale=ru&amp;open_datepicker=true",
+        "origin_iata": "BAX",
+        "destination_iata": "SVO"
+      }
+    ]
+  }
+}
+</code></pre>
+<ul>
+<li><strong>result</strong> - the obtained result
+
+<ul>
+<li><strong>title</strong>:</li>
+<li><strong>flights_every_day</strong> - is avaiable flights every day</li>
+<li><strong>flights_number</strong> - the flight&#39;s number</li>
+<li><strong>min_flight_duration</strong> - minimum flight duration for flights
+
+<ul>
+<li><strong>days</strong> - flight duration in days</li>
+<li><strong>hours</strong> - flight duration in hours</li>
+<li><strong>min</strong> - flight duration in minutes</li>
+</ul></li>
+<li><strong>subtitle</strong>:</li>
+<li><strong>origin</strong> - information about the origin point:
+
+<ul>
+<li><strong>city</strong> - city of origin</li>
+<li><strong>country</strong> - country of origin</li>
+<li><strong>airport</strong> - airport name of origin</li>
+</ul></li>
+<li><strong>destination</strong> - information about final destination:
+
+<ul>
+<li><strong>city</strong> - city of destination</li>
+<li><strong>country</strong> - country of destination</li>
+<li><strong>airport</strong> - airport name of destination</li>
+</ul></li>
+<li><strong>direct_flights</strong> - information about direct flights:</li>
+<li><strong>depart_time</strong> - the depart time for the flight</li>
+<li><strong>arrival_time</strong> - the arrival time for the flight</li>
+<li><strong>arrival_day_indicator</strong> - the indicator for the arrival day</li>
+<li><strong>airline_logo</strong> - the logo for an airline company</li>
+<li><strong>airline_code</strong> - the airline company IATA code</li>
+<li><strong>airline_name</strong> - the airline company name</li>
+<li><strong>flight_number</strong> - the flight number</li>
+<li><strong>op_days</strong> - daily flight of the week</li>
+<li><strong>choose_dates_url</strong> - the URL for chosen dates</li>
+<li><strong>origin_iata</strong> - the origin IATA code</li>
+<li><strong>destination_iata</strong> - the destination IATA code</li>
+</ul></li>
 </ul>
 
       </div>
