@@ -6,6 +6,8 @@ Requests as a result of which the partner receives information about the countri
 
 ## Request "Country"
 
+The request returns a file with a list of countries from the database.
+
 > Sample request
 
 ```shell
@@ -132,6 +134,8 @@ The response contains:
 
 ## Request "Cities"
 
+The request returns a file with a list of cities from the database.
+
 > Sample request
 
 ```shell
@@ -247,6 +251,8 @@ print(response.text)
 
 ## Request "Amenities"
 
+The request returns a file with a list of amenities from the database.
+
 > Sample request
 
 ```shell
@@ -345,6 +351,8 @@ print(response.text)
 * **groupName** - location of amenities
 
 ## Request 'Hotels list'
+
+The request returns a file with a list of hotels from the database.
 
 > Sample request
 
@@ -534,6 +542,8 @@ The response contains:
 
 ## Request "Types of rooms"
 
+The request returns a file with a list of rooms type from the database.
+
 > Sample request
 
 ```shell
@@ -618,6 +628,8 @@ print(response.text)
 ```
 
 ## Request "Types of hotels"
+
+The request returns a file with a list of hotels type from the database.
 
 > Sample request
 
@@ -712,6 +724,8 @@ print(response.text)
 
 ## Request "Hotel photos". Old method
 
+The request returns a hotel photos from the database.
+
 > Sample request
 
 https://photo.hotellook.com/image_v2/limit/hId_photoId/photosize.jpg
@@ -794,6 +808,8 @@ print(response.text)
 * **file_type** - you can use **.auto** in the type part of file. It means that our system detects whether a user’s browser can accept the Webp image format. If yes, the server will send the image in Webp format (smaller size). If no, the image will be in JPEG format
 
 ## Request for hotel photos. New method
+
+The request returns a hotel photos from the database.
 
 > Example request
 
@@ -941,6 +957,8 @@ where instead of **photo_id** substitute id photos.
 
 ## Request "Hotel's room photos (in a sprite)"
 
+The request returns a hotel's rooms photos from the database.
+
 Use this request to get a sprite with photos of rooms.
 
 > Sample request
@@ -1037,6 +1055,8 @@ Parameters similar to those described in the request above, except for photo_idx
 [https://photo.hotellook.com/rooms/limit/h4_12_1/200/200.auto](https://photo.hotellook.com/rooms/limit/h4_12_1/200/200.auto)
 
 ## Request 'City photo'
+
+The request returns a city photos from the database.
 
 > Sample request
 
