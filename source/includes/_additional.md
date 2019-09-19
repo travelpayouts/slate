@@ -117,8 +117,6 @@ print response_body
 
 The routes schedule API returns information about direct flights from one city or airport to another. 
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3438c693f7bfb0c14368)
-
 > Example of a request:
 
 ```shell
