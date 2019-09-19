@@ -1,4 +1,4 @@
-# Statistical hotels data data
+# Hotels statistical data
 
 Requests as a result of which the partner receives information about the countries, cities and hotels.
 
