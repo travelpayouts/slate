@@ -30,7 +30,7 @@ Returns the cheapest non-stop tickets, as well as tickets with 1 or 2 stops, for
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3438c693f7bfb0c14368)
 
-> Example of a request:
+> Request example
 
 ```shell
 curl --request GET \
@@ -155,7 +155,7 @@ Returns the cheapest non-stop tickets for the selected route with departure/retu
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3438c693f7bfb0c14368)
 
-> Example of a request:
+> Request example
 
 ```shell
 curl --request GET \
@@ -274,7 +274,7 @@ Returns the cheapest non-stop, one-stop, and two-stop flights for the selected r
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3438c693f7bfb0c14368)
 
-> Example of a request:
+> Request example
 
 ```shell
 curl --request GET \
@@ -523,7 +523,7 @@ Returns routes for which an airline operates flights, sorted by popularity.
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3438c693f7bfb0c14368)
 
-> Example of a request:
+> Request example
 
 ```shell
 curl --request GET \
@@ -636,7 +636,7 @@ Brings the most popular directions from a specified city back.
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3438c693f7bfb0c14368)
 
-> Example of a request:
+> Request example
 
 ```shell
 curl --request GET \
