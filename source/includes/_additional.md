@@ -8,7 +8,7 @@ The request returned information about visa rules for Russian citizens.
 
 ```shell
 curl --request GET \
-  --url 'https://overmind.jetradar.com/api/ru/visas?api_key=afbadb4ff8485c0adcba486b4ca90cc4' \
+  --url 'https://overmind.jetradar.com/api/ru/visas?api_key=YOUR_API_KEY_HERE' \
   --header 'x-access-token: YOUR_API_TOKEN_HERE'
 ```
 
@@ -17,7 +17,7 @@ require 'rubygems' if RUBY_VERSION < '1.9'
 require 'rest_client'
 
 headers  = {:x_access_token => "YOUR_API_TOKEN_HERE"}
-response = RestClient.get "https://overmind.jetradar.com/api/ru/visas?api_key=afbadb4ff8485c0adcba486b4ca90cc4", headers
+response = RestClient.get "https://overmind.jetradar.com/api/ru/visas?api_key=YOUR_API_KEY_HERE", headers
 puts response
 ```
 
@@ -27,7 +27,7 @@ puts response
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://overmind.jetradar.com/api/ru/visas?api_key=afbadb4ff8485c0adcba486b4ca90cc4",
+  CURLOPT_URL => "https://overmind.jetradar.com/api/ru/visas?api_key=YOUR_API_KEY_HERE",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -54,14 +54,14 @@ if ($err) {
 ```python
 from urllib2 import Request, urlopen
 headers = {"X-Access-Token": "YOUR_API_TOKEN_HERE"}
-request = Request("https://overmind.jetradar.com/api/ru/visas?api_key=afbadb4ff8485c0adcba486b4ca90cc4", headers=headers)
+request = Request("https://overmind.jetradar.com/api/ru/visas?api_key=YOUR_API_KEY_HERE", headers=headers)
 response_body = urlopen(request).read()
 print response_body
 ```
 
 ### Request
 
-`GET https://overmind.jetradar.com/api/ru/visas?api_key=afbadb4ff8485c0adcba486b4ca90cc4`
+`GET https://overmind.jetradar.com/api/ru/visas?api_key=YOUR_API_KEY_HERE`
 
 ### Request parameters
 
