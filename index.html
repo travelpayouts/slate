@@ -361,7 +361,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </ul>
           </li>
           <li>
-            <a href="#statistical-hotels-data-data" class="toc-h1 toc-link" data-title="statistical-hotels-data-data">Statistical hotels data data</a>
+            <a href="#hotels-statistical-data" class="toc-h1 toc-link" data-title="hotels-statistical-data">Hotels statistical data</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#request-quot-country-quot" class="toc-h2 toc-link" data-title="request-country">Request "Country"</a>
@@ -4039,22 +4039,65 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 <h1 id='hotels-data-api'>Hotels data API</h1><h2 id='authorization'>Authorization</h2>
 <p>The authorization is based on <a href="https://www.travelpayouts.com/developers/api">affilliate token</a>.</p>
 <h2 id='hotel-search-by-name-or-location'>Hotel search by name or location</h2>
-<p><strong>Endpoint</strong>: <a href="http://engine.hotellook.com/api/v2/lookup.json">http://engine.hotellook.com/api/v2/lookup.json</a></p>
-
 <p>Search for a specific location or name places of a hotel (city, island).</p>
 
 <p><strong>Attention!</strong> If you send a request without a token, the number of queries will be limited. The values of restrictions are passed in the response header:</p>
 
 <ul>
-<li>X-Ratelimit-Interval - limit interval in seconds;</li>
-<li>X-Ratelimit-Remaining - how many requests left of this limit;</li>
-<li>X-Ratelimit-Limit - the value limit.</li>
+<li>X-Ratelimit-Interval - limit interval in seconds</li>
+<li>X-Ratelimit-Remaining - how many requests left of this limit</li>
+<li>X-Ratelimit-Limit - the value limit</li>
 </ul>
 
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>http://engine.hotellook.com/api/v2/lookup.json?query<span class="o">=</span>moscow&amp;lang<span class="o">=</span>ru&amp;lookFor<span class="o">=</span>both&amp;limit<span class="o">=</span>1&amp;token<span class="o">=</span>PasteYourTokenHere
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://engine.hotellook.com/api/v2/lookup.json?query=moscow&amp;lang=ru&amp;lookFor=both&amp;limit=1&amp;token=PasteYourTokenHere'</span> <span class="se">\</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/https'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://engine.hotellook.com/api/v2/lookup.json?query=moscow&amp;lang=ru&amp;lookFor=both&amp;limit=1&amp;token=PasteYourTokenHere"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">https</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://engine.hotellook.com/api/v2/lookup.json?query=moscow&amp;lang=ru&amp;lookFor=both&amp;limit=1&amp;token=PasteYourTokenHere"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://engine.hotellook.com/api/v2/lookup.json"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s">"query"</span><span class="p">:</span><span class="s">"moscow"</span><span class="p">,</span><span class="s">"lang"</span><span class="p">:</span><span class="s">"ru"</span><span class="p">,</span><span class="s">"lookFor"</span><span class="p">:</span><span class="s">"both"</span><span class="p">,</span><span class="s">"limit"</span><span class="p">:</span><span class="s">"1"</span><span class="p">,</span><span class="s">"token"</span><span class="p">:</span><span class="s">"PasteYourTokenHere"</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre><h3 id='request'>Request</h3>
 <p><code>GET http://engine.hotellook.com/api/v2/lookup.json?query=moscow&amp;lang=ru&amp;lookFor=both&amp;limit=1&amp;token=PasteYourTokenHere</code></p>
 <h3 id='request-parameters'>Request parameters</h3>
@@ -4064,20 +4107,20 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 <li><strong>query</strong> – main parameter, it is set:
 
 <ul>
-<li>as a text;</li>
-<li>by longitude and latitude (also displays the nearest objects).</li>
+<li>as a text</li>
+<li>by longitude and latitude (also displays the nearest objects)</li>
 </ul></li>
-<li>lang – display language. It can take any iso-language code (pt, en, fr, de, id, it, pl, es, th, ru); if the database doesn’t include a translation for the requested language, it returns the English name of the object. By default, lang=&quot;en&quot;.</li>
+<li>lang – display language. It can take any iso-language code (pt, en, fr, de, id, it, pl, es, th, ru); if the database doesn’t include a translation for the requested language, it returns the English name of the object. By default, lang=&quot;en&quot;</li>
 <li>lookFor – objects displayed in the results:
 
 <ul>
-<li>city;</li>
-<li>hotel;</li>
-<li>both (city&amp;hotel).</li>
+<li>city</li>
+<li>hotel</li>
+<li>both (city&amp;hotel)</li>
 </ul></li>
-<li>limit – limitation of output results from 1 to 100, default - 10.</li>
-<li>convertCase – automatically change the keyboard layout (actual for Russian users, for example, when requesting &quot;vjcrdf&quot; will be found &quot;москва&quot;). Values - 1 or 0. Default - 1. </li>
-<li>token - your affiliate token.</li>
+<li>limit – limitation of output results from 1 to 100, default - 10</li>
+<li>convertCase – automatically change the keyboard layout (actual for Russian users, for example, when requesting &quot;vjcrdf&quot; will be found &quot;москва&quot;). Values - 1 or 0. Default - 1</li>
+<li>token - your affiliate token</li>
 </ul>
 <h3 id='response'>Response</h3>
 <blockquote>
@@ -4127,55 +4170,98 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 <p>The block &quot;<strong>locations</strong>&quot; includes:</p>
 
 <ul>
-<li><strong>cityName</strong> – city name;</li>
-<li><strong>fullName</strong> – name of city and country;</li>
-<li><strong>countryCode</strong> – IATA code of country;</li>
-<li><strong>countryName</strong> – country name;</li>
-<li><strong>iata</strong> – IATA airport code in this city, there may be several;</li>
-<li><strong>id</strong> – location id in the database;</li>
-<li><strong>hotelsCount</strong> – number of hotels in this location;</li>
+<li><strong>cityName</strong> – city name</li>
+<li><strong>fullName</strong> – name of city and country</li>
+<li><strong>countryCode</strong> – IATA code of country</li>
+<li><strong>countryName</strong> – country name</li>
+<li><strong>iata</strong> – IATA airport code in this city, there may be several</li>
+<li><strong>id</strong> – location id in the database</li>
+<li><strong>hotelsCount</strong> – number of hotels in this location</li>
 <li><strong>location</strong>:
 
 <ul>
-<li><strong>lat</strong> – latitude of location;</li>
-<li><strong>lon</strong> – longitude of location.</li>
+<li><strong>lat</strong> – latitude of location</li>
+<li><strong>lon</strong> – longitude of location</li>
 </ul></li>
-<li><strong>score</strong> – internal parameter, used for sorting.</li>
-<li><strong>token</strong> - your affiliate token.</li>
+<li><strong>score</strong> – internal parameter, used for sorting</li>
+<li><strong>token</strong> - your affiliate token</li>
 </ul>
 
 <p>The block &quot;<strong>hotels</strong>&quot; includes:</p>
 
 <ul>
-<li><strong>label</strong> – name of hotel;</li>
-<li><strong>locationName</strong> – location of hotel;</li>
-<li><strong>locationId</strong> – location id in the database;</li>
-<li><strong>Id</strong> – hotel id in the database;</li>
-<li><strong>fullName</strong> – full name of the hotel and the location of it;</li>
+<li><strong>label</strong> – name of hotel</li>
+<li><strong>locationName</strong> – location of hotel</li>
+<li><strong>locationId</strong> – location id in the database</li>
+<li><strong>Id</strong> – hotel id in the database</li>
+<li><strong>fullName</strong> – full name of the hotel and the location of it</li>
 <li><strong>location</strong>:
 
 <ul>
-<li><strong>lat</strong> – latitude of hotel;</li>
-<li><strong>lon</strong> – longitude of hotel.</li>
+<li><strong>lat</strong> – latitude of hotel</li>
+<li><strong>lon</strong> – longitude of hotel</li>
 </ul></li>
 </ul>
 <h2 id='searching-a-hotel-or-location-by-coordinates'>Searching a hotel or location by coordinates</h2>
-<p><strong>Endpoint</strong>: <a href="http://engine.hotellook.com/api/v2/lookup.json">http://engine.hotellook.com/api/v2/lookup.json</a></p>
-
 <p>Search for a specific location or hotel (city, island) by coordinates.</p>
 
 <p><strong>Attention!</strong> If you send a request without a token, the number of queries will be limited. The values of restrictions are passed in the response header:</p>
 
 <ul>
-<li>X-Ratelimit-Interval - limit interval in seconds;</li>
-<li>X-Ratelimit-Remaining - how many requests left of this limit;</li>
-<li>X-Ratelimit-Limit - the value limit.</li>
+<li>X-Ratelimit-Interval - limit interval in seconds</li>
+<li>X-Ratelimit-Remaining - how many requests left of this limit</li>
+<li>X-Ratelimit-Limit - the value limit</li>
 </ul>
 
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>http://engine.hotellook.com/api/v2/lookup.json?query<span class="o">=</span>55.0291,82.9059&amp;lang<span class="o">=</span>ru&amp;lookFor<span class="o">=</span>both&amp;limit<span class="o">=</span>1&amp;token<span class="o">=</span>PasteYourTokenHere
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://engine.hotellook.com/api/v2/lookup.json?query=55.0291,82.9059&amp;lang=ru&amp;lookFor=both&amp;limit=1&amp;token=PasteYourTokenHere'</span> <span class="se">\</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/https'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://engine.hotellook.com/api/v2/lookup.json?query=55.0291,82.9059&amp;lang=ru&amp;lookFor=both&amp;limit=1&amp;token=PasteYourTokenHere"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">https</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://engine.hotellook.com/api/v2/lookup.json?query=55.0291,82.9059&amp;lang=ru&amp;lookFor=both&amp;limit=1&amp;token=PasteYourTokenHere"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://engine.hotellook.com/api/v2/lookup.json"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s">"query"</span><span class="p">:</span><span class="s">"55.0291,82.9059"</span><span class="p">,</span><span class="s">"lang"</span><span class="p">:</span><span class="s">"ru"</span><span class="p">,</span><span class="s">"lookFor"</span><span class="p">:</span><span class="s">"both"</span><span class="p">,</span><span class="s">"limit"</span><span class="p">:</span><span class="s">"1"</span><span class="p">,</span><span class="s">"token"</span><span class="p">:</span><span class="s">"PasteYourTokenHere"</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre><h3 id='request-2'>Request</h3>
 <p><code>GET http://engine.hotellook.com/api/v2/lookup.json?query=55.0291,82.9059&amp;lang=ru&amp;lookFor=both&amp;limit=1&amp;token=PasteYourTokenHere</code></p>
 <h3 id='request-parameters-2'>Request parameters</h3>
@@ -4185,20 +4271,20 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 <li><strong>query</strong> – main parameter, it is set:
 
 <ul>
-<li>as a text;</li>
-<li>by the longitude and latitude (also displays the nearest objects).</li>
+<li>as a text</li>
+<li>by the longitude and latitude (also displays the nearest objects)</li>
 </ul></li>
-<li>lang – display language. It can take any iso-language code (pt, en, fr, de, id, it, pl, es, th, ru) - if the database doesn’t include a translation for the requested language, it returns the English name of the object. By default lang=&quot;en&quot;.</li>
+<li>lang – display language. It can take any iso-language code (pt, en, fr, de, id, it, pl, es, th, ru) - if the database doesn’t include a translation for the requested language, it returns the English name of the object. By default lang=&quot;en&quot;</li>
 <li>lookFor – objects displayed in the results:
 
 <ul>
-<li>city;</li>
-<li>hotel;</li>
-<li>both (city&amp;hotel).</li>
+<li>city</li>
+<li>hotel</li>
+<li>both (city&amp;hotel)</li>
 </ul></li>
-<li>limit – limitation of output results from 1 to 100, default - 10.</li>
-<li>convertCase – automatically change the keyboard layout (actual for Russian users, for example, when requesting &quot;vjcrdf&quot; will be found &quot;москва&quot;). Values - 1 or 0. Default - 1.</li>
-<li>token - your affiliate token.</li>
+<li>limit – limitation of output results from 1 to 100, default - 10</li>
+<li>convertCase – automatically change the keyboard layout (actual for Russian users, for example, when requesting &quot;vjcrdf&quot; will be found &quot;москва&quot;). Values - 1 or 0. Default - 1</li>
+<li>token - your affiliate token</li>
 </ul>
 <h3 id='response-2'>Response</h3>
 <blockquote>
@@ -4238,75 +4324,118 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 <p>The block &quot;<strong>locations</strong>&quot; includes:</p>
 
 <ul>
-<li><strong>id</strong> – id of locations in the database.</li>
-<li><strong>type</strong> – type of locations (city, isle).</li>
-<li><strong>countryIso</strong> – country code.</li>
-<li><strong>name</strong> – name of locations.</li>
-<li><strong>state</strong> – code of state.</li>
-<li><strong>fullname</strong> – full name of the location with the name of the country.</li>
+<li><strong>id</strong> – id of locations in the database</li>
+<li><strong>type</strong> – type of locations (city, isle)</li>
+<li><strong>countryIso</strong> – country code</li>
+<li><strong>name</strong> – name of locations</li>
+<li><strong>state</strong> – code of state</li>
+<li><strong>fullname</strong> – full name of the location with the name of the country</li>
 <li><strong>geo</strong>:
 
 <ul>
-<li><strong>lat</strong> – latitude of location.</li>
-<li><strong>on</strong> – longitude of location.</li>
+<li><strong>lat</strong> – latitude of location</li>
+<li><strong>on</strong> – longitude of location</li>
 </ul></li>
 </ul>
 
 <p>The block &quot;<strong>hotels</strong>&quot; includes:</p>
 
 <ul>
-<li><strong>Id</strong> – id of hotel in the database.</li>
-<li><strong>name</strong> – name of hotel.</li>
-<li><strong>locationId</strong> – location id in the database.</li>
+<li><strong>Id</strong> – id of hotel in the database</li>
+<li><strong>name</strong> – name of hotel</li>
+<li><strong>locationId</strong> – location id in the database</li>
 <li><strong>location</strong>:
 
 <ul>
-<li><strong>lat</strong> – latitude of hotel.</li>
-<li><strong>lon</strong> – longitude of hotel.</li>
+<li><strong>lat</strong> – latitude of hotel</li>
+<li><strong>lon</strong> – longitude of hotel</li>
 </ul></li>
 </ul>
 <h2 id='displays-the-cost-of-living-in-hotels'>Displays the cost of living in hotels</h2>
-<p><strong>Endpoint</strong>: <a href="http://engine.hotellook.com/api/v2/cache.json">http://engine.hotellook.com/api/v2/cache.json</a></p>
-
 <p>The request is used to get the price of hotel rooms from the cache for the period. It doesn&#39;t contain information about room availability.</p>
 
 <p><strong>Attention</strong>! If you send a request without a token, the number of queries will be limited. The values of restrictions are passed in the response header:</p>
 
 <ul>
-<li>X-Ratelimit-Interval - limit interval in seconds;</li>
-<li>X-Ratelimit-Remaining - how many requests left of this limit;</li>
-<li>X-Ratelimit-Limit - the value limit.</li>
+<li>X-Ratelimit-Interval - limit interval in seconds</li>
+<li>X-Ratelimit-Remaining - how many requests left of this limit</li>
+<li>X-Ratelimit-Limit - the value limit</li>
 </ul>
 
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>http://engine.hotellook.com/api/v2/cache.json?location<span class="o">=</span>Saint-Petersburg&amp;hotelId<span class="o">=</span>277083&amp;checkIn<span class="o">=</span>2017-09-13&amp;checkOut<span class="o">=</span>2017-09-18&amp;currency<span class="o">=</span>rub&amp;limit<span class="o">=</span>1&amp;token<span class="o">=</span>PasteYourTokenHere
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://engine.hotellook.com/api/v2/cache.json?location=Saint-Petersburg&amp;hotelId=277083&amp;checkIn=2019-09-13&amp;checkOut=2019-09-18&amp;currency=rub&amp;limit=1&amp;token=PasteYourTokenHere'</span> <span class="se">\</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/https'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://engine.hotellook.com/api/v2/cache.json?location=Saint-Petersburg&amp;hotelId=277083&amp;checkIn=2019-09-13&amp;checkOut=2019-09-18&amp;currency=rub&amp;limit=1&amp;token=PasteYourTokenHere"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">https</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://engine.hotellook.com/api/v2/cache.json?location=Saint-Petersburg&amp;hotelId=277083&amp;checkIn=2019-09-13&amp;checkOut=2019-09-18&amp;currency=rub&amp;limit=1&amp;token=PasteYourTokenHere"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://engine.hotellook.com/api/v2/cache.json"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s">"location"</span><span class="p">:</span><span class="s">"Saint-Petersburg"</span><span class="p">,</span><span class="s">"hotelId"</span><span class="p">:</span><span class="s">"277083"</span><span class="p">,</span><span class="s">"checkIn"</span><span class="p">:</span><span class="s">"2019-09-13"</span><span class="p">,</span><span class="s">"checkOut"</span><span class="p">:</span><span class="s">"2019-09-18"</span><span class="p">,</span><span class="s">"currency"</span><span class="p">:</span> <span class="s">"rub"</span><span class="p">,</span> <span class="s">"limit"</span><span class="p">:</span> <span class="s">"1"</span><span class="p">,</span> <span class="s">"token"</span><span class="p">:</span><span class="s">"PasteYourTokenHere"</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre><h3 id='request-3'>Request</h3>
-<p><code>GET http://engine.hotellook.com/api/v2/cache.json?location=Saint-Petersburg&amp;hotelId=277083&amp;checkIn=2017-09-13&amp;checkOut=2017-09-18&amp;currency=rub&amp;limit=1&amp;token=PasteYourTokenHere</code></p>
+<p><code>GET http://engine.hotellook.com/api/v2/cache.json?location=Saint-Petersburg&amp;hotelId=277083&amp;checkIn=2019-09-13&amp;checkOut=2019-09-18&amp;currency=rub&amp;limit=1&amp;token=PasteYourTokenHere</code></p>
 <h3 id='request-parameters-3'>Request parameters</h3>
 <ul>
-<li><strong>location</strong> - location name (IATA code can be used location);</li>
-<li><strong>checkIn</strong> - date of check-in;</li>
-<li><strong>checkOut</strong> - date of check-out;</li>
-<li>locationId - id of location (can be used instead of the location);</li>
-<li>hotelId - id of the hotel;</li>
-<li>hotel - name of the hotel (when entering the name necessarily indicate the location or locationId;</li>
-<li>adults - number of guests (by default, 2);</li>
-<li>children - number of children (2 to 18 years);</li>
-<li>infants - number of infants (0 to 2 years);</li>
+<li><strong>location</strong> - location name (IATA code can be used location)</li>
+<li><strong>checkIn</strong> - date of check-in</li>
+<li><strong>checkOut</strong> - date of check-out</li>
+<li>locationId - id of location (can be used instead of the location)</li>
+<li>hotelId - id of the hotel</li>
+<li>hotel - name of the hotel (when entering the name necessarily indicate the location or locationId</li>
+<li>adults - number of guests (by default, 2)</li>
+<li>children - number of children (2 to 18 years)</li>
+<li>infants - number of infants (0 to 2 years)</li>
 <li>limit - number of hotels. If this parameter is used in a query without specifying a precise ID or name of the hotel, the following applies:
 
 <ul>
-<li>limit = 4 (default) - will return for one hotel each category (Stars);</li>
-<li>limit = 5 - return two five-stars hotel and one of the other categories;</li>
-<li>limit = 6 - two 5 and 4-star hotel and the other one;</li>
-<li>limit = 7 - two 5, 4 and 3-star hotels and one comfortable;</li>
-<li>limit = 8 - all of two. And so on, with the growth parameters in turn increasing the number of hotels in every star. If the specified star hotels are no more, the issue will begin to fall and hotels 1 0 star by the same rule.</li>
+<li>limit = 4 (default) - will return for one hotel each category (Stars)</li>
+<li>limit = 5 - return two five-stars hotel and one of the other categories</li>
+<li>limit = 6 - two 5 and 4-star hotel and the other one</li>
+<li>limit = 7 - two 5, 4 and 3-star hotels and one comfortable</li>
+<li>limit = 8 - all of two. And so on, with the growth parameters in turn increasing the number of hotels in every star. If the specified star hotels are no more, the issue will begin to fall and hotels 1 0 star by the same rule</li>
 </ul></li>
-<li>customerIp - parameter to specify the user IP if the request is not sent directly, but through a proxy server.</li>
-<li>currency - currency of price (rub, usd, eur). </li>
-<li>token - your affiliate token.</li>
+<li>customerIp - parameter to specify the user IP if the request is not sent directly, but through a proxy server</li>
+<li>currency - currency of price (rub, usd, eur).</li>
+<li>token - your affiliate token</li>
 </ul>
 <h3 id='response-3'>Response</h3>
 <blockquote>
@@ -4339,78 +4468,169 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <ul>
-<li><strong>stars</strong> - number of the hotel&#39;s stars;</li>
-<li><strong>locationId</strong> - location id of this hotel;</li>
-<li><strong>priceFrom</strong> - minimum price per stay in a hotel room for the period;</li>
-<li><strong>priceAvg</strong> - average price per stay in a hotel room for the period;</li>
-<li><strong>pricePercentile</strong> - segmentation price for proportions (e.g., record type &quot;50&quot;: 59531.09 means that 50% of the price is in the range of 59531.09 to rub);</li>
-<li><strong>hotelName</strong> - name of hotel;</li>
+<li><strong>stars</strong> - number of the hotel&#39;s stars</li>
+<li><strong>locationId</strong> - location id of this hotel</li>
+<li><strong>priceFrom</strong> - minimum price per stay in a hotel room for the period</li>
+<li><strong>priceAvg</strong> - average price per stay in a hotel room for the period</li>
+<li><strong>pricePercentile</strong> - segmentation price for proportions (e.g., record type &quot;50&quot;: 59531.09 means that 50% of the price is in the range of 59531.09 to rub)</li>
+<li><strong>hotelName</strong> - name of hotel</li>
 <li><strong>location</strong> - information about the location of the hotel:
 
 <ul>
-<li><strong>geo</strong> - coordinates of the hotel;</li>
-<li><strong>name</strong> - name of location (city);</li>
-<li><strong>state</strong> - state in which the city is located;</li>
-<li><strong>country</strong> - a country of hotel.</li>
+<li><strong>geo</strong> - coordinates of the hotel</li>
+<li><strong>name</strong> - name of location (city)</li>
+<li><strong>state</strong> - state in which the city is located</li>
+<li><strong>country</strong> - a country of hotel</li>
 </ul></li>
-<li>hotelId - id of hotel.</li>
+<li>hotelId - id of hotel</li>
 </ul>
 <h2 id='list-of-hotels-in-the-archive'>List of hotels in the archive</h2>
-<p><strong>Endpoint</strong>: http://yasen.hotellook.com/tp/v1/hotels</p>
-
 <p>This request return the file with a list of all hotels for the specified locale.</p>
-<h3 id='request-4'>Request</h3>
+
+<blockquote>
+<p>Sample request</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://yasen.hotellook.com/tp/v1/hotels?language=en'</span> <span class="se">\</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/https'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://yasen.hotellook.com/tp/v1/hotels?language=en"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">https</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://yasen.hotellook.com/tp/v1/hotels?language=en"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://yasen.hotellook.com/tp/v1/hotels"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s">"language"</span><span class="p">:</span><span class="s">"en"</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre><h3 id='request-4'>Request</h3>
 <p><code>GET http://yasen.hotellook.com/tp/v1/hotels?language=en</code></p>
 <h3 id='request-parameters-4'>Request parameters</h3>
 <p>The <strong>language</strong> parameter can take the values:</p>
 
 <ul>
-<li>ru (Russian);</li>
-<li>en (English);</li>
-<li>th (Thai);</li>
-<li>de (German);</li>
-<li>es (Spanish);</li>
-<li>fr (French);</li>
-<li>it (Italian);</li>
-<li>pl (Polish).</li>
+<li>ru (Russian)</li>
+<li>en (English)</li>
+<li>th (Thai)</li>
+<li>de (German)</li>
+<li>es (Spanish)</li>
+<li>fr (French)</li>
+<li>it (Italian)</li>
+<li>pl (Polish)</li>
 </ul>
 <h3 id='response-4'>Response</h3>
 <p>The file with a list of hotels includes the following data:</p>
 
 <ul>
-<li><strong>id</strong> - unique id of the hotel;</li>
-<li><strong>name</strong> - name of the hotel;</li>
-<li><strong>location_name</strong> - name of the place location of the hotel;</li>
-<li><strong>location_id</strong> - a unique id location of the hotel;</li>
-<li><strong>location_iata</strong> - IATA code for the location of the hotel;</li>
-<li><strong>country_name</strong> - name of the country in which the hotel is located;</li>
-<li><strong>photos_count</strong> - number of photos of the hotel in the database.</li>
+<li><strong>id</strong> - unique id of the hotel</li>
+<li><strong>name</strong> - name of the hotel</li>
+<li><strong>location_name</strong> - name of the place location of the hotel</li>
+<li><strong>location_id</strong> - a unique id location of the hotel</li>
+<li><strong>location_iata</strong> - IATA code for the location of the hotel</li>
+<li><strong>country_name</strong> - name of the country in which the hotel is located</li>
+<li><strong>photos_count</strong> - number of photos of the hotel in the database</li>
 </ul>
 
 <p>The hotels file is updated once a week in the morning (GMT) on Saturday.</p>
 
 <p><strong>Note</strong>! To download the list of hotels you <strong>do not need</strong> access to the search hotels API.</p>
 <h2 id='hotels-selections'>Hotels Selections</h2>
-<p><strong>Endpoint</strong>: <a href="http://yasen.hotellook.com/tp/public/widget_location_dump.json">http://yasen.hotellook.com/tp/public/widget_location_dump.json</a></p>
-
 <p>The request recovers the list of specific hotels according to the ID of a location. A collection is formed according to the specified period. If the period is not specified, a collection shall be formed from the hotels found for the last three days.</p>
 
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>http://yasen.hotellook.com/tp/public/widget_location_dump.json?currency<span class="o">=</span>rub&amp;language<span class="o">=</span>ru&amp;limit<span class="o">=</span>5&amp;id<span class="o">=</span>12209&amp;type<span class="o">=</span>popularity&amp;check_in<span class="o">=</span>2017-02-02&amp;check_out<span class="o">=</span>2017-02-17&amp;token<span class="o">=</span>PasteYourTokenHere
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://yasen.hotellook.com/tp/public/widget_location_dump.json?currency=rub&amp;language=ru&amp;limit=5&amp;id=12209&amp;type=popularity&amp;check_in=2019-02-02&amp;check_out=2019-02-17&amp;token=PasteYourTokenHere'</span> <span class="se">\</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/https'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://yasen.hotellook.com/tp/public/widget_location_dump.json?currency=rub&amp;language=ru&amp;limit=5&amp;id=12209&amp;type=popularity&amp;check_in=2019-02-02&amp;check_out=2019-02-17&amp;token=PasteYourTokenHere"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">https</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://yasen.hotellook.com/tp/public/widget_location_dump.json?currency=rub&amp;language=ru&amp;limit=5&amp;id=12209&amp;type=popularity&amp;check_in=2019-02-02&amp;check_out=2019-02-17&amp;token=PasteYourTokenHere"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://yasen.hotellook.com/tp/public/widget_location_dump.json"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s">"currency"</span><span class="p">:</span><span class="s">"rub"</span><span class="p">,</span> <span class="s">"language"</span><span class="p">:</span><span class="s">"ru"</span><span class="p">,</span> <span class="s">"limit"</span><span class="p">:</span><span class="s">"5"</span><span class="p">,</span> <span class="s">"id"</span><span class="p">:</span><span class="s">"12209"</span><span class="p">,</span> <span class="s">"type"</span><span class="p">:</span><span class="s">"popularity"</span><span class="p">,</span> <span class="s">"check_in"</span><span class="p">:</span><span class="s">"2019-02-02"</span><span class="p">,</span> <span class="s">"check_out"</span><span class="p">:</span><span class="s">"2019-02-17"</span><span class="p">,</span> <span class="s">"token"</span><span class="p">:</span><span class="s">"PasteYourTokenHere"</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre><h3 id='request-5'>Request</h3>
-<p><code>GET http://yasen.hotellook.com/tp/public/widget_location_dump.json?currency=rub&amp;language=ru&amp;limit=5&amp;id=12209&amp;type=popularity&amp;check_in=2017-02-02&amp;check_out=2017-02-17&amp;token=PasteYourTokenHere</code></p>
+<p><code>GET http://yasen.hotellook.com/tp/public/widget_location_dump.json?currency=rub&amp;language=ru&amp;limit=5&amp;id=12209&amp;type=popularity&amp;check_in=2019-02-02&amp;check_out=2019-02-17&amp;token=PasteYourTokenHere</code></p>
 <h3 id='request-parameters-5'>Request parameters</h3>
 <ul>
-<li><strong>check_in</strong> — date of check-in;</li>
-<li><strong>check_out</strong> — date of check-out;</li>
-<li><strong>currency</strong> — currency of response;</li>
-<li><strong>language</strong> — language of reaponse (pt, en, fr, de, id, it, pl, es, th, ru);</li>
-<li><strong>limit</strong> — limitation of output results from 1 to 100, default - 10;</li>
-<li><strong>type</strong> — type of hotels from request <code>/tp/public/available_selections.json</code>;</li>
-<li><strong>id</strong> — id of the city.</li>
-<li><strong>token</strong> — your affiliate token.</li>
+<li><strong>check_in</strong> — date of check-in</li>
+<li><strong>check_out</strong> — date of check-out</li>
+<li><strong>currency</strong> — currency of response</li>
+<li><strong>language</strong> — language of reaponse (pt, en, fr, de, id, it, pl, es, th, ru)</li>
+<li><strong>limit</strong> — limitation of output results from 1 to 100, default - 10</li>
+<li><strong>type</strong> — type of hotels from request <code>/tp/public/available_selections.json</code></li>
+<li><strong>id</strong> — id of the city</li>
+<li><strong>token</strong> — your affiliate token</li>
 </ul>
 <h3 id='response-5'>Response</h3>
 <blockquote>
@@ -4437,8 +4657,8 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
                 </span><span class="s2">"search_params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"adults"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-                    </span><span class="s2">"checkIn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-02"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"checkOut"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-17"</span><span class="w">
+                    </span><span class="s2">"checkIn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-02"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"checkOut"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-17"</span><span class="w">
                 </span><span class="p">},</span><span class="w">
                 </span><span class="s2">"price_pn"</span><span class="p">:</span><span class="w"> </span><span class="mi">2647</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"old_price_pn"</span><span class="p">:</span><span class="w"> </span><span class="mi">2851</span><span class="w">
@@ -4449,42 +4669,85 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <ul>
-<li><strong>hotel_id</strong> – unique hotels’ ID;</li>
-<li><strong>distance</strong> – distance from the city’s center;</li>
-<li><strong>name</strong> – hotel’s name;</li>
-<li><strong>stars</strong> – number of stars;</li>
-<li><strong>rating</strong> – hotel’s rating, assigned by its visitors;</li>
-<li><strong>property_type</strong> – type of a hotel;</li>
-<li><strong>hotel_type</strong> – description of a hotel’s type;</li>
-<li><strong>last_price_info</strong> – information about the last found price of a hotel (if any):
+<li><strong>hotel_id</strong> – unique hotels’ ID</li>
+<li><strong>distance</strong> – distance from the city’s center</li>
+<li><strong>name</strong> – hotel’s name</li>
+<li><strong>stars</strong> – number of stars</li>
+<li><strong>rating</strong> – hotel’s rating, assigned by its visitors</li>
+<li><strong>property_type</strong> – type of a hotel</li>
+<li><strong>hotel_type</strong> – description of a hotel’s type</li>
+<li><strong>last_price_info</strong> – information about the last found price of a hotel (if any)
 
 <ul>
-<li><strong>price</strong> – price of accommodation during the whole period with a discount;</li>
-<li><strong>old_price</strong> - price of accommodation without a discount;</li>
-<li><strong>discount</strong> – amount of a discount;</li>
-<li><strong>insertion_time</strong> – time, when the collection was found;</li>
-<li><strong>nights</strong> – number of nights.</li>
+<li><strong>price</strong> – price of accommodation during the whole period with a discount</li>
+<li><strong>old_price</strong> - price of accommodation without a discount</li>
+<li><strong>discount</strong> – amount of a discount</li>
+<li><strong>insertion_time</strong> – time, when the collection was found</li>
+<li><strong>nights</strong> – number of nights</li>
 </ul></li>
-<li><strong>search_params</strong> – search parameters;</li>
-<li><strong>price_pn</strong> – price of a night in a hotel room with a discount;</li>
-<li><strong>old_price_pn</strong> - price of a night in a hotel room without a discount;</li>
-<li><strong>has_wifi</strong> – availability of Wi-Fi.</li>
+<li><strong>search_params</strong> – search parameters</li>
+<li><strong>price_pn</strong> – price of a night in a hotel room with a discount</li>
+<li><strong>old_price_pn</strong> - price of a night in a hotel room without a discount</li>
+<li><strong>has_wifi</strong> – availability of Wi-Fi</li>
 </ul>
 <h2 id='the-types-of-hotel-collections'>The types of hotel collections</h2>
-<p><strong>Endpoint</strong>: <a href="http://yasen.hotellook.com/tp/public/available_selections.json">http://yasen.hotellook.com/tp/public/available_selections.json</a></p>
-
 <p>The request recovers the list of all available separate collections. This type is used to search for hotels with a discount.</p>
 
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>http://yasen.hotellook.com/tp/public/available_selections.json?id<span class="o">=</span>12209&amp;token<span class="o">=</span>PasteYourTokenHere
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://yasen.hotellook.com/tp/public/available_selections.json?id=12209&amp;token=PasteYourTokenHere'</span> <span class="se">\</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/https'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://yasen.hotellook.com/tp/public/available_selections.json?id=12209&amp;token=PasteYourTokenHere"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">https</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://yasen.hotellook.com/tp/public/available_selections.json?id=12209&amp;token=PasteYourTokenHere"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://yasen.hotellook.com/tp/public/available_selections.json"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s">"id"</span><span class="p">:</span><span class="s">"12209"</span><span class="p">,</span> <span class="s">"token"</span><span class="p">:</span><span class="s">"PasteYourTokenHere"</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre><h3 id='request-6'>Request</h3>
 <p><code>GET http://yasen.hotellook.com/tp/public/available_selections.json?id=12209&amp;token=PasteYourTokenHere</code></p>
 <h3 id='request-parameters-6'>Request parameters</h3>
 <ul>
-<li><strong>id</strong> — id of the city.</li>
-<li><strong>token</strong> — your affiliate token.</li>
+<li><strong>id</strong> — id of the city</li>
+<li><strong>token</strong> — your affiliate token</li>
 </ul>
 <h3 id='response-6'>Response</h3>
 <blockquote>
@@ -4513,35 +4776,80 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <ul>
-<li><strong>center</strong> – hotels, located in the center of a city;</li>
-<li><strong>tophotels</strong> – best hotels;</li>
-<li><strong>highprice</strong> – most expensive hotels;</li>
-<li><strong>3-stars, 4-stars, 5-stars</strong> – automatic searching of the hotels, having 3, 4 or 5 stars;</li>
-<li><strong>restaurant</strong> – availability of the own restaurant;</li>
-<li><strong>pets</strong> – opportunity to live with the pets;</li>
-<li><strong>pool</strong> – availability of the own pool;</li>
-<li><strong>cheaphotel</strong> – cheapest hotels;</li>
-<li><strong>luxury</strong> – luxury hotels;</li>
-<li><strong>price</strong> – manually formed collections by the price;</li>
-<li><strong>rating</strong> – hotels with the highest rating;</li>
-<li><strong>distance</strong> – distance from an airport;</li>
-<li><strong>popularity</strong> – popularity of a hotel;</li>
-<li><strong>2stars, 3stars, 4stars, 5stars</strong> – manually formed collections with the corresponding number of stars.</li>
+<li><strong>center</strong> – hotels, located in the center of a city</li>
+<li><strong>tophotels</strong> – best hotels</li>
+<li><strong>highprice</strong> – most expensive hotels</li>
+<li><strong>3-stars, 4-stars, 5-stars</strong> – automatic searching of the hotels, having 3, 4 or 5 stars</li>
+<li><strong>restaurant</strong> – availability of the own restaurant</li>
+<li><strong>pets</strong> – opportunity to live with the pets</li>
+<li><strong>pool</strong> – availability of the own pool</li>
+<li><strong>cheaphotel</strong> – cheapest hotels</li>
+<li><strong>luxury</strong> – luxury hotels</li>
+<li><strong>price</strong> – manually formed collections by the price</li>
+<li><strong>rating</strong> – hotels with the highest rating</li>
+<li><strong>distance</strong> – distance from an airport</li>
+<li><strong>popularity</strong> – popularity of a hotel</li>
+<li><strong>2stars, 3stars, 4stars, 5stars</strong> – manually formed collections with the corresponding number of stars</li>
 </ul>
-<h1 id='statistical-hotels-data-data'>Statistical hotels data data</h1>
+<h1 id='hotels-statistical-data'>Hotels statistical data</h1>
 <p>Requests as a result of which the partner receives information about the countries, cities and hotels.</p>
 
 <p><strong>Attention</strong>! The default number of requests is limited to <strong>60 per minute</strong>. If you need to process more requests, send a letter to support@travelpayouts.com.</p>
 <h2 id='request-quot-country-quot'>Request &quot;Country&quot;</h2>
-<p><code>GET http://engine.hotellook.com/api/v2/static/countries.json</code></p>
-<h3 id='request'>Request</h3>
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>http://engine.hotellook.com/api/v2/static/countries.json?token<span class="o">=</span>PasteYourTokenHere
-</code></pre><h3 id='request-parameters'>Request parameters</h3>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://engine.hotellook.com/api/v2/static/countries.json?token=PasteYourTokenHere'</span> <span class="se">\</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/https'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://engine.hotellook.com/api/v2/static/countries.json?token=PasteYourTokenHere"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">https</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://engine.hotellook.com/api/v2/static/countries.json?token=PasteYourTokenHere"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://engine.hotellook.com/api/v2/static/countries.json"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s">"token"</span><span class="p">:</span><span class="s">"PasteYourTokenHere"</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre><h3 id='request'>Request</h3>
+<p><code>GET http://engine.hotellook.com/api/v2/static/countries.json?token=PasteYourTokenHere</code></p>
+<h3 id='request-parameters'>Request parameters</h3>
 <ul>
-<li><strong>token</strong> - your affiliate token.</li>
+<li><strong>token</strong> - your affiliate token</li>
 </ul>
 <h3 id='response'>Response</h3>
 <blockquote>
@@ -4589,31 +4897,76 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 <p>The response contains: </p>
 
 <ul>
-<li><strong>Id</strong> – id of country.</li>
-<li><strong>code</strong> – code of country.</li>
+<li><strong>Id</strong> – id of country</li>
+<li><strong>code</strong> – code of country</li>
 <li>The block EN:
 
 <ul>
-<li><strong>isVariation</strong> – primary or secondary title. 1 - secondary, 0 - primary.</li>
-<li><strong>name</strong> – country name in English.</li>
+<li><strong>isVariation</strong> – primary or secondary title. 1 - secondary, 0 - primary</li>
+<li><strong>name</strong> – country name in English</li>
 </ul></li>
 <li>The block RU:
 
 <ul>
-<li><strong>isVariation</strong> – primary or secondary title.</li>
-<li><strong>name</strong> – country name in Russian.</li>
+<li><strong>isVariation</strong> – primary or secondary title</li>
+<li><strong>name</strong> – country name in Russian</li>
 </ul></li>
 </ul>
 <h2 id='request-quot-cities-quot'>Request &quot;Cities&quot;</h2>
-<p><code>GET http://engine.hotellook.com/api/v2/static/locations.json</code></p>
-<h3 id='request-2'>Request</h3>
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>http://engine.hotellook.com/api/v2/static/locations.json?token<span class="o">=</span>PasteYourTokenHere
-</code></pre><h3 id='request-parameters-2'>Request parameters</h3>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://engine.hotellook.com/api/v2/static/locations.json?token=PasteYourTokenHere'</span> <span class="se">\</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/https'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://engine.hotellook.com/api/v2/static/locations.json?token=PasteYourTokenHere"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">https</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://engine.hotellook.com/api/v2/static/locations.json?token=PasteYourTokenHere"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://engine.hotellook.com/api/v2/static/locations.json"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s">"token"</span><span class="p">:</span><span class="s">"PasteYourTokenHere"</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre><h3 id='request-2'>Request</h3>
+<p><code>GET http://engine.hotellook.com/api/v2/static/locations.json?token=PasteYourTokenHere</code></p>
+<h3 id='request-parameters-2'>Request parameters</h3>
 <ul>
-<li>token - your affiliate token.</li>
+<li>token - your affiliate token</li>
 </ul>
 <h3 id='response-2'>Response</h3>
 <blockquote>
@@ -4644,41 +4997,86 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <ul>
-<li><strong>Id</strong> – id of city.</li>
-<li><strong>code</strong> – iata-code of city.</li>
-<li><strong>countryId</strong> – id of country.</li>
-<li><strong>latitude</strong> – latitude of city.</li>
-<li><strong>longitude</strong> – longitude of city.</li>
+<li><strong>Id</strong> – id of city</li>
+<li><strong>code</strong> – iata-code of city</li>
+<li><strong>countryId</strong> – id of country</li>
+<li><strong>latitude</strong> – latitude of city</li>
+<li><strong>longitude</strong> – longitude of city</li>
 <li>The block DE:
 
 <ul>
-<li><strong>isVariation</strong> - primary or secondary title. 1 - secondary, 0 - primary.</li>
-<li><strong>name</strong> – city name in German.</li>
+<li><strong>isVariation</strong> - primary or secondary title. 1 - secondary, 0 - primary</li>
+<li><strong>name</strong> – city name in German</li>
 </ul></li>
 <li>The block EN:
 
 <ul>
-<li><strong>isVariation</strong> - primary or secondary title.</li>
-<li><strong>name</strong> – city name in English.</li>
+<li><strong>isVariation</strong> - primary or secondary title</li>
+<li><strong>name</strong> – city name in English</li>
 </ul></li>
 <li>The block RU:
 
 <ul>
-<li><strong>isVariation</strong> – primary or secondary title.</li>
-<li><strong>name</strong> – city name in Russian.</li>
+<li><strong>isVariation</strong> – primary or secondary title</li>
+<li><strong>name</strong> – city name in Russian</li>
 </ul></li>
 </ul>
 <h2 id='request-quot-amenities-quot'>Request &quot;Amenities&quot;</h2>
-<p><code>GET http://engine.hotellook.com/static/amenities/</code></p>
-<h3 id='request-3'>Request</h3>
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>http://engine.hotellook.com/api/v2/static/amenities/en.json?token<span class="o">=</span>PasteYourTokenHere
-</code></pre><h3 id='request-parameters-3'>Request parameters</h3>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://engine.hotellook.com/api/v2/static/amenities/en.json?token=PasteYourTokenHere'</span> <span class="se">\</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/https'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://engine.hotellook.com/api/v2/static/amenities/en.json?token=PasteYourTokenHere"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">https</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://engine.hotellook.com/api/v2/static/amenities/en.json?token=PasteYourTokenHere"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://engine.hotellook.com/api/v2/static/amenities/en.json"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s">"token"</span><span class="p">:</span><span class="s">"PasteYourTokenHere"</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre><h3 id='request-3'>Request</h3>
+<p><code>GET http://engine.hotellook.com/api/v2/static/amenities/en.json?token=PasteYourTokenHere</code></p>
+<h3 id='request-parameters-3'>Request parameters</h3>
 <ul>
-<li><strong>en.json</strong> - language that you want to see result (en, ru, fr, de and etc);</li>
-<li><strong>token</strong> - your affiliate token.</li>
+<li><strong>en.json</strong> - language that you want to see result (en, ru, fr, de and etc)</li>
+<li><strong>token</strong> - your affiliate token</li>
 </ul>
 <h3 id='response-3'>Response</h3>
 <blockquote>
@@ -4703,21 +5101,66 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <ul>
-<li><strong>Id</strong> – id of amenities in the database.</li>
-<li><strong>name</strong> – name of amenities.</li>
-<li><strong>groupName</strong> - location of amenities.</li>
+<li><strong>Id</strong> – id of amenities in the database</li>
+<li><strong>name</strong> – name of amenities</li>
+<li><strong>groupName</strong> - location of amenities</li>
 </ul>
 <h2 id='request-39-hotels-list-39'>Request &#39;Hotels list&#39;</h2>
-<p><code>GET http://engine.hotellook.com/static/hotels.json</code></p>
-<h3 id='request-4'>Request</h3>
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>http://engine.hotellook.com/api/v2/static/hotels.json?locationId<span class="o">=</span>895&amp;token<span class="o">=</span>PasteYourTokenHere
-</code></pre><h3 id='request-parameters-4'>Request parameters</h3>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://engine.hotellook.com/api/v2/static/hotels.json?locationId=895&amp;token=PasteYourTokenHere'</span> <span class="se">\</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/https'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://engine.hotellook.com/api/v2/static/hotels.json?locationId=895&amp;token=PasteYourTokenHere"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">https</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://engine.hotellook.com/api/v2/static/hotels.json?locationId=895&amp;token=PasteYourTokenHere"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://engine.hotellook.com/api/v2/static/hotels.json"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s">"locationId"</span><span class="p">:</span><span class="s">"895"</span><span class="p">,</span> <span class="s">"token"</span><span class="p">:</span><span class="s">"PasteYourTokenHere"</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre><h3 id='request-4'>Request</h3>
+<p><code>GET http://engine.hotellook.com/api/v2/static/hotels.json?locationId=895&amp;token=PasteYourTokenHere</code></p>
+<h3 id='request-parameters-4'>Request parameters</h3>
 <ul>
-<li><strong>locationId</strong> – id of location.</li>
-<li><strong>token</strong> – your affiliate token.</li>
+<li><strong>locationId</strong> – id of location</li>
+<li><strong>token</strong> – your affiliate token</li>
 </ul>
 <h3 id='response-4'>Response</h3>
 <blockquote>
@@ -4799,60 +5242,105 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 <p>The response contains:</p>
 
 <ul>
-<li><strong>id</strong> – id of hotel in database hotellook.</li>
-<li><strong>cityId</strong> – id of city.</li>
-<li><strong>stars</strong> – number of stars.</li>
+<li><strong>id</strong> – id of hotel in database hotellook</li>
+<li><strong>cityId</strong> – id of city</li>
+<li><strong>stars</strong> – number of stars</li>
 <li><strong>pricefrom</strong> – average minimum cost of the period, in USD</li>
-<li><strong>rating</strong> – rating visitors.</li>
-<li><strong>popularity</strong> – popularity of hotel.</li>
-<li><strong>propertyType</strong> – type of hotel (hostel, motel, villa, etc.).</li>
-<li><strong>checkOut</strong> – check out time.</li>
-<li><strong>checkIn</strong> – check in time.</li>
-<li><strong>distance</strong> – distance to the center.</li>
-<li><strong>photoCount</strong> – number of photos.</li>
+<li><strong>rating</strong> – rating visitors</li>
+<li><strong>popularity</strong> – popularity of hotel</li>
+<li><strong>propertyType</strong> – type of hotel (hostel, motel, villa, etc.)</li>
+<li><strong>checkOut</strong> – check out time</li>
+<li><strong>checkIn</strong> – check in time</li>
+<li><strong>distance</strong> – distance to the center</li>
+<li><strong>photoCount</strong> – number of photos</li>
 <li><strong>photos</strong>:
 
 <ul>
-<li><strong>url</strong> – link to the photo.</li>
-<li><strong>width</strong> – width of photo.</li>
-<li><strong>height</strong> – height of photo.</li>
+<li><strong>url</strong> – link to the photo</li>
+<li><strong>width</strong> – width of photo</li>
+<li><strong>height</strong> – height of photo</li>
 </ul></li>
-<li><strong>facilities</strong> – id amenities in the database.</li>
-<li><strong>shortFacilities</strong> – availability of the amenities from the list: &#39;restaurant&#39;, &#39;parking&#39;, &#39;non-smoking&#39;, &#39;pets&#39;, &#39;tv&#39;, &#39;laundry&#39;, &#39;air conditioning&#39;, &#39;internet&#39;, &#39;pool&#39;, &#39;fitness&#39;, &#39;wi-fi in public areas&#39;, &#39;wi-fi in room&#39;, &#39;hairdryer&#39;, &#39;shared bathroom&#39;, &#39;safe&#39;, &#39;babysitting&#39;, &#39;children care/activities&#39; (the list can change).</li>
-<li><strong>photosByRoomType</strong> - photos of rooms types. The key - id of the room type, the value - number of photos.</li>
+<li><strong>facilities</strong> – id amenities in the database</li>
+<li><strong>shortFacilities</strong> – availability of the amenities from the list: &#39;restaurant&#39;, &#39;parking&#39;, &#39;non-smoking&#39;, &#39;pets&#39;, &#39;tv&#39;, &#39;laundry&#39;, &#39;air conditioning&#39;, &#39;internet&#39;, &#39;pool&#39;, &#39;fitness&#39;, &#39;wi-fi in public areas&#39;, &#39;wi-fi in room&#39;, &#39;hairdryer&#39;, &#39;shared bathroom&#39;, &#39;safe&#39;, &#39;babysitting&#39;, &#39;children care/activities&#39; (the list can change)</li>
+<li><strong>photosByRoomType</strong> - photos of rooms types. The key - id of the room type, the value - number of photos</li>
 <li><strong>location</strong>:
 
 <ul>
-<li><strong>lat</strong> – latitude of hotel.</li>
-<li><strong>lon</strong> – longitude of hotel.</li>
+<li><strong>lat</strong> – latitude of hotel</li>
+<li><strong>lon</strong> – longitude of hotel</li>
 </ul></li>
-<li><strong>name</strong> – hotel name.</li>
-<li><strong>address</strong> – hotel address.</li>
-<li><strong>link</strong> – link to this page of hotel. </li>
-<li><strong>poi_distance</strong> - distance to the important places (shown in the list of places id array pois and distance in meters).</li>
+<li><strong>name</strong> – hotel name</li>
+<li><strong>address</strong> – hotel address</li>
+<li><strong>link</strong> – link to this page of hotel</li>
+<li><strong>poi_distance</strong> - distance to the important places (shown in the list of places id array pois and distance in meters)</li>
 <li><strong>pois</strong> - an array of the important places:
 
 <ul>
-<li><strong>confirmed</strong> - confirmed place;</li>
-<li><strong>rating</strong> - place ranking;</li>
-<li><strong>location</strong> - location;</li>
-<li><strong>name</strong> - the name of the place;</li>
-<li><strong>geom</strong> - coordinates of the point;</li>
-<li><strong>category</strong> - the place category;</li>
-<li><strong>id</strong> - id of place in the base.</li>
+<li><strong>confirmed</strong> - confirmed place</li>
+<li><strong>rating</strong> - place ranking</li>
+<li><strong>location</strong> - location</li>
+<li><strong>name</strong> - the name of the place</li>
+<li><strong>geom</strong> - coordinates of the point</li>
+<li><strong>category</strong> - the place category</li>
+<li><strong>id</strong> - id of place in the base</li>
 </ul></li>
 </ul>
 <h2 id='request-quot-types-of-rooms-quot'>Request &quot;Types of rooms&quot;</h2>
-<p><code>GET http://engine.hotellook.com/static/roomTypes.json</code></p>
-
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>http://engine.hotellook.com/api/v2/static/roomTypes.json?language<span class="o">=</span>en&amp;token<span class="o">=</span>PasteYourTokenHere
-</code></pre><h3 id='request-parameters-5'>Request parameters</h3>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://engine.hotellook.com/api/v2/static/roomTypes.json?language=en&amp;token=PasteYourTokenHere'</span> <span class="se">\</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/https'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://engine.hotellook.com/api/v2/static/roomTypes.json?language=en&amp;token=PasteYourTokenHere"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">https</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://engine.hotellook.com/api/v2/static/roomTypes.json?language=en&amp;token=PasteYourTokenHere"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://engine.hotellook.com/api/v2/static/roomTypes.json"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s">"language"</span><span class="p">:</span><span class="s">"en"</span><span class="p">,</span> <span class="s">"token"</span><span class="p">:</span><span class="s">"PasteYourTokenHere"</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre><h3 id='request-5'>Request</h3>
+<p><code>GET http://engine.hotellook.com/api/v2/static/roomTypes.json?language=en&amp;token=PasteYourTokenHere</code></p>
+<h3 id='request-parameters-5'>Request parameters</h3>
 <ul>
-<li>language - language of reaponse (pt, en, fr, de, id, it, pl, es, th, ru).</li>
-<li><strong>token</strong> - your affiliate token.</li>
+<li>language - language of reaponse (pt, en, fr, de, id, it, pl, es, th, ru)</li>
+<li><strong>token</strong> - your affiliate token</li>
 </ul>
 <h3 id='response-5'>Response</h3>
 <blockquote>
@@ -4866,16 +5354,61 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
    </span><span class="s2">"86"</span><span class="p">:</span><span class="s2">"Business deluxe"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='request-quot-types-of-hotels-quot'>Request &quot;Types of hotels&quot;</h2>
-<p><code>GET http://engine.hotellook.com/static/hotelTypes.json</code></p>
-<h3 id='request-5'>Request</h3>
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>http://engine.hotellook.com/api/v2/static/hotelTypes.json?language<span class="o">=</span>en&amp;token<span class="o">=</span>PasteYourTokenHere
-</code></pre><h3 id='request-parameters-6'>Request parameters</h3>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://engine.hotellook.com/api/v2/static/hotelTypes.json?language=en&amp;token=PasteYourTokenHere'</span> <span class="se">\</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/https'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://engine.hotellook.com/api/v2/static/hotelTypes.json?language=en&amp;token=PasteYourTokenHere"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">https</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://engine.hotellook.com/api/v2/static/hotelTypes.json?language=en&amp;token=PasteYourTokenHere"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://engine.hotellook.com/api/v2/static/hotelTypes.json"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s">"language"</span><span class="p">:</span><span class="s">"en"</span><span class="p">,</span> <span class="s">"token"</span><span class="p">:</span><span class="s">"PasteYourTokenHere"</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre><h3 id='request-6'>Request</h3>
+<p><code>GET http://engine.hotellook.com/api/v2/static/hotelTypes.json?language=en&amp;token=PasteYourTokenHere</code></p>
+<h3 id='request-parameters-6'>Request parameters</h3>
 <ul>
-<li>language - language of reaponse (pt, en, fr, de, id, it, pl, es, th, ru).</li>
-<li><strong>token</strong> - your affiliate token.</li>
+<li>language - language of reaponse (pt, en, fr, de, id, it, pl, es, th, ru)</li>
+<li><strong>token</strong> - your affiliate token</li>
 </ul>
 <h3 id='response-6'>Response</h3>
 <blockquote>
@@ -4897,8 +5430,6 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
     </span><span class="s2">"12"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Villa"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='request-quot-hotel-photos-quot-old-method'>Request &quot;Hotel photos&quot;. Old method</h2>
-<p>Endpoint: <a href="https://photo.hotellook.com/image_v2/limit">https://photo.hotellook.com/image_v2/limit</a></p>
-
 <blockquote>
 <p>Sample request</p>
 </blockquote>
@@ -4914,18 +5445,112 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 <p>https://photo.hotellook.com/image_v2/limit/h503387_1/640/480.jpg</p>
 
 <p>https://photo.hotellook.com/image_v2/limit/h503387_1/800/520.auto</p>
-<h3 id='request-6'>Request</h3>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'https://photo.hotellook.com/image_v2/limit/hId_photoId/photosize.jpg'</span> <span class="se">\</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/https'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://photo.hotellook.com/image_v2/limit/hId_photoId/photosize.jpg"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">https</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://photo.hotellook.com/image_v2/limit/hId_photoId/photosize.jpg"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://photo.hotellook.com/image_v2/limit/hId_photoId/photosize.jpg"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre><h3 id='request-7'>Request</h3>
 <p><code>GET https://photo.hotellook.com/image_v2/limit/hId_photoId/photosize.jpg</code></p>
 <h3 id='request-parameters-7'>Request parameters</h3>
 <ul>
-<li><strong>h+Id</strong> – h + <strong>hotel&#39;s id</strong>.</li>
-<li><strong>photoId</strong> – number of the hotel&#39;s photo.</li>
-<li><strong>photosize</strong> – size of the photo (width/height).</li>
-<li><strong>file_type</strong> - you can use <strong>.auto</strong> in the type part of file. It means that our system detects whether a user’s browser can accept the Webp image format. If yes, the server will send the image in Webp format (smaller size). If no, the image will be in JPEG format.</li>
+<li><strong>h+Id</strong> – h + <strong>hotel&#39;s id</strong></li>
+<li><strong>photoId</strong> – number of the hotel&#39;s photo</li>
+<li><strong>photosize</strong> – size of the photo (width/height)</li>
+<li><strong>file_type</strong> - you can use <strong>.auto</strong> in the type part of file. It means that our system detects whether a user’s browser can accept the Webp image format. If yes, the server will send the image in Webp format (smaller size). If no, the image will be in JPEG format</li>
 </ul>
 <h2 id='request-for-hotel-photos-new-method'>Request for hotel photos. New method</h2>
-<p><strong>Endpoint</strong>: <a href="https://yasen.hotellook.com/photos/hotel_photos">https://yasen.hotellook.com/photos/hotel_photos</a></p>
-<h3 id='first-request'>First request</h3>
+<blockquote>
+<p>Example request</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'https://yasen.hotellook.com/photos/hotel_photos?id=27926056,4'</span> <span class="se">\</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/https'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://yasen.hotellook.com/photos/hotel_photos?id=27926056,4"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">https</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://yasen.hotellook.com/photos/hotel_photos?id=27926056,4"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://yasen.hotellook.com/photos/hotel_photos"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s">"id"</span><span class="p">:</span><span class="s">"27926056,4"</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre><h3 id='first-request'>First request</h3>
 <p><code>GET https://yasen.hotellook.com/photos/hotel_photos?id=27926056,4</code></p>
 
 <p>where <strong>id</strong> is the id of the hotels indicated through a comma.</p>
@@ -4942,38 +5567,124 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 <blockquote>
 <p>Sample request</p>
 </blockquote>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'https://photo.hotellook.com/image_v2/limit/photo_id/800/520.auto'</span> <span class="se">\</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/https'</span>
 
-<p>https://photo.hotellook.com/image_v2/limit/photo_id/800/520.auto</p>
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://photo.hotellook.com/image_v2/limit/photo_id/800/520.auto"</span><span class="p">)</span>
 
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">https</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://photo.hotellook.com/image_v2/limit/photo_id/800/520.auto"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://photo.hotellook.com/image_v2/limit/photo_id/800/520.auto"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre>
 <p>After that, send a request to the address <a href="https://photo.hotellook.com/image_v2/limit/photo_id/800/520.auto">https://photo.hotellook.com/image_v2/limit/photo_id/800/520.auto</a></p>
 
 <p>where instead of <strong>photo_id</strong> substitute id photos.</p>
 <h2 id='request-quot-hotel-39-s-room-photos-in-a-sprite-quot'>Request &quot;Hotel&#39;s room photos (in a sprite)&quot;</h2>
-<p><strong>Endpoint</strong>: <a href="https://photo.hotellook.com/rooms/sprite/">https://photo.hotellook.com/rooms/sprite/</a></p>
-
 <p>Use this request to get a sprite with photos of rooms.</p>
 
 <blockquote>
 <p>Sample request</p>
 </blockquote>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'https://photo.hotellook.com/rooms/sprite/h4_1/100/3/50.auto'</span> <span class="se">\</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/https'</span>
 
-<p>https://photo.hotellook.com/rooms/sprite/h4_1/100/3/50.auto</p>
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://photo.hotellook.com/rooms/sprite/h4_1/100/3/50.auto"</span><span class="p">)</span>
 
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">https</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://photo.hotellook.com/rooms/sprite/h4_1/100/3/50.auto"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://photo.hotellook.com/rooms/sprite/h4_1/100/3/50.auto"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre>
 <blockquote>
 <p>To get a sprite with rectangular photographs, along with the need to specify the width of the height of the photos:</p>
 </blockquote>
 
 <p>https://photo.hotellook.com/rooms/sprite/h4_12/100x50/3/50x25.auto</p>
-<h3 id='request-7'>Request</h3>
+<h3 id='request-8'>Request</h3>
 <p><code>GET https://photo.hotellook.com/rooms/sprite/hhotel-id_group-id/first_width/photos_count-1/rest_photos_width.auto</code></p>
 <h3 id='request-parameters-8'>Request parameters</h3>
 <ul>
-<li><strong>h + hotel-Id</strong> - letter h + Hotel identifier (from static/hotels.json).</li>
-<li><strong>group-id</strong> - ID room type (from static/hotels.json and internalTypeId of the search for an answer).</li>
-<li><strong>first_width</strong> - width of the first photo in the sprite.</li>
-<li><strong>photos_count-1</strong> - number of photos of the room type minus one (from the static/hotels.json). For example, if the answer is that photographs of this type have four pieces, it indicates three instead of this parameter.</li>
-<li><strong>rest_photos_width</strong> - width of the rest of the photos in the sprite.</li>
-<li><strong>auto</strong> - our system checks whether a user&#39;s browser can accommodate the WebP image format. If yes, the server will provide a WebP image format. If not, the image will be in JPEG format.</li>
+<li><strong>h + hotel-Id</strong> - letter h + Hotel identifier (from static/hotels.json)</li>
+<li><strong>group-id</strong> - ID room type (from static/hotels.json and internalTypeId of the search for an answer)</li>
+<li><strong>first_width</strong> - width of the first photo in the sprite</li>
+<li><strong>photos_count-1</strong> - number of photos of the room type minus one (from the static/hotels.json). For example, if the answer is that photographs of this type have four pieces, it indicates three instead of this parameter</li>
+<li><strong>rest_photos_width</strong> - width of the rest of the photos in the sprite</li>
+<li><strong>auto</strong> - our system checks whether a user&#39;s browser can accommodate the WebP image format. If yes, the server will provide a WebP image format. If not, the image will be in JPEG format</li>
 </ul>
 <h3 id='additional-information'>Additional information</h3>
 <p>To get a picture of the room, given the size, use code like:</p>
@@ -4990,13 +5701,57 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 
 <p><a href="https://photo.hotellook.com/rooms/limit/h4_12_1/200/200.auto">https://photo.hotellook.com/rooms/limit/h4_12_1/200/200.auto</a></p>
 <h2 id='request-39-city-photo-39'>Request &#39;City photo&#39;</h2>
-<p><strong>Endpoint</strong>: <a href="https://photo.hotellook.com/static/cities/">https://photo.hotellook.com/static/cities/</a></p>
-
 <blockquote>
 <p>Sample request</p>
 </blockquote>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'https://photo.hotellook.com/static/cities/960x720/LED.jpg'</span> <span class="se">\</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/https'</span>
 
-<p>https://photo.hotellook.com/static/cities/960x720/LED.jpg</p>
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://photo.hotellook.com/static/cities/960x720/LED.jpg"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">https</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://photo.hotellook.com/static/cities/960x720/LED.jpg"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://photo.hotellook.com/static/cities/960x720/LED.jpg"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre><h3 id='request-9'>Request</h3>
+<p><code>GET https://photo.hotellook.com/static/cities/960x720/LED.jpg</code></p>
 <h3 id='request-parameters-9'>Request parameters</h3>
 <ul>
 <li><strong>photosize</strong> – size of the photo (width/height)</li>
@@ -5031,7 +5786,52 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>http://engine.hotellook.com/api/v2/search/start.json?iata<span class="o">=</span>HKT&amp;checkIn<span class="o">=</span>2018-08-10&amp;checkOut<span class="o">=</span>2018-08-13&amp;adultsCount<span class="o">=</span>2&amp;customerIP<span class="o">=</span>100.168.1.1&amp;childrenCount<span class="o">=</span>1&amp;childAge1<span class="o">=</span>8&amp;lang<span class="o">=</span>ru&amp;currency<span class="o">=</span>USD&amp;waitForResult<span class="o">=</span>0&amp;marker<span class="o">=</span>УкажитеВашМаркер&amp;signature<span class="o">=</span>a475100374414df97a9c6c7d7731b3c6
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'http://engine.hotellook.com/api/v2/search/start.json?iata=HKT&amp;checkIn=2018-08-10&amp;checkOut=2018-08-13&amp;adultsCount=2&amp;customerIP=100.168.1.1&amp;childrenCount=1&amp;childAge1=8&amp;lang=ru&amp;currency=USD&amp;waitForResult=0&amp;marker=УкажитеВашМаркер&amp;signature=a475100374414df97a9c6c7d7731b3c6'</span> <span class="se">\</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/https'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://engine.hotellook.com/api/v2/search/start.json?iata=HKT&amp;checkIn=2018-08-10&amp;checkOut=2018-08-13&amp;adultsCount=2&amp;customerIP=100.168.1.1&amp;childrenCount=1&amp;childAge1=8&amp;lang=ru&amp;currency=USD&amp;waitForResult=0&amp;marker=УкажитеВашМаркер&amp;signature=a475100374414df97a9c6c7d7731b3c6"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">https</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://engine.hotellook.com/api/v2/search/start.json?iata=HKT&amp;checkIn=2018-08-10&amp;checkOut=2018-08-13&amp;adultsCount=2&amp;customerIP=100.168.1.1&amp;childrenCount=1&amp;childAge1=8&amp;lang=ru&amp;currency=USD&amp;waitForResult=0&amp;marker=УкажитеВашМаркер&amp;signature=a475100374414df97a9c6c7d7731b3c6"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://engine.hotellook.com/api/v2/search/start.json"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s">"iata"</span><span class="p">:</span><span class="s">"HKT"</span><span class="p">,</span> <span class="s">"checkIn"</span><span class="p">:</span><span class="s">"2018-08-10"</span><span class="p">,</span> <span class="s">"checkOut"</span><span class="p">:</span><span class="s">"2018-08-13"</span><span class="p">,</span> <span class="s">"adultsCount"</span><span class="p">:</span><span class="s">"2"</span><span class="p">,</span> <span class="s">"customerIP"</span><span class="p">:</span><span class="s">"100.168.1.1"</span><span class="p">,</span> <span class="s">"childrenCount"</span><span class="p">:</span><span class="s">"1"</span><span class="p">,</span> <span class="s">"childAge1"</span><span class="p">:</span><span class="s">"8"</span><span class="p">,</span> <span class="s">"lang"</span><span class="p">:</span><span class="s">"ru"</span><span class="p">,</span> <span class="s">"currency"</span><span class="p">:</span><span class="s">"USD"</span><span class="p">,</span> <span class="s">"waitForResult"</span><span class="p">:</span><span class="s">"0"</span><span class="p">,</span> <span class="s">"marker"</span><span class="p">:</span><span class="s">"УкажитеВашМаркер"</span><span class="p">,</span> <span class="s">"signature"</span><span class="p">:</span><span class="s">"a475100374414df97a9c6c7d7731b3c6"</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre>
 <p>where <strong>signature</strong> is md5 of the string: &quot;<em>YourToken:YourMarker:adultsCount:checkIn:checkOut:childAge1:childrenCount:currency:customerIP:iata:lang:waitForResult</em>&quot;. </p>
 
@@ -5042,39 +5842,39 @@ To move on to the booking, give your visitors a link from the parameter <code>&q
 <p>Required parameters are highlighted in <strong>bold</strong>.</p>
 
 <ul>
-<li><strong>cityId</strong> – the location ID (the query static/locations.json).</li>
-<li><strong>hotelId</strong> – the hotel ID (the query static/hotels.json).</li>
-<li><p><strong>iata</strong> – iata code of city.</p>
+<li><strong>cityId</strong> – the location ID (the query static/locations.json)</li>
+<li><strong>hotelId</strong> – the hotel ID (the query static/hotels.json)</li>
+<li><p><strong>iata</strong> – iata code of city</p>
 
 <p><strong>Note</strong>. The request must have at least one of the required parameters iata, cityId or hotelId.</p></li>
-<li><p><strong>checkIn</strong> – check-in date format: yyyy–MM–dd.</p></li>
-<li><p><strong>checkOut</strong> – check-out date format: yyyy–MM–dd.</p></li>
-<li><p><strong>adultsCount</strong> – number of adults.</p></li>
-<li><p>customerIP – IP of the user who initiated the request.
-childrenCount – the number of children; possible values - from 0 to 3. Default - 0.</p></li>
-<li><p>childAge1, childAge2, childAge3 – ages of children (if childrenCount greater than 0). The default age is 1 year (max = 17).</p></li>
-<li><p>lang – the language of the search result. Stated together with the region.</p>
+<li><p><strong>checkIn</strong> – check-in date format: yyyy–MM–dd</p></li>
+<li><p><strong>checkOut</strong> – check-out date format: yyyy–MM–dd</p></li>
+<li><p><strong>adultsCount</strong> – number of adults</p></li>
+<li><p>customerIP – IP of the user who initiated the request</p></li>
+<li><p>childrenCount – the number of children; possible values - from 0 to 3. Default - 0</p></li>
+<li><p>childAge1, childAge2, childAge3 – ages of children (if childrenCount greater than 0). The default age is 1 year (max = 17)</p></li>
+<li><p>lang – the language of the search result. Stated together with the region</p>
 
 <ul>
-<li>en_US;</li>
-<li>en_GB;</li>
-<li>ru_RU;</li>
-<li>de_DE;</li>
-<li>en_AU;</li>
-<li>en_CA;</li>
-<li>en_IE;</li>
-<li>es_ES;</li>
-<li>fr_FR;</li>
-<li>it_IT;</li>
-<li>pl_PL;</li>
-<li>th_TH.</li>
+<li>en_US</li>
+<li>en_GB</li>
+<li>ru_RU</li>
+<li>de_DE</li>
+<li>en_AU</li>
+<li>en_CA</li>
+<li>en_IE</li>
+<li>es_ES</li>
+<li>fr_FR</li>
+<li>it_IT</li>
+<li>pl_PL</li>
+<li>th_TH</li>
 </ul></li>
 <li><p>currency – USD, RUB, EUR, ...</p></li>
-<li><p>waitForResult – wait for the completion of all searches for partners, possible values 0 or 1.</p>
+<li><p>waitForResult – wait for the completion of all searches for partners, possible values 0 or 1</p>
 
 <ul>
-<li>1 – the connection is open before all the data from the partners. The result is returned to the user query and its searchId.</li>
-<li>0 – the connection will be terminated immediately and returned to the user searchId (default).</li>
+<li>1 – the connection is open before all the data from the partners. The result is returned to the user query and its searchId</li>
+<li>0 – the connection will be terminated immediately and returned to the user searchId (default)</li>
 </ul></li>
 </ul>
 <h3 id='response'>Response</h3>
@@ -5094,29 +5894,27 @@ childrenCount – the number of children; possible values - from 0 to 3. Default
 <p>where <strong>signature</strong> is md5 of the string: <em>&quot;YourToken:YourMarker:limit:offset:roomsCount:searchId:sortAsc:sortBy&quot;</em>. </p>
 <h3 id='request-parameters-2'>Request parameters</h3>
 <ul>
-<li><strong>searchId</strong> – search Id.</li>
-<li>limit – maximum number of hotels, from 0 to infinity, where 0 - no limit. Default - 0.</li>
-<li>offset – to skip a number of hotels from 0 to infinity, where 0 - no hotel not passed. Default - 0.</li>
-<li><p>sortBy – how to sort:</p>
+<li><strong>searchId</strong> – search Id</li>
+<li>limit – maximum number of hotels, from 0 to infinity, where 0 - no limit. Default - 0</li>
+<li>offset – to skip a number of hotels from 0 to infinity, where 0 - no hotel not passed. Default - 0</li>
+<li>sortBy – how to sort:
 
 <ul>
-<li>popularity - by popularity;</li>
-<li>price - by price;</li>
-<li>name - by name;</li>
-<li>guestScore – by User Rating;</li>
-<li>stars – by number of stars</li>
-</ul>
-
-<p><em>Default – popularity</em></p></li>
-<li><p>sortAsc – how to sort the values:</p>
+<li>popularity - by popularity</li>
+<li>price - by price</li>
+<li>name - by name</li>
+<li>guestScore – by User Rating</li>
+<li>stars – by number of stars
+<em>Default – popularity</em></li>
+</ul></li>
+<li>sortAsc – how to sort the values:
 
 <ul>
-<li>1 – ascending;</li>
-<li>0 – descending.</li>
-</ul>
-
-<p><em>Default – 1.</em></p></li>
-<li><p>roomsCount – the maximum number of rooms that are returned in each hotel, from 0 to infinity, where 0 - no limit. Default – 0.</p></li>
+<li>1 – ascending</li>
+<li>0 – descending
+<em>Default – 1.</em></li>
+</ul></li>
+<li>roomsCount – the maximum number of rooms that are returned in each hotel, from 0 to infinity, where 0 - no limit. Default – 0</li>
 </ul>
 <h3 id='response-2'>Response</h3>
 <blockquote>
@@ -5175,53 +5973,53 @@ childrenCount – the number of children; possible values - from 0 to 3. Default
 <p>Block &quot;<strong>result</strong>&quot; contains:</p>
 
 <ul>
-<li><strong>fullUrl</strong> - the link to the hotel&#39;s page with partner&#39;s marker;</li>
-<li><strong>maxPrice</strong> – the highest price of the hotel rooms;</li>
-<li><strong>maxPricePerNight</strong> - the maximum price per night;</li>
-<li><strong>price</strong> – the average price per room;</li>
-<li><strong>minPriceTotal</strong> - the minimum cost per stay;</li>
-<li><strong>photoCount</strong> - the number of photos of the hotel;</li>
-<li><strong>guestScore</strong> - the travelers&#39; rating;</li>
-<li><strong>id</strong> – the ID of hotel in the database;</li>
-<li><strong>name</strong> – hotel&#39;s name;</li>
-<li><strong>address</strong> – the hotel&#39;s address;</li>
-<li><strong>distance</strong> - the distance from the hotel to the city center;</li>
-<li><strong>amenities</strong> - amenities at the hotel (descriptions of values you can find here);</li>
+<li><strong>fullUrl</strong> - the link to the hotel&#39;s page with partner&#39;s marker</li>
+<li><strong>maxPrice</strong> – the highest price of the hotel rooms</li>
+<li><strong>maxPricePerNight</strong> - the maximum price per night</li>
+<li><strong>price</strong> – the average price per room</li>
+<li><strong>minPriceTotal</strong> - the minimum cost per stay</li>
+<li><strong>photoCount</strong> - the number of photos of the hotel</li>
+<li><strong>guestScore</strong> - the travelers&#39; rating</li>
+<li><strong>id</strong> – the ID of hotel in the database</li>
+<li><strong>name</strong> – hotel&#39;s name</li>
+<li><strong>address</strong> – the hotel&#39;s address</li>
+<li><strong>distance</strong> - the distance from the hotel to the city center</li>
+<li><strong>amenities</strong> - amenities at the hotel (descriptions of values you can find here)</li>
 <li><strong>location</strong> – the hotel&#39;s location:
 
 <ul>
-<li><strong>lat</strong> – latitude of hotel;</li>
-<li><strong>lon</strong> – longitude of hotel.</li>
+<li><strong>lat</strong> – latitude of hotel</li>
+<li><strong>lon</strong> – longitude of hotel</li>
 </ul></li>
-<li><strong>stars</strong> – the number of stars the hotel;</li>
-<li><strong>url</strong> – the link to the hotel website.</li>
+<li><strong>stars</strong> – the number of stars the hotel</li>
+<li><strong>url</strong> – the link to the hotel website</li>
 </ul>
 
 <p>Block &quot;<strong>rooms</strong>&quot; contains:</p>
 
 <ul>
-<li><strong>type, desc</strong> – the type of rooms;</li>
-<li><strong>total</strong> – the rate for all time;</li>
-<li><strong>price</strong> – the daily room rate;</li>
-<li><strong>tax</strong> – taxes and fees;</li>
+<li><strong>type, desc</strong> – the type of rooms</li>
+<li><strong>total</strong> – the rate for all time</li>
+<li><strong>price</strong> – the daily room rate</li>
+<li><strong>tax</strong> – taxes and fees</li>
 <li><strong>options</strong> – additional services:
 
 <ul>
-<li><strong>breakfast</strong> - whether breakfast included in the rate or not;</li>
-<li><strong>available</strong> - the number of available rooms of this type;</li>
-<li><strong>deposit</strong> - payment directly on the site, if it is 0 - then pay at the hotel;</li>
-<li><strong>refundable</strong> - &quot;free cancellation&quot;;</li>
-<li><strong>cardRequired</strong> - without reservation card, if 0 - you can book without card and then pay at partners;</li>
-<li><strong>smoking</strong> - can smoke in the room;</li>
-<li><strong>freeWifi</strong> - whether there is free wifi in the room;</li>
-<li><strong>hotelWebsite</strong> - proposal leads to the official hotel website.</li>
+<li><strong>breakfast</strong> - whether breakfast included in the rate or not</li>
+<li><strong>available</strong> - the number of available rooms of this type</li>
+<li><strong>deposit</strong> - payment directly on the site, if it is 0 - then pay at the hotel</li>
+<li><strong>refundable</strong> - &quot;free cancellation&quot;</li>
+<li><strong>cardRequired</strong> - without reservation card, if 0 - you can book without card and then pay at partners</li>
+<li><strong>smoking</strong> - can smoke in the room</li>
+<li><strong>freeWifi</strong> - whether there is free wifi in the room</li>
+<li><strong>hotelWebsite</strong> - proposal leads to the official hotel website</li>
 </ul></li>
-<li><strong>bookingURL</strong> – the link to the booking website;</li>
-<li><strong>fullBookingURL</strong> - complete link to book with filled all data about users (date of check In and check out, number of adults and childrens, currency and ets);</li>
-<li><strong>internalTypeId</strong> - grouping by type of rooms;</li>
-<li><strong>agencyId</strong> – the id of booking agencies;</li>
-<li><strong>agencyName</strong> – the name of the booking agencies;</li>
-<li><strong>rating</strong> - the ranking of visitors. The parameters are calculated based on guest rating, which is compiled on the basis of a vote.</li>
+<li><strong>bookingURL</strong> – the link to the booking website</li>
+<li><strong>fullBookingURL</strong> - complete link to book with filled all data about users (date of check In and check out, number of adults and childrens, currency and ets)</li>
+<li><strong>internalTypeId</strong> - grouping by type of rooms</li>
+<li><strong>agencyId</strong> – the id of booking agencies</li>
+<li><strong>agencyName</strong> – the name of the booking agencies</li>
+<li><strong>rating</strong> - the ranking of visitors. The parameters are calculated based on guest rating, which is compiled on the basis of a vote</li>
 </ul>
 
 <p>You can get photos and other information about hotel with help of <a href="https://support.travelpayouts.com/hc/en-us/articles/115000343268-Hotels-data-API">Hotel Data API</a>.</p>
@@ -5231,9 +6029,9 @@ childrenCount – the number of children; possible values - from 0 to 3. Default
 <p>All input parameters are checked and errors are shown if they are wrong:</p>
 
 <ul>
-<li>errorCode 1 – not all required parameters are filled;</li>
-<li>errorCode 2 – at least one of the parameters does not match the format;</li>
-<li>errorCode 3 – access is denied;</li>
+<li>errorCode 1 – not all required parameters are filled</li>
+<li>errorCode 2 – at least one of the parameters does not match the format</li>
+<li>errorCode 3 – access is denied</li>
 <li>errorCode 4 – search is not over yet</li>
 </ul>
 
