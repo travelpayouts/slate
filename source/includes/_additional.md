@@ -275,13 +275,13 @@ print(response.text)
 * **result** - the obtained result
   * **title**:
     * **flights_every_day** - is avaiable flights every day
-    * **flights_number** - the flights number
+    * **flights_number** - the flight's number
     * **min_flight_duration** - minimum flight duration for flights
       * **days** - flight duration in days
       * **hours** - flight duration in hours
       * **min** - flight duration in minutes
   * **subtitle**:
-    * **origin** - information about the origin destination:
+    * **origin** - information about the origin point:
       * **city** - city of origin
       * **country** - country of origin
       * **airport** - airport name of origin
@@ -293,11 +293,11 @@ print(response.text)
     * **depart_time** - the depart time for the flight
     * **arrival_time** - the arrival time for the flight
     * **arrival_day_indicator** - the indicator for the arrival day
-    * **airline_logo** - the logo for airline company
+    * **airline_logo** - the logo for an airline company
     * **airline_code** - the airline company IATA code
     * **airline_name** - the airline company name
     * **flight_number** - the flight number
     * **op_days** - daily flight of the week
-    * **choose_dates_url** - the url for choosen dates
+    * **choose_dates_url** - the URL for chosen dates
     * **origin_iata** - the origin IATA code
-    * **destination_iata** - the destinational IATA code
+    * **destination_iata** - the destination IATA code
