@@ -1,4 +1,4 @@
-# Hotel search API
+# Hotels search API
 
 ## Requirements for Hotels API access
 
