@@ -3150,7 +3150,7 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 <aside class="warning">Ajax requests to the API don’t work because the access token is passed unencrypted. You must make requests to the API from the server. </aside>
 <h2 id='roundtrip'>Roundtrip</h2>
 <p><a href="https://app.getpostman.com/run-collection/3438c693f7bfb0c14368"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman" /></a></p>
-<h3 id='request-parameters'>Request parameters</h3>
+
 <blockquote>
 <p>Body example</p>
 </blockquote>
@@ -3179,7 +3179,7 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
     </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w"> 
-</span></code></pre>
+</span></code></pre><h3 id='request-parameters'>Request parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3427,7 +3427,7 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 <aside class="notice">Please note! Use currency rates to convert the prices of flights to the currency you need (because the response contains the flight price in Russian rubles).</aside> 
 <h2 id='one-way'>One way</h2><h3 id='request-initialization'>Request initialization</h3>
 <p>To get &quot;One-way&quot; tickets, add a JSON into the body of the request.</p>
-<h3 id='body-example'>Body example</h3>
+
 <blockquote>
 <p>Body example</p>
 </blockquote>
@@ -3451,7 +3451,7 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre><h3 id='request-parameters-2'>Request parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3531,7 +3531,7 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 <p>Open jaw is a round-trip ticket in which the traveller does not arrive in the same city of departure and/or does not depart from the same city where he/she first landed. For example, London - Paris - Berlin - London.</p>
 
 <p>To get &quot;Open jaw&quot; tickets, add a JSON into the body of the request:</p>
-<h3 id='body-example-2'>Body example</h3>
+
 <blockquote>
 <p>Body example</p>
 </blockquote>
@@ -3565,7 +3565,7 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='request-parameters-2'>Request parameters</h3>
+</span></code></pre><h3 id='request-parameters-3'>Request parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3648,6 +3648,8 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 
 <p>Then send the request to the server for search results:</p>
 
+<p><code>GET https://api.travelpayouts.com/v1/flight_search_results?uuid=%search_id%</code></p>
+
 <blockquote>
 <p>Request example</p>
 </blockquote>
@@ -3657,7 +3659,7 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 <aside class="notice">As a result of the search, you will get the JSON array where each element is a response from a definite agency. </aside>
 
 <aside class="warning">Repeat the request until you get an associative array with one element search_id. The periodicity of sending requests isn't restricted. </aside>
-<h3 id='example-of-answer'>Example of answer</h3>
+<h3 id='request-example'>Request example</h3>
 <aside class="warning">Attention! The link to the search results is relevant for 15 minutes. After this time, you must send a search query again.</aside>
 
 <blockquote>
@@ -3955,7 +3957,7 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 <tr>
 <td>flight</td>
 <td>-</td>
-<td>flight details: <li><strong>departure</strong> - departure IATA code;</li><li> <strong>duration</strong> - flight duration in minutes;</li><li> <strong>departure_date</strong> - departure date (UNIX-time);</li><li> <strong>departure_time</strong> - departure time (UNIX-time);</li><li> <strong>local_departure_timestamp</strong> - local departure time in UNIX format;</li><li> <strong>arrival_time</strong> - arrival time (UNIX-time);</li><li> <strong>local_arrival_timestamp</strong> - local arrival time in UNIX format;</li><li> <strong>number</strong> - flight number. To generate a full flight number, use the number and <strong>operating_carrier parameters</strong>;</li><li> <strong>delay</strong> - duration of stop between flights (in minutes);</li><li> <strong>operating_carrier</strong> - IATA code of airline that performs the carriage;</li><li> <strong>arrival_date</strong> - arrival date;</li><li> <strong>aircraft</strong> - type of aircraft;</li><li> <strong>rating_summary</strong> - some rating information about agency or airline (can be blank);</li><li> <strong>is_bus, is_train</strong> — true, if in this segment they do not travel by plane, but by bus or train;</li><li> <strong>arrival</strong> - IATA code of arrival.</li></td>
+<td>flight details: <li><strong>departure</strong> - departure IATA code;</li><li> <strong>duration</strong> - flight duration in minutes;</li><li> <strong>departure_date</strong> - departure date (UNIX-time);</li><li> <strong>departure_time</strong> - departure time (UNIX-time);</li><li> <strong>local_departure_timestamp</strong> - local departure time in UNIX format;</li><li> <strong>arrival_time</strong> - arrival time (UNIX-time);</li><li> <strong>local_arrival_timestamp</strong> - local arrival time in UNIX format;</li><li> <strong>number</strong> - flight number. To generate a full flight number, use the number and <strong>operating_carrier parameters</strong>;</li><li> <strong>delay</strong> - duration of stop between flights (in minutes);</li><li> <strong>operating_carrier</strong> - IATA code of airline that performs the carriage;</li><li> <strong>arrival_date</strong> - arrival date;</li><li> <strong>aircraft</strong> - type of aircraft;</li><li> <strong>rating_summary</strong> - some rating information about agency or airline (can be blank);</li><li> <strong>is_bus, is_train</strong> — true, if in this segment they do not travel by plane, but by bus or train;</li><li> <strong>technical_stops</strong> - information about technical stops ;</li><li> <strong>arrival</strong> - IATA code of arrival.</li></td>
 </tr>
 <tr>
 <td>terms</td>
@@ -4070,8 +4072,9 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 <pre class="highlight shell tab-shell"><code>curl -v -H <span class="s1">'Accept-Encoding:gzip,deflate,sdch'</span> https://api.travelpayouts.com/v1/flight_searches/%search_id%/clicks/%terms.url%.json 
 --compressed
 </code></pre>
-<p>To get a link to the site of the ticket booking agencies send a request to the following address:
-<code>GET https://api.travelpayouts.com/v1/flight_searches/%search_id%/clicks/%terms.url%.json</code></p>
+<p>To get a link to the site of the ticket booking agencies send a request to the following address:</p>
+
+<p><code>GET https://api.travelpayouts.com/v1/flight_searches/%search_id%/clicks/%terms.url%.json</code></p>
 
 <p>where <strong>search_id</strong> is the ID from the answer of the request, <strong>terms.url</strong> - URL parameter from the response.</p>
 
@@ -5921,8 +5924,8 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 <p>Required parameters are highlighted in <strong>bold</strong>.</p>
 
 <ul>
-<li><strong>cityId</strong> – the location ID (the query static/locations.json)</li>
-<li><strong>hotelId</strong> – the hotel ID (the query static/hotels.json)</li>
+<li><strong>cityId</strong> – the location ID (the query <a href="#request-quot-cities-quot">static/locations.json</a>)</li>
+<li><strong>hotelId</strong> – the hotel ID (the query <a href="#request-39-hotels-list-39">static/hotels.json</a>)</li>
 <li><p><strong>iata</strong> – iata code of city</p>
 
 <p><strong>Note</strong>. The request must have at least one of the required parameters iata, cityId or hotelId.</p></li>
@@ -6120,20 +6123,20 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 <p>Request example</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
-  --url <span class="s1">'https://overmind.jetradar.com/api/ru/visas?api_key=afbadb4ff8485c0adcba486b4ca90cc4'</span> <span class="se">\</span>
+  --url <span class="s1">'https://overmind.jetradar.com/api/ru/visas?api_key=YOUR_API_KEY_HERE'</span> <span class="se">\</span>
   --header <span class="s1">'x-access-token: YOUR_API_TOKEN_HERE'</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span> <span class="k">if</span> <span class="no">RUBY_VERSION</span> <span class="o">&lt;</span> <span class="s1">'1.9'</span>
 <span class="nb">require</span> <span class="s1">'rest_client'</span>
 
 <span class="n">headers</span>  <span class="o">=</span> <span class="p">{</span><span class="ss">:x_access_token</span> <span class="o">=&gt;</span> <span class="s2">"YOUR_API_TOKEN_HERE"</span><span class="p">}</span>
-<span class="n">response</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s2">"https://overmind.jetradar.com/api/ru/visas?api_key=afbadb4ff8485c0adcba486b4ca90cc4"</span><span class="p">,</span> <span class="n">headers</span>
+<span class="n">response</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s2">"https://overmind.jetradar.com/api/ru/visas?api_key=YOUR_API_KEY_HERE"</span><span class="p">,</span> <span class="n">headers</span>
 <span class="nb">puts</span> <span class="n">response</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 
 <span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
 
 <span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
-  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://overmind.jetradar.com/api/ru/visas?api_key=afbadb4ff8485c0adcba486b4ca90cc4"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://overmind.jetradar.com/api/ru/visas?api_key=YOUR_API_KEY_HERE"</span><span class="p">,</span>
   <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
   <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
   <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
@@ -6157,11 +6160,11 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
 <span class="p">}</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">urllib2</span> <span class="kn">import</span> <span class="n">Request</span><span class="p">,</span> <span class="n">urlopen</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"X-Access-Token"</span><span class="p">:</span> <span class="s">"YOUR_API_TOKEN_HERE"</span><span class="p">}</span>
-<span class="n">request</span> <span class="o">=</span> <span class="n">Request</span><span class="p">(</span><span class="s">"https://overmind.jetradar.com/api/ru/visas?api_key=afbadb4ff8485c0adcba486b4ca90cc4"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">request</span> <span class="o">=</span> <span class="n">Request</span><span class="p">(</span><span class="s">"https://overmind.jetradar.com/api/ru/visas?api_key=YOUR_API_KEY_HERE"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 <span class="n">response_body</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="k">print</span> <span class="n">response_body</span>
 </code></pre><h3 id='request'>Request</h3>
-<p><code>GET https://overmind.jetradar.com/api/ru/visas?api_key=afbadb4ff8485c0adcba486b4ca90cc4</code></p>
+<p><code>GET https://overmind.jetradar.com/api/ru/visas?api_key=YOUR_API_KEY_HERE</code></p>
 <h3 id='request-parameters'>Request parameters</h3>
 <ul>
 <li><strong>api_key</strong> - your API key</li>
@@ -6190,7 +6193,7 @@ We&#39;ll also need to see the URL of your project, design prototypes, a descrip
     "_id": null
   }
 ]
-</code></pre><h3 id='response-parameters'>Response parameters</h3>
+</code></pre>
 <ul>
 <li>transit_visa_hours - how much hours you can stay in the country by transit visa</li>
 <li>is_schengen - is it possible to enter on a Schengen visa</li>
