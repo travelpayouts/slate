@@ -90,7 +90,7 @@ Required parameters are highlighted in **bold**.
     * city
     * hotel
     * both (city&hotel)
-* limit – limitation of output results from 1 to 100, default - 10
+* limit – limitation of output results from 1 to 10, default - 10
 * convertCase – automatically change the keyboard layout (actual for Russian users, for example, when requesting "vjcrdf" will be found "москва"). Values - 1 or 0. Default - 1
 * token - your affiliate token
 
@@ -253,7 +253,7 @@ Required parameters are highlighted in **bold**.
     * city
     * hotel
     * both (city&hotel)
-* limit – limitation of output results from 1 to 100, default - 10
+* limit – limitation of output results from 1 to 10, default - 10
 * convertCase – automatically change the keyboard layout (actual for Russian users, for example, when requesting "vjcrdf" will be found "москва"). Values - 1 or 0. Default - 1
 * token - your affiliate token
 
