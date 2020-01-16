@@ -20,7 +20,6 @@ includes:
   - hotelstatdata
   - hotelssearchapi
   - hotelapierrors
-  - additional
 
 search: true
 ---
