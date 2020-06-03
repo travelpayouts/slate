@@ -6,6 +6,23 @@ By default, one partner may send no more than 200 queries per hour for one IP, u
 
 ## Аccess to the flights search API
 
+### Requirements for Search API
+
+* Each search query must be initiated by the user and the results must be shown to the user in full. The results for each query must contain a “buy" button next to each flight option.
+* The reference to the agency's website must be received only when the user clicks the "Buy" button. Automatic collection of all links from the answer is prohibited. Violation of this rule will disable the API search for the partner.
+* It's forbidden to use our search API with the API of other metasearches of flights.
+* It's forbidden to use requests with localhost IP addresses (127.0.0.1-127.255.255.255).
+* It's forbidden to automatically collect data from search results using the search API.
+* Page with found flights should be hidden from search engine bots using the robots.txt file. For example, if flights tickets are displayed on the page www.sitename.com/search, then robots.txt should contain the lines:
+  ```
+  User-Agent: *
+  Disallow: /search/
+  ```
+* The conversion rate for searches via the Buy link must be 9% or more. The conversion rate from the Buy button to actual purchases must be at least 5%.
+* Ajax requests to the API don’t work because the access token is passed unencrypted. You must make requests to the API from the server.
+
+### How to get access
+
 To access the flights search API you should be registered in our [travel affiliate program](https://travelpayouts.com/) and [submit your request](https://support.travelpayouts.com/hc/ru/requests/new) on with the following information:
 
 * URL of your website;
@@ -14,13 +31,6 @@ To access the flights search API you should be registered in our [travel affilia
 * How you will use the search API?
 * Why aren’t the standard methods of integration (search forms, White Label, API access to data) suitable for you.
 * Requirements for flights search API access.
-
-<aside class="notice">Each search query must be initiated by the user and the results must be shown to the user in full. The results for each query must contain a “buy” button next to each flight option.</aside>
-
-The conversion rate for searches via the Buy link must be 9% or more. The conversion rate from the Buy button to actual purchases must be at least 5%.
-We'll also need to see the URL of your project, design prototypes, a description of your project, and how our API will be used.
-
-<aside class="warning">Ajax requests to the API don’t work because the access token is passed unencrypted. You must make requests to the API from the server. </aside>
 
 ## Roundtrip
 
