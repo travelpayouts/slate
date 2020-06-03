@@ -3119,7 +3119,22 @@ Note! Additionally we created translations for different languages for all data 
 <p>With the help of API, you can get the results of requests in real time and create a Multi-City search. </p>
 
 <p>By default, one partner may send no more than 200 queries per hour for one IP, using the airline tickets search API. This restriction may be changed if a situation so requires.</p>
-<h2 id='ccess-to-the-flights-search-api'>Аccess to the flights search API</h2>
+<h2 id='ccess-to-the-flights-search-api'>Аccess to the flights search API</h2><h3 id='requirements-for-search-api'>Requirements for Search API</h3>
+<ul>
+<li>Each search query must be initiated by the user and the results must be shown to the user in full. The results for each query must contain a “buy&quot; button next to each flight option.</li>
+<li>The reference to the agency&#39;s website must be received only when the user clicks the &quot;Buy&quot; button. Automatic collection of all links from the answer is prohibited. Violation of this rule will disable the API search for the partner.</li>
+<li>It&#39;s forbidden to use our search API with the API of other metasearches of flights.</li>
+<li>It&#39;s forbidden to use requests with localhost IP addresses (127.0.0.1-127.255.255.255).</li>
+<li>It&#39;s forbidden to automatically collect data from search results using the search API.</li>
+<li>Page with found flights should be hidden from search engine bots using the robots.txt file. For example, if flights tickets are displayed on the page www.sitename.com/search, then robots.txt should contain the lines:
+<code>
+User-Agent: *
+Disallow: /search/
+</code></li>
+<li>The conversion rate for searches via the Buy link must be 9% or more. The conversion rate from the Buy button to actual purchases must be at least 5%.</li>
+<li>Ajax requests to the API don’t work because the access token is passed unencrypted. You must make requests to the API from the server.</li>
+</ul>
+<h3 id='how-to-get-access'>How to get access</h3>
 <p>To access the flights search API you should be registered in our <a href="https://travelpayouts.com/">travel affiliate program</a> and <a href="https://support.travelpayouts.com/hc/ru/requests/new">submit your request</a> on with the following information:</p>
 
 <ul>
@@ -3130,13 +3145,6 @@ Note! Additionally we created translations for different languages for all data 
 <li>Why aren’t the standard methods of integration (search forms, White Label, API access to data) suitable for you.</li>
 <li>Requirements for flights search API access.</li>
 </ul>
-
-<aside class="notice">Each search query must be initiated by the user and the results must be shown to the user in full. The results for each query must contain a “buy” button next to each flight option.</aside>
-
-<p>The conversion rate for searches via the Buy link must be 9% or more. The conversion rate from the Buy button to actual purchases must be at least 5%.
-We&#39;ll also need to see the URL of your project, design prototypes, a description of your project, and how our API will be used.</p>
-
-<aside class="warning">Ajax requests to the API don’t work because the access token is passed unencrypted. You must make requests to the API from the server. </aside>
 <h2 id='roundtrip'>Roundtrip</h2>
 <p><a href="https://app.getpostman.com/run-collection/3438c693f7bfb0c14368"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman" /></a></p>
 
