@@ -34,8 +34,6 @@ To access the API you should be [registered](https://travelpayouts.com/) in our 
 Dear partners! Attention, the data is transferred from the cache, so it is recommended to use them to generate static pages.
 </aside>
 
-To access the API you must pass your token in the X-Access-Token header or in the token parameter. To obtain a token for the Data Access API, go to [http://www.travelpayouts.com/developers/api](https://www.travelpayouts.com/programs/100/tools/api).
+To access the API you must pass your token in the X-Access-Token header or in the token parameter. To obtain a token for the Data Access API, go to [https://www.travelpayouts.com/programs/100/tools/api](https://www.travelpayouts.com/programs/100/tools/api).
 
-<aside class="tip">
-You can find more helpfull informaion in the [Help center](https://support.travelpayouts.com/hc/en-us/articles/226985367-Useful-additions-to-work-with-the-Travelpayouts-API).
-</aside>
+**You can find more helpfull informaion in the [Help center](https://support.travelpayouts.com/hc/en-us/articles/226985367-Useful-additions-to-work-with-the-Travelpayouts-API)**.
