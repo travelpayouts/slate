@@ -100,9 +100,9 @@ Note. If the point of departure and the point of destination are not specified, 
 Parameter | Default | Description
 --------- | ------- | -----------
 currency | RUB | The airline ticket’s currency.
-origin | - | The point of departure. The IATA city code or the country code. The length - from 2 to 3 symbols.
+origin | MOW | The point of departure. The IATA city code or the country code. The length - from 2 to 3 symbols.
 destination | - | The point of destination. The IATA city code or the country code. The length - from 2 to 3 symbols.
-beginning_of_period | - | The beginning of the period, within which the dates of departure fall (in the YYYY-MM-DD format, for example, 2016-05-01). Must be specified if **period_type** is equal to a month.
+beginning_of_period | - | The beginning of the period, within which the dates of departure fall (in the YYYY-MM-DD format, for example, 2021-05-01). Must be specified if **period_type** is equal to a month.
 period_type | - | The period for which the tickets have been found (the required parameter): **year** — for the whole time, **month** — for a month.
 one_way | false | **true** - one way, **false** - back-to-back.
 page | 1 | A page number.
@@ -111,6 +111,7 @@ show_to_affiliates | true | **false** - all the prices, **true** - just the pric
 sorting | price | The assorting of prices: **price** — by the price. For the directions, only **city - city** assorting by the price is possible; **route** — by the popularity of a route; **distance_unit_price** — by the price for 1 km.
 trip_duration | 1 | A page number.
 token | - | Individual affiliate token.
+unique | - | Returns only unique directions, if **origin** was specified, but **destination** was not specified.
 
 ### Response
 
@@ -125,11 +126,11 @@ token | - | Individual affiliate token.
       "trip_class": 0,
       "origin": "BKK",
       "destination": "PHS",
-      "depart_date": "2018-02-09",
-      "return_date": "2018-02-11",
+      "depart_date": "2021-02-09",
+      "return_date": "2021-02-11",
       "number_of_changes": 0,
       "value": 36.36,
-      "found_at": "2017-07-24T06:33:32+04:00",
+      "found_at": "2021-07-24T06:33:32+04:00",
       "distance": 339,
       "actual": true
     }
@@ -256,11 +257,11 @@ token | - | Individual affiliate token.
         "trip_class":0,
         "origin":"LED",
         "destination":"HKT",
-        "depart_date":"2015-10-01",
+        "depart_date":"2021-10-01",
         "return_date":"",
         "number_of_changes":1,
         "value":29127,
-        "found_at":"2015-09-24T00:06:12+04:00",
+        "found_at":"2021-09-24T00:06:12+04:00",
         "distance":8015,
         "actual":true
     }]
@@ -383,15 +384,15 @@ depart_date** *(optional)* | - | Day or month of departure (yyyy-mm-dd or yyyy-m
     "value":26000.0,
     "trip_class":0,
     "show_to_affiliates":true,
-    "return_date":"2016-09-18",
+    "return_date":"2021-09-18",
     "origin":"BAX",
     "number_of_changes":0,
     "gate":"AMADEUS",
-    "found_at":"2016-07-28T04:57:47Z",
+    "found_at":"2021-07-28T04:57:47Z",
     "duration":null,
     "distance":3643,
     "destination":"SIP",
-    "depart_date":"2016-09-09",
+    "depart_date":"2021-09-09",
     "actual":true
     }],
 "origins":[
@@ -434,7 +435,7 @@ Brings the prices for the nearest dates to the target ones back.
 
 ```shell
 curl --request GET \
-  --url 'https://api.travelpayouts.com/v2/prices/week-matrix?currency=usd&origin=LED&destination=HKT&show_to_affiliates=true&depart_date=2017-11-04&return_date=2017-11-18' \
+  --url 'https://api.travelpayouts.com/v2/prices/week-matrix?currency=usd&origin=LED&destination=HKT&show_to_affiliates=true&depart_date=2021-11-04&return_date=2021-11-18' \
   --header 'x-access-token: 321d6a221f8926b5ec41ae89a3b2ae7b'
 ```
 
@@ -442,7 +443,7 @@ curl --request GET \
 require 'uri'
 require 'net/https'
 
-url = URI("https://api.travelpayouts.com/v2/prices/week-matrix?currency=usd&origin=LED&destination=HKT&show_to_affiliates=true&depart_date=2017-11-04&return_date=2017-11-18")
+url = URI("https://api.travelpayouts.com/v2/prices/week-matrix?currency=usd&origin=LED&destination=HKT&show_to_affiliates=true&depart_date=2021-11-04&return_date=2021-11-18")
 
 https = Net::HTTP.new(url.host, url.port)
 
@@ -459,7 +460,7 @@ puts response.read_body
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api.travelpayouts.com/v2/prices/week-matrix?currency=usd&origin=LED&destination=HKT&show_to_affiliates=true&depart_date=2017-11-04&return_date=2017-11-18",
+  CURLOPT_URL => "https://api.travelpayouts.com/v2/prices/week-matrix?currency=usd&origin=LED&destination=HKT&show_to_affiliates=true&depart_date=2021-11-04&return_date=2021-11-18",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -488,7 +489,7 @@ import requests
 
 url = "https://api.travelpayouts.com/v2/prices/week-matrix"
 
-querystring = {"currency":"usd","origin":"LED","destination":"HKT","show_to_affiliates":"true","depart_date":"2017-11-04","return_date":"2017-11-18"}
+querystring = {"currency":"usd","origin":"LED","destination":"HKT","show_to_affiliates":"true","depart_date":"2021-11-04","return_date":"2021-11-18"}
 
 headers = {'x-access-token': '321d6a221f8926b5ec41ae89a3b2ae7b'}
 
@@ -498,7 +499,7 @@ print(response.text)
 ```
 ### Request
 
-GET `https://api.travelpayouts.com/v2/prices/week-matrix?currency=usd&origin=LED&destination=HKT&show_to_affiliates=true&depart_date=2016-09-04&return_date=2016-09-18&token=PutHereYourToken`
+GET `https://api.travelpayouts.com/v2/prices/week-matrix?currency=usd&origin=LED&destination=HKT&show_to_affiliates=true&depart_date=2021-09-04&return_date=2021-09-18&token=PutHereYourToken`
 
 ### Request parameters
 
@@ -525,11 +526,11 @@ Parameter | Default | Description
         "trip_class":0,
         "origin":"LED",
         "destination":"HKT",
-        "depart_date":"2016-03-01",
-        "return_date":"2016-03-15",
+        "depart_date":"2021-03-01",
+        "return_date":"2021-03-15",
         "number_of_changes":1,
         "value":71725,
-        "found_at":"2016-02-19T00:04:37+04:00",
+        "found_at":"2021-02-19T00:04:37+04:00",
         "distance":8015,
         "actual":true
     }]
