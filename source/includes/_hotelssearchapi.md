@@ -269,3 +269,13 @@ Block "**rooms**" contains:
 You can get photos and other information about hotel with help of [Hotel Data API](https://support.travelpayouts.com/hc/en-us/articles/115000343268-Hotels-data-API).
 
 **Attention**! The reference to the agency's website must be received only when the user clicks the "Buy" button. Automatic collection of all links from the answer is prohibited. Violation of this rule will disable the API search for the partner.
+
+## Hotels API request errors
+
+All input parameters are checked and errors are shown if they are wrong:
+
+* errorCode 1 – not all required parameters are filled
+* errorCode 2 – at least one of the parameters does not match the format
+* errorCode 3 – access is denied
+* errorCode 4 – search is not over yet
+
