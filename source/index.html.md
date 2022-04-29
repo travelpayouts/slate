@@ -19,7 +19,6 @@ includes:
   - hotelsdata
   - hotelstatdata
   - hotelssearchapi
-  - hotelapierrors
 
 search: true
 ---
