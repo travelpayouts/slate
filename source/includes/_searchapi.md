@@ -688,7 +688,6 @@ initiated_at | date and time of search (**deprecated**);
 open_jaw | true if it is part of open jaw (**deprecated**);
 clean_marker | affiliate marker (**deprecated**);
 currency | currency type (**deprecated**);
-flight_info | information about routes: {RouteNumber} <li>**ontime_percent** — delay persant; _min — min number of delay; max — max number of delay; mean — average number of delay._ </li><li>**IATA** — IATA code;</li><li> **city** — city where airport is located;</li><li> **average_rate** — average rating of airport;</li><li> **rates** — number of ratings;</li><li> **country** — country where airport is located;</li><li> **name** — airport name;</li><li> **time_zone** — time zone of airport.</li>
 filters_boundary | array data for filtering: <li>**stops_duration** — time between flights (maximum and minimum);</li><li> **flights_duration** — flights duration (maximum and minimum);</li><li> **arrival_datetime_0** — arrival datetime (maximum and minimum);</li><li> **price** — price of flights (maximum and minimum);</li><li> **departure_time_0** — departure time (maximum and minimum);</li><li> **stops_count** — stops count.</li>
 
 <aside class="warning">Attention! Use currency rates to convert the prices of flights to the currency you need (because the response contains the flight price in Russian rubles).</aside>
