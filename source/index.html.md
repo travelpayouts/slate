@@ -16,8 +16,6 @@ includes:
   - dataapiv2
   - dataapijson
   - searchapi
-  - hotelstatdata
-  - hotelssearchapi
 
 search: true
 ---
