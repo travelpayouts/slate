@@ -22,7 +22,7 @@ Dates and times are given in UTC, formatted according to [ISO 8601](https://ru.w
 Important. We strongly urge receiving data in compressed GZIP format, which saves a significant amount of time in receiving the response. To get data in compressed form, send the header Accept-Encoding: gzip, deflate.
 </aside>
 
-To obtain access to the API for searching for plane tickets and hotels, [send a request](https://support.travelpayouts.com/hc/en-us/requests/new).
+To obtain access to the API for searching for plane tickets, [send a request](https://support.travelpayouts.com/hc/en-us/requests/new).
 
 ## Cheapest tickets
 
